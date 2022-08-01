@@ -9,6 +9,7 @@ life = max_life;
 
 max_hSpd = 4;
 max_vSpd = 6;
+dash_Spd = 6;
 
 combo = 0;
 damage = noone;

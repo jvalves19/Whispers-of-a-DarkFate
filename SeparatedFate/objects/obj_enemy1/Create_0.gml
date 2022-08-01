@@ -15,3 +15,4 @@ timer_state = 0;
 dist_player = 100;
 damage = noone;
 atk = 1;
+canAttack = true;

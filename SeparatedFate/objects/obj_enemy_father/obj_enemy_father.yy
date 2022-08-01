@@ -1,16 +1,13 @@
 {
-  "spriteId": {
-    "name": "spr_enemy1Idle",
-    "path": "sprites/spr_enemy1Idle/spr_enemy1Idle.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "obj_enemy_father",
-    "path": "objects/obj_enemy_father/obj_enemy_father.yy",
+    "name": "obj_father",
+    "path": "objects/obj_father/obj_father.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -24,10 +21,7 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-  ],
+  "eventList": [],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
@@ -35,7 +29,7 @@
     "path": "folders/Objects/Enemys.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_enemy1",
+  "name": "obj_enemy_father",
   "tags": [],
   "resourceType": "GMObject",
 }

@@ -56,6 +56,7 @@ switch(state){
 		
 		if(sprite_index != spr_enemy1AttackA){
 			image_index = 0;
+			canAttack = true;
 		}
 		sprite_index = spr_enemy1AttackA;
 		
@@ -63,11 +64,12 @@ switch(state){
 			state = "idle";
 		}
 			
-		if(image_index >= 4 && damage == noone){
+		if(image_index >= 4 && damage == noone && canAttack){
 			//Create obj Damage
 			damage = instance_create_layer(x + sprite_width/3 , y-25 , layer, obj_damage);
 			damage.damage = atk;
 			damage.father = id;
+			canAttack = false;
 		}
 		//destroy obj damage
 		if(damage != noone && image_index > 5){
@@ -82,9 +84,9 @@ switch(state){
 	case "hit":
 		if(sprite_index != spr_enemy1Hit){
 			image_index = 0;
-			//life -= 5;
 		}
 		sprite_index = spr_enemy1Hit;
+		hSpd = 0;
 		
 		if(life > 0){
 			if(image_index > image_number-1){
@@ -115,4 +117,6 @@ switch(state){
 	
 		break;
 	
+	default:
+		state = "idle";
 }
