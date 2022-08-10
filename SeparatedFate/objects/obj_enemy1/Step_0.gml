@@ -9,7 +9,7 @@ if(!ground){
 
 
 switch(state){
-	//Enemy Idle State
+	#region idle
 	case "idle":
 		hSpd = 0;
 		timer_state++;
@@ -27,8 +27,9 @@ switch(state){
 		scr_enemy_attack(obj_player, dist_player, xscale);
 	
 		break;
+	#endregion
 	
-	//Enemy Walk State
+	#region walk
 	case "walk":
 		timer_state++;
 		
@@ -46,11 +47,11 @@ switch(state){
 			timer_state = 0;
 		}
 		scr_enemy_attack(obj_player, dist_player, xscale);
-
 		
 		break;
-		
-		
+	#endregion
+	
+	#region attack
 	case "attack": 
 		hSpd = 0;
 		
@@ -79,8 +80,9 @@ switch(state){
 		
 		
 		break;
+	#endregion
 
-	//Get Hit 
+	#region hit and death
 	case "hit":
 		if(sprite_index != spr_enemy1Hit){
 			image_index = 0;
@@ -99,9 +101,11 @@ switch(state){
 			}
 	
 		break;
-		
+	
 	//You re dead now
 	case "dead":
+		hSpd = 0;
+		
 		if(sprite_index != spr_enemy1Dead){
 			image_index = 0;
 		}
@@ -116,6 +120,7 @@ switch(state){
 		}
 	
 		break;
+	#endregion
 	
 	default:
 		state = "idle";
