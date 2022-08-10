@@ -193,6 +193,8 @@ switch(state){
 		break;
 			
 	case "dead":
+		hSpd = 0;
+		
 		if(sprite_index != spr_dead){
 			image_index = 0;
 		}
