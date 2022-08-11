@@ -4,7 +4,7 @@
 var ground = place_meeting(x, y + 1, obj_block);
 
 if(!ground){
-	vSpd += GRAVITY * weight;
+	vSpd += GRAVITY * weight * global.spd_mult;
 }
 
 
@@ -37,7 +37,7 @@ switch(state){
 			image_index = 0;
 			
 			//Horizontal Speed can be alternated between 1 or -1
-			hSpd = choose(1, -1);
+			hSpd = choose(1, -1) * global.spd_mult;
 		}
 		sprite_index = spr_enemy1Walk;
 		

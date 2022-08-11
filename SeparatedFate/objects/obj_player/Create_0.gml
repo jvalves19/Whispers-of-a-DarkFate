@@ -4,7 +4,7 @@
 // Inherit the parent event
 event_inherited();
 
-max_life = 100;
+max_life = 10;
 life = max_life;
 
 max_hSpd = 4;

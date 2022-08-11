@@ -13,8 +13,8 @@ attack = keyboard_check_pressed(ord("J"));
 dash = keyboard_check_pressed(vk_space);
 
 //Gravity
-if(!ground && (vSpd < max_vSpd *2 )){
-	vSpd += GRAVITY * weight;
+if(!ground && (vSpd < max_vSpd * 2 )){
+	vSpd += GRAVITY * weight * global.spd_mult;
 }
 
 //State Machine
@@ -136,8 +136,14 @@ switch(state){
 			}
 			
 		//Creatint attack object
-		if(image_index >= 3  && damage == noone && canAttack){
+		if(image_index >= 3  && damage == noone && canAttack && sprite_index != spr_attack3){
 			damage = instance_create_layer(x + sprite_width/6 , y-25 , layer, obj_damage);
+			damage.damage = atk * atkMult;
+			damage.father = id;
+			canAttack = false;
+		}
+		if(image_index >= 9 && damage == noone && canAttack && sprite_index == spr_attack3){
+			damage = instance_create_layer(x + sprite_width/4 , y-25 , layer, obj_damageWater);
 			damage.damage = atk * atkMult;
 			damage.father = id;
 			canAttack = false;
@@ -193,6 +199,15 @@ switch(state){
 		break;
 			
 	case "dead":
+		if(instance_exists(obj_game_controller)){
+			with(obj_game_controller){
+				game_over = true;				
+				if(keyboard_check(vk_enter)){
+					game_restart();					
+				}
+			}
+		}
+	
 		hSpd = 0;
 		
 		if(sprite_index != spr_dead){
@@ -211,5 +226,3 @@ switch(state){
 			state = "idle";
 			
 }
-
-if(keyboard_check(ord("R"))) room_restart();
