@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-menu = ["Begin Story", "Read Story", "End Game"];
+menu = ["Resume Story", "Main Menu", "End Game"];
 sel = -1;
 
 #region METODS
@@ -46,7 +46,7 @@ select_menu = function(){
 
 	//Play Game
 	if(sel == 0 && _option) room_goto(rm_castle);
-	//Main Load Game
+	//Main Menu
 	//if(sel == 1 && _option) room_goto(rm_menu);
 	//Exit Game
 	if(sel == 2 && _option) game_end();

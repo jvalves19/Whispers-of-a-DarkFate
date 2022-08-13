@@ -30,7 +30,7 @@
     "path": "folders/Objects/Options.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_menu",
+  "name": "obj_pause",
   "tags": [],
   "resourceType": "GMObject",
 }

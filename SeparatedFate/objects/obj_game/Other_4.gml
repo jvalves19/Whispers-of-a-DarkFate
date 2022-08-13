@@ -1,4 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-select_menu();
+if(instance_exists(obj_player)){
+	obj_player.persistent = true;
+}

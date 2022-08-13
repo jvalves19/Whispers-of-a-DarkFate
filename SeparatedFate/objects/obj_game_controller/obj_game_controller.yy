@@ -26,8 +26,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Options",
+    "path": "folders/Objects/Options.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_game_controller",
