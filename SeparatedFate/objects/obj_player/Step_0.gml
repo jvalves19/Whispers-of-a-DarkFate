@@ -1,6 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+//check if is changing room
+
 //Initializing variables
 var right, left, jump, attack, dash;
 var ground = place_meeting(x, y + 1, obj_block);

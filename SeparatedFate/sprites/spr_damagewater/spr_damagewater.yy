@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "WaterPriest",
+    "path": "folders/Sprites/WaterPriest.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_damageWater",
