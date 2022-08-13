@@ -4,7 +4,7 @@
 //Check if player is here
 var player = place_meeting(x, y, obj_player);
 
-var action = keyboard_check_released(ord("Ed"));
+var action = keyboard_check_released(ord("E"));
 
 if(player && action){
 	var tran = instance_create_layer(0, 0, layer, obj_transition);
