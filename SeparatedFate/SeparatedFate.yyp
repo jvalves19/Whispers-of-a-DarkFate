@@ -31,6 +31,7 @@
     {"id":{"name":"spr_idle","path":"sprites/spr_idle/spr_idle.yy",},"order":0,},
     {"id":{"name":"spr_tileCastle02","path":"sprites/spr_tileCastle02/spr_tileCastle02.yy",},"order":1,},
     {"id":{"name":"spr_tileForest02","path":"sprites/spr_tileForest02/spr_tileForest02.yy",},"order":1,},
+    {"id":{"name":"Sprite31","path":"sprites/Sprite31/Sprite31.yy",},"order":15,},
     {"id":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},"order":3,},
     {"id":{"name":"spr_damageWater","path":"sprites/spr_damageWater/spr_damageWater.yy",},"order":10,},
     {"id":{"name":"spr_sensor","path":"sprites/spr_sensor/spr_sensor.yy",},"order":1,},

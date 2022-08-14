@@ -33,8 +33,7 @@ if(game_over){
 	
 	//Writing Game Over
 	draw_set_font(fnt_game_over);
-	draw_set_valign(1);
-	draw_set_halign(1);
+	define_align(1,  1);
 	
 	//Shadow
 	draw_set_color(c_red);
@@ -50,8 +49,7 @@ if(game_over){
 	draw_set_color(c_white);
 	draw_text(center_w + 11, center_h + 51, "Press ENTER to restart");
 	
-	draw_set_valign(-1);
-	draw_set_halign(-1);	
+	define_align(-1, -1);	
 	draw_set_font(-1);
 }
 else{

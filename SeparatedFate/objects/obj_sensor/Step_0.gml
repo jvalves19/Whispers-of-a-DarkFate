@@ -6,7 +6,13 @@ var player = place_meeting(x, y, obj_player);
 
 var action = keyboard_check_released(ord("E"));
 
-if(player && action){
+if(player){
+	sense = true;
+}else{
+	sense = false;
+}
+
+if(sense && action){
 	var tran = instance_create_layer(0, 0, layer, obj_transition);
 	
 	tran.destination = destination;
