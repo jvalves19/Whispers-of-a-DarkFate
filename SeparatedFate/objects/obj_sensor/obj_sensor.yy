@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "Sprite31",
-    "path": "sprites/Sprite31/Sprite31.yy",
+    "name": "spr_sensor",
+    "path": "sprites/spr_sensor/spr_sensor.yy",
   },
   "solid": false,
   "visible": true,
