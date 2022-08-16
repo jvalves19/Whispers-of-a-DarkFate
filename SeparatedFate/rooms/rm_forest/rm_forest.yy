@@ -20,7 +20,6 @@
             {"propertyId":{"name":"destionation_x","path":"objects/obj_sensor/obj_sensor.yy",},"objectId":{"name":"obj_sensor","path":"objects/obj_sensor/obj_sensor.yy",},"value":"1072","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
             {"propertyId":{"name":"destionation_y","path":"objects/obj_sensor/obj_sensor.yy",},"objectId":{"name":"obj_sensor","path":"objects/obj_sensor/obj_sensor.yy",},"value":"384","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
           ],"isDnd":false,"objectId":{"name":"obj_sensor","path":"objects/obj_sensor/obj_sensor.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":0.5,"scaleY":0.75,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":496.0,"y":384.0,"resourceVersion":"1.0","name":"inst_4C23D812","tags":[],"resourceType":"GMRInstance",},
-        {"properties":[],"isDnd":false,"objectId":{"name":"obj_game","path":"objects/obj_game/obj_game.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":0.0,"y":0.0,"resourceVersion":"1.0","name":"inst_1C9551D4","tags":[],"resourceType":"GMRInstance",},
       ],"visible":true,"depth":100,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":8,"gridY":16,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],"resourceVersion":"1.0","name":"Sensing","tags":[],"resourceType":"GMRInstanceLayer",},
     {"instances":[
         {"properties":[],"isDnd":false,"objectId":{"name":"obj_enemy1","path":"objects/obj_enemy1/obj_enemy1.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":896.0,"y":384.0,"resourceVersion":"1.0","name":"inst_BDBF922_1","tags":[],"resourceType":"GMRInstance",},
@@ -97,7 +96,6 @@
     {"name":"inst_7AC2D274_1","path":"rooms/rm_forest/rm_forest.yy",},
     {"name":"inst_569255BA_1","path":"rooms/rm_forest/rm_forest.yy",},
     {"name":"inst_4C23D812","path":"rooms/rm_forest/rm_forest.yy",},
-    {"name":"inst_1C9551D4","path":"rooms/rm_forest/rm_forest.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,

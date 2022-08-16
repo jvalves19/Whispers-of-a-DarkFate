@@ -1,54 +1,52 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+pause = false;
+pauseSurf = 1;
+pauseSurfBuffer = 1;
+
+resW = 2000;
+resH = 1400;
+
+value = 0;
+
 menu = ["Resume Story", "Main Menu", "End Game"];
 sel = -1;
 
-#region METODS
 draw_menu = function(){
-	draw_set_font(fnt_menu);
-	define_align(0, 0);
-
-	var _qtd = array_length(menu);
-	var _alt = display_get_gui_height();
-	var _space_y = string_height("I") + 16;
-
-	for(var i = 0 ; i < _qtd; i++){
-		var _color = c_white;
-		var _text = menu[i];
-	
-		if(sel == i){
-			_color = c_red;
-		}
-	
-		draw_text_color(20, (_alt / 2) + (i * _space_y), _text, _color, _color, _color, _color, 1); 
-	}
-
-	//Reseting Variables
-	draw_set_font(-1);
-	define_align(-1, -1);
+	create_menu();
 }
 
 select_menu = function(){
-	var _up, _down, _option;
+	change_option();
+	
+	//Resume Game
+	if(sel == 0 && _option){
+		if(!pause){
+			pause = true;
+		
+			instance_deactivate_all(true);
+		
+			pauseSurf = surface_create(resW, resH);
+			surface_set_target(pauseSurf);
+			draw_surface(application_surface, 0, 0);
+			surface_reset_target();
 
-	_up = keyboard_check_pressed(vk_up);
-	_down = keyboard_check_pressed(vk_down);
-	_option = keyboard_check_pressed(vk_enter);
-
-	//Changing Selection
-	if(_up && sel <= 0) sel=3;
-	if(_up) sel--;
-
-
-	if(_down && sel >= 2 ) sel=-1;
-	if(_down) sel++;
-
-	//Play Game
-	if(sel == 0 && _option) room_goto(rm_castle);
+			if(buffer_exists(pauseSurfBuffer)) buffer_delete(pauseSurfBuffer);
+			
+			pauseSurfBuffer = buffer_create(resW * resH * 4, buffer_fixed, 1);
+			buffer_get_surface(pauseSurfBuffer, pauseSurf, 0);
+		}
+		else{
+			pause = false;
+			instance_activate_all();
+		
+			if(surface_exists(pauseSurf)) surface_free(pauseSurf);
+			if(buffer_exists(pauseSurfBuffer)) buffer_delete(pauseSurfBuffer);
+		}
+	}
 	//Main Menu
-	//if(sel == 1 && _option) room_goto(rm_menu);
+	if(sel == 1 && _option) game_restart();
 	//Exit Game
 	if(sel == 2 && _option) game_end();
 }
-#endregion

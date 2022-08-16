@@ -4,15 +4,9 @@
 //check if is changing room
 
 //Initializing variables
-var right, left, jump, attack, dash;
+player_controls();
 var ground = place_meeting(x, y + 1, obj_block);
 var fall = vSpd!=0;
-
-right = keyboard_check(ord("D"));
-left = keyboard_check(ord("A"));
-jump = keyboard_check_pressed(ord("W"));
-attack = keyboard_check_pressed(ord("J"));
-dash = keyboard_check_pressed(vk_space);
 
 //Gravity
 if(!ground && (vSpd < max_vSpd * 2 )){
@@ -52,7 +46,6 @@ switch(state){
 	#region walk
 	case "walk":
 		sprite_index = spr_walk;
-		
 		
 		//Movement to the direction
 		hSpd = (right - left) * max_hSpd;
@@ -140,15 +133,11 @@ switch(state){
 		//Creatint attack object
 		if(image_index >= 3  && damage == noone && canAttack && sprite_index != spr_attack3){
 			damage = instance_create_layer(x + sprite_width/6 , y-25 , layer, obj_damage);
-			damage.damage = atk * atkMult;
-			damage.father = id;
-			canAttack = false;
+			player_combo_attack();
 		}
-		if(image_index >= 9 && damage == noone && canAttack && sprite_index == spr_attack3){
+		if(image_index >= 8 && damage == noone && canAttack && sprite_index == spr_attack3){
 			damage = instance_create_layer(x + sprite_width/4 , y-25 , layer, obj_damageWater);
-			damage.damage = atk * atkMult;
-			damage.father = id;
-			canAttack = false;
+			player_combo_attack();
 		}
 		
 		if(attack && combo < 2 && image_index >= image_number-3){
@@ -203,7 +192,8 @@ switch(state){
 	case "dead":
 		if(instance_exists(obj_game_controller)){
 			with(obj_game_controller){
-				game_over = true;				
+				game_over = true;
+				instance_deactivate_object(obj_pause);
 				if(keyboard_check(vk_enter)){
 					game_restart();					
 				}
