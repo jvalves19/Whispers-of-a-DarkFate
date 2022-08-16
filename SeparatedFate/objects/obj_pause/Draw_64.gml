@@ -15,11 +15,10 @@ if(pause){
 	
 	draw_set_color(c_white);
 	draw_text(center_w, center_h, "Game Pause");
-	
-	draw_menu();
-	
 	define_align(-1, -1);	
 	draw_set_font(-1);
+	
+	draw_menu();
 }
 else{
 	value = 0;
