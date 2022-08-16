@@ -5,6 +5,7 @@
 function player_controls(){
 	right = keyboard_check(ord("D"));
 	left = keyboard_check(ord("A"));
+	down = keyboard_check(ord("S"));
 	jump = keyboard_check_pressed(ord("W"));
 	attack = keyboard_check_pressed(ord("J"));
 	dash = keyboard_check_pressed(vk_space);

@@ -192,7 +192,8 @@ switch(state){
 	case "dead":
 		if(instance_exists(obj_game_controller)){
 			with(obj_game_controller){
-				game_over = true;				
+				game_over = true;
+				instance_deactivate_object(obj_pause);
 				if(keyboard_check(vk_enter)){
 					game_restart();					
 				}

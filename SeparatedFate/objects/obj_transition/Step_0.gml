@@ -6,11 +6,14 @@ if(changeRoom){
 }
 else{
 	alpha += 0.02;
+	instance_deactivate_object(obj_pause);
 }
 
-if(alpha >= 1){
+if(alpha >= 1){	
 	room_goto(destination);
 	
 	obj_player.x = destionation_x;
 	obj_player.y = destionation_y;
+	
+	instance_activate_object(obj_pause);
 }
