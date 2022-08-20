@@ -2,6 +2,7 @@
 // You can write your code in this editor
 
 //check if is changing room
+if(instance_exists(obj_transition)) exit;
 
 //Initializing variables
 player_controls();
@@ -39,6 +40,16 @@ switch(state){
 				state = "dash";
 				image_index = 0;
 			}
+		else
+			if(heal){
+				state = "heal";
+				image_index = 0;
+			}
+		else
+			if(ultimate){
+				state = "ultimate";
+				image_index = 0;
+			}
 		
 		break;
 	#endregion
@@ -69,6 +80,16 @@ switch(state){
 		else
 			if(dash){
 				state = "dash";
+				image_index = 0;
+			}
+		else
+			if(heal){
+				state = "heal";
+				image_index = 0;
+			}
+		else
+			if(ultimate){
+				state = "ultimate";
 				image_index = 0;
 			}
 		
@@ -168,6 +189,60 @@ switch(state){
 		break;
 	#endregion
 	
+	#region ultimate
+	case "ultimate":
+		if(aura > 0){	
+			
+			if(sprite_index != spr_ultimate){
+				image_index = 0;	
+				aura = aura - 10;
+			}
+			hSpd = 0;
+			
+			sprite_index = spr_ultimate;
+			
+		
+			for(i = 0; i < image_number-1; i++){
+				damage = instance_create_layer(x + sprite_width/5 , y-30 , layer, obj_damageUltimate);
+				damage.damage = atk/200;
+				damage.father = id;
+				canAttack = false;
+			}		
+		}
+		
+		
+		if(image_index > image_number-1){
+			state = "idle";
+			canAttack = true;
+			if(damage){
+				instance_destroy(damage, false);
+				damage = noone;
+			}
+		}
+	
+		break;
+	#endregion
+		
+	#region heal
+	case "heal":		
+		if(aura > 0 && life < max_life){
+			if(sprite_index != spr_heal){
+				image_index = 0;	
+				sprite_index = spr_heal;
+			}
+			hSpd = 0;
+			aura -= 5;
+			life += 10;
+			
+		}
+		
+		if(image_index >= image_number-1){
+			state = "idle";
+		}
+		break;
+		
+	#endregion
+	
 	#region hit and death
 	case "hit":
 		if(sprite_index != spr_hit){
@@ -190,27 +265,22 @@ switch(state){
 		break;
 			
 	case "dead":
-		if(instance_exists(obj_game_controller)){
-			with(obj_game_controller){
-				game_over = true;
-				instance_deactivate_object(obj_pause);
-				if(keyboard_check(vk_enter)){
-					game_restart();					
-				}
-			}
-		}
-	
-		hSpd = 0;
-		
 		if(sprite_index != spr_dead){
 			image_index = 0;
 		}
+		hSpd = 0;
 		sprite_index = spr_dead;
 			
 		if(image_index > image_number-1){
 			image_speed = 0;
 		}
-	
+
+		if(instance_exists(obj_game_controller)){
+			with(obj_game_controller){	
+				game_over = true;
+			}
+		}					
+		
 		break;
 	#endregion
 		

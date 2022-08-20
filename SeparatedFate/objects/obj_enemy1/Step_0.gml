@@ -53,71 +53,20 @@ switch(state){
 	
 	#region attack
 	case "attack": 
-		hSpd = 0;
-		
-		if(sprite_index != spr_enemy1AttackA){
-			image_index = 0;
-			canAttack = true;
-		}
-		sprite_index = spr_enemy1AttackA;
-		
-		if(image_index > image_number-1){
-			state = "idle";
-		}
-			
-		if(image_index >= 4 && damage == noone && canAttack){
-			//Create obj Damage
-			damage = instance_create_layer(x + sprite_width/3 , y-25 , layer, obj_damage);
-			damage.damage = atk;
-			damage.father = id;
-			canAttack = false;
-		}
-		//destroy obj damage
-		if(damage != noone && image_index > 5){
-			instance_destroy(damage)
-			damage = noone;
-		}
-		
+		attacking(spr_enemy1AttackA, 3, 8, sprite_width/3, -sprite_height/5, 2, 1);
 		
 		break;
 	#endregion
 
 	#region hit and death
 	case "hit":
-		if(sprite_index != spr_enemy1Hit){
-			image_index = 0;
-		}
-		sprite_index = spr_enemy1Hit;
-		hSpd = 0;
-		
-		if(life > 0){
-			if(image_index > image_number-1){
-				state = "idle";
-			}
-		}
-		else
-			if(image_index >= 0){
-				state = "dead";
-			}
+		get_hit(spr_enemy1Hit, 0);
 	
 		break;
 	
 	//You re dead now
 	case "dead":
-		hSpd = 0;
-		
-		if(sprite_index != spr_enemy1Dead){
-			image_index = 0;
-		}
-		sprite_index = spr_enemy1Dead;
-		
-		//is dead
-		if(image_index > image_number-1){
-			image_speed = 0;
-			image_alpha -= 0.01;
-			
-			if(image_alpha <= 0) instance_destroy();
-		}
+		dying(spr_enemy1Dead);
 	
 		break;
 	#endregion

@@ -1,8 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-state = src_playerStateFree;
-
 //Make some datas randomic in game
 randomize();
 

@@ -9,7 +9,7 @@ if(pause){
 	if(surface_exists(pauseSurf)) draw_surface(pauseSurf, 0, 0);
 	else{
 		pauseSurf = surface_create(resW, resH);
-		buffer_set_surface(pauseSurfBuffer, pauseSurfBuffer, 0);	
+		buffer_set_surface(pauseSurfBuffer, pauseSurf, 0);	
 	}
 	
 	surface_reset_target();
