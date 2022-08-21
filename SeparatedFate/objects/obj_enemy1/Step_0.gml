@@ -7,7 +7,6 @@ if(!ground){
 	vSpd += GRAVITY * weight * global.spd_mult;
 }
 
-
 switch(state){
 	#region idle
 	case "idle":
@@ -15,9 +14,9 @@ switch(state){
 		timer_state++;
 	
 		if(sprite_index != spr_enemy1Idle){
+			sprite_index = spr_enemy1Idle;
 			image_index = 0;
 		}
-		sprite_index = spr_enemy1Idle;
 		
 		//Patrol State Begin
 		if(irandom(timer_state > 100)){
@@ -34,12 +33,11 @@ switch(state){
 		timer_state++;
 		
 		if(sprite_index != spr_enemy1Walk){
+			sprite_index = spr_enemy1Walk;
 			image_index = 0;
-			
 			//Horizontal Speed can be alternated between 1 or -1
 			hSpd = choose(1, -1) * global.spd_mult;
 		}
-		sprite_index = spr_enemy1Walk;
 		
 		//Patrol State End
 		if(irandom(timer_state > 300)){

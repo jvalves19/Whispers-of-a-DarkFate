@@ -32,8 +32,7 @@ switch(state){
 			}
 		else
 			if(attack){
-				state = "attack";
-				hSpd = 0;
+				state_attack(ground);
 			}
 		else
 			if(dash){
@@ -73,9 +72,7 @@ switch(state){
 			}
 		else
 			if(attack){
-				state = "attack";
-				hSpd = 0;
-				image_index = 0;
+				state_attack(ground);
 			}
 		else
 			if(dash){
@@ -140,85 +137,23 @@ switch(state){
 		hSpd = 0;
 		
 		if(combo == 0){
-			sprite_index = spr_attack;
+			player_attacking(spr_attack, 3, 8, sprite_width/6, -sprite_height/5, 2, 1);
 		}
 		else
 			if(combo == 1){
-				sprite_index = spr_attack2;
+				player_attacking(spr_attack2, 3, 8, sprite_width/6, -sprite_height/5, 2, 1);
 			}
 		else
 			if(combo == 2){
-				sprite_index = spr_attack3;
+				player_attacking(spr_attack3, 9, 14, sprite_width/4, -sprite_height/5, 3, 3);	
 			}
-			
-		//Creatint attack object
-		if(image_index >= 3  && damage == noone && canAttack && sprite_index != spr_attack3){
-			damage = instance_create_layer(x + sprite_width/6 , y-25 , layer, obj_damage);
-			player_combo_attack();
-		}
-		if(image_index >= 8 && damage == noone && canAttack && sprite_index == spr_attack3){
-			damage = instance_create_layer(x + sprite_width/4 , y-25 , layer, obj_damageWater);
-			player_combo_attack();
-		}
-		
-		if(attack && combo < 2 && image_index >= image_number-3){
-			combo++;
-			image_index = 0;
-			canAttack = true;
-			atkMult += 0.5;
-			
-			if(damage){
-				instance_destroy(damage, false);
-				damage = noone;
-			}
-		}
-		
-		if(image_index > image_number-1){
-			state = "idle";
-			hSpd = 0;
-			combo = 0;
-			canAttack = true;
-			atkMult = 1;
-			
-			if(damage){
-				instance_destroy(damage, false);
-				damage = noone;
-			}
-		}
 	
 		break;
 	#endregion
 	
 	#region ultimate
 	case "ultimate":
-		if(aura > 0){	
-			
-			if(sprite_index != spr_ultimate){
-				image_index = 0;	
-				aura = aura - 10;
-			}
-			hSpd = 0;
-			
-			sprite_index = spr_ultimate;
-			
-		
-			for(i = 0; i < image_number-1; i++){
-				damage = instance_create_layer(x + sprite_width/5 , y-30 , layer, obj_damageUltimate);
-				damage.damage = atk/200;
-				damage.father = id;
-				canAttack = false;
-			}		
-		}
-		
-		
-		if(image_index > image_number-1){
-			state = "idle";
-			canAttack = true;
-			if(damage){
-				instance_destroy(damage, false);
-				damage = noone;
-			}
-		}
+		player_ultimate(spr_ultimate, sprite_width/5, -sprite_height/4, 2, 3);
 	
 		break;
 	#endregion
@@ -227,8 +162,8 @@ switch(state){
 	case "heal":		
 		if(aura > 0 && life < max_life){
 			if(sprite_index != spr_heal){
-				image_index = 0;	
 				sprite_index = spr_heal;
+				image_index = 0;					
 			}
 			hSpd = 0;
 			aura -= 5;
@@ -246,11 +181,11 @@ switch(state){
 	#region hit and death
 	case "hit":
 		if(sprite_index != spr_hit){
+			sprite_index = spr_hit;
 			image_index = 0;
+			hSpd = 0;
 		}
-		sprite_index = spr_hit;
-		hSpd = 0;
-			
+		
 		if(life > 0){
 			if(image_index > image_number-1){
 				state = "idle";
@@ -266,10 +201,10 @@ switch(state){
 			
 	case "dead":
 		if(sprite_index != spr_dead){
+			sprite_index = spr_dead;
 			image_index = 0;
+			hSpd = 0;
 		}
-		hSpd = 0;
-		sprite_index = spr_dead;
 			
 		if(image_index > image_number-1){
 			image_speed = 0;

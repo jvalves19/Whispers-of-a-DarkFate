@@ -5,26 +5,6 @@
 // Inherit the parent event
 event_inherited();
 
-//Method Hit
-///@method get_hit()
-get_hit = function(_sprite_index, _image_index){
-	if(sprite_index != _sprite_index){
-		sprite_index = _sprite_index;
-		image_index = 0;
-		hSpd = 0;
-	}	
-		
-	if(life > 0){
-		if(image_index > image_number-1){
-			state = "idle";
-		}
-	}
-	else
-		if(image_index >= _image_index){
-			state = "dead";
-		}
-}
-
 //Method Attack
 ///@method attacking()
 attacking = function(_sprite_index, _image_index_min, _image_index_max, _dist_x, _dist_y, _xscale_damage, _yscale_damage, _next_state){
@@ -59,6 +39,26 @@ attacking = function(_sprite_index, _image_index_min, _image_index_max, _dist_x,
 		damage = noone;
 	}
 
+}
+
+//Method Hit
+///@method get_hit()
+get_hit = function(_sprite_index, _image_index){
+	if(sprite_index != _sprite_index){
+		sprite_index = _sprite_index;
+		image_index = 0;
+		hSpd = 0;
+	}	
+		
+	if(life > 0){
+		if(image_index > image_number-1){
+			state = "idle";
+		}
+	}
+	else
+		if(image_index >= _image_index){
+			state = "dead";
+		}
 }
 	
 ///@method dying()
