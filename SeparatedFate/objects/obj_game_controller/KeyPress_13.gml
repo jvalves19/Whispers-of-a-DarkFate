@@ -3,13 +3,14 @@
 
 
 if(game_over){
-	if(room != rm_castle){
+	if(room != rm_firstBoss){
 		game_restart();
 	}
 	else{
 		room_goto_next();
-		obj_player.life = 100;
+		obj_player.life = obj_player.max_life;
 		obj_player.state = "idle";
+		instance_activate_object(obj_pause);
 	}
 }
 
