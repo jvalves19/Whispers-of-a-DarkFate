@@ -17,12 +17,6 @@ function player_controls(){
 }
 #endregion
 
-function player_combo_attack(){
-	damage.damage = atk * atkMult;
-	damage.father = id;
-	canAttack = false;
-}
-
 #region SCREEN ALIGN
 function define_align(_ver, _hor){
 	draw_set_halign(_hor);

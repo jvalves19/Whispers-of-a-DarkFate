@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "UI_HUD",
-    "path": "folders/Sprites/UI_HUD.yy",
+    "name": "Health",
+    "path": "folders/Sprites/UI_HUD/Health.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_boss_health",
