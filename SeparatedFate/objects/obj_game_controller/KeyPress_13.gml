@@ -10,6 +10,9 @@ if(game_over){
 		room_goto_next();
 		obj_player.life = obj_player.max_life;
 		obj_player.state = "idle";
+		obj_player.x = 64;
+		obj_player.y = 380;
+	
 		instance_activate_object(obj_pause);
 	}
 }

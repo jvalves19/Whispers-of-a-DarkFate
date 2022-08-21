@@ -10,10 +10,10 @@ life = max_life;
 max_aura = 150;
 aura = max_aura;
 
-healthbar_width = 512;
-healthbar_height = 96;
+healthbar_width = 720;
+healthbar_height = 64;
 healthbar_x = (400/2) - (healthbar_width/4);
-healthbar_y = ystart - 300;
+healthbar_y = ystart - 350;
 
 max_hSpd = 4;
 max_vSpd = 6;
@@ -27,11 +27,14 @@ canAttack = true;
 atkMult = 1;
 
 draw_hud = function(){
-	draw_sprite(spr_healthBg, 0, healthbar_x, healthbar_y);
-	draw_sprite_stretched(spr_health, 0, healthbar_x, healthbar_y, (life/max_life) * healthbar_width, healthbar_height);
+	draw_sprite_stretched(spr_artGUI, 0, healthbar_x - 5, healthbar_y, 128, 120);
+	draw_sprite_stretched(spr_art, 0, healthbar_x, healthbar_y, 120, 110);
+	
+	draw_sprite(spr_healthBg, 0, healthbar_x + 140, healthbar_y);
+	draw_sprite_stretched(spr_health, 0, healthbar_x + 140, healthbar_y, (life/max_life) * healthbar_width, healthbar_height);
 
-	draw_sprite(spr_healthBg, 0, healthbar_x, healthbar_y + 80);
-	draw_sprite_stretched(spr_aura, 0, healthbar_x, healthbar_y + 80, (aura/max_aura) * healthbar_width, healthbar_height);
+	draw_sprite(spr_healthBg, 0, healthbar_x + 140, healthbar_y + 50);
+	draw_sprite_stretched(spr_aura, 0, healthbar_x + 140, healthbar_y + 50, (aura/max_aura) * healthbar_width, healthbar_height);
 }
 
 //Methods to attack
