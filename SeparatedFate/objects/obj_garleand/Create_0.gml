@@ -7,6 +7,12 @@ event_inherited();
 max_life = 1000;
 life = max_life;
 
+
+healthbar_width = 1630;
+healthbar_height = 40;
+healthbar_x = (400/2) - (healthbar_width/26);
+healthbar_y = ystart + 910;
+
 max_hSpd = 4;
 max_vSpd = 2;
 

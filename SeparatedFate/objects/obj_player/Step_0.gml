@@ -119,11 +119,10 @@ switch(state){
 	#region dash
 	case "dash":
 		if(sprite_index != spr_dash){
+			sprite_index = spr_dash;
 			image_index = 0;	
-		}
-		sprite_index = spr_dash;
-		
-		hSpd = image_xscale * dash_Spd;
+			hSpd = image_xscale * dash_Spd;
+		}		
 		
 		if(image_index >= image_number-1){
 			state = "idle";
@@ -180,22 +179,7 @@ switch(state){
 	
 	#region hit and death
 	case "hit":
-		if(sprite_index != spr_hit){
-			sprite_index = spr_hit;
-			image_index = 0;
-			hSpd = 0;
-		}
-		
-		if(life > 0){
-			if(image_index > image_number-1){
-				state = "idle";
-			}
-		}
-		else
-			if(image_index >= 0){
-				state = "dead";
-			}
-	
+		player_get_hit(spr_hit);	
 			
 		break;
 			
