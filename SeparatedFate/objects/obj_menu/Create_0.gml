@@ -18,7 +18,7 @@ select_menu = function(){
 	//Play Game
 	if(sel == 0 && _option) room_goto(rm_cutscene);
 	//Load Game
-	//if(sel == 1 && _option) room_goto(rm_loadGame);
+	if(sel == 1 && _option) loadGame();
 	//Exit Game
 	if(sel == 2 && _option) game_end();
 }

@@ -8,3 +8,7 @@ if(game_over){
 else{
 	global.spd_mult = 1;
 }
+
+if(object_exists(obj_player)){
+	global.actRoom = room;
+}

@@ -69,6 +69,7 @@
     {"id":{"name":"spr_tileGarlCastle","path":"sprites/spr_tileGarlCastle/spr_tileGarlCastle.yy",},"order":0,},
     {"id":{"name":"spr_art","path":"sprites/spr_art/spr_art.yy",},"order":13,},
     {"id":{"name":"obj_bard","path":"objects/obj_bard/obj_bard.yy",},"order":0,},
+    {"id":{"name":"src_saveLoad","path":"scripts/src_saveLoad/src_saveLoad.yy",},"order":4,},
     {"id":{"name":"spr_enemy1Hit","path":"sprites/spr_enemy1Hit/spr_enemy1Hit.yy",},"order":1,},
     {"id":{"name":"seq_cutscene","path":"sequences/seq_cutscene/seq_cutscene.yy",},"order":0,},
     {"id":{"name":"rm_forest","path":"rooms/rm_forest/rm_forest.yy",},"order":2,},

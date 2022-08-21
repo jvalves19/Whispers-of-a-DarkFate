@@ -10,3 +10,7 @@ max_vSpd = 2;
 timer_state = 0;
 
 damage = noone;
+
+
+sense = false;
+value = 0;
