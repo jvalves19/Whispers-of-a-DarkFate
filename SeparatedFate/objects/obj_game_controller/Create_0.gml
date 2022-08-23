@@ -11,8 +11,8 @@ global.actRoom = noone;
 
 
 
-global.bossName = noone;
 
 bossDead = false;
 
 global.destroyed = false;
+global.destroyed2 = false;
