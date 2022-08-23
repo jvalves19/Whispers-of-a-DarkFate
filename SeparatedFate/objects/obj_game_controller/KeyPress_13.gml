@@ -1,7 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-
 if(game_over){
 	if(room != rm_firstBoss){
 		game_restart();
@@ -19,3 +18,12 @@ if(game_over){
 
 game_over = false;
 value = 0;
+
+
+if(bossDead){
+	global.destroyed = true;
+	saveGame();
+	room_restart();
+}
+
+bossDead = false;

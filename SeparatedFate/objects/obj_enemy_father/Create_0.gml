@@ -77,8 +77,5 @@ dying = function(_sprite_index){
 			if(image_alpha <= 0){
 				instance_destroy();
 			}
-		}
-		
-	global.bossState = "dead";
-	
+		}	
 }

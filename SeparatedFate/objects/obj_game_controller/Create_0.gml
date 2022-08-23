@@ -9,4 +9,10 @@ value = 0;
 
 global.actRoom = noone;
 
-global.bossState = "idle";
+
+
+global.bossName = noone;
+
+bossDead = false;
+
+global.destroyed = false;

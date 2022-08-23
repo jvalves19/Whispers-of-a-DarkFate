@@ -13,6 +13,11 @@ if(object_exists(obj_player)){
 	global.actRoom = room;
 }
 
-if(object_exists(obj_garleand)){
-	global.bossState = global.bossState;
+
+
+if(bossDead){
+	global.spd_mult = 0.5;
 }
+else{
+	global.spd_mult = 1;
+};
