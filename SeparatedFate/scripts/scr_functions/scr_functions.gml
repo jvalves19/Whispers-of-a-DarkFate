@@ -7,16 +7,15 @@ function player_controls(){
 	left = keyboard_check(ord("A"));
 	down = keyboard_check(ord("S"));
 	jump = keyboard_check_pressed(ord("W"));
+	
 	attack = keyboard_check_pressed(ord("J"));
-	dash = keyboard_check_pressed(vk_space);
+	ultimate = keyboard_check_pressed(ord("K"));
+	
+	dash = keyboard_check_pressed(vk_space);	
+	
+	heal = down && ultimate;
 }
 #endregion
-
-function player_combo_attack(){
-	damage.damage = atk * atkMult;
-	damage.father = id;
-	canAttack = false;
-}
 
 #region SCREEN ALIGN
 function define_align(_ver, _hor){

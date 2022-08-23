@@ -17,3 +17,7 @@ if(alpha >= 1){
 	
 	instance_activate_object(obj_pause);
 }
+
+if(changeRoom && alpha <= 0){
+	instance_destroy();
+}

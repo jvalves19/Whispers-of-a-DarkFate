@@ -6,3 +6,7 @@ global.spd_mult = 1;
 game_over = false;
 
 value = 0;
+
+global.actRoom = noone;
+
+global.bossState = "idle";

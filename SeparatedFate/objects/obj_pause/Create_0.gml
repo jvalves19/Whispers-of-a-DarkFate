@@ -46,7 +46,9 @@ select_menu = function(){
 		}
 	}
 	//Main Menu
-	if(sel == 1 && _option) game_restart();
+	if(sel == 1 && _option){
+		game_restart();
+	}
 	//Exit Game
 	if(sel == 2 && _option) game_end();
 }

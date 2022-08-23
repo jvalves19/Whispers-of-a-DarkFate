@@ -29,6 +29,10 @@ var tam = ds_list_size(apply_damage);
 for(var i = 0; i < tam; i++){
 	target = apply_damage[| i].id;	
 	
+	if(obj_player.aura < obj_player.max_aura){
+		obj_player.aura = obj_player.aura+5;
+	}
+	
 	if(target.life > 0){
 		target.state = "hit";
 		target.life -= damage;

@@ -29,8 +29,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Damages",
+    "path": "folders/Objects/Damages.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_damage",

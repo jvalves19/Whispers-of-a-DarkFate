@@ -2,6 +2,7 @@
 // You can write your code in this editor
 
 //check if is changing room
+if(instance_exists(obj_transition)) exit;
 
 //Initializing variables
 player_controls();
@@ -31,12 +32,21 @@ switch(state){
 			}
 		else
 			if(attack){
-				state = "attack";
-				hSpd = 0;
+				state_attack(ground);
 			}
 		else
 			if(dash){
 				state = "dash";
+				image_index = 0;
+			}
+		else
+			if(heal){
+				state = "heal";
+				image_index = 0;
+			}
+		else
+			if(ultimate){
+				state = "ultimate";
 				image_index = 0;
 			}
 		
@@ -62,13 +72,21 @@ switch(state){
 			}
 		else
 			if(attack){
-				state = "attack";
-				hSpd = 0;
-				image_index = 0;
+				state_attack(ground);
 			}
 		else
 			if(dash){
 				state = "dash";
+				image_index = 0;
+			}
+		else
+			if(heal){
+				state = "heal";
+				image_index = 0;
+			}
+		else
+			if(ultimate){
+				state = "ultimate";
 				image_index = 0;
 			}
 		
@@ -101,11 +119,10 @@ switch(state){
 	#region dash
 	case "dash":
 		if(sprite_index != spr_dash){
+			sprite_index = spr_dash;
 			image_index = 0;	
-		}
-		sprite_index = spr_dash;
-		
-		hSpd = image_xscale * dash_Spd;
+			hSpd = image_xscale * dash_Spd;
+		}		
 		
 		if(image_index >= image_number-1){
 			state = "idle";
@@ -119,98 +136,70 @@ switch(state){
 		hSpd = 0;
 		
 		if(combo == 0){
-			sprite_index = spr_attack;
+			player_attacking(spr_attack, 3, 8, sprite_width/6, -sprite_height/5, 2, 1);
 		}
 		else
 			if(combo == 1){
-				sprite_index = spr_attack2;
+				player_attacking(spr_attack2, 3, 8, sprite_width/6, -sprite_height/5, 2, 1);
 			}
 		else
 			if(combo == 2){
-				sprite_index = spr_attack3;
+				player_attacking(spr_attack3, 9, 14, sprite_width/4, -sprite_height/5, 3, 3);	
 			}
-			
-		//Creatint attack object
-		if(image_index >= 3  && damage == noone && canAttack && sprite_index != spr_attack3){
-			damage = instance_create_layer(x + sprite_width/6 , y-25 , layer, obj_damage);
-			player_combo_attack();
-		}
-		if(image_index >= 8 && damage == noone && canAttack && sprite_index == spr_attack3){
-			damage = instance_create_layer(x + sprite_width/4 , y-25 , layer, obj_damageWater);
-			player_combo_attack();
-		}
-		
-		if(attack && combo < 2 && image_index >= image_number-3){
-			combo++;
-			image_index = 0;
-			canAttack = true;
-			atkMult += 0.5;
-			
-			if(damage){
-				instance_destroy(damage, false);
-				damage = noone;
-			}
-		}
-		
-		if(image_index > image_number-1){
-			state = "idle";
-			hSpd = 0;
-			combo = 0;
-			canAttack = true;
-			atkMult = 1;
-			
-			if(damage){
-				instance_destroy(damage, false);
-				damage = noone;
-			}
-		}
 	
 		break;
 	#endregion
 	
+	#region ultimate
+	case "ultimate":
+		player_ultimate(spr_ultimate, sprite_width/5, -sprite_height/4, 2, 3);
+	
+		break;
+	#endregion
+		
+	#region heal
+	case "heal":		
+		if(aura > 0 && life < max_life){
+			if(sprite_index != spr_heal){
+				sprite_index = spr_heal;
+				image_index = 0;					
+			}
+			hSpd = 0;
+			aura -= 5;
+			life += 10;
+			
+		}
+		
+		if(image_index >= image_number-1){
+			state = "idle";
+		}
+		break;
+		
+	#endregion
+	
 	#region hit and death
 	case "hit":
-		if(sprite_index != spr_hit){
-			image_index = 0;
-		}
-		sprite_index = spr_hit;
-		hSpd = 0;
-			
-		if(life > 0){
-			if(image_index > image_number-1){
-				state = "idle";
-			}
-		}
-		else
-			if(image_index >= 0){
-				state = "dead";
-			}
-	
+		player_get_hit(spr_hit);	
 			
 		break;
 			
 	case "dead":
-		if(instance_exists(obj_game_controller)){
-			with(obj_game_controller){
-				game_over = true;
-				instance_deactivate_object(obj_pause);
-				if(keyboard_check(vk_enter)){
-					game_restart();					
-				}
-			}
-		}
-	
-		hSpd = 0;
-		
 		if(sprite_index != spr_dead){
+			sprite_index = spr_dead;
 			image_index = 0;
+			hSpd = 0;
 		}
-		sprite_index = spr_dead;
 			
 		if(image_index > image_number-1){
 			image_speed = 0;
 		}
-	
+
+		if(instance_exists(obj_game_controller)){
+			with(obj_game_controller){	
+				game_over = true;
+			}
+		}					
+		
 		break;
 	#endregion
 		
