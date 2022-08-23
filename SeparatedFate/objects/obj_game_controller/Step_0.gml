@@ -20,4 +20,4 @@ if(bossDead){
 }
 else{
 	global.spd_mult = 1;
-};
+}

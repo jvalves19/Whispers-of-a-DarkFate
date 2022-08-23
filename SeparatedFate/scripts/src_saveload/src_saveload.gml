@@ -8,7 +8,9 @@ function saveGame(){
 	ini_write_real("savegame", "yPos", obj_player.y);
 	
 	ini_write_real("savegame", "boss", global.destroyed);	
+	ini_write_real("savegame", "boss2", global.destroyed2);	
 	show_debug_message(global.destroyed);
+	show_debug_message(global.destroyed2);
 	
 	ini_close();
 }
@@ -23,7 +25,9 @@ function loadGame(){
 	obj_player.y= ini_read_real("savegame", "yPos", 0);
 	
 	global.destroyed = ini_read_real("savegame", "boss", 0);
+	global.destroyed2 = ini_read_real("savegame", "boss2", 0);
 	show_debug_message(global.destroyed);
+	show_debug_message(global.destroyed2);
 	
 	
 	ini_close();

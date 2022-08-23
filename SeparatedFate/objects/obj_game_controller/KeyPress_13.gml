@@ -15,15 +15,13 @@ if(game_over){
 		instance_activate_object(obj_pause);
 	}
 }
-
 game_over = false;
 value = 0;
 
 
 if(bossDead){
-	global.destroyed = true;
+	
 	saveGame();
 	room_restart();
 }
-
 bossDead = false;
