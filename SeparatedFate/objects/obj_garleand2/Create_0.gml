@@ -26,5 +26,5 @@ canAttack = true;
 //Function Attack - Substate
 state_atk = irandom(2);
 
-global.bossName = object_index;
-global.destroyed = global.destroyed;
+global.bossName2 = object_index;
+global.destroyed2 = global.destroyed2;
