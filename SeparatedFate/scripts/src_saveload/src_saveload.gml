@@ -6,11 +6,13 @@ function saveGame(){
 	ini_write_real("savegame", "roomID", global.actRoom);
 	ini_write_real("savegame", "xPos", obj_player.x);
 	ini_write_real("savegame", "yPos", obj_player.y);
+	//ini_write_real("savegame", "Player Life", global.pMaxLife);
 	
 	ini_write_real("savegame", "boss", global.destroyed);	
 	ini_write_real("savegame", "boss2", global.destroyed2);	
 	show_debug_message(global.destroyed);
 	show_debug_message(global.destroyed2);
+	//show_debug_message(global.pMaxLife);
 	
 	ini_close();
 }
@@ -23,18 +25,20 @@ function loadGame(){
 	roomID = ini_read_real("savegame", "roomID", 0);
 	obj_player.x  = ini_read_real("savegame", "xPos", 0);
 	obj_player.y= ini_read_real("savegame", "yPos", 0);
+	//global.pMaxLife = ini_read_real("savegame", "Player Life", 0);
 	
 	global.destroyed = ini_read_real("savegame", "boss", 0);
 	global.destroyed2 = ini_read_real("savegame", "boss2", 0);
 	show_debug_message(global.destroyed);
 	show_debug_message(global.destroyed2);
+	//show_debug_message(global.pMaxLife);
 	
 	
 	ini_close();
 	room_goto(roomID);
 }
 
-
+/*
 function saveGame2(){
 	var _saveData = array_create(0);
 	
@@ -88,3 +92,4 @@ function loadGame2(){
 	}
 
 }
+*/

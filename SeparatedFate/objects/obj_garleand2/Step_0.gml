@@ -56,15 +56,15 @@ switch(state){
 		//SubState Attack
 			switch(state_atk){
 				case 0:
-					attacking(spr_garlAttack1, 3, 8, sprite_width/5, -sprite_height/5, 2, 1);
+					attacking(spr_garlAttack1, 3, 8, sprite_width/5, -sprite_height/5, 2, 1, "idle");
 					break;
 					
 				case 1:
-					attacking(spr_garlAttack2, 5, 8, sprite_width/5, -sprite_height/5, 1, 4);
+					attacking(spr_garlAttack2, 5, 8, sprite_width/5, -sprite_height/5, 1, 4, "idle");
 					break;
 					
 				case 2:
-					attacking(spr_garlAttack3, 3, 6, sprite_width/5, -sprite_height/5, 2, 1);
+					attacking(spr_garlAttack3, 3, 6, sprite_width/5, -sprite_height/5, 2, 1, "idle");
 					break;
 			}
 		
@@ -83,6 +83,7 @@ switch(state){
 		
 		if(instance_exists(obj_game_controller)){
 			with(obj_game_controller){	
+				//global.pMaxLife += 100;
 				bossDead = true;	
 				global.destroyed2 = true;
 			}
@@ -90,4 +91,7 @@ switch(state){
 		
 		break;
 	#endregion
+	
+	default:
+		state = "idle";
 }

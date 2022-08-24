@@ -179,7 +179,7 @@ switch(state){
 	
 	#region hit and death
 	case "hit":
-		player_get_hit(spr_hit);	
+		get_hit(spr_hit, 0);	
 			
 		break;
 			
@@ -198,7 +198,7 @@ switch(state){
 			with(obj_game_controller){	
 				game_over = true;
 			}
-		}					
+		}	
 		
 		break;
 	#endregion

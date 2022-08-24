@@ -51,7 +51,7 @@ switch(state){
 	
 	#region attack
 	case "attack": 
-		attacking(spr_enemy1AttackA, 3, 8, sprite_width/5, -sprite_height/5);
+		attacking(spr_enemy1AttackA, 3, 8, sprite_width/5, -sprite_height/5, 1, 1, "idle");
 		
 		break;
 	#endregion

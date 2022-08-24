@@ -15,12 +15,12 @@ if(game_over){
 		instance_activate_object(obj_pause);
 	}
 }
+global.spd_mult = 1;
 game_over = false;
 value = 0;
 
 
 if(bossDead){
-	
 	saveGame();
 	room_restart();
 }

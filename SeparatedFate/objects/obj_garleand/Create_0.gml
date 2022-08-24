@@ -27,5 +27,4 @@ canAttack = true;
 state_atk = irandom(2);
 
 global.bossName = object_index;
-
 global.destroyed = global.destroyed;
