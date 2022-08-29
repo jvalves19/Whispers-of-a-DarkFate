@@ -45,7 +45,7 @@ switch(state){
 				image_index = 0;
 			}
 		else
-			if(ultimate){
+			if(ultimate && global.controllPowers[0]){
 				state = "ultimate";
 				image_index = 0;
 			}
@@ -85,7 +85,7 @@ switch(state){
 				image_index = 0;
 			}
 		else
-			if(ultimate){
+			if(ultimate && global.controllPowers[0]){
 				state = "ultimate";
 				image_index = 0;
 			}
@@ -134,7 +134,7 @@ switch(state){
 	#region attack
 	case "attack":
 		hSpd = 0;
-		
+
 		if(combo == 0){
 			player_attacking(spr_attack, 3, 8, sprite_width/6, -sprite_height/5, 2, 1);
 		}
@@ -144,9 +144,15 @@ switch(state){
 			}
 		else
 			if(combo == 2){
-				player_attacking(spr_attack3, 9, 14, sprite_width/4, -sprite_height/5, 3, 3);	
+				player_attacking(spr_attack3, 9, 14, sprite_width/4, -sprite_height/5, 3, 3);
 			}
-	
+			
+		if(soundAttack == false && image_index < 1){
+			audio_play_sound(snd_sword, 1, false);
+			soundAttack = true;
+		}
+		soundAttack = false;
+		
 		break;
 	#endregion
 	
@@ -179,7 +185,13 @@ switch(state){
 	
 	#region hit and death
 	case "hit":
-		get_hit(spr_hit, 0);	
+		get_hit(spr_hit, 0);
+		
+		if(soundAttack == false && image_index < 1){
+			audio_play_sound(snd_hit, 1, false);
+			soundAttack = true;
+		}
+		soundAttack = false;
 			
 		break;
 			

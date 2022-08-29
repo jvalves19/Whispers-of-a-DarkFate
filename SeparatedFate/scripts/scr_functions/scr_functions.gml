@@ -68,28 +68,6 @@ function change_option(){
 }
 #endregion
 
-#region BOSS HUD
-function draw_boss_hud(_string){
-	draw_set_font(fnt_dungeon);
-	define_align(1,  1);
-	
-	//Shadow
-	draw_set_color(c_red);
-	draw_text(healthbar_x+200, healthbar_y-20, _string);	
-	//Text
-	draw_set_color(c_white);
-	draw_text(healthbar_x+201, healthbar_y-21, _string);	
-
-	draw_sprite(spr_boss_healthBg, 0, healthbar_x-5, healthbar_y-5);
-	draw_sprite_stretched_ext(spr_boss_health, 0, healthbar_x, healthbar_y, (life/max_life) * healthbar_width, healthbar_height, -1, 0.5);
-
-
-	define_align(-1, -1);	
-	draw_set_font(-1);
-}
-
-#endregion
-
 #region GAME OVER AND BOSS DEFEATED SCREEN
 function draw_gameover_screen(_string, _desc){
 	//Get camera info
@@ -138,6 +116,28 @@ function draw_gameover_screen(_string, _desc){
 	draw_set_color(c_white);
 	draw_text(center_w + 11, center_h + 51, _desc);
 	
+	define_align(-1, -1);	
+	draw_set_font(-1);
+}
+
+#endregion
+
+#region BOSS HUD
+function draw_boss_hud(_string){
+ 	draw_set_font(fnt_dungeon);
+	define_align(1,  1);
+	
+	//Shadow
+	draw_set_color(c_red);
+	draw_text(healthbar_x+210, healthbar_y-290, _string);	
+	//Text
+	draw_set_color(c_white);
+	draw_text(healthbar_x+211, healthbar_y-291, _string);	
+
+	draw_sprite(spr_boss_healthBg, 0, healthbar_x-5, healthbar_y-265);
+	draw_sprite_stretched_ext(spr_boss_health, 0, healthbar_x, healthbar_y-260, (life/max_life) * healthbar_width, healthbar_height, -1, 0.5);
+
+
 	define_align(-1, -1);	
 	draw_set_font(-1);
 }

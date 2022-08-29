@@ -8,6 +8,7 @@ if(game_over){
 
 if(object_exists(obj_player)){
 	global.actRoom = room;
+	
 }
 
 

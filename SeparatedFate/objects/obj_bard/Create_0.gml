@@ -14,3 +14,6 @@ damage = noone;
 
 sense = false;
 value = 0;
+
+text = "";
+objText = noone;

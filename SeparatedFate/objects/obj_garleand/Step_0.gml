@@ -56,15 +56,15 @@ switch(state){
 		//SubState Attack
 			switch(state_atk){
 				case 0:
-					attacking(spr_garlAttack1, 3, 8, sprite_width/5, -sprite_height/5, 2, 1, "idle");
+					attacking(spr_garlAttack1, 3, 8, sprite_width/10, -sprite_height/5, 5, 2, "idle");
 					break;
 					
 				case 1:
-					attacking(spr_garlAttack2, 5, 8, sprite_width/5, -sprite_height/5, 1, 4, "idle");
+					attacking(spr_garlAttack2, 5, 8, sprite_width/6, -sprite_height/5, 3, 4, "idle");
 					break;
 					
 				case 2:
-					attacking(spr_garlAttack3, 3, 6, sprite_width/5, -sprite_height/5, 2, 1, "idle");
+					attacking(spr_garlAttack3, 3, 6, sprite_width/6, -sprite_height/5, 2, 3, "idle");
 					break;
 			}
 		
@@ -84,7 +84,10 @@ switch(state){
 		if(instance_exists(obj_game_controller)){
 			with(obj_game_controller){	
 				bossDead = true;
-				global.destroyed = true;
+				audio_sound_gain(msc_bossBattle, 0, 2000);
+				if(keyboard_check(vk_enter)){
+					global.destroyed = true;
+				}
 			}
 		}	
 		

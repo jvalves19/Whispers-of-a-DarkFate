@@ -26,16 +26,13 @@ atk = 20;
 canAttack = true;
 atkMult = 1;
 
-draw_hud = function(){
-	draw_sprite_stretched(spr_artGUI, 0, healthbar_x - 5, healthbar_y, 128, 120);
-	draw_sprite_stretched(spr_art, 0, healthbar_x, healthbar_y, 120, 110);
-	
-	draw_sprite(spr_healthBg, 0, healthbar_x + 140, healthbar_y);
-	draw_sprite_stretched(spr_health, 0, healthbar_x + 140, healthbar_y, (life/max_life) * healthbar_width, healthbar_height);
+//Powers
+//Ultimate and Heal
+global.controllPowers = [false, false]
 
-	draw_sprite(spr_healthBg, 0, healthbar_x + 140, healthbar_y + 50);
-	draw_sprite_stretched(spr_aura, 0, healthbar_x + 140, healthbar_y + 50, (aura/max_aura) * healthbar_width, healthbar_height);
-}
+//SOUNDS
+soundAttack = false;
+soundHit = false;
 
 //Methods to attack
 state_attack = function(ground){

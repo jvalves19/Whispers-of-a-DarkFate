@@ -18,5 +18,22 @@ if(player){
 }
 
 if(sense && action){
-	saveGame();
+	if(objText == noone){
+		instance_deactivate_object(obj_pause);
+		objText = instance_create_layer(x, y, layer, obj_dialogue);
+		objText.text = "Deseja Salvar o Jogo?";
+	}
+	else{
+		instance_activate_object(obj_pause);
+		instance_destroy(objText);
+		objText = noone;
+	}
+	
+	//saveGame();
+}
+
+if(!player){
+	instance_activate_object(obj_pause);
+	instance_destroy(objText);
+	objText = noone;
 }

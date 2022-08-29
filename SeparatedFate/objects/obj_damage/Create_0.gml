@@ -3,7 +3,8 @@
 
 damage = 0;
 father = noone;
-image_alpha = 0;
+image_alpha = 1;
 
 //Create a checklist to see if I can hit the target
 apply_damage = ds_list_create();
+

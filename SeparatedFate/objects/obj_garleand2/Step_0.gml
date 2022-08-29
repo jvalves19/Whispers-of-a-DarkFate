@@ -83,7 +83,7 @@ switch(state){
 		
 		if(instance_exists(obj_game_controller)){
 			with(obj_game_controller){	
-				//global.pMaxLife += 100;
+				obj_player.max_life += 100;
 				bossDead = true;	
 				global.destroyed2 = true;
 			}

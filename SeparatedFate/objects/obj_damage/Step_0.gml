@@ -1,6 +1,3 @@
-/// @description Insert description here
-// You can write your code in this editor
-
 var target = instance_place(x, y, obj_father);
 var target_list = ds_list_create();
 
@@ -30,13 +27,17 @@ for(var i = 0; i < tam; i++){
 	target = apply_damage[| i].id;	
 	
 	if(target.life > 0){
+		
+
 		target.state = "hit";
 		target.life -= damage;
 	}
+	
 }
 
 //Destroying the lists to clear space
 ds_list_destroy(apply_damage);
 ds_list_destroy(target_list);
+
 
 instance_destroy();

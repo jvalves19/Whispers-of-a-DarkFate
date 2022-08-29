@@ -14,9 +14,10 @@ global.actRoom = noone;
 //global.pMaxLife = 100;
 
 //ALL BOSSES GLOBAL VARIABLES
+bossDead = false;
+
 global.bossName = noone;
 global.bossName2 = noone
 
-bossDead = false;
 global.destroyed = false;
 global.destroyed2 = false;

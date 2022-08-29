@@ -22,7 +22,15 @@ select_menu = function(){
 	
 	//Resume Game
 	if(sel == 0 && _option){
-		if(!pause){
+		if(pause){
+			pause = false;
+			instance_activate_all();
+		
+			if(surface_exists(pauseSurf)) surface_free(pauseSurf);
+			if(buffer_exists(pauseSurfBuffer)) buffer_delete(pauseSurfBuffer);
+
+		}
+		else{		
 			pause = true;
 		
 			instance_deactivate_all(true);
@@ -35,14 +43,7 @@ select_menu = function(){
 			if(buffer_exists(pauseSurfBuffer)) buffer_delete(pauseSurfBuffer);
 			
 			pauseSurfBuffer = buffer_create(resW * resH * 4, buffer_fixed, 1);
-			buffer_get_surface(pauseSurfBuffer, pauseSurf, 0);
-		}
-		else{
-			pause = false;
-			instance_activate_all();
-		
-			if(surface_exists(pauseSurf)) surface_free(pauseSurf);
-			if(buffer_exists(pauseSurfBuffer)) buffer_delete(pauseSurfBuffer);
+			buffer_get_surface(pauseSurfBuffer, pauseSurf, 0);		
 		}
 	}
 	//Main Menu
