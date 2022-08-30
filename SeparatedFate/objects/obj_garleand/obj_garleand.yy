@@ -33,8 +33,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Garleand",
-    "path": "folders/Objects/Enemys/Bosses/Garleand.yy",
+    "name": "Bosses",
+    "path": "folders/Objects/Enemys/Bosses.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_garleand",

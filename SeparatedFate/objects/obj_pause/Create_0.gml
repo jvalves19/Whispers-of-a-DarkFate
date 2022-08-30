@@ -5,8 +5,8 @@ pause = false;
 pauseSurf = 1;
 pauseSurfBuffer = 1;
 
-resW = 2000;
-resH = 1400;
+resW = 1920;
+resH = 1080;
 
 value = 0;
 
@@ -47,9 +47,8 @@ select_menu = function(){
 		}
 	}
 	//Main Menu
-	if(sel == 1 && _option){
-		game_restart();
-	}
+	if(sel == 1 && _option) game_restart();
+	
 	//Exit Game
 	if(sel == 2 && _option) game_end();
 }

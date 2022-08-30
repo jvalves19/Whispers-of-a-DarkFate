@@ -27,7 +27,7 @@ for(var i = 0; i < tam; i++){
 	target = apply_damage[| i].id;	
 	
 	if(target.life > 0){
-		
+		audio_play_sound(snd_hit, 1, false);
 
 		target.state = "hit";
 		target.life -= damage;

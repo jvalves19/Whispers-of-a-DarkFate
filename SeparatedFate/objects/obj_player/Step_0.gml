@@ -146,13 +146,6 @@ switch(state){
 			if(combo == 2){
 				player_attacking(spr_attack3, 9, 14, sprite_width/4, -sprite_height/5, 3, 3);
 			}
-			
-		if(soundAttack == false && image_index < 1){
-			audio_play_sound(snd_sword, 1, false);
-			soundAttack = true;
-		}
-		soundAttack = false;
-		
 		break;
 	#endregion
 	
@@ -185,14 +178,7 @@ switch(state){
 	
 	#region hit and death
 	case "hit":
-		get_hit(spr_hit, 0);
-		
-		if(soundAttack == false && image_index < 1){
-			audio_play_sound(snd_hit, 1, false);
-			soundAttack = true;
-		}
-		soundAttack = false;
-			
+		get_hit(spr_hit, 0);			
 		break;
 			
 	case "dead":

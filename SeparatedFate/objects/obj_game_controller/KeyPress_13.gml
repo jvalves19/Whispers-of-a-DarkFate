@@ -3,7 +3,7 @@
 
 if(game_over){
 	if(room == rm_firstBoss){
-		room_goto_next();
+		room_goto(rm_town);
 		
 		obj_player.life = obj_player.max_life;
 		obj_player.state = "idle";

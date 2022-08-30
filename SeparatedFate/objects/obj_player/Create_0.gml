@@ -1,6 +1,3 @@
-/// @description Insert description here
-// You can write your code in this editor
-
 // Inherit the parent event
 event_inherited();
 
@@ -29,10 +26,6 @@ atkMult = 1;
 //Powers
 //Ultimate and Heal
 global.controllPowers = [false, false]
-
-//SOUNDS
-soundAttack = false;
-soundHit = false;
 
 //Methods to attack
 state_attack = function(ground){
