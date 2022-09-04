@@ -27,8 +27,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Options",
-    "path": "folders/Objects/Options.yy",
+    "name": "Cutscenes",
+    "path": "folders/Objects/Cutscenes.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_intro",

@@ -10,10 +10,13 @@ value = 0;
 
 global.actRoom = noone;
 
+
 //PLAYER VARIABLES
 //global.pMaxLife = 100;
 
 //ALL BOSSES GLOBAL VARIABLES
+global.bossBattle = false;
+
 bossDead = false;
 
 global.bossName = noone;

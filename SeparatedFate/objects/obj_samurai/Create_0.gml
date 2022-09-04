@@ -32,3 +32,6 @@ state_atk = irandom(2);
 
 global.bossName2 = object_index;
 global.destroyed2 = global.destroyed2;
+if(!global.destroyed2){
+	global.bossBattle = true;
+}

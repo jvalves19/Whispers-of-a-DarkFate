@@ -3,3 +3,4 @@
 
 audio_sound_gain(msc_bossBattle, 0, 2000);
 audio_play_sound(msc_bossBattle, 1000, false);
+global.bossBattle = false;

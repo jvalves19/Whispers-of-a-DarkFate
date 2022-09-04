@@ -12,6 +12,8 @@ function saveGame(){
 	ini_write_real("savegame", "boss", global.destroyed);	
 	ini_write_real("savegame", "boss2", global.destroyed2);	
 	
+	//ini_write_real("savegame", "BossBattle", global.bossBattle);
+	
 	//SAVE POWERS
 	ini_write_real("savegame", "Powers", global.controllPowers[0]);	
 	
@@ -35,6 +37,8 @@ function loadGame(){
 	//LOAD BOSSES
 	global.destroyed = ini_read_real("savegame", "boss", 0);
 	global.destroyed2 = ini_read_real("savegame", "boss2", 0);
+	
+	//global.bossBattle = ini_read_real("savegame", "BossBattle", 0);
 	
 	//LOAD POWERS
 	global.controllPowers[0] = ini_read_real("savegame", "Powers", 0);

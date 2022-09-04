@@ -24,7 +24,7 @@ canAttack = true;
 atkMult = 1;
 
 //Powers
-//Ultimate and Heal
+//[ultimate, heal, ... ]
 global.controllPowers = [false, false]
 
 //Methods to attack
@@ -95,14 +95,15 @@ player_attacking = function(_sprite_index, _image_index_min, _image_index_max, _
 ///@method player_ultimate()
 player_ultimate = function(_sprite_index, _dist_x, _dist_y, _xscale_damage, _yscale_damage){
 	if(aura > 0){			
-			if(sprite_index != _sprite_index){
-				sprite_index = _sprite_index;
-				image_index = 0;	
-				aura = aura - 25;
-				hSpd = 0;
-			}	
+		if(sprite_index != _sprite_index){
+			sprite_index = _sprite_index;
+			image_index = 0;	
+			aura = aura - 40;
+			hSpd = 0;
+		}	
 			
-			for(i = 0; i < image_number-1; i++){
+		for(i = 0; i < image_number-3; i++){
+			if(image_index >= 5 && image_index <= 20){
 				damage = instance_create_layer(x + _dist_x, y + _dist_y, layer, obj_damage);
 				damage.image_xscale = _xscale_damage;
 				damage.image_yscale = _yscale_damage;
@@ -110,15 +111,16 @@ player_ultimate = function(_sprite_index, _dist_x, _dist_y, _xscale_damage, _ysc
 				damage.damage = atk/200;
 				damage.father = id;
 				canAttack = false;
-			}		
-		}
-		
-		if(image_index > image_number-1){
-			state = "idle";
-			canAttack = true;
-			if(damage){
-				instance_destroy(damage, false);
-				damage = noone;
 			}
-		}	
+		}		
+	}
+		
+	if(image_index > image_number-1){
+		state = "idle";
+		canAttack = true;
+		if(damage){
+			instance_destroy(damage, false);
+			damage = noone;
+		}
+	}	
 }

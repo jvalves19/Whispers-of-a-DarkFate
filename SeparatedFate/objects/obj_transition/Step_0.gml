@@ -15,6 +15,7 @@ if(alpha >= 1){
 	obj_player.x = destionation_x;
 	obj_player.y = destionation_y;
 	
+	
 	instance_activate_object(obj_pause);
 }
 

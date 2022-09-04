@@ -3,15 +3,12 @@
 
 if(game_over){
 	if(room == rm_firstBoss){
-		room_goto(rm_town);
+		instance_activate_object(obj_pause);
+		room_goto(rm_cutsc01);
 		
 		obj_player.life = obj_player.max_life;
 		obj_player.state = "idle";
-		obj_player.x = 70;
-		obj_player.y = 380;
 		global.controllPowers[0] = true;
-	
-		instance_activate_object(obj_pause);
 	}
 	else{
 		game_restart();
