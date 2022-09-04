@@ -23,6 +23,8 @@ atk = 20;
 canAttack = true;
 atkMult = 1;
 
+global.playerID = object_index;
+
 //Powers
 //[ultimate, heal, ... ]
 global.controllPowers = [false, false]

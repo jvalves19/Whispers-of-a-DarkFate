@@ -1,7 +1,3 @@
-/// @description Insert description here
-// You can write your code in this editor
-
-
 global.spd_mult = 1;
 
 game_over = false;
@@ -13,6 +9,9 @@ global.actRoom = noone;
 
 //PLAYER VARIABLES
 //global.pMaxLife = 100;
+global.actPlayer = noone;
+global.playerID = noone;
+global.owPlayerID = noone;
 
 //ALL BOSSES GLOBAL VARIABLES
 global.bossBattle = false;

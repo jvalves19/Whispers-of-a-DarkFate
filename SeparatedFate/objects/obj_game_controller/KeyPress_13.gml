@@ -21,6 +21,7 @@ if(bossDead){
 	saveGame();
 }
 
+global.bossBattle = false;
 global.spd_mult = 1;
 game_over = false;
 value = 0;
