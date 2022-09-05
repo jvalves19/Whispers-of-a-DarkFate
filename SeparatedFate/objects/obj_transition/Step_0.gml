@@ -1,7 +1,7 @@
 /// @description Insert description here
-// You can write your code in this editor
-
+// You can write your code in this ed
 if(changeRoom){
+	
 	alpha -= 0.02;
 }
 else{
@@ -12,9 +12,14 @@ else{
 if(alpha >= 1){	
 	room_goto(destination);
 	
-	obj_player.x = destionation_x;
-	obj_player.y = destionation_y;
+	global.actPlayer.x = destionation_x;
+	global.actPlayer.y = destionation_y;
 	
+	if(destination != rm_world){
+		with(global.actPlayer){
+			instance_change(obj_player, true);
+		}
+	}
 	
 	instance_activate_object(obj_pause);
 }

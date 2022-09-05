@@ -26,20 +26,21 @@ if(bossDead){
 global.actPlayer = global.playerID;
 
 if(global.actRoom == rm_world){
-	global.actPlayer = global.owPlayerID;
+	//instance_create_layer(x, y, layer, obj_owPlayer);
 	
-	/*with(global.playerID){
-		instance_change(global.actPlayer, true);
+	with(global.playerID){
+		instance_change(obj_owPlayer, true);
 	}
-	*/
-} 
+	
+	global.actPlayer = global.owPlayerID;
+}
 
 /*
 if(global.actRoom != rm_world){
 	global.actPlayer = global.playerID;
-	with(global.owPlayerID){
-		instance_change(global.actPlayer, true);
-	}
+	//with(global.owPlayerID){
+	//	instance_change(global.actPlayer, true);
+	//}
 	
 }
-*/
+

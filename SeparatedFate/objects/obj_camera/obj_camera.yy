@@ -1,8 +1,5 @@
 {
-  "spriteId": {
-    "name": "spr_owPlayer",
-    "path": "sprites/spr_owPlayer/spr_owPlayer.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,
@@ -28,11 +25,11 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Characters",
-    "path": "folders/Objects/Characters.yy",
+    "name": "Objects",
+    "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_owPlayer",
+  "name": "obj_camera",
   "tags": [],
   "resourceType": "GMObject",
 }
