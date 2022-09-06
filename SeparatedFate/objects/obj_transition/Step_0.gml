@@ -1,6 +1,5 @@
 /// @description Insert description here
-// You can write your code in this editor
-
+// You can write your code in this ed
 if(changeRoom){
 	alpha -= 0.02;
 }
@@ -11,13 +10,14 @@ else{
 
 if(alpha >= 1){	
 	room_goto(destination);
-	
-	obj_player.x = destionation_x;
-	obj_player.y = destionation_y;
-	
+
+	global.actPlayer.x = destionation_x; 
+	global.actPlayer.y = destionation_y;	
+
 	instance_activate_object(obj_pause);
 }
 
 if(changeRoom && alpha <= 0){
+
 	instance_destroy();
 }

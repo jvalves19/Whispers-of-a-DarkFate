@@ -2,26 +2,27 @@
 // You can write your code in this editor
 
 if(game_over){
-	if(room != rm_firstBoss){
-		game_restart();
-	}
-	else{
-		room_goto_next();
+	if(room == rm_firstBoss){
+		instance_activate_object(obj_pause);
+		room_goto(rm_cutsc01);
+		
 		obj_player.life = obj_player.max_life;
 		obj_player.state = "idle";
-		obj_player.x = 70;
-		obj_player.y = 380;
-	
-		instance_activate_object(obj_pause);
+		global.controllPowers[0] = true;
+	}
+	else{
+		game_restart();
 	}
 }
-global.spd_mult = 1;
-game_over = false;
-value = 0;
 
 
 if(bossDead){
+	obj_player.life = obj_player.max_life
 	saveGame();
-	room_restart();
 }
+
+global.bossBattle = false;
+global.spd_mult = 1;
+game_over = false;
+value = 0;
 bossDead = false;

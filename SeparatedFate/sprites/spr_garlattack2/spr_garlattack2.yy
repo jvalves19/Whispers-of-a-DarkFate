@@ -109,8 +109,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Boss_Garleand",
-    "path": "folders/Sprites/Enemys/Bosses/Boss_Garleand.yy",
+    "name": "Boss Garleand",
+    "path": "folders/Sprites/Enemys/Bosses/Boss Garleand.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_garlAttack2",

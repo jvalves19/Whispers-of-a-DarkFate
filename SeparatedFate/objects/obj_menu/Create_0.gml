@@ -16,10 +16,19 @@ select_menu = function(){
 	change_option();
 	
 	//Play Game
-	if(sel == 0 && _option) room_goto(rm_cutscene);
+	if(sel == 0 && _option){
+		audio_stop_sound(msc_menu);
+		room_goto(rm_cutsc);
+	}
 	//Load Game
-	if(sel == 1 && _option) loadGame();
+	if(sel == 1 && _option){
+		audio_stop_sound(msc_menu);
+		loadGame();
+	}
 	//Exit Game
 	if(sel == 2 && _option) game_end();
 }
 #endregion
+
+audio_play_sound(msc_menu, 1000, true);
+audio_sound_gain(msc_menu, 1, 0);

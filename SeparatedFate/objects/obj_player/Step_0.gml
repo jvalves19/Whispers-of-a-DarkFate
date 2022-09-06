@@ -19,7 +19,7 @@ switch(state){
 	#region idle
 	case "idle":
 		hSpd = 0;
-		sprite_index = spr_idle;
+		sprite_index = spr_pIdle;
 		
 		if(right || left){
 			state = "walk";
@@ -45,7 +45,7 @@ switch(state){
 				image_index = 0;
 			}
 		else
-			if(ultimate){
+			if(ultimate && global.controllPowers[0]){
 				state = "ultimate";
 				image_index = 0;
 			}
@@ -55,7 +55,7 @@ switch(state){
 	
 	#region walk
 	case "walk":
-		sprite_index = spr_walk;
+		sprite_index = spr_pWalk;
 		
 		//Movement to the direction
 		hSpd = (right - left) * max_hSpd;
@@ -85,7 +85,7 @@ switch(state){
 				image_index = 0;
 			}
 		else
-			if(ultimate){
+			if(ultimate && global.controllPowers[0]){
 				state = "ultimate";
 				image_index = 0;
 			}
@@ -97,7 +97,7 @@ switch(state){
 	#region jump
 	case "jump": 
 		if(vSpd < 0){
-			sprite_index = spr_jump;
+			sprite_index = spr_pJump;
 			
 			//Dont Repeat the Jump Animation 
 			if(image_index >= image_number-1){
@@ -105,7 +105,7 @@ switch(state){
 			}
 		}
 		else {
-			sprite_index = spr_fall;
+			sprite_index = spr_pFall;
 		}
 		
 		if(ground){
@@ -118,8 +118,8 @@ switch(state){
 	
 	#region dash
 	case "dash":
-		if(sprite_index != spr_dash){
-			sprite_index = spr_dash;
+		if(sprite_index != spr_pDash){
+			sprite_index = spr_pDash;
 			image_index = 0;	
 			hSpd = image_xscale * dash_Spd;
 		}		
@@ -134,25 +134,24 @@ switch(state){
 	#region attack
 	case "attack":
 		hSpd = 0;
-		
+
 		if(combo == 0){
-			player_attacking(spr_attack, 3, 8, sprite_width/6, -sprite_height/5, 2, 1);
+			player_attacking(spr_pAttack, 4, 6, sprite_width/5, -sprite_height/2, 2, 1);
 		}
 		else
 			if(combo == 1){
-				player_attacking(spr_attack2, 3, 8, sprite_width/6, -sprite_height/5, 2, 1);
+				player_attacking(spr_pAttack2, 4, 6, sprite_width/5, -sprite_height/2, 2, 1);
 			}
 		else
 			if(combo == 2){
-				player_attacking(spr_attack3, 9, 14, sprite_width/4, -sprite_height/5, 3, 3);	
+				player_attacking(spr_pAttack3, sprite_width/5, -sprite_height/2, 2, 1);
 			}
-	
 		break;
 	#endregion
 	
 	#region ultimate
 	case "ultimate":
-		player_ultimate(spr_ultimate, sprite_width/5, -sprite_height/4, 2, 3);
+		player_ultimate(spr_pUltimate, sprite_width/5, -sprite_height/2, 2, 2);
 	
 		break;
 	#endregion
@@ -160,8 +159,8 @@ switch(state){
 	#region heal
 	case "heal":		
 		if(aura > 0 && life < max_life){
-			if(sprite_index != spr_heal){
-				sprite_index = spr_heal;
+			if(sprite_index != spr_pHeal){
+				sprite_index = spr_pHeal;
 				image_index = 0;					
 			}
 			hSpd = 0;
@@ -179,8 +178,7 @@ switch(state){
 	
 	#region hit and death
 	case "hit":
-		get_hit(spr_hit, 0);	
-			
+		get_hit(spr_pHit, 0);			
 		break;
 			
 	case "dead":

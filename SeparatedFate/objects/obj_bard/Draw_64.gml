@@ -1,7 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-
 if(sense){	
 	var x1 = xstart + 200;
 	var w = camera_get_view_width(view_camera[0]);

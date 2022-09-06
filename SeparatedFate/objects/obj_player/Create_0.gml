@@ -1,6 +1,3 @@
-/// @description Insert description here
-// You can write your code in this editor
-
 // Inherit the parent event
 event_inherited();
 
@@ -26,16 +23,11 @@ atk = 20;
 canAttack = true;
 atkMult = 1;
 
-draw_hud = function(){
-	draw_sprite_stretched(spr_artGUI, 0, healthbar_x - 5, healthbar_y, 128, 120);
-	draw_sprite_stretched(spr_art, 0, healthbar_x, healthbar_y, 120, 110);
-	
-	draw_sprite(spr_healthBg, 0, healthbar_x + 140, healthbar_y);
-	draw_sprite_stretched(spr_health, 0, healthbar_x + 140, healthbar_y, (life/max_life) * healthbar_width, healthbar_height);
+global.playerID = object_index;
 
-	draw_sprite(spr_healthBg, 0, healthbar_x + 140, healthbar_y + 50);
-	draw_sprite_stretched(spr_aura, 0, healthbar_x + 140, healthbar_y + 50, (aura/max_aura) * healthbar_width, healthbar_height);
-}
+//Powers
+//[ultimate, heal, ... ]
+global.controllPowers = [false, false]
 
 //Methods to attack
 state_attack = function(ground){
@@ -105,14 +97,15 @@ player_attacking = function(_sprite_index, _image_index_min, _image_index_max, _
 ///@method player_ultimate()
 player_ultimate = function(_sprite_index, _dist_x, _dist_y, _xscale_damage, _yscale_damage){
 	if(aura > 0){			
-			if(sprite_index != _sprite_index){
-				sprite_index = _sprite_index;
-				image_index = 0;	
-				aura = aura - 25;
-				hSpd = 0;
-			}	
+		if(sprite_index != _sprite_index){
+			sprite_index = _sprite_index;
+			image_index = 0;	
+			aura = aura - 40;
+			hSpd = 0;
+		}	
 			
-			for(i = 0; i < image_number-1; i++){
+		for(i = 0; i < image_number-3; i++){
+			if(image_index >= 5 && image_index <= 20){
 				damage = instance_create_layer(x + _dist_x, y + _dist_y, layer, obj_damage);
 				damage.image_xscale = _xscale_damage;
 				damage.image_yscale = _yscale_damage;
@@ -120,15 +113,16 @@ player_ultimate = function(_sprite_index, _dist_x, _dist_y, _xscale_damage, _ysc
 				damage.damage = atk/200;
 				damage.father = id;
 				canAttack = false;
-			}		
-		}
-		
-		if(image_index > image_number-1){
-			state = "idle";
-			canAttack = true;
-			if(damage){
-				instance_destroy(damage, false);
-				damage = noone;
 			}
-		}	
+		}		
+	}
+		
+	if(image_index > image_number-1){
+		state = "idle";
+		canAttack = true;
+		if(damage){
+			instance_destroy(damage, false);
+			damage = noone;
+		}
+	}	
 }

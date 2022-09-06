@@ -23,8 +23,16 @@ damage = noone;
 atk = 25;
 canAttack = true;
 
+audio_stop_sound(msc_bossBattle);
+audio_play_sound(msc_bossBattle, 1000, true);
+audio_sound_gain(msc_bossBattle, 1, 0);
+
 //Function Attack - Substate
 state_atk = irandom(2);
 
 global.bossName = object_index;
 global.destroyed = global.destroyed;
+
+if(!global.destroyed){
+	global.bossBattle = true;
+}

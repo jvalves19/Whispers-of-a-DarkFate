@@ -62,20 +62,18 @@ get_hit = function(_sprite_index, _image_index){
 }
 	
 ///@method dying()
-dying = function(_sprite_index){
-		if(sprite_index != _sprite_index){
-			sprite_index = _sprite_index;
-			image_index = 0;
-			hSpd = 0;
-		}
+dying = function(_sprite_index){		
+	if(sprite_index != _sprite_index){
+		sprite_index = _sprite_index;
+		image_index = 0;
+		hSpd = 0;
+	}
 	
-		//is dead
-		if(image_index > image_number-1){
-			image_speed = 0;
-			image_alpha -= 0.01;
+	//is dead
+	if(image_index > image_number-1){
+		image_speed = 0;
+		image_alpha -= 0.01;
 			
-			if(image_alpha <= 0){
-				instance_destroy();
-			}
-		}	
+		if(image_alpha <= 0) instance_destroy();
+	}
 }

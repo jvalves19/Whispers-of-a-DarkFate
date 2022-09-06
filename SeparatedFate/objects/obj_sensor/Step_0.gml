@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 //Check if player is here
-var player = place_meeting(x, y, obj_player);
+var player = place_meeting(x, y, global.actPlayer);
 
 var action = keyboard_check_released(ord("E"));
 
