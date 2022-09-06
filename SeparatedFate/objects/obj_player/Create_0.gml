@@ -27,7 +27,7 @@ global.playerID = object_index;
 
 //Powers
 //[ultimate, heal, ... ]
-global.controllPowers = [false, false]
+global.controllPowers = global.controllPowers;
 
 //Methods to attack
 state_attack = function(ground){

@@ -20,13 +20,10 @@ if(bossDead){
 #endregion
 
 
-
-
 if(object_exists(obj_player) || object_exists(obj_owPlayer)){
 	global.actRoom = room;
 }
 
-//TENTANDO RESOLVER ESSA BUDEGA
 if(global.actRoom == rm_world){		
 	with(global.actPlayer){
 		instance_change(obj_owPlayer, true);

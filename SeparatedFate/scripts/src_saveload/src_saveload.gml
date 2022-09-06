@@ -9,16 +9,16 @@ function saveGame(){
 	ini_write_real("savegame", "Player Life", obj_player.max_life);
 	
 	//SAVE BOSSES
-	ini_write_real("savegame", "boss", global.destroyed);	
-	ini_write_real("savegame", "boss2", global.destroyed2);	
+	ini_write_real("savegame", "boss", global.destroyed[1]);	
+	ini_write_real("savegame", "boss2", global.destroyed[2]);	
 	
 	//ini_write_real("savegame", "BossBattle", global.bossBattle);
 	
 	//SAVE POWERS
 	ini_write_real("savegame", "Powers", global.controllPowers[0]);	
 	
-	show_debug_message(global.destroyed);
-	show_debug_message(global.destroyed2);
+	show_debug_message(global.destroyed[1]);
+	show_debug_message(global.destroyed[2]);
 	//show_debug_message(global.pMaxLife);
 	
 	ini_close();
@@ -35,16 +35,16 @@ function loadGame(){
 	obj_player.max_life = ini_read_real("savegame", "Player Life", 0);
 	
 	//LOAD BOSSES
-	global.destroyed = ini_read_real("savegame", "boss", 0);
-	global.destroyed2 = ini_read_real("savegame", "boss2", 0);
+	global.destroyed[1] = ini_read_real("savegame", "boss", 0);
+	global.destroyed[2] = ini_read_real("savegame", "boss2", 0);
 	
 	//global.bossBattle = ini_read_real("savegame", "BossBattle", 0);
 	
 	//LOAD POWERS
 	global.controllPowers[0] = ini_read_real("savegame", "Powers", 0);
 	
-	show_debug_message(global.destroyed);
-	show_debug_message(global.destroyed2);
+	show_debug_message(global.destroyed[1]);
+	show_debug_message(global.destroyed[2]);
 	//show_debug_message(global.pMaxLife);
 	
 	

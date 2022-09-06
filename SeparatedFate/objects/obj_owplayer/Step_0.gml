@@ -1,4 +1,4 @@
-depth = -y/100;	
+if(instance_exists(obj_transition)) exit;
 
 var right = keyboard_check(ord("D"));
 var left = keyboard_check(ord("A"));

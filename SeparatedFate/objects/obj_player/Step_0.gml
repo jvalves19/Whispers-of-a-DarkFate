@@ -144,7 +144,7 @@ switch(state){
 			}
 		else
 			if(combo == 2){
-				player_attacking(spr_pAttack3, sprite_width/5, -sprite_height/2, 2, 1);
+				player_attacking(spr_pAttack3, 4, 6, sprite_width/5, -sprite_height/2, 2, 1);
 			}
 		break;
 	#endregion

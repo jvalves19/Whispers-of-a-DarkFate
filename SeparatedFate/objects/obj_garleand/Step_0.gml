@@ -86,7 +86,7 @@ switch(state){
 				bossDead = true;
 				audio_sound_gain(msc_bossBattle, 0, 2000);
 				if(keyboard_check(vk_enter)){
-					global.destroyed = true;
+					global.destroyed[1] = true;
 				}
 			}
 		}	

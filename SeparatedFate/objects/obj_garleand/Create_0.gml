@@ -30,9 +30,9 @@ audio_sound_gain(msc_bossBattle, 1, 0);
 //Function Attack - Substate
 state_atk = irandom(2);
 
-global.bossName = object_index;
-global.destroyed = global.destroyed;
+global.bossName[1] = object_index;
+global.destroyed[1] = global.destroyed[1];
 
-if(!global.destroyed){
+if(!global.destroyed[1]){
 	global.bossBattle = true;
 }
