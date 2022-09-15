@@ -1,6 +1,3 @@
-/// @description Insert description here
-// You can write your code in this editor
-
 pause = false;
 pauseSurf = 1;
 pauseSurfBuffer = 1;
@@ -11,7 +8,7 @@ resH = 1080;
 value = 0;
 
 menu = ["Resume Story", "Main Menu", "End Game"];
-sel = -1;
+sel = 0;
 
 draw_menu = function(){
 	create_menu();
@@ -21,7 +18,7 @@ select_menu = function(){
 	change_option();
 	
 	//Resume Game
-	if(sel == 0 && _option){
+	if(sel == 0 && keyboard_check_pressed(vk_enter)){
 		if(pause){
 			pause = false;
 			instance_activate_all();

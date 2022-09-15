@@ -158,7 +158,7 @@ switch(state){
 		
 	#region heal
 	case "heal":		
-		if(aura > 0 && life < max_life){
+		if(aura > 0 && life < global.pMaxLife){
 			if(sprite_index != spr_pHeal){
 				sprite_index = spr_pHeal;
 				image_index = 0;					

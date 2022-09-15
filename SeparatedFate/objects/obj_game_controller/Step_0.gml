@@ -13,13 +13,14 @@ else{
 	instance_activate_object(obj_sensor);
 }
 
-
 if(bossDead){
+	instance_deactivate_object(obj_pause)
 	global.spd_mult = 0.5;
 }
 #endregion
 
 
+#region PLAYER
 if(object_exists(obj_player) || object_exists(obj_owPlayer)){
 	global.actRoom = room;
 }
@@ -39,3 +40,4 @@ if(global.actRoom != rm_world){
 	
 	global.actPlayer = global.playerID;
 }
+#endregion

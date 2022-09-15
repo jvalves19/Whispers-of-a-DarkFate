@@ -6,20 +6,30 @@ function saveGame(){
 	ini_write_real("savegame", "roomID", global.actRoom);
 	ini_write_real("savegame", "xPos", obj_player.x);
 	ini_write_real("savegame", "yPos", obj_player.y);
-	ini_write_real("savegame", "Player Life", obj_player.max_life);
+	
+	//PLAYER STATUS
+	ini_write_real("savegame", "Player Life", global.pMaxLife);
+	ini_write_real("savegame", "Player Aura", global.pMaxAura);
+	ini_write_real("savegame", "Player Atk", global.pAtk);
+	
+	
+	show_debug_message(global.pMaxLife);
+	show_debug_message(global.pAtk);
 	
 	//SAVE BOSSES
 	ini_write_real("savegame", "boss", global.destroyed[1]);	
-	ini_write_real("savegame", "boss2", global.destroyed[2]);	
-	
+	ini_write_real("savegame", "boss2", global.destroyed[2]);		
 	//ini_write_real("savegame", "BossBattle", global.bossBattle);
 	
 	//SAVE POWERS
 	ini_write_real("savegame", "Powers", global.controllPowers[0]);	
 	
+	//INVENTORY AND KEYS SYSTEM
+	
+	
 	show_debug_message(global.destroyed[1]);
 	show_debug_message(global.destroyed[2]);
-	//show_debug_message(global.pMaxLife);
+
 	
 	ini_close();
 }
@@ -32,12 +42,19 @@ function loadGame(){
 	roomID = ini_read_real("savegame", "roomID", 0);
 	obj_player.x  = ini_read_real("savegame", "xPos", 0);
 	obj_player.y= ini_read_real("savegame", "yPos", 0);
-	obj_player.max_life = ini_read_real("savegame", "Player Life", 0);
+	
+	global.pMaxLife = ini_read_real("savegame", "Player Life", 0);
+	global.pMaxAura = ini_read_real("savegame", "Player Aura", 0);
+	global.pAtk = ini_read_real("savegame", "Player Atk", 0);
+	
+	
+	obj_player.life = global.pMaxLife;
+	obj_player.aura = global.pMaxAura;	
+	obj_player.atk = global.pAtk;
 	
 	//LOAD BOSSES
 	global.destroyed[1] = ini_read_real("savegame", "boss", 0);
 	global.destroyed[2] = ini_read_real("savegame", "boss2", 0);
-	
 	//global.bossBattle = ini_read_real("savegame", "BossBattle", 0);
 	
 	//LOAD POWERS
@@ -45,8 +62,9 @@ function loadGame(){
 	
 	show_debug_message(global.destroyed[1]);
 	show_debug_message(global.destroyed[2]);
-	//show_debug_message(global.pMaxLife);
 	
+	show_debug_message(global.pMaxLife);
+	show_debug_message(global.pAtk);
 	
 	ini_close();
 	room_goto(roomID);

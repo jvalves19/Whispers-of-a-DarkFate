@@ -1,14 +1,14 @@
 global.spd_mult = 1;
-
 game_over = false;
-
 value = 0;
 
 global.actRoom = noone;
 
-
 //PLAYER VARIABLES
-//global.pMaxLife = 100;
+global.pMaxLife = 100;
+global.pMaxAura = 150;
+global.pAtk = 20;
+
 global.controllPowers = [
 false,	//Fast Sword
 false	//Heal

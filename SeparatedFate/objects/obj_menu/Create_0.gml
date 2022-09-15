@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 menu = ["Begin Story", "Read Story", "End Game"];
-sel = -1;
+sel = 0;
 
 #region METODS
 

@@ -4,9 +4,8 @@
 // Inherit the parent event
 event_inherited();
 
-max_life = 1000;
+max_life = 200;
 life = max_life;
-
 
 healthbar_width = 1630;
 healthbar_height = 40;

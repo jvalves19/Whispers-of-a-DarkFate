@@ -6,19 +6,22 @@ if(game_over){
 		instance_activate_object(obj_pause);
 		room_goto(rm_cutsc01);
 		
-		obj_player.life = obj_player.max_life;
+		obj_player.life = global.pMaxLife;
+		obj_player.aura = global.pMaxAura;
 		obj_player.state = "idle";
-		global.controllPowers[0] = true;
 	}
 	else{
 		game_restart();
 	}
 }
 
-
-if(bossDead){
-	obj_player.life = obj_player.max_life
-	saveGame();
+if(bossDead){	
+	global.pMaxLife += 400;
+	global.pMaxAura += 250;
+	global.pAtk += 20;
+	
+	obj_player.life = global.pMaxLife;
+	obj_player.aura = global.pMaxAura;
 }
 
 global.bossBattle = false;
