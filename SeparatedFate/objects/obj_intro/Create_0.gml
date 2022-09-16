@@ -12,14 +12,27 @@ next = 0;
 
 holdspace = 0;
 
-strings[0] = "Em um tempo tão distante que ate mesmo os imortais\npoderiam esquecer de seus acontecimentos";
+strings[0] = "Em um tempo tão distante que até mesmo os imortais\npoderiam esquecer de seus acontecimentos";
 strings[1] = "havia um homem";
 strings[2] = "seu nome era \nÍlkael";
 
 
-strings[3] = "ele era um feiticeiro Imortal, unico entre sua especie";
-strings[4] = "se apaixonou por Sylvir \numa mulher extremamente encantadora";
+strings[3] = "ele era um feiticeiro Imortal, único entre sua espécie";
+strings[4] = "ele se apaixonou por Sylvir \numa mulher extremamente encantadora";
 strings[5] = "Sylvir era uma humana e \nconsquistou o coracao de um imortal";
+
+strings[6] = "Para salvá-la da morte iminente\nÍlkael tenta um feitiço para torná-la imortal.";
+strings[7] = "Após o feitiço, Ílkael morre";
+
+strings[8] = "....";
+
+strings[9] = "Após um tempo Ílkael acorda fraco e imponente";
+strings[10] = "Ele teve sua alma dividida em várias partes\ndurante a tentativa de salvar Sylvir";
+strings[11] = "Agora, lhe resta tentar descobrir onde Sylvir está\nE o que aconteceu com seus poderes...";
+strings[12] = "... com sua essência";
+
+strings[13] = "...";
+strings[14] = "Ílkael: Encontrei o rastro de magia de Sylvir.\nAcho que estou perto dela...";
 
 
 audio_play_sound(msc_intro, 1000, true);

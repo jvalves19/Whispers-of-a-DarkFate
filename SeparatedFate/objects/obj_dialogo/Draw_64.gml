@@ -12,7 +12,8 @@ if(inicializar){
 	draw_text_ext(_xx + 32, _yy + 10, texto_grid[# Infos.Texto, pagina], 32, _guiW - 64);
 	draw_text(_xx + 16, _yy - 60, texto_grid[# Infos.Nome, pagina]);
 	
-	draw_text(1500, 50, "press Enter to Skip");
+	draw_sprite_ext(spr_pixel, 0, 1450, 0, 420, 100, 0, c_black, 0.5);
+	draw_text(1500, 10, "press Enter to Skip");
 	
 	if(op_draw){
 		var _opX = _xx + 32;
@@ -29,6 +30,7 @@ if(inicializar){
 			draw_text(_opX + _opBorda, _opY - (_opSep * i), op[i]);
 			
 			if(op_selecionada == i){
+			
 				draw_sprite(spr_seletor, 0, _xx + 8, _opY - (_opSep * i) + 8);
 			}
 		}

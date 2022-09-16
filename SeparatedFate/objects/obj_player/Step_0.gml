@@ -96,6 +96,8 @@ switch(state){
 	
 	#region jump
 	case "jump": 
+		hSpd = (right - left) * max_hSpd;
+		
 		if(vSpd < 0){
 			sprite_index = spr_pJump;
 			

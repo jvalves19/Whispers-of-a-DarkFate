@@ -1,5 +1,3 @@
-/// @description Insert description here
- 
 draw_sprite_ext(spr_pixel, 0, 0, 0, 1920, 200, 0, c_black, 1);
 draw_sprite_ext(spr_pixel, 0, 0, 900, 1920, 200, 0, c_black, 1);
 

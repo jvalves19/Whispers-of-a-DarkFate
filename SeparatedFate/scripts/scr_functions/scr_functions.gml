@@ -174,7 +174,7 @@ function draw_power_screen(_string, _desc){
 
 #region BOSS HUD
 function draw_boss_hud(_string){
- 	draw_set_font(fnt_dungeon);
+ 	draw_set_font(fnt_boss);
 	define_align(1,  1);
 	
 	//Shadow

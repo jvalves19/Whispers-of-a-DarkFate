@@ -28,7 +28,7 @@ global.bossBattle = false;
 
 bossDead = false;
 
-for(i=1; i<=2; i++){
+for(i=1; i<=3; i++){
 	global.bossName[i] = noone;
 	global.destroyed[i] = false;
 }

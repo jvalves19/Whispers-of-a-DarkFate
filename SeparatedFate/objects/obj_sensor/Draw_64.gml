@@ -1,21 +1,10 @@
-/// @description Insert description here
-// You can write your code in this editor
-
 if(sense){	
-	var x1 = room_width/2;	
-	var y1 = room_height/2;
-
-
 	define_align(fa_middle, fa_center);
-	draw_set_font(fnt_game_over);
+	draw_set_font(fnt_game_over)
 	
-	draw_set_color(c_white);
-	draw_text(x1, y1, "Press E to Action");
+	draw_sprite_ext(spr_pixel, 0, 1000, 0, 920, 100, 0, c_black, 0.5);
+	draw_text(1500, 50, "press E to Action");
 	
-	
-	define_align(-1, -1);
 	draw_set_font(-1);
-	
-}else{
-	value = 0;
+	define_align(-1, -1);
 }
