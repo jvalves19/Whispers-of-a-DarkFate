@@ -29,7 +29,7 @@ var tam = ds_list_size(apply_damage);
 for(var i = 0; i < tam; i++){
 	target = apply_damage[| i].id;	
 	
-	if(obj_player.aura < obj_player.max_aura){
+	if(obj_player.aura < global.pMaxAura){
 		obj_player.aura = obj_player.aura+5;
 	}
 	

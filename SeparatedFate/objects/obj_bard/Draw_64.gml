@@ -18,6 +18,7 @@ if(sense){
 	
 	define_align(-1, -1);	
 	draw_set_font(-1);
-}else{
+}
+else{
 	value = 0;
 }

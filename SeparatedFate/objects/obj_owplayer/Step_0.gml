@@ -1,3 +1,5 @@
+if(instance_exists(obj_transition)) exit;
+
 var right = keyboard_check(ord("D"));
 var left = keyboard_check(ord("A"));
 var down = keyboard_check(ord("S"));
@@ -22,3 +24,17 @@ if(place_meeting(x, y + vSpd, obj_block)){
 	vSpd = 0;
 }
 y += vSpd;
+
+image_speed = 0.5;
+if(hSpd==0 && vSpd==0){
+	image_speed = 0;
+	image_index = 0;
+	
+}
+
+//look to the right side
+if(hSpd > 0)		sprite_index = spr_owPlayerRight;
+else if(hSpd < 0)	sprite_index = spr_owPlayerLeft;
+
+if(vSpd > 0)		sprite_index = spr_owPlayerDown;
+else if(vSpd < 0)	sprite_index = spr_owPlayerUp;

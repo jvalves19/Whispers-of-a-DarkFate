@@ -1,25 +1,20 @@
 // Inherit the parent event
 event_inherited();
 
-max_life = 100;
-life = max_life;
-
-max_aura = 150;
-aura = max_aura;
-
-healthbar_width = 720;
-healthbar_height = 64;
-healthbar_x = (400/2) - (healthbar_width/4);
-healthbar_y = ystart - 350;
-
 max_hSpd = 4;
 max_vSpd = 6;
 dash_Spd = 6;
 
+global.pMaxLife = global.pMaxLife;
+life = global.pMaxLife;
+
+global.pMaxAura = global.pMaxAura;
+aura = global.pMaxAura ;
+
 combo = 0;
 damage = noone;
 
-atk = 20;
+atk = global.pAtk;
 canAttack = true;
 atkMult = 1;
 
@@ -27,7 +22,7 @@ global.playerID = object_index;
 
 //Powers
 //[ultimate, heal, ... ]
-global.controllPowers = [false, false]
+global.controllPowers = global.controllPowers;
 
 //Methods to attack
 state_attack = function(ground){

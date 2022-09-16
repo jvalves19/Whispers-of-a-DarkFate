@@ -7,7 +7,6 @@ event_inherited();
 max_life = 1000;
 life = max_life;
 
-
 healthbar_width = 1630;
 healthbar_height = 40;
 healthbar_x = (400/2) - (healthbar_width/26);
@@ -30,9 +29,9 @@ audio_sound_gain(msc_bossBattle, 1, 0);
 //Function Attack - Substate
 state_atk = irandom(2);
 
-global.bossName = object_index;
-global.destroyed = global.destroyed;
+global.bossName[1] = object_index;
+global.destroyed[1] = global.destroyed[1];
 
-if(!global.destroyed){
+if(!global.destroyed[1]){
 	global.bossBattle = true;
 }

@@ -1,13 +1,13 @@
 {
   "spriteId": {
-    "name": "spr_owPlayer",
-    "path": "sprites/spr_owPlayer/spr_owPlayer.yy",
+    "name": "spr_owPlayerRight",
+    "path": "sprites/spr_owPlayerRight/spr_owPlayerRight.yy",
   },
   "solid": false,
   "visible": true,
   "managed": true,
   "spriteMaskId": null,
-  "persistent": false,
+  "persistent": true,
   "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,

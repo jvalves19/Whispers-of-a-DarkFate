@@ -1,8 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-//check if is changing room
-if(instance_exists(obj_transition)) exit;
+//check if is changing room or in a dialogue
+if(instance_exists(obj_transition) || instance_exists(obj_dialogo)) exit;
 
 //Initializing variables
 player_controls();
@@ -144,7 +144,7 @@ switch(state){
 			}
 		else
 			if(combo == 2){
-				player_attacking(spr_pAttack3, sprite_width/5, -sprite_height/2, 2, 1);
+				player_attacking(spr_pAttack3, 4, 6, sprite_width/5, -sprite_height/2, 2, 1);
 			}
 		break;
 	#endregion
@@ -158,7 +158,7 @@ switch(state){
 		
 	#region heal
 	case "heal":		
-		if(aura > 0 && life < max_life){
+		if(aura > 0 && life < global.pMaxLife){
 			if(sprite_index != spr_pHeal){
 				sprite_index = spr_pHeal;
 				image_index = 0;					
@@ -202,6 +202,18 @@ switch(state){
 	#endregion
 		
 		default: 
-			state = "idle";
-			
+			state = "idle";			
 }
+
+//Dialogue System
+#region DIALOGUE
+if(distance_to_object(obj_npcFather) < 10){	
+	if(keyboard_check_pressed(ord("E")) && !global.dialogo){		
+		var _npc = instance_nearest(x, y, obj_npcFather);
+		var _dialogue = instance_create_layer(x, y, "Dialogue", obj_dialogo)
+		
+		_dialogue.npc_nome = _npc.nome;
+	}
+}
+
+#endregion

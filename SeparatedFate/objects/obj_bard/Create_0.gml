@@ -4,6 +4,8 @@
 // Inherit the parent event
 event_inherited();
 
+nome = "Bardoo";
+
 max_hSpd = 2;
 max_vSpd = 2;
 

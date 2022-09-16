@@ -2,6 +2,7 @@
 // You can write your code in this editor
 
 var ground = place_meeting(x, y + 1, obj_block);
+var action = keyboard_check_released(ord("E"));
 
 if(!ground){
 	vSpd += GRAVITY * weight * global.spd_mult;
@@ -9,13 +10,14 @@ if(!ground){
 
 //Check if player is here
 var player = place_meeting(x, y, obj_player);
-var action = keyboard_check_released(ord("E"));
+//var action = keyboard_check_released(ord("E"));
 
 if(player){
 	sense = true;
 }else{
 	sense = false;
 }
+
 
 if(sense && action){
 	if(objText == noone){
@@ -29,8 +31,8 @@ if(sense && action){
 		objText = noone;
 	}
 	
-	//saveGame();
 }
+
 
 if(!player){
 	instance_activate_object(obj_pause);

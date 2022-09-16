@@ -80,16 +80,16 @@ switch(state){
 	//You re dead now
 	case "dead":
 		dying(spr_samDead);
-		
-		if(instance_exists(obj_game_controller)){
+		audio_sound_gain(msc_bossBattle2, 0, 2000);
+		global.spd_mult = 0.5;
+				
+		if(instance_exists(obj_game_controller) && image_alpha <= 0){
 			with(obj_game_controller){	
-				bossDead = true;
-				audio_sound_gain(msc_bossBattle2, 0, 2000);
-				if(keyboard_check(vk_enter)){
-					global.destroyed2 = true;
-				}
+				bossDead = true;			
+				global.destroyed[2] = true;
+				global.controllPowers[0] = true;
 			}
-		}	
+		}		
 		
 		break;
 	#endregion

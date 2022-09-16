@@ -1,14 +1,20 @@
-//player events
 if(game_over){
 	instance_deactivate_object(obj_pause);
 	global.spd_mult = 0.5;
 }
 
-if(object_exists(obj_player)){
-	global.actRoom = room;
-	
+#region DIALOGUE SYSTEM
+if(instance_exists(obj_dialogo)){
+	global.dialogo = true;
 }
 
+if(global.dialogo){
+	instance_deactivate_object(obj_pause);
+}
+#endregion
+
+#region BOSS
+//BOSS EVENTS
 if(global.bossBattle){
 	instance_deactivate_object(obj_sensor);
 }
@@ -16,31 +22,31 @@ else{
 	instance_activate_object(obj_sensor);
 }
 
-//BOSS EVENTS
 if(bossDead){
+	instance_deactivate_object(obj_pause)
 	global.spd_mult = 0.5;
 }
+#endregion
 
+#region PLAYER
+//PLAYER EVENTS
+if(object_exists(obj_player) || object_exists(obj_owPlayer)){
+	global.actRoom = room;
+}
 
-
-global.actPlayer = global.playerID;
-
-if(global.actRoom == rm_world){
-	//instance_create_layer(x, y, layer, obj_owPlayer);
-	
-	with(global.playerID){
+if(global.actRoom == rm_world){		
+	with(global.actPlayer){
 		instance_change(obj_owPlayer, true);
 	}
 	
 	global.actPlayer = global.owPlayerID;
 }
 
-/*
 if(global.actRoom != rm_world){
-	global.actPlayer = global.playerID;
-	//with(global.owPlayerID){
-	//	instance_change(global.actPlayer, true);
-	//}
+	with(global.actPlayer){
+		instance_change(obj_player, true);
+	}
 	
+	global.actPlayer = global.playerID;
 }
-
+#endregion

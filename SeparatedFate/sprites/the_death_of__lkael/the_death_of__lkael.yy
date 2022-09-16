@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "The_death_of__lkael",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -24,12 +27,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"b6bb271c-a55e-4780-ad6f-d3c8e17f9b31","path":"sprites/The_death_of__lkael/The_death_of__lkael.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"b6bb271c-a55e-4780-ad6f-d3c8e17f9b31","path":"sprites/The_death_of__lkael/The_death_of__lkael.yy",},"LayerId":{"name":"97cb8744-d9f5-44b7-8b2b-13870c509087","path":"sprites/The_death_of__lkael/The_death_of__lkael.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"The_death_of__lkael","path":"sprites/The_death_of__lkael/The_death_of__lkael.yy",},"resourceVersion":"1.0","name":"b6bb271c-a55e-4780-ad6f-d3c8e17f9b31","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"b6bb271c-a55e-4780-ad6f-d3c8e17f9b31",},
   ],
   "sequence": {
-    "spriteId": {"name":"The_death_of__lkael","path":"sprites/The_death_of__lkael/The_death_of__lkael.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "The_death_of__lkael",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -37,12 +40,12 @@
     "autoRecord": true,
     "volume": 1.0,
     "length": 1.0,
-    "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore`1","elementType":"MessageEventKeyframe",},
-    "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore`1","elementType":"MomentsEventKeyframe",},
+    "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
+    "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"35089d31-e75e-4897-9e21-b36a5873aa4f","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"b6bb271c-a55e-4780-ad6f-d3c8e17f9b31","path":"sprites/The_death_of__lkael/The_death_of__lkael.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe`1","elementType":"SpriteFrameKeyframe",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore`1","elementType":"SpriteFrameKeyframe",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+            {"id":"35089d31-e75e-4897-9e21-b36a5873aa4f","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"b6bb271c-a55e-4780-ad6f-d3c8e17f9b31","path":"sprites/The_death_of__lkael/The_death_of__lkael.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -58,22 +61,13 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"The_death_of__lkael","path":"sprites/The_death_of__lkael/The_death_of__lkael.yy",},
-    "resourceVersion": "1.4",
-    "name": "The_death_of__lkael",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"97cb8744-d9f5-44b7-8b2b-13870c509087","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"97cb8744-d9f5-44b7-8b2b-13870c509087","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Art_Concepts",
     "path": "folders/Sprites/Art_Concepts.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "The_death_of__lkael",
-  "tags": [],
-  "resourceType": "GMSprite",
 }
