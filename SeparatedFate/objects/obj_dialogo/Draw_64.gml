@@ -12,19 +12,33 @@ if(inicializar){
 	draw_text_ext(_xx + 32, _yy + 10, texto_grid[# Infos.Texto, pagina], 32, _guiW - 64);
 	draw_text(_xx + 16, _yy - 60, texto_grid[# Infos.Nome, pagina]);
 	
-	/*
+	draw_text(1500, 50, "press Enter to Skip");
+	
 	if(op_draw){
 		var _opX = _xx + 32;
 		var _opY = _yy - 256;
 		var _opSep = 96;
 		var _opBorda = 6;
 		
+		op_selecionada += keyboard_check_pressed(vk_up) - keyboard_check_pressed(vk_down);
+		op_selecionada = clamp(op_selecionada, 0, op_num-1);
+		
 		for(var i = 0; i < op_num; i++){
 			var _stringW = string_width(op[i]);
-			draw_sprite_ext(spr_opBack, 0, _opX, _opY - (_opSep * i), (_stringW + _opBorda * 2) /10, 1, 0, c_white, 1);
+			draw_sprite_ext(spr_opBack, 0, _opX, _opY - (_opSep * i), (_stringW + _opBorda * 2)/16, 1, 0, c_white, 1);
 			draw_text(_opX + _opBorda, _opY - (_opSep * i), op[i]);
 			
+			if(op_selecionada == i){
+				draw_sprite(spr_seletor, 0, _xx + 8, _opY - (_opSep * i) + 8);
+			}
+		}
+		
+		if(keyboard_check_pressed(vk_enter)){
+			var _dialogue = instance_create_layer(x, y, "Dialogue", obj_dialogo)
+			_dialogue.npc_nome = op_resposta[op_selecionada];
+			
+			instance_destroy();
 		}
 	}
-	*/
+	
 }

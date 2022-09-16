@@ -1,25 +1,12 @@
 // Script assets have changed for v2.3.0 see
 function scr_dialogue(){
 	switch npc_nome{
-		case "Bardo":	
-		
+		#region BARDO
+		case "Bardo":		
 			switch global.stateDialogue{	
 				case 0:
-					ds_grid_add_text("Deseja Salvar o Jogo?", 0, "Bardo");
-					
+					ds_grid_add_text("Deseja Salvar o Jogo?", 0, "Bardo");					
 					instance_create_layer(x, y, layer, obj_dialogue);
-						/*add_op("Sim", "Yes");
-						add_op("Não", "No");
-						
-					case "Yes":
-						//saveGame();
-						
-						break;
-					case "No":
-						//room_restart();
-						
-						break;
-						*/
 					
 				break;
 				
@@ -40,17 +27,27 @@ function scr_dialogue(){
 					ds_grid_add_text("O nome dele é Garleand", 0, "Bardo")
 				
 					global.stateDialogue = global.stateDialogue - global.stateDialogue
-				break;
-					
+				break;	
 			}
-			
 		break;
+		#endregion
 		
+		#region MULHER
 		case "Mulher":
 			ds_grid_add_text("Você acredita no Amor?", 0, "Mulher");
 			ds_grid_add_text("...", 1, "Ilkael");
-			ds_grid_add_text("O amor é...", 0, "Mulher");
+				add_op("Sim, Acredito sim", "Resposta 1");
+				add_op("Não, Acho isso uma palhaçada", "Resposta 2");		
 		break;
+			case "Resposta 1":
+				ds_grid_add_text("O amor é...", 0, "Mulher");
+			break;
+			
+			case "Resposta 2":
+				ds_grid_add_text("Não me admira. Você tem uma aparência horrenda", 0, "Mulher");
+			break;
+			
+		#endregion
 		
 	}
 }
@@ -82,5 +79,5 @@ function add_op(_texto, _resposta){
 	op[op_num] = _texto;
 	op_resposta[op_num] = _resposta;
 	
-	op_num++;	
+	op_num++;
 }
