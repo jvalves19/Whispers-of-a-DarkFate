@@ -25,7 +25,7 @@ function saveGame(){
 	ini_write_real("savegame", "Powers", global.controllPowers[0]);	
 	
 	//INVENTORY AND KEYS SYSTEM
-	
+	ini_write_real("savegame", "Dialogue", global.stateDialogue);
 	
 	show_debug_message(global.destroyed[1]);
 	show_debug_message(global.destroyed[2]);
@@ -59,6 +59,9 @@ function loadGame(){
 	
 	//LOAD POWERS
 	global.controllPowers[0] = ini_read_real("savegame", "Powers", 0);
+	
+	//INVENTORY AND KEYS SYSTEM
+	global.stateDialogue = ini_read_real("savegame", "Dialogue", 0);
 	
 	show_debug_message(global.destroyed[1]);
 	show_debug_message(global.destroyed[2]);

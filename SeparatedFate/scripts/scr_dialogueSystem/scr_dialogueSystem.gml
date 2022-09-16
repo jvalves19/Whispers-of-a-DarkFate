@@ -5,16 +5,6 @@ function scr_dialogue(){
 		
 			switch global.stateDialogue{	
 				case 0:
-					ds_grid_add_text("Ola, Ilkael", 0, "Bardo")
-					ds_grid_add_text("Como sabe meu nome? Quem e voce?", 1, "Ilkael")
-					ds_grid_add_text("Eu sei de muitas coisas, camarada", 0, "Bardo")
-					ds_grid_add_text("Sei que acabou de tomar uma surra", 0, "Bardo")
-					ds_grid_add_text("A proposito... Sou o Bardo. Pode me chamar de Jonas", 0, "Bardo")
-				
-					global.stateDialogue++;
-				break;
-				
-				case 1:
 					ds_grid_add_text("Deseja Salvar o Jogo?", 0, "Bardo");
 					
 					instance_create_layer(x, y, layer, obj_dialogue);
@@ -31,7 +21,27 @@ function scr_dialogue(){
 						break;
 						*/
 					
-				break;	
+				break;
+				
+				case 1:
+					ds_grid_add_text("Ola, Ilkael", 0, "Bardo")
+					ds_grid_add_text("Como sabe meu nome? Quem e voce?", 1, "Ilkael")
+					ds_grid_add_text("Eu sei de muitas coisas, camarada", 0, "Bardo")
+					ds_grid_add_text("Sei que acabou de tomar uma surra", 0, "Bardo")
+					ds_grid_add_text("A proposito... Sou o Bardo. Pode me chamar de Jonas", 0, "Bardo")
+				
+					global.stateDialogue = global.stateDialogue - global.stateDialogue;
+				break;
+				
+				
+				case 2:
+					ds_grid_add_text("Ola, Ilkael", 0, "Bardo")
+					ds_grid_add_text("Tenho umas informações pra você sobre o cara que te espancou", 0, "Bardo")
+					ds_grid_add_text("O nome dele é Garleand", 0, "Bardo")
+				
+					global.stateDialogue = global.stateDialogue - global.stateDialogue
+				break;
+					
 			}
 			
 		break;

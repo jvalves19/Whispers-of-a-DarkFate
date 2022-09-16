@@ -85,7 +85,8 @@ switch(state){
 				
 		if(instance_exists(obj_game_controller) && image_alpha <= 0){
 			with(obj_game_controller){	
-				bossDead = true;			
+				bossDead = true;	
+				global.stateDialogue = 2;
 				global.destroyed[2] = true;
 				global.controllPowers[0] = true;
 			}

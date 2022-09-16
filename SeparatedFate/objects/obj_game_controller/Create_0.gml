@@ -3,7 +3,7 @@ game_over = false;
 value = 0;
 
 global.dialogo = false;
-global.stateDialogue = 0;
+global.stateDialogue = 1;
 
 global.actRoom = noone;
 
