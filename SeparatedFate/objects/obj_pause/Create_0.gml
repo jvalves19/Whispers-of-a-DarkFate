@@ -10,12 +10,14 @@ value = 0;
 menu = ["Resume Story", "Main Menu", "End Game"];
 sel = 0;
 
+
+
 draw_menu = function(){
-	create_menu();
+	if(pause) create_menu();
 }
 
 select_menu = function(){
-	change_option();
+	if(pause) change_option();
 	
 	//Resume Game
 	if(sel == 0 && keyboard_check_pressed(vk_enter)){
