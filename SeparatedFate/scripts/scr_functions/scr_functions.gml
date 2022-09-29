@@ -10,6 +10,7 @@ function player_controls(){
 	
 	attack = keyboard_check_pressed(ord("J"));
 	ultimate = keyboard_check_pressed(ord("K"));
+	spell = keyboard_check_pressed(ord("L"));
 	
 	dash = keyboard_check_pressed(vk_space);	
 	

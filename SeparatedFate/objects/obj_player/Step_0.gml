@@ -9,6 +9,13 @@ player_controls();
 var ground = place_meeting(x, y + 1, obj_block);
 var fall = vSpd!=0;
 
+
+//Spell direction variables
+var flipped = direction;
+var spell_x = (x + 4) * (flipped);
+var _xx = x + lengthdir_x(0, image_angle);
+var y_offset = lengthdir_y(-20, image_angle);
+
 //Gravity
 if(!ground && (vSpd < max_vSpd * 2 )){
 	vSpd += GRAVITY * weight * global.spd_mult;
@@ -49,6 +56,11 @@ switch(state){
 				state = "ultimate";
 				image_index = 0;
 			}
+		else
+			if(spell){
+				state = "spell";
+				image_index = 0;
+			}
 		
 		break;
 	#endregion
@@ -87,6 +99,11 @@ switch(state){
 		else
 			if(ultimate && global.controllPowers[0]){
 				state = "ultimate";
+				image_index = 0;
+			}
+		else
+			if(spell){
+				state = "spell";
 				image_index = 0;
 			}
 		
@@ -158,6 +175,30 @@ switch(state){
 		break;
 	#endregion
 		
+	#region spell
+	case "spell":
+		if(sprite_index != spr_pHit){
+			sprite_index = spr_pHit;
+			image_index = 0;	
+			hSpd = 0;
+			
+			with(instance_create_layer(_xx, y - 30, layer, obj_spell)){
+				speed = 5;
+				direction = -90 + 90 * other.image_xscale;
+				image_angle = direction;
+			}
+			
+		}
+	
+		
+	
+		if(image_index >= image_number-1){
+			state = "idle";
+		}
+		
+		break;
+	#endregion
+	
 	#region heal
 	case "heal":		
 		if(aura > 0 && life < global.pMaxLife){
