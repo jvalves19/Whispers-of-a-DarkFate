@@ -25,6 +25,8 @@ function scr_dialogue(){
 					ds_grid_add_text("Ola, Ilkael", 0, "Bardo")
 					ds_grid_add_text("Tenho umas informações pra você sobre o cara que te espancou", 0, "Bardo")
 					ds_grid_add_text("O nome dele é Garleand", 0, "Bardo")
+					ds_grid_add_text("Também tenho essa chave pra você", 0, "Bardo")
+					global.key[0] = true;
 				
 					global.stateDialogue = global.stateDialogue - global.stateDialogue
 				break;	

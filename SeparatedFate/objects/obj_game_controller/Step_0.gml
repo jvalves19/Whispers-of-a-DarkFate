@@ -13,6 +13,10 @@ if(global.dialogo){
 }
 #endregion
 
+if(object_exists(obj_player)){
+	global.key[0] = global.key[0];
+}
+
 #region BOSS
 //BOSS EVENTS
 if(global.bossBattle){

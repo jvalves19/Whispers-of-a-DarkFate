@@ -18,6 +18,8 @@ atk = global.pAtk;
 canAttack = true;
 atkMult = 1;
 
+global.key[0] = global.key[0];
+
 global.playerID = object_index;
 
 //Powers

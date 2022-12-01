@@ -15,6 +15,7 @@
     {"id":{"name":"spr_pUltimate","path":"sprites/spr_pUltimate/spr_pUltimate.yy",},"order":1,},
     {"id":{"name":"spr_tileForest01","path":"sprites/spr_tileForest01/spr_tileForest01.yy",},"order":0,},
     {"id":{"name":"spr_owPlayerDown","path":"sprites/spr_owPlayerDown/spr_owPlayerDown.yy",},"order":0,},
+    {"id":{"name":"obj_sensorKey","path":"objects/obj_sensorKey/obj_sensorKey.yy",},"order":23,},
     {"id":{"name":"spr_tileTown3","path":"sprites/spr_tileTown3/spr_tileTown3.yy",},"order":3,},
     {"id":{"name":"obj_dialogue","path":"objects/obj_dialogue/obj_dialogue.yy",},"order":17,},
     {"id":{"name":"spr_bgGarlCastle","path":"sprites/spr_bgGarlCastle/spr_bgGarlCastle.yy",},"order":1,},

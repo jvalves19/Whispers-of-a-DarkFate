@@ -17,10 +17,11 @@ false,	//Fast Sword
 false	//Heal
 ]
 
-
 global.playerID = noone;
 global.owPlayerID = noone;
 global.actPlayer = global.playerID;
+
+global.key[0] = false;
 
 #region BOSSESS
 //ALL BOSSES GLOBAL VARIABLES

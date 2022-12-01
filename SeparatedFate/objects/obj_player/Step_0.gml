@@ -11,10 +11,10 @@ var fall = vSpd!=0;
 
 
 //Spell direction variables
-var flipped = direction;
-var spell_x = (x + 4) * (flipped);
+//var flipped = direction;
+//var spell_x = (x + 4) * (flipped);
 var _xx = x + lengthdir_x(0, image_angle);
-var y_offset = lengthdir_y(-20, image_angle);
+//var y_offset = lengthdir_y(-20, image_angle);
 
 //Gravity
 if(!ground && (vSpd < max_vSpd * 2 )){
