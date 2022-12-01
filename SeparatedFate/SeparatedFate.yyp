@@ -4,6 +4,7 @@
   "name": "SeparatedFate",
   "resources": [
     {"id":{"name":"spr_bandit1Walk","path":"sprites/spr_bandit1Walk/spr_bandit1Walk.yy",},"order":3,},
+    {"id":{"name":"msc_world","path":"sounds/msc_world/msc_world.yy",},"order":8,},
     {"id":{"name":"spr_tlBossGrave01","path":"sprites/spr_tlBossGrave01/spr_tlBossGrave01.yy",},"order":0,},
     {"id":{"name":"spr_enemy1Walk","path":"sprites/spr_enemy1Walk/spr_enemy1Walk.yy",},"order":2,},
     {"id":{"name":"spr_bgGrave","path":"sprites/spr_bgGrave/spr_bgGrave.yy",},"order":2,},
@@ -156,6 +157,7 @@
     {"id":{"name":"spr_bard_idle","path":"sprites/spr_bard_idle/spr_bard_idle.yy",},"order":0,},
     {"id":{"name":"scr_dialogueSystem","path":"scripts/scr_dialogueSystem/scr_dialogueSystem.yy",},"order":6,},
     {"id":{"name":"spr_tileGarlCastle","path":"sprites/spr_tileGarlCastle/spr_tileGarlCastle.yy",},"order":0,},
+    {"id":{"name":"snd_spell","path":"sounds/snd_spell/snd_spell.yy",},"order":2,},
     {"id":{"name":"spr_darkDead","path":"sprites/spr_darkDead/spr_darkDead.yy",},"order":6,},
     {"id":{"name":"spr_art","path":"sprites/spr_art/spr_art.yy",},"order":13,},
     {"id":{"name":"spr_tileWCity","path":"sprites/spr_tileWCity/spr_tileWCity.yy",},"order":1,},

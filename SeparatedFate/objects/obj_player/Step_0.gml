@@ -181,19 +181,23 @@ switch(state){
 			sprite_index = spr_pHit;
 			image_index = 0;	
 			hSpd = 0;
-			
-			with(instance_create_layer(_xx, y - 30, layer, obj_spell)){
-				speed = 5;
-				direction = -90 + 90 * other.image_xscale;
-				image_angle = direction;
-			}
-			
 		}
 	
-		
+		if(image_index >= 1 && canAttack && aura > 5){
+			damage = instance_create_layer(_xx, y - 30, layer, obj_spell)
+			damage.speed = 5;
+			damage.direction = -90 + 90 * other.image_xscale;
+			damage.image_angle = direction;
+				
+			damage.damage = atk;
+			damage.father = id;
+			canAttack = false;
+			aura -= 50;
+		}
 	
 		if(image_index >= image_number-1){
 			state = "idle";
+			canAttack = true;
 		}
 		
 		break;

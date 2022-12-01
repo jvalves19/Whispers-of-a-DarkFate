@@ -40,9 +40,16 @@ if(global.actRoom == rm_world){
 	}
 	
 	global.actPlayer = global.owPlayerID;
+	
+
+	audio_play_sound(msc_world, 500, true);
+	audio_sound_gain(msc_world, 0.045, 0);
 }
 
-if(global.actRoom != rm_world){
+if(global.actRoom != rm_world){	
+	audio_stop_sound(msc_world);
+
+	
 	with(global.actPlayer){
 		instance_change(obj_player, true);
 	}
