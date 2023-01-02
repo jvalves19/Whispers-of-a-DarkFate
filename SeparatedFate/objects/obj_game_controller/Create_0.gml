@@ -6,22 +6,35 @@ global.dialogo = false;
 global.stateDialogue = 1;
 
 global.actRoom = noone;
+global.playerID = noone;
+global.owPlayerID = noone;
+global.actPlayer = global.playerID;
 
 //PLAYER VARIABLES
 global.pMaxLife = 100;
 global.pMaxAura = 150;
 global.pAtk = 20;
 
+global.currentPower = -1;
 global.controllPowers = [
 false,	//Fast Sword
-false	//Heal
+false,	//Holy Explosion
+false,	//Thunder Exectution
 ]
 
-global.playerID = noone;
-global.owPlayerID = noone;
-global.actPlayer = global.playerID;
+global.currentSpell = -1;
+global.controllSpells = [
+false,	//electric
+false,	//fire
+false	//holy
+]
 
-global.key[0] = false;
+#region KEY SYSTEM
+for(global.numKey = 0; global.numKey<10; global.numKey++){
+	global.key[global.numKey] = false;	
+}
+global.numKey = 0;
+#endregion
 
 #region BOSSESS
 //ALL BOSSES GLOBAL VARIABLES

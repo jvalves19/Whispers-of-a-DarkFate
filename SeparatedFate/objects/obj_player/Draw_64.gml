@@ -24,3 +24,5 @@ draw_sprite_stretched(spr_health, 0, w - 220, h/center_h + 10,
 draw_sprite(spr_healthBg, 0, w - 220, h/center_h + 60);
 draw_sprite_stretched(spr_aura, 0, w - 220, h/center_h + 60, 
 (aura/global.pMaxAura ) * healthbar_width, healthbar_height);
+
+draw_text(180, 180, global.currentSpell)

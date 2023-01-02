@@ -3,7 +3,7 @@
 
 if(game_over){
 	if(room == rm_firstBoss){
-		instance_activate_object(obj_pause);
+		instance_deactivate_object(obj_pause);
 		room_goto(rm_cutsc01);
 		
 		obj_player.life = global.pMaxLife;

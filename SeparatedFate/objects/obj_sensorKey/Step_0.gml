@@ -12,7 +12,7 @@ if(player){
 	sense = false;
 }
 
-if(sense && action && global.key[0]){
+if(sense && action && global.key[keyNum]){
 	var tran = instance_create_layer(0, 0, layer, obj_transition);
 	
 	tran.destination = destination;

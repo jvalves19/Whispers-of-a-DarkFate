@@ -1,6 +1,7 @@
 // Inherit the parent event
 event_inherited();
 
+#region Life and Aura
 max_hSpd = 4;
 max_vSpd = 6;
 dash_Spd = 6;
@@ -10,6 +11,7 @@ life = global.pMaxLife;
 
 global.pMaxAura = global.pMaxAura;
 aura = global.pMaxAura ;
+#endregion
 
 combo = 0;
 damage = noone;
@@ -18,13 +20,10 @@ atk = global.pAtk;
 canAttack = true;
 atkMult = 1;
 
-global.key[0] = global.key[0];
-
 global.playerID = object_index;
 
-//Powers
-//[ultimate, heal, ... ]
-global.controllPowers = global.controllPowers;
+canSpell = false;
+canPower = false;
 
 //Methods to attack
 state_attack = function(ground){

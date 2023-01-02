@@ -13,7 +13,7 @@ next = 0;
 holdspace = 0;
 
 strings[0] = "Depois de uma luta intensa contra aquele desconhecido\nIlkael morre...";
-strings[1] = "O desconhecido liberta um enorme demonio";
+strings[1] = "....";
 strings[2] = "Imediatamente um exercito de demonios\ncomecam a invadir a terra";
 
 

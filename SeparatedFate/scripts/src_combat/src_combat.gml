@@ -78,3 +78,15 @@ function dying (_sprite_index){
 			}
 		}	
 }
+	
+function setSpell(_xx, _aura, _objSpell){
+	damage = instance_create_layer(_xx, y - 30, layer, _objSpell)
+	damage.speed = 5;
+	damage.direction = -90 + 90 * other.image_xscale;
+	damage.image_angle = direction;
+				
+	damage.damage = atk;
+	damage.father = id;
+	canAttack = false;
+	aura -= _aura;
+}

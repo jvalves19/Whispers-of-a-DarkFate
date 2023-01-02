@@ -3,6 +3,19 @@ if(game_over){
 	global.spd_mult = 0.5;
 }
 
+//CONTROLL SPELLS
+for(i=0; i<3; i++){
+	if(global.currentSpell == i){
+		global.controllSpells[i] = true;
+	}
+}
+//CONTROLL POWERS
+for(i=0; i<3; i++){
+	if(global.currentPower == i){
+		global.controllPowers[i] = true;
+	}
+}
+
 #region DIALOGUE SYSTEM
 if(instance_exists(obj_dialogo)){
 	global.dialogo = true;
@@ -13,9 +26,11 @@ if(global.dialogo){
 }
 #endregion
 
+#region KEY SYSTEM
 if(object_exists(obj_player)){
-	global.key[0] = global.key[0];
+	global.key[global.numKey] = global.key[global.numKey];
 }
+#endregion
 
 #region BOSS
 //BOSS EVENTS

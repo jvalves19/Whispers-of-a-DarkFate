@@ -1,4 +1,4 @@
-if(sense && global.key[0]){	
+if(sense && global.key[keyNum]){	
 	define_align(fa_middle, fa_center);
 	draw_set_font(fnt_game_over)
 	
@@ -8,7 +8,7 @@ if(sense && global.key[0]){
 	draw_set_font(-1);
 	define_align(-1, -1);
 }
-if(sense && !global.key[0]){
+if(sense && !global.key[keyNum]){
 	define_align(fa_middle, fa_center);
 	draw_set_font(fnt_game_over)
 	

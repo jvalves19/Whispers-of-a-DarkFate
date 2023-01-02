@@ -7,6 +7,7 @@ function player_controls(){
 	left = keyboard_check(ord("A"));
 	down = keyboard_check(ord("S"));
 	jump = keyboard_check_pressed(ord("W"));
+	changeSpell = keyboard_check_pressed(ord("Q"));
 	
 	attack = keyboard_check_pressed(ord("J"));
 	ultimate = keyboard_check_pressed(ord("K"));

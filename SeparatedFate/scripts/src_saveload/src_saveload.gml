@@ -1,5 +1,3 @@
-// Script assets have changed for v2.3.0 see
-// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function saveGame(){
 	ini_open("savedata.ini");
 	
@@ -12,26 +10,34 @@ function saveGame(){
 	ini_write_real("savegame", "Player Aura", global.pMaxAura);
 	ini_write_real("savegame", "Player Atk", global.pAtk);
 	
-	
-	show_debug_message(global.pMaxLife);
-	show_debug_message(global.pAtk);
-	
 	//SAVE BOSSES
 	ini_write_real("savegame", "boss", global.destroyed[1]);	
 	ini_write_real("savegame", "boss2", global.destroyed[2]);		
-	//ini_write_real("savegame", "BossBattle", global.bossBattle);
 	
 	//SAVE POWERS
+	ini_write_real("savegame", "Spell", global.currentSpell);
+	ini_write_real("savegame", "Spell0", global.controllSpells[0]);
+	ini_write_real("savegame", "Spell1", global.controllSpells[1]);
+	ini_write_real("savegame", "Spell2", global.controllSpells[2]);
+	
+	ini_write_real("savegame", "Power", global.currentPower);
 	ini_write_real("savegame", "Powers", global.controllPowers[0]);	
 	
 	//INVENTORY AND KEYS SYSTEM
-	ini_write_real("savegame", "Keys", global.key[0]);
+	ini_write_real("savegame", "Keys1", global.key[1]);
+	ini_write_real("savegame", "Keys2", global.key[2]);
+	ini_write_real("savegame", "Keys3", global.key[3]);
+	ini_write_real("savegame", "Keys4", global.key[4]);
+	ini_write_real("savegame", "Keys5", global.key[5]);
+	
 	ini_write_real("savegame", "Dialogue", global.stateDialogue);
 	
+	//DEBUG
+	show_debug_message(global.pMaxLife);
+	show_debug_message(global.pAtk);
 	show_debug_message(global.destroyed[1]);
 	show_debug_message(global.destroyed[2]);
 
-	
 	ini_close();
 }
 
@@ -56,13 +62,23 @@ function loadGame(){
 	//LOAD BOSSES
 	global.destroyed[1] = ini_read_real("savegame", "boss", 0);
 	global.destroyed[2] = ini_read_real("savegame", "boss2", 0);
-	//global.bossBattle = ini_read_real("savegame", "BossBattle", 0);
 	
 	//LOAD POWERS
+	global.currentSpell = ini_read_real("savegame", "Spell", 0);
+	global.controllSpells[0] = ini_read_real("savegame", "Spell0", 0);
+	global.controllSpells[1] = ini_read_real("savegame", "Spell1", 0);
+	global.controllSpells[2] = ini_read_real("savegame", "Spell2", 0);
+	
+	global.currentPower = ini_read_real("savegame", "Power", 0);
 	global.controllPowers[0] = ini_read_real("savegame", "Powers", 0);
 	
 	//INVENTORY AND KEYS SYSTEM
-	global.key[0] = ini_read_real("savegame", "Keys", 0);
+	global.key[1] = ini_read_real("savegame", "Keys1", 0);
+	global.key[2] = ini_read_real("savegame", "Keys2", 0);
+	global.key[3] = ini_read_real("savegame", "Keys3", 0);
+	global.key[4] = ini_read_real("savegame", "Keys4", 0);
+	global.key[5] = ini_read_real("savegame", "Keys5", 0);
+	
 	global.stateDialogue = ini_read_real("savegame", "Dialogue", 0);
 	
 	show_debug_message(global.destroyed[1]);
@@ -74,59 +90,3 @@ function loadGame(){
 	ini_close();
 	room_goto(roomID);
 }
-
-/*
-function saveGame2(){
-	var _saveData = array_create(0);
-	
-	with(all){
-		var _saveEntity = {
-			obj : object_get_name(object_index),
-			room : room,
-			y : y,
-			x : x,
-			image_index : image_index,
-			image_blend : image_blend,
-		}
-		array_push(_saveData, _saveEntity);
-		
-	}
-	
-	var _string = json_stringify(_saveData);
-	var _buffer = buffer_create(string_byte_length(_string) + 1, buffer_fixed, 1);
-	
-	buffer_write(_buffer, buffer_string, _string);
-	buffer_save(_buffer, "savegame.save");
-	buffer_delete(_buffer);
-	
-	show_debug_message("Game Saved" + _string);
-}
-
-function loadGame2(){
-	with(all) instance_destroy();
-	
-	if(file_exists("savegame.save")){
-		var _buffer = buffer_load("savegame.save");
-		var _string = buffer_read(_buffer, buffer_string);
-		
-		buffer_delete(_buffer);
-		
-		var _loadData = json_parse(_string);
-		
-		while(array_length(_loadData) > 0){
-			var _loadEntity = array_pop(_loadData);
-			
-			with(instance_create_layer(0, 0, layer, asset_get_index(_loadEntity.obj))){
-				x = _loadEntity.x;
-				y = _loadEntity.y;
-				room = _loadEntity.room;
-				image_blend = _loadEntity.image_blend;
-				image_index = _loadEntity.image_index;
-			}
-		}
-		show_debug_message("game Loaded" + _string);
-		
-	}
-
-}
-*/

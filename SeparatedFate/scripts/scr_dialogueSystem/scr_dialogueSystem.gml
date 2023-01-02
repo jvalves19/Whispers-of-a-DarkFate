@@ -26,7 +26,7 @@ function scr_dialogue(){
 					ds_grid_add_text("Tenho umas informações pra você sobre o cara que te espancou", 0, "Bardo")
 					ds_grid_add_text("O nome dele é Garleand", 0, "Bardo")
 					ds_grid_add_text("Também tenho essa chave pra você", 0, "Bardo")
-					global.key[0] = true;
+					global.key[1] = true;
 				
 					global.stateDialogue = global.stateDialogue - global.stateDialogue
 				break;	
@@ -43,6 +43,9 @@ function scr_dialogue(){
 		break;
 			case "Resposta 1":
 				ds_grid_add_text("O amor é...", 0, "Mulher");
+				ds_grid_add_text("Esqueça. Eu só iria dizer bobagem\nPegue essa chave", 0, "Mulher");
+				global.key[2] = true;
+				
 			break;
 			
 			case "Resposta 2":

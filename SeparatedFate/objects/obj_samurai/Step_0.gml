@@ -88,7 +88,7 @@ switch(state){
 				bossDead = true;	
 				global.stateDialogue = 2;
 				global.destroyed[2] = true;
-				global.controllPowers[0] = true;
+				global.currentPower = 0;
 			}
 		}		
 		

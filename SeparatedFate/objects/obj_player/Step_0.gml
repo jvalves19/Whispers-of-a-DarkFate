@@ -1,6 +1,3 @@
-/// @description Insert description here
-// You can write your code in this editor
-
 //check if is changing room or in a dialogue
 if(instance_exists(obj_transition) || instance_exists(obj_dialogo)) exit;
 
@@ -9,17 +6,60 @@ player_controls();
 var ground = place_meeting(x, y + 1, obj_block);
 var fall = vSpd!=0;
 
-
 //Spell direction variables
 //var flipped = direction;
 //var spell_x = (x + 4) * (flipped);
-var _xx = x + lengthdir_x(0, image_angle);
 //var y_offset = lengthdir_y(-20, image_angle);
+var _xx = x + lengthdir_x(0, image_angle);
 
 //Gravity
 if(!ground && (vSpd < max_vSpd * 2 )){
 	vSpd += GRAVITY * weight * global.spd_mult;
 }
+
+#region CHANGE SPELL
+if(changeSpell && global.currentSpell == 0){
+	if(global.controllSpells[1]){
+		global.currentSpell = 1;
+		exit;
+	}
+	if(global.controllSpells[2]){
+		global.currentSpell = 2;	
+		exit;
+	}
+}
+	
+if(changeSpell && global.currentSpell == 1){
+	if(global.controllSpells[2]){
+		global.currentSpell = 2;
+		exit;
+	}
+	if(global.controllSpells[0]){
+		global.currentSpell = 0;	
+		exit;
+	}
+}
+	
+if(changeSpell && global.currentSpell == 2){
+	if(global.controllSpells[0]){
+		global.currentSpell = 0;
+		exit;
+	}
+	if(global.controllSpells[1]){
+		global.currentSpell = 1;
+		exit;
+	}
+}
+if(global.currentSpell == 0 || global.currentSpell == 1 || global.currentSpell == 2){
+	canSpell = true;
+}
+#endregion
+
+#region CHANGE POWER
+if(global.currentPower == 0 || global.currentPower == 1 || global.currentPower == 2){
+	canPower = true;
+}
+#endregion	
 
 //State Machine
 switch(state){
@@ -52,12 +92,12 @@ switch(state){
 				image_index = 0;
 			}
 		else
-			if(ultimate && global.controllPowers[0]){
+			if(ultimate && canPower){
 				state = "ultimate";
 				image_index = 0;
 			}
 		else
-			if(spell){
+			if(spell && canSpell){
 				state = "spell";
 				image_index = 0;
 			}
@@ -97,12 +137,12 @@ switch(state){
 				image_index = 0;
 			}
 		else
-			if(ultimate && global.controllPowers[0]){
+			if(ultimate && canPower){
 				state = "ultimate";
 				image_index = 0;
 			}
 		else
-			if(spell){
+			if(spell && canSpell){
 				state = "spell";
 				image_index = 0;
 			}
@@ -170,7 +210,9 @@ switch(state){
 	
 	#region ultimate
 	case "ultimate":
-		player_ultimate(spr_pUltimate, sprite_width/5, -sprite_height/2, 2, 2);
+		if(global.currentPower == 0){
+			player_ultimate(spr_pUltimate, sprite_width/5, -sprite_height/2, 2, 2);
+		}
 	
 		break;
 	#endregion
@@ -183,16 +225,20 @@ switch(state){
 			hSpd = 0;
 		}
 	
-		if(image_index >= 1 && canAttack && aura > 5){
-			damage = instance_create_layer(_xx, y - 30, layer, obj_spell)
-			damage.speed = 5;
-			damage.direction = -90 + 90 * other.image_xscale;
-			damage.image_angle = direction;
-				
-			damage.damage = atk;
-			damage.father = id;
-			canAttack = false;
-			aura -= 50;
+		if(global.currentSpell == 0){
+			if(image_index >= 1 && canAttack && aura > 5){
+				setSpell(_xx, 01, obj_spell);
+			}
+		}
+		if(global.currentSpell == 1){
+			if(image_index >= 1 && canAttack && aura > 5){
+				setSpell(_xx, 50, obj_fire);
+			}
+		}
+		if(global.currentSpell == 2){
+			if(image_index >= 1 && canAttack && aura > 5){
+				setSpell(_xx, 50, obj_holy);
+			}
 		}
 	
 		if(image_index >= image_number-1){
@@ -252,8 +298,7 @@ switch(state){
 			state = "idle";			
 }
 
-//Dialogue System
-#region DIALOGUE
+#region DIALOGUE SYSTEM
 if(distance_to_object(obj_npcFather) < 10){	
 	if(keyboard_check_pressed(ord("E")) && !global.dialogo){		
 		var _npc = instance_nearest(x, y, obj_npcFather);
@@ -262,5 +307,4 @@ if(distance_to_object(obj_npcFather) < 10){
 		_dialogue.npc_nome = _npc.nome;
 	}
 }
-
 #endregion
