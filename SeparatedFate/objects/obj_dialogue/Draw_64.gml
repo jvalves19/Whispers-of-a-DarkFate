@@ -1,1 +1,1 @@
-draw_menu();
+draw_menu(menus[pag]);

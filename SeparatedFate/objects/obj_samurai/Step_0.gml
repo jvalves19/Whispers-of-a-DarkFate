@@ -1,5 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
+if(instance_exists(obj_player)){
+	var _direction =  point_direction(x, y, obj_player.x, obj_player.y);
+}
 
 var ground = place_meeting(x, y + 1, obj_block);
 
@@ -37,7 +40,7 @@ switch(state){
 			var _dist = point_distance(x, y, obj_player.x, obj_player.y);
 			var _dir = point_direction(x, y, obj_player.x, obj_player.y);
 			
-			if(_dist > 50){
+			if(_dist > 40){
 				hSpd = lengthdir_x(max_hSpd, _dir);
 			}
 			else{
@@ -56,15 +59,17 @@ switch(state){
 		//SubState Attack
 			switch(state_atk){
 				case 0:
-					attacking(spr_samAttack1, 3, 8, sprite_width/5, -sprite_height/5, 2, 1, "idle");
+					attacking(spr_samAttack1, 1, 5, sprite_width/10, -sprite_height/5, 2, 1, "idle");
+					hSpd = lengthdir_x(1, _direction);
+					if(sign(hSpd) != 0) image_xscale = sign(hSpd);
 					break;
 					
 				case 1:
-					attacking(spr_samAttack2, 5, 8, sprite_width/5, -sprite_height/5, 1, 4, "idle");
+					attacking(spr_samAttack2, 2, 8, sprite_width/10, -sprite_height/5, 2, 4, "idle");
 					break;
 					
 				case 2:
-					attacking(spr_samAttack3, 3, 6, sprite_width/5, -sprite_height/5, 2, 1, "idle");
+					attacking(spr_samAttack3, 6, 15, sprite_width/10, -sprite_height/5, 2, 1, "idle");
 					break;
 			}
 		
@@ -74,6 +79,9 @@ switch(state){
 	#region hit and death
 	case "hit":
 		get_hit(spr_samHit, 0);
+		
+		hSpd = lengthdir_x(1, _direction);
+		if(sign(hSpd) != 0) image_xscale = sign(hSpd);
 	
 		break;
 	
@@ -84,11 +92,13 @@ switch(state){
 		global.spd_mult = 0.5;
 				
 		if(instance_exists(obj_game_controller) && image_alpha <= 0){
-			with(obj_game_controller){	
+			with(obj_game_controller){
+				instance_deactivate_object(obj_sensor);
 				bossDead = true;	
 				global.stateDialogue = 2;
 				global.destroyed[2] = true;
 				global.currentPower = 0;
+				global.currentSpell = 2;
 			}
 		}		
 		

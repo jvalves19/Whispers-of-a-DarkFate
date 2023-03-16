@@ -4,17 +4,29 @@ if(game_over){
 }
 
 //CONTROLL SPELLS
+#region SPELLS
 for(i=0; i<3; i++){
 	if(global.currentSpell == i){
 		global.controllSpells[i] = true;
 	}
 }
+if(global.currentSpell == -1) global.spell = spr_actSpell;
+if(global.currentSpell == 0) global.spell = spr_actSpell1;
+if(global.currentSpell == 1) global.spell = spr_actSpell2;
+if(global.currentSpell == 2) global.spell = spr_actSpell3;
+#endregion
+
 //CONTROLL POWERS
+#region POWERS
 for(i=0; i<3; i++){
 	if(global.currentPower == i){
 		global.controllPowers[i] = true;
 	}
 }
+if(global.currentPower == -1) global.power = spr_actPower;
+if(global.currentPower == 0) global.power = spr_actPower1;
+if(global.currentPower == 1) global.power = spr_actPower2;
+#endregion
 
 #region DIALOGUE SYSTEM
 if(instance_exists(obj_dialogo)){

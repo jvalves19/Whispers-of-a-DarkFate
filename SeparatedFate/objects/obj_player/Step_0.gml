@@ -1,5 +1,5 @@
 //check if is changing room or in a dialogue
-if(instance_exists(obj_transition) || instance_exists(obj_dialogo)) exit;
+if(instance_exists(obj_transition) || instance_exists(obj_dialogo)) || instance_exists(obj_dialogue) exit;
 
 //Initializing variables
 player_controls();

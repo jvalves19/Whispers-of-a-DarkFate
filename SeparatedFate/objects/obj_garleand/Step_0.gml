@@ -1,5 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
+if(instance_exists(obj_player)){
+	var _direction =  point_direction(x, y, obj_player.x, obj_player.y);
+}
 
 var ground = place_meeting(x, y + 1, obj_block);
 
@@ -57,14 +60,22 @@ switch(state){
 			switch(state_atk){
 				case 0:
 					attacking(spr_garlAttack1, 3, 8, sprite_width/10, -sprite_height/5, 5, 2, "idle");
+					
+					hSpd = lengthdir_x(3, _direction);
+					if(sign(hSpd) != 0) image_xscale = sign(hSpd);
+					
 					break;
 					
 				case 1:
 					attacking(spr_garlAttack2, 5, 8, sprite_width/6, -sprite_height/5, 3, 4, "idle");
+					hSpd = lengthdir_x(1, _direction);
+					if(sign(hSpd) != 0) image_xscale = sign(hSpd);
 					break;
 					
 				case 2:
 					attacking(spr_garlAttack3, 3, 6, sprite_width/6, -sprite_height/5, 2, 3, "idle");
+					hSpd = lengthdir_x(1, _direction);
+					if(sign(hSpd) != 0) image_xscale = sign(hSpd);
 					break;
 			}
 		

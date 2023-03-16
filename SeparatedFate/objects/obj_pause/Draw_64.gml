@@ -18,7 +18,7 @@ if(pause){
 	define_align(-1, -1);	
 	draw_set_font(-1);
 	
-	draw_menu();
+	draw_menu(menus[pag]);
 }
 else{
 	value = 0;

@@ -27,19 +27,33 @@ function define_align(_ver, _hor){
 #endregion
 
 #region MENU
-function create_menu(){
+enum menu_actions{
+	roda_metodo,
+	carrega_menu
+}
+enum menu_list{
+	main,
+	load,
+	options
+}
+enum pause_list{
+	main,
+	options
+}
+
+function create_menu(_menu){
 	draw_set_font(fnt_menu);
 	define_align(0, 0);
 
-	var _qtd = array_length(menu);
+	var _qtd = array_length(_menu);
 	var _alt = display_get_gui_height();
 	var _space_y = string_height("I") + 16;
 
 	for(var i = 0 ; i < _qtd; i++){
 		var _color = c_white;
-		var _text = menu[i];
+		var _text = _menu[i][0];
 	
-		if(sel == i){
+		if(menu_sel[pag] == i){
 			_color = c_red;
 		}
 	
@@ -53,19 +67,28 @@ function create_menu(){
 #endregion
 
 #region CHANGE OPTION MENU
-function change_option(){
-	var _qtd = array_length(menu);
+function change_option(_menu){
+	var _qtd = array_length(_menu) - 1;
+	var _sel = menu_sel[pag];
 
 	_up = keyboard_check_pressed(vk_up);
 	_down = keyboard_check_pressed(vk_down);
 	_option = keyboard_check_pressed(vk_enter);
 
 	//Changing Selection
-	if(_up && sel <= 0) sel = _qtd;
-	if(_up) sel--;
-
-	if(_down && sel >= _qtd - 1 ) sel=-1;
-	if(_down) sel++;	
+	if(_up || _down){
+		_sel += _down - _up;
+		menu_sel[pag] = clamp(_sel, 0, _qtd);
+	}
+	
+	if(_option){
+		switch(_menu[_sel][1]){
+			case 0: _menu[_sel][2](); break;
+			case 1: pag = _menu[_sel][2]; break;
+			case 2: pag = _menu[_sel][2]; break;
+		}
+	}
+	
 }
 #endregion
 
@@ -122,51 +145,22 @@ function draw_gameover_screen(_string, _desc){
 }
 
 function draw_power_screen(_string, _desc){
-	//Get camera info
-	var x1 = camera_get_view_x(view_camera[0]);
-	var w = camera_get_view_width(view_camera[0]);
-	var x2 = x1 + w;
-	var center_w = x1 + w/2;
-		
-	var y1 = camera_get_view_y(view_camera[0]);
-	var h = camera_get_view_height(view_camera[0]);
-	var y2 = y1 + h;
-	var center_h = y1 + h/2;
-
-	var qtd = h * 1;
-	value = lerp(value, 1, 0.01);
-
-	//Dark on full screen
-	draw_set_alpha(value - 0.3);
-	draw_rectangle(x1, y1, x2, y2, false);
-
-	draw_set_color(c_black);
-	//Draw top black lines
-	draw_rectangle(x1, y1, x2, y1 + qtd * value, false);
+	define_align(fa_middle, fa_center);
+	draw_set_font(fnt_game_over)
 	
-	//Draw bot black lines
-	draw_rectangle(x1, y2, x2, y2 - qtd * value, false);
+	draw_sprite_ext(spr_pixel, 0, 1000, 0, 920, 400, 0, c_black, 0.5);
 	
-	draw_set_alpha(1);
-	draw_set_color(-1);
-	
-	//Writing Game Over
-	draw_set_font(fnt_dungeon);
-	define_align(1,  1);
-	
-	//Shadow
 	draw_set_color(c_red);
-	draw_text(center_w + 1, center_h + 1, _string);	
-	//Text
-	draw_set_color(c_white);
-	draw_text(center_w, center_h, _string);	
+	draw_text(1501, 51, _string);
 	
-	draw_set_font(-1);
+	draw_set_color(c_white);
+	draw_text(1500, 50, _string);	
+	
 	draw_set_color(c_black);
-	draw_text(center_w + 10, center_h + 50, _desc);
+	draw_text(1501, 251, _desc);
 	
 	draw_set_color(c_white);
-	draw_text(center_w + 11, center_h + 51, _desc);
+	draw_text(1500, 250, _desc);
 	
 	define_align(-1, -1);	
 	draw_set_font(-1);

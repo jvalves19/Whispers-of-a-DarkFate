@@ -1,25 +1,9 @@
 {
-  "spriteId": {
-    "name": "spr_tileWorld",
-    "path": "sprites/spr_tileWorld/spr_tileWorld.yy",
-  },
-  "tileWidth": 24,
-  "tileHeight": 24,
-  "tilexoff": 0,
-  "tileyoff": 0,
-  "tilehsep": 0,
-  "tilevsep": 0,
-  "spriteNoExport": true,
-  "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
-  },
-  "out_tilehborder": 2,
-  "out_tilevborder": 2,
-  "out_columns": 32,
-  "tile_count": 1024,
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tl_World",
   "autoTileSets": [
-    {"tiles":[
+    {"resourceType":"GMAutoTileSet","resourceVersion":"1.0","name":"autotile_1","closed_edge":false,"tiles":[
         118,
         55,
         54,
@@ -36,8 +20,8 @@
         149,
         151,
         0,
-      ],"closed_edge":false,"resourceVersion":"1.0","name":"autotile_1","tags":[],"resourceType":"GMAutoTileSet",},
-    {"tiles":[
+      ],},
+    {"resourceType":"GMAutoTileSet","resourceVersion":"1.0","name":"autotile_2","closed_edge":false,"tiles":[
         391,
         328,
         327,
@@ -54,8 +38,8 @@
         422,
         424,
         0,
-      ],"closed_edge":false,"resourceVersion":"1.0","name":"autotile_2","tags":[],"resourceType":"GMAutoTileSet",},
-    {"tiles":[
+      ],},
+    {"resourceType":"GMAutoTileSet","resourceVersion":"1.0","name":"autotile_3","closed_edge":false,"tiles":[
         582,
         519,
         518,
@@ -72,17 +56,30 @@
         613,
         615,
         0,
-      ],"closed_edge":false,"resourceVersion":"1.0","name":"autotile_3","tags":[],"resourceType":"GMAutoTileSet",},
+      ],},
   ],
-  "tileAnimationFrames": [
-    {"frames":[
-        451,
-        452,
-        453,
-        452,
-      ],"resourceVersion":"1.0","name":"animation_Water","tags":[],"resourceType":"GMTileAnimation",},
-  ],
-  "tileAnimationSpeed": 2.0,
+  "macroPageTiles": {
+    "SerialiseHeight": 0,
+    "SerialiseWidth": 0,
+    "TileSerialiseData": [],
+  },
+  "out_columns": 32,
+  "out_tilehborder": 2,
+  "out_tilevborder": 2,
+  "parent": {
+    "name": "World",
+    "path": "folders/Tile Sets/World.yy",
+  },
+  "spriteId": {
+    "name": "spr_tileWorld",
+    "path": "sprites/spr_tileWorld/spr_tileWorld.yy",
+  },
+  "spriteNoExport": true,
+  "textureGroupId": {
+    "name": "Default",
+    "path": "texturegroups/Default",
+  },
+  "tile_count": 1024,
   "tileAnimation": {
     "FrameData": [
       0,
@@ -4184,17 +4181,19 @@
     ],
     "SerialiseFrameCount": 4,
   },
-  "macroPageTiles": {
-    "SerialiseWidth": 0,
-    "SerialiseHeight": 0,
-    "TileSerialiseData": [],
-  },
-  "parent": {
-    "name": "World",
-    "path": "folders/Tile Sets/World.yy",
-  },
-  "resourceVersion": "1.0",
-  "name": "tl_World",
-  "tags": [],
-  "resourceType": "GMTileSet",
+  "tileAnimationFrames": [
+    {"resourceType":"GMTileAnimation","resourceVersion":"1.0","name":"animation_Water","frames":[
+        451,
+        452,
+        453,
+        452,
+      ],},
+  ],
+  "tileAnimationSpeed": 2.0,
+  "tileHeight": 24,
+  "tilehsep": 0,
+  "tilevsep": 0,
+  "tileWidth": 24,
+  "tilexoff": 0,
+  "tileyoff": 0,
 }

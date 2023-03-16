@@ -15,6 +15,7 @@ global.pMaxLife = 100;
 global.pMaxAura = 150;
 global.pAtk = 20;
 
+global.power = noone;
 global.currentPower = -1;
 global.controllPowers = [
 false,	//Fast Sword
@@ -22,6 +23,7 @@ false,	//Holy Explosion
 false,	//Thunder Exectution
 ]
 
+global.spell = noone;
 global.currentSpell = -1;
 global.controllSpells = [
 false,	//electric

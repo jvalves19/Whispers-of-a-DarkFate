@@ -16,7 +16,11 @@ function scr_dialogue(){
 					ds_grid_add_text("Eu sei de muitas coisas, camarada", 0, "Bardo")
 					ds_grid_add_text("Sei que acabou de tomar uma surra", 0, "Bardo")
 					ds_grid_add_text("A proposito... Sou o Bardo. Pode me chamar de Jonas", 0, "Bardo")
-				
+					
+					
+					ds_grid_add_text("A proposito... Tome esse novo poder para você", 0, "Bardo")
+					global.currentSpell = 0;
+					
 					global.stateDialogue = global.stateDialogue - global.stateDialogue;
 				break;
 				
@@ -26,8 +30,10 @@ function scr_dialogue(){
 					ds_grid_add_text("Tenho umas informações pra você sobre o cara que te espancou", 0, "Bardo")
 					ds_grid_add_text("O nome dele é Garleand", 0, "Bardo")
 					ds_grid_add_text("Também tenho essa chave pra você", 0, "Bardo")
+					
 					global.key[1] = true;
-				
+					global.currentSpell = 1;
+					
 					global.stateDialogue = global.stateDialogue - global.stateDialogue
 				break;	
 			}
