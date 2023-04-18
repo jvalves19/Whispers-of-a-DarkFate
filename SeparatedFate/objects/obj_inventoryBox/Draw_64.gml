@@ -14,3 +14,4 @@ for(var i=0; i<7; i++){
 	draw_text(x + 680, y + 6 + posY, "x1");
 	draw_set_halign(fa_left);
 }
+
