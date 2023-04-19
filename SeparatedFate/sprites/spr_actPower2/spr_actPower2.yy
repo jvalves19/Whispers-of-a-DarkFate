@@ -3,7 +3,7 @@
   "resourceVersion": "1.0",
   "name": "spr_actPower2",
   "bbox_bottom": 41,
-  "bbox_left": 43,
+  "bbox_left": 41,
   "bbox_right": 70,
   "bbox_top": 14,
   "bboxMode": 0,

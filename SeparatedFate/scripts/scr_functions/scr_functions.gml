@@ -35,7 +35,10 @@ function player_controls(){
 		(gamepad_button_check_pressed(0, gp_shoulderr))||
 		keyboard_check_pressed(ord("Q"))
 	);
-	
+	changeUltimate = (
+		(gamepad_button_check_pressed(0, gp_shoulderl)) ||
+		keyboard_check_pressed(vk_tab)
+	);
 	attack = (
 		(gamepad_button_check_pressed(0, gp_face3)) || 
 		keyboard_check_pressed(ord("J"))
@@ -52,7 +55,6 @@ function player_controls(){
 		(gamepad_button_check_pressed(0, gp_face2)) ||
 		keyboard_check_pressed(vk_space)
 	);	
-	
 	heal = down && action;
 }
 #endregion

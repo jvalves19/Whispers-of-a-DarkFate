@@ -33,6 +33,9 @@ function scr_dialogue(){
 					
 					global.key[1] = true;
 					global.currentSpell = 1;
+					global.currentPower = 0;
+					global.currentPower = 1;
+					global.currentSpell = 2;
 					
 					global.stateDialogue = global.stateDialogue - global.stateDialogue
 				break;	

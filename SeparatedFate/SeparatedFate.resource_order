@@ -66,6 +66,7 @@
     {"name":"spr_darkAttack3","order":4,"path":"sprites/spr_darkAttack3/spr_darkAttack3.yy",},
     {"name":"spr_tileWorldRPG","order":3,"path":"sprites/spr_tileWorldRPG/spr_tileWorldRPG.yy",},
     {"name":"spr_damage","order":2,"path":"sprites/spr_damage/spr_damage.yy",},
+    {"name":"spr_pUltimate2","order":11,"path":"sprites/spr_pUltimate2/spr_pUltimate2.yy",},
     {"name":"spr_mdGrave","order":3,"path":"sprites/spr_mdGrave/spr_mdGrave.yy",},
     {"name":"obj_fire","order":4,"path":"objects/obj_fire/obj_fire.yy",},
     {"name":"spr_garlUltimate","order":7,"path":"sprites/spr_garlUltimate/spr_garlUltimate.yy",},

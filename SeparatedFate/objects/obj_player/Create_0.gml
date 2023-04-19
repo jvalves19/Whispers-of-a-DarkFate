@@ -101,14 +101,27 @@ player_ultimate = function(_sprite_index, _dist_x, _dist_y, _xscale_damage, _ysc
 		}	
 			
 		for(i = 0; i < image_number-3; i++){
-			if(image_index >= 5 && image_index <= 20){
-				damage = instance_create_layer(x + _dist_x, y + _dist_y, layer, obj_damage);
-				damage.image_xscale = _xscale_damage;
-				damage.image_yscale = _yscale_damage;
+			if(global.currentPower == 0){
+				if(image_index >= 5 && image_index <= 20){
+					damage = instance_create_layer(x + _dist_x, y + _dist_y, layer, obj_damage);
+					damage.image_xscale = _xscale_damage;
+					damage.image_yscale = _yscale_damage;
 				
-				damage.damage = atk/200;
-				damage.father = id;
-				canAttack = false;
+					damage.damage = atk/200;
+					damage.father = id;
+					canAttack = false;
+				}
+			}
+			else if(global.currentPower == 1){
+				if(image_index >= 5 && image_index <= 20){
+					damage = instance_create_layer(x + _dist_x, y + _dist_y, layer, obj_damage);
+					damage.image_xscale = _xscale_damage;
+					damage.image_yscale = _yscale_damage;
+				
+					damage.damage = atk/200;
+					damage.father = id;
+					canAttack = false;
+				}
 			}
 		}		
 	}

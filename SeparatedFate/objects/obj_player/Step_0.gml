@@ -56,6 +56,38 @@ if(global.currentSpell == 0 || global.currentSpell == 1 || global.currentSpell =
 #endregion
 
 #region CHANGE POWER
+if(changeUltimate && global.currentPower == 0){
+	if(global.controllPowers[1]){
+		global.currentPower = 1;
+		exit;
+	}
+	if(global.controllSpells[2]){
+		global.currentPower = 2;	
+		exit;
+	}
+}
+	
+if(changeUltimate && global.currentPower == 1){
+	if(global.controllPowers[2]){
+		global.currentPower = 2;
+		exit;
+	}
+	if(global.controllPowers[0]){
+		global.currentPower = 0;	
+		exit;
+	}
+}
+	
+if(changeUltimate && global.currentPower == 2){
+	if(global.controllPowers[0]){
+		global.currentPower = 0;
+		exit;
+	}
+	if(global.controllPowers[1]){
+		global.currentPower = 1;
+		exit;
+	}
+}
 if(global.currentPower == 0 || global.currentPower == 1 || global.currentPower == 2){
 	canPower = true;
 }
@@ -212,6 +244,9 @@ switch(state){
 	case "ultimate":
 		if(global.currentPower == 0){
 			player_ultimate(spr_pUltimate, sprite_width/5, -sprite_height/2, 2, 2);
+		}
+		if(global.currentPower == 1){
+			player_ultimate(spr_pUltimate2, random(x)-150, -random(y), 1, room_height);
 		}
 	
 		break;
