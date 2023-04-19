@@ -246,7 +246,7 @@ switch(state){
 			player_ultimate(spr_pUltimate, sprite_width/5, -sprite_height/2, 2, 2);
 		}
 		if(global.currentPower == 1){
-			player_ultimate(spr_pUltimate2, random(x)-150, -random(y), 1, room_height);
+			player_ultimate(spr_pUltimate2, random(x)-150, sprite_height-200, 2, 3);
 		}
 	
 		break;

@@ -5,6 +5,7 @@ var target_list = ds_list_create();
 //return "who collides? obj_father" "save at list? target_list"
 var qtd = instance_place_list(x, y, obj_father, target_list, 0);
 
+
 //Add every target in the damage list
 for(var i = 0; i < qtd; i++){
 	var actual = target_list[| i];
@@ -23,7 +24,6 @@ for(var i = 0; i < qtd; i++){
 //applying damage
 var tam = ds_list_size(apply_damage);
 for(var i = 0; i < tam; i++){
-
 	target = apply_damage[| i].id;	
 	
 	if(target.life > 0){

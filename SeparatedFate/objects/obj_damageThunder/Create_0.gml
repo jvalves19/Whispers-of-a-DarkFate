@@ -1,8 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-sprite_index = spr_spThunder;
-	
 damage = 0;
 father = noone;
 image_alpha = 1;
