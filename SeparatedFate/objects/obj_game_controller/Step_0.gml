@@ -112,6 +112,7 @@ if(keyboard_check_pressed(vk_enter) || gamepad_button_check_pressed(0, gp_face1)
 	
 		obj_player.life = global.pMaxLife;
 		obj_player.aura = global.pMaxAura;
+		room_restart();
 	}
 
 	global.bossBattle = false;

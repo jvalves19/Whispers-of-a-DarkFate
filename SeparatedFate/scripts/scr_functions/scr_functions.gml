@@ -3,19 +3,57 @@
 
 #region PLAYER CONTROLS
 function player_controls(){
-	right = keyboard_check(ord("D")) || (gamepad_axis_value(0, gp_axislh) > 0) || (gamepad_button_check(0, gp_padr));
-	left = keyboard_check(ord("A")) || (gamepad_axis_value(0, gp_axislh) < 0) || (gamepad_button_check(0, gp_padl));
-	down = keyboard_check(ord("S")) || (gamepad_button_check(0, gp_padd));
-	jump = keyboard_check_pressed(ord("W")) || (gamepad_button_check_pressed(0, gp_face1));
-	changeSpell = keyboard_check_pressed(ord("Q"));
+	action = (
+		(gamepad_button_check_pressed(0, gp_face4)) ||
+		keyboard_check_pressed(ord("E")) 
+	);
+	right = (
+		//(gamepad_axis_value(0, gp_axislh) > 0)  ||
+		(gamepad_button_check(0, gp_padr)) ||
+		keyboard_check(vk_right) ||
+		keyboard_check(ord("D"))
+	);
+	left = (
+		//(gamepad_axis_value(0, gp_axislh) < 0) || 
+		(gamepad_button_check(0, gp_padl)) || 
+		keyboard_check(vk_left) || 
+		keyboard_check(ord("A")) 
+	);
+	down = (
+		(gamepad_button_check(0, gp_padd)) ||
+		keyboard_check(ord("S"))
+	);
+	up = (
+		(gamepad_button_check(0, gp_padu)) ||
+		keyboard_check(ord("W"))
+	);
+	jump = (
+		(gamepad_button_check_pressed(0, gp_face1) || 
+		keyboard_check_pressed(ord("W")))
+	);
+	changeSpell = (
+		(gamepad_button_check_pressed(0, gp_shoulderr))||
+		keyboard_check_pressed(ord("Q"))
+	);
 	
-	attack = keyboard_check_pressed(ord("J")) || (gamepad_button_check_pressed(0, gp_face3));
-	ultimate = keyboard_check_pressed(ord("K")) || (gamepad_button_check_pressed(0, gp_shoulderr));
-	spell = keyboard_check_pressed(ord("L")) || (gamepad_button_check_pressed(0, gp_shoulderrb));
+	attack = (
+		(gamepad_button_check_pressed(0, gp_face3)) || 
+		keyboard_check_pressed(ord("J"))
+	);
+	ultimate = (
+		(gamepad_button_check_pressed(0, gp_stickl) + gamepad_button_check_pressed(0, gp_stickr)) ||
+		keyboard_check_pressed(ord("K"))
+	);
+	spell = (
+		(gamepad_button_check_pressed(0, gp_shoulderrb)) ||
+		keyboard_check_pressed(ord("L"))
+	);
+	dash = (
+		(gamepad_button_check_pressed(0, gp_face2)) ||
+		keyboard_check_pressed(vk_space)
+	);	
 	
-	dash = keyboard_check_pressed(vk_space) || (gamepad_button_check_pressed(0, gp_face2));	
-	
-	heal = down && ultimate;
+	heal = down && action;
 }
 #endregion
 

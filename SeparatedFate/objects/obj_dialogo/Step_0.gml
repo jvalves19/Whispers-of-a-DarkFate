@@ -1,3 +1,5 @@
+player_controls();
+
 if(!inicializar){
 	scr_dialogue();
 	inicializar = true;

@@ -13,7 +13,7 @@ if(inicializar){
 	draw_text(_xx + 16, _yy - 60, texto_grid[# Infos.Nome, pagina]);
 	
 	draw_sprite_ext(spr_pixel, 0, 1450, 0, 420, 100, 0, c_black, 0.5);
-	draw_text(1500, 10, "press Enter to Skip");
+	draw_text(1500, 10, "E ou X para Selecionar");
 	
 	if(op_draw){
 		var _opX = _xx + 32;
@@ -21,7 +21,7 @@ if(inicializar){
 		var _opSep = 96;
 		var _opBorda = 6;
 		
-		op_selecionada += (keyboard_check_pressed(vk_up)||(gamepad_button_check_pressed(0, gp_padu))) - (keyboard_check_pressed(vk_down)||(gamepad_button_check_pressed(0, gp_padd)));
+		op_selecionada += up - down;
 		op_selecionada = clamp(op_selecionada, 0, op_num-1);
 		
 		for(var i = 0; i < op_num; i++){
@@ -35,7 +35,7 @@ if(inicializar){
 			}
 		}
 		
-		if(keyboard_check_pressed(vk_enter)){
+		if(keyboard_check_pressed(vk_enter) || gamepad_button_check_pressed(0, gp_face1)){
 			var _dialogue = instance_create_layer(x, y, "Dialogue", obj_dialogo)
 			_dialogue.npc_nome = op_resposta[op_selecionada];
 			

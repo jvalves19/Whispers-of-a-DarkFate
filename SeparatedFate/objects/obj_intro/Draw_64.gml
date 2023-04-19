@@ -7,6 +7,6 @@ draw_set_valign(fa_top);
 draw_set_font(fnt_dungeon);
 draw_text(760, 920, print);
 
-if(holdspace > 0) draw_text(1500, 50, "Hold SPACE to Skip"); 
+if(holdspace > 0) draw_text(1500, 50, "Segure ESPAÇO ou O "); 
 
 draw_sprite_ext(spr_pixel, 0, 0, 0, 1920, 1080, 0, c_black, a);

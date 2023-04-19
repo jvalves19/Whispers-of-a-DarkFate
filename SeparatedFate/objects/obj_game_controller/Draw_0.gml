@@ -3,7 +3,7 @@
 
 //Game Over Screen
 if(game_over){
-	draw_gameover_screen("Game Over", "Press ENTER to Restart");
+	draw_gameover_screen("Game Over", "ENTER ou X para Reiniciar");
 }
 else{
 	value = 0;
@@ -11,5 +11,5 @@ else{
 
 
 if(bossDead){
-	draw_gameover_screen("Great Beast Killed", "Press ENTER to Continue");
+	draw_gameover_screen("Great Beast \nObliterada", "\n\n\nENTER ou X para Continuar");
 }
