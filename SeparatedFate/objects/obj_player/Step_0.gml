@@ -300,7 +300,7 @@ switch(state){
 
 #region DIALOGUE SYSTEM
 if(distance_to_object(obj_npcFather) < 10){	
-	if((keyboard_check_pressed(ord("E")) || gamepad_button_check_pressed(0, gp_face4)) && !global.dialogo){		
+	if(action && !global.dialogo){		
 		var _npc = instance_nearest(x, y, obj_npcFather);
 		var _dialogue = instance_create_layer(x, y, "Dialogue", obj_dialogo)
 		
