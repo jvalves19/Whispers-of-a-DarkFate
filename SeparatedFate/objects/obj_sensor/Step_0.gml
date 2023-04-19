@@ -4,7 +4,7 @@
 //Check if player is here
 var player = place_meeting(x, y, global.actPlayer);
 
-var action = keyboard_check_released(ord("E"));
+var action = keyboard_check_released(ord("E")) || (gamepad_button_check_released(0, gp_face4));
 
 if(player){
 	sense = true;

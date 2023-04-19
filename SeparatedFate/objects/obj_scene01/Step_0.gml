@@ -32,7 +32,7 @@ if((l > string_length(str) + 100) && next < array_length_1d(strings) - 1){
 str = strings[next];
 
 
-if(keyboard_check_direct(vk_space)) holdspace++;
+if((keyboard_check_direct(vk_space))||(gamepad_button_check(0, gp_face2))) holdspace++;
 
 if((holdspace > 80) || (xpos < 10)){
 	fadeout = 1;

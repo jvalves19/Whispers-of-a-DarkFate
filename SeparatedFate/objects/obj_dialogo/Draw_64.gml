@@ -21,7 +21,7 @@ if(inicializar){
 		var _opSep = 96;
 		var _opBorda = 6;
 		
-		op_selecionada += keyboard_check_pressed(vk_up) - keyboard_check_pressed(vk_down);
+		op_selecionada += (keyboard_check_pressed(vk_up)||(gamepad_button_check_pressed(0, gp_padu))) - (keyboard_check_pressed(vk_down)||(gamepad_button_check_pressed(0, gp_padd)));
 		op_selecionada = clamp(op_selecionada, 0, op_num-1);
 		
 		for(var i = 0; i < op_num; i++){

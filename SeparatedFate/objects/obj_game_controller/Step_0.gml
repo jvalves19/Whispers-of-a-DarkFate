@@ -88,3 +88,35 @@ if(global.actRoom != rm_world){
 	global.actPlayer = global.playerID;
 }
 #endregion
+
+
+if(keyboard_check_pressed(vk_enter) || gamepad_button_check_pressed(0, gp_face1)){
+	if(game_over){
+		if(room == rm_firstBoss){
+			instance_deactivate_object(obj_pause);
+			room_goto(rm_cutsc01);
+		
+			obj_player.life = global.pMaxLife;
+			obj_player.aura = global.pMaxAura;
+			obj_player.state = "idle";
+		}
+		else{
+			game_restart();
+		}
+	}
+
+	if(bossDead){	
+		global.pMaxLife += 400;
+		global.pMaxAura += 250;
+		global.pAtk += 20;
+	
+		obj_player.life = global.pMaxLife;
+		obj_player.aura = global.pMaxAura;
+	}
+
+	global.bossBattle = false;
+	global.spd_mult = 1;
+	game_over = false;
+	value = 0;
+	bossDead = false;
+}

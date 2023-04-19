@@ -8,7 +8,7 @@ else{
 
 if(pagina < ds_grid_height(texto_grid) - 1){
 	obj_npcFather.sense_draw = false;
-	if(keyboard_check_pressed(vk_enter)){
+	if(keyboard_check_pressed(vk_enter)) || (gamepad_button_check_pressed(0, gp_face1)){
 		pagina++;
 	}
 }
@@ -22,7 +22,7 @@ else{
 			op_draw = true;
 		}
 		else{
-			if(keyboard_check_pressed(vk_enter)){
+			if(keyboard_check_pressed(vk_enter)) || (gamepad_button_check_pressed(0, gp_face1)){
 				global.dialogo = false;
 				instance_destroy();
 			}

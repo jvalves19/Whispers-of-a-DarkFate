@@ -3,17 +3,17 @@
 
 #region PLAYER CONTROLS
 function player_controls(){
-	right = keyboard_check(ord("D"));
-	left = keyboard_check(ord("A"));
-	down = keyboard_check(ord("S"));
-	jump = keyboard_check_pressed(ord("W"));
+	right = keyboard_check(ord("D")) || (gamepad_axis_value(0, gp_axislh) > 0) || (gamepad_button_check(0, gp_padr));
+	left = keyboard_check(ord("A")) || (gamepad_axis_value(0, gp_axislh) < 0) || (gamepad_button_check(0, gp_padl));
+	down = keyboard_check(ord("S")) || (gamepad_button_check(0, gp_padd));
+	jump = keyboard_check_pressed(ord("W")) || (gamepad_button_check_pressed(0, gp_face1));
 	changeSpell = keyboard_check_pressed(ord("Q"));
 	
-	attack = keyboard_check_pressed(ord("J"));
-	ultimate = keyboard_check_pressed(ord("K"));
-	spell = keyboard_check_pressed(ord("L"));
+	attack = keyboard_check_pressed(ord("J")) || (gamepad_button_check_pressed(0, gp_face3));
+	ultimate = keyboard_check_pressed(ord("K")) || (gamepad_button_check_pressed(0, gp_shoulderr));
+	spell = keyboard_check_pressed(ord("L")) || (gamepad_button_check_pressed(0, gp_shoulderrb));
 	
-	dash = keyboard_check_pressed(vk_space);	
+	dash = keyboard_check_pressed(vk_space) || (gamepad_button_check_pressed(0, gp_face2));	
 	
 	heal = down && ultimate;
 }
@@ -71,9 +71,9 @@ function change_option(_menu){
 	var _qtd = array_length(_menu) - 1;
 	var _sel = menu_sel[pag];
 
-	_up = keyboard_check_pressed(vk_up);
-	_down = keyboard_check_pressed(vk_down);
-	_option = keyboard_check_pressed(vk_enter);
+	_up = keyboard_check_pressed(vk_up) || (gamepad_button_check_pressed(0, gp_padu));
+	_down = keyboard_check_pressed(vk_down) || (gamepad_button_check_pressed(0, gp_padd));
+	_option = keyboard_check_pressed(vk_enter) || (gamepad_button_check_pressed(0, gp_face1));
 
 	//Changing Selection
 	if(_up || _down){
