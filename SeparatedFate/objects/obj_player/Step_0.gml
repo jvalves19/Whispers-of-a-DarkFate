@@ -246,7 +246,9 @@ switch(state){
 			player_ultimate(spr_pUltimate, sprite_width/5, -sprite_height/2, 2, 2);
 		}
 		if(global.currentPower == 1){
-			player_ultimate(spr_pUltimate2, random(x)-150, sprite_height-200, 2, 3);
+			player_ultimate(spr_pUltimate2, random_range
+				(camera_get_view_width(view_camera[0])-250, camera_get_view_width(view_camera[0])-550), 
+				(camera_get_view_height(view_camera[0])-470), 2, 4);
 		}
 	
 		break;

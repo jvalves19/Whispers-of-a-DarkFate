@@ -114,7 +114,7 @@ player_ultimate = function(_sprite_index, _dist_x, _dist_y, _xscale_damage, _ysc
 			}
 		}
 		else if(global.currentPower == 1){
-			if(image_index >= 5 && image_index <= 20){
+			if(image_index >= 4 && image_index <= 20){
 				if((image_index % 2) == 1){
 					damage = instance_create_layer(x + _dist_x, y + _dist_y, layer, obj_damageThunder);
 					damage.image_xscale = _xscale_damage;
