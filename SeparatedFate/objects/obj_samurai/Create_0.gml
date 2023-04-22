@@ -4,6 +4,8 @@
 // Inherit the parent event
 event_inherited();
 
+object_set_visible(self, false)
+
 max_life = 200;
 life = max_life;
 

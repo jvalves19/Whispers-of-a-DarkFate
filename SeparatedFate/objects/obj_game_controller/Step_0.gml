@@ -54,8 +54,8 @@ else{
 }
 
 if(bossDead){
-	instance_deactivate_object(obj_pause)
 	global.spd_mult = 0.5;
+	instance_deactivate_object(obj_sensor);
 }
 #endregion
 
@@ -112,12 +112,11 @@ if(keyboard_check_pressed(vk_enter) || gamepad_button_check_pressed(0, gp_face1)
 	
 		obj_player.life = global.pMaxLife;
 		obj_player.aura = global.pMaxAura;
-		room_restart();
-	}
-
-	global.bossBattle = false;
-	global.spd_mult = 1;
-	game_over = false;
-	value = 0;
-	bossDead = false;
+		
+		global.bossBattle = false;
+		global.spd_mult = 1;
+		game_over = false;
+		bossDead = false;
+		value = 0;	
+	}	
 }

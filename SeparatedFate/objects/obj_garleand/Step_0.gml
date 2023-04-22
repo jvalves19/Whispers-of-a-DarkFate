@@ -1,5 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
+
 if(instance_exists(obj_player)){
 	var _direction =  point_direction(x, y, obj_player.x, obj_player.y);
 }
@@ -42,6 +43,7 @@ switch(state){
 			
 			if(_dist > 50){
 				hSpd = lengthdir_x(max_hSpd, _dir);
+				if(sign(hSpd) != 0) image_xscale = sign(hSpd);
 			}
 			else{
 				hSpd = 0;
@@ -60,9 +62,9 @@ switch(state){
 			switch(state_atk){
 				case 0:
 					attacking(spr_garlAttack1, 3, 8, sprite_width/10, -sprite_height/5, 5, 2, "idle");
-					
-					hSpd = lengthdir_x(3, _direction);
+					hSpd = lengthdir_x(1, _direction);
 					if(sign(hSpd) != 0) image_xscale = sign(hSpd);
+					
 					
 					break;
 					
@@ -70,12 +72,14 @@ switch(state){
 					attacking(spr_garlAttack2, 5, 8, sprite_width/6, -sprite_height/5, 3, 4, "idle");
 					hSpd = lengthdir_x(1, _direction);
 					if(sign(hSpd) != 0) image_xscale = sign(hSpd);
+					
 					break;
 					
 				case 2:
 					attacking(spr_garlAttack3, 3, 6, sprite_width/6, -sprite_height/5, 2, 3, "idle");
 					hSpd = lengthdir_x(1, _direction);
 					if(sign(hSpd) != 0) image_xscale = sign(hSpd);
+					
 					break;
 			}
 		
@@ -85,6 +89,8 @@ switch(state){
 	#region hit and death
 	case "hit":
 		get_hit(spr_garlHit, 0);
+		hSpd = lengthdir_x(1, _direction);
+		if(sign(hSpd) != 0) image_xscale = sign(hSpd);		
 	
 		break;
 	
