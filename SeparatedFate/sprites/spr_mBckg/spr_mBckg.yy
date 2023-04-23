@@ -1,10 +1,10 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "WhatsApp_Image_2023_04_23_at_11_54_04_AM",
-  "bbox_bottom": 191,
+  "name": "spr_mBckg",
+  "bbox_bottom": 42,
   "bbox_left": 0,
-  "bbox_right": 1023,
+  "bbox_right": 646,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -13,26 +13,26 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"b767919f-01b6-4b12-b52c-f3e80da65c0d",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"dc4a3422-bd42-4484-868c-afe98a66b730",},
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 192,
+  "height": 43,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"c8712a72-e7ab-430b-8ba3-cd2fc597c7e6","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"19a6b86a-c43c-4951-92b9-75a436ee0ae1","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "UI_HUD",
-    "path": "folders/Sprites/UI_HUD.yy",
+    "name": "Health",
+    "path": "folders/Sprites/UI_HUD/Health.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "WhatsApp_Image_2023_04_23_at_11_54_04_AM",
+    "name": "spr_mBckg",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"b767919f-01b6-4b12-b52c-f3e80da65c0d","path":"sprites/WhatsApp_Image_2023_04_23_at_11_54_04_AM/WhatsApp_Image_2023_04_23_at_11_54_04_AM.yy",},},},"Disabled":false,"id":"2ab65b03-c116-491d-9df8-c3b2b75ce77f","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"dc4a3422-bd42-4484-868c-afe98a66b730","path":"sprites/spr_mBckg/spr_mBckg.yy",},},},"Disabled":false,"id":"cd5b9b3d-0386-45ca-971b-24c6fec96b2d","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 1024,
+  "width": 648,
 }

@@ -4,7 +4,7 @@ father = noone;
 
 if(global.currentSpell == 0){
 	sprite_index = spr_spell;
-	audio_play_sound(snd_sword, 1, false);
+	audio_play_sound(snd_spell, 1, false);
 }
 
 if(global.currentSpell == 1){

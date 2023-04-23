@@ -152,6 +152,8 @@
     {"id":{"name":"obj_damageWater","path":"objects/obj_damageWater/obj_damageWater.yy",},},
     {"id":{"name":"rm_graveyard","path":"rooms/rm_graveyard/rm_graveyard.yy",},},
     {"id":{"name":"obj_samurai","path":"objects/obj_samurai/obj_samurai.yy",},},
+    {"id":{"name":"spr_mana","path":"sprites/spr_mana/spr_mana.yy",},},
+    {"id":{"name":"spr_mBckg","path":"sprites/spr_mBckg/spr_mBckg.yy",},},
     {"id":{"name":"obj_cultist","path":"objects/obj_cultist/obj_cultist.yy",},},
     {"id":{"name":"spr_block","path":"sprites/spr_block/spr_block.yy",},},
     {"id":{"name":"spr_garlAttack2","path":"sprites/spr_garlAttack2/spr_garlAttack2.yy",},},
