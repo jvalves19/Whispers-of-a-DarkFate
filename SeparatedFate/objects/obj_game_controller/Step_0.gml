@@ -68,7 +68,7 @@ if(instance_exists(obj_dialogo)){
 
 if(global.dialogo){
 	instance_deactivate_object(obj_pause);
-}
+} else { instance_activate_object(obj_pause);  }
 #endregion
 
 #region KEY SYSTEM
