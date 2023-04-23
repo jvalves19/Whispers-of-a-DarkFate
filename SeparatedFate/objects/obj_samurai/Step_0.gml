@@ -69,7 +69,7 @@ switch(state){
 					break;
 					
 				case 2:
-					attacking(spr_samAttack3, 6, 15, sprite_width/10, -sprite_height/5, 2, 1, "idle");
+					attacking(spr_samAttack3, 7, 15, sprite_width/10, -sprite_height/5, 1, 4, "idle");
 					break;
 			}
 		

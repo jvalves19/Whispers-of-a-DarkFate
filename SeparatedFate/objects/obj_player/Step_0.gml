@@ -262,25 +262,13 @@ switch(state){
 			hSpd = 0;
 		}
 	
-		if(global.currentSpell == 0){
-			if(image_index >= 1 && canAttack && aura > 5){
-				setSpell(_xx, 01, obj_spell);
-			}
+		if(image_index >= 1 && canAttack && aura > 5){
+			setSpell(_xx, 10, 01, obj_pSpells);
 		}
-		if(global.currentSpell == 1){
-			if(image_index >= 1 && canAttack && aura > 5){
-				setSpell(_xx, 50, obj_fire);
-			}
-		}
-		if(global.currentSpell == 2){
-			if(image_index >= 1 && canAttack && aura > 5){
-				setSpell(_xx, 50, obj_holy);
-			}
-		}
-	
+		
 		if(image_index >= image_number-1){
-			state = "idle";
 			canAttack = true;
+			state = "idle";
 		}
 		
 		break;
@@ -299,7 +287,7 @@ switch(state){
 			
 		}
 		
-		if(image_index >= image_number-1){
+		if(image_index >= image_number-1){	
 			state = "idle";
 		}
 		break;

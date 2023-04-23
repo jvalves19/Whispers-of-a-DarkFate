@@ -17,13 +17,13 @@ combo = 0;
 damage = noone;
 
 atk = global.pAtk;
-canAttack = true;
 atkMult = 1;
 
-global.playerID = object_index;
-
+canAttack = true;
 canSpell = false;
 canPower = false;
+
+global.playerID = object_index;
 
 //Methods to attack
 state_attack = function(ground){
@@ -131,7 +131,6 @@ player_ultimate = function(_sprite_index, _dist_x, _dist_y, _xscale_damage, _ysc
 	}
 		
 	if(image_index > image_number-1){
-		global.spd_mult = 1;
 		state = "idle";
 		canAttack = true;
 		if(damage){

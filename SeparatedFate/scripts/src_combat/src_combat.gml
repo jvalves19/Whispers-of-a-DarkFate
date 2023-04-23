@@ -26,18 +26,35 @@ function attacking(_sprite_index, _image_index_min, _image_index_max, _dist_x, _
 		state = _next_state;
 	}
 	
-	if(image_index >= _image_index_min && damage == noone && image_index < _image_index_max && canAttack){
+	if(image_index >= _image_index_min && damage == noone && image_index < _image_index_max && canAttack){			
 		damage = instance_create_layer(x + _dist_x, y + _dist_y, layer, obj_damage);
 		damage.damage = atk;
 		damage.father = id;
 		damage.image_xscale = _xscale_damage;
 		damage.image_yscale = _yscale_damage;
 		canAttack = false;	
+		
+		if(_sprite_index == spr_samAttack3){
+			var _xx = x + lengthdir_x(0, image_angle);
+			damage = instance_create_layer(_xx, y - 30, layer, obj_damMove)
+			damage.speed = 5;
+			damage.direction = -90 + 90 * other.image_xscale;
+			damage.image_angle = direction;
+			
+			damage.damage = atk;
+			damage.father = id;
+			damage.image_xscale = _xscale_damage;
+			damage.image_yscale = _yscale_damage;
+			canAttack = false;	
+		}
+		
 	}
+	
 	
 	if(damage != noone && image_index >= _image_index_max){
 		instance_destroy(damage)
 		damage = noone;
+		
 	}
 }
 
@@ -79,13 +96,13 @@ function dying (_sprite_index){
 		}	
 }
 	
-function setSpell(_xx, _aura, _objSpell){
+function setSpell(_xx, _damage, _aura, _objSpell){
 	damage = instance_create_layer(_xx, y - 30, layer, _objSpell)
 	damage.speed = 5;
 	damage.direction = -90 + 90 * other.image_xscale;
 	damage.image_angle = direction;
 				
-	damage.damage = atk;
+	damage.damage = _damage;
 	damage.father = id;
 	canAttack = false;
 	aura -= _aura;

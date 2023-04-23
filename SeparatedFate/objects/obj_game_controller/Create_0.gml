@@ -38,7 +38,7 @@ for(global.numKey = 0; global.numKey<10; global.numKey++){
 global.numKey = 0;
 #endregion
 
-#region BOSSESS
+	#region BOSSESS
 //ALL BOSSES GLOBAL VARIABLES
 global.bossBattle = false;
 
