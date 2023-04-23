@@ -37,8 +37,7 @@ if(inicializar){
 			draw_sprite_ext(spr_opBack, 0, _opX, _opY - (_opSep * i), (_stringW + _opBorda * 2)/16, 1, 0, c_white, 1);
 			draw_text(_opX + _opBorda, _opY - (_opSep * i), op[i]);
 			
-			if(op_selecionada == i){
-			
+			if(op_selecionada == i){	
 				draw_sprite(spr_seletor, 0, _xx + 8, _opY - (_opSep * i) + 8);
 			}
 		}
