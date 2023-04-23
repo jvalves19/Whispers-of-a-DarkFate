@@ -1,5 +1,5 @@
 healthbar_width = 720;
-healthbar_height = 64;
+healthbar_height = 30;
 healthbar_x = (400/2) - (healthbar_width/4);
 healthbar_y = ystart - 350;
 
@@ -24,10 +24,10 @@ draw_sprite_stretched(global.power, 0, w/center_w + 20, h/center_h + 150, 125, 1
 #endregion
 
 //Player HealthBar
-draw_sprite(spr_healthBg, 0, w - 220, h/center_h + 10);
-draw_sprite_stretched(spr_health, 0, w - 220, h/center_h + 10, 
-(life/global.pMaxLife) * healthbar_width, healthbar_height);
+draw_sprite_stretched(spr_vBckg, 0, w - 250, h/center_h + 10, healthbar_width+35, healthbar_height + 30);
+draw_sprite_stretched(spr_vida, 0, w - 230, h/center_h + 30, 
+(life/global.pMaxLife) * healthbar_width, healthbar_height - 10);
 //Player AuraBar
-draw_sprite(spr_healthBg, 0, w - 220, h/center_h + 60);
-draw_sprite_stretched(spr_aura, 0, w - 220, h/center_h + 60, 
+draw_sprite_stretched(spr_vBckg, 0, w - 250, h/center_h + 80, healthbar_width+35, healthbar_height+ 30);
+draw_sprite_stretched(spr_aura, 0, w - 230, h/center_h + 100, 
 (aura/global.pMaxAura ) * healthbar_width, healthbar_height);
