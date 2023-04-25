@@ -19,6 +19,9 @@ damage = noone;
 atk = global.pAtk;
 atkMult = 1;
 
+global.currentBlade = global.currentBlade;
+curBlade = global.currentBlade; 
+
 canAttack = true;
 canSpell = false;
 canPower = false;
@@ -38,6 +41,7 @@ state_attack = function(ground){
 player_attacking = function(_sprite_index, _image_index_min, _image_index_max, _dist_x, _dist_y, _xscale_damage, _yscale_damage, _next_state, _damage_obj){
 	if(!_xscale_damage) _xscale_damage = 1;
 	if(!_yscale_damage) _yscale_damage = 1;
+	_damage_obj = obj_pDamages;
 	
 	//Use UNDEFINED cause _next_state receive a String Value
 	if(_next_state == undefined) _next_state = "idle";
@@ -52,13 +56,6 @@ player_attacking = function(_sprite_index, _image_index_min, _image_index_max, _
 	
 	if(image_index > image_number-1){
 		state = _next_state;
-	}
-	
-	if(combo < 2){
-		_damage_obj = obj_damage;
-	}
-	else {
-		_damage_obj = obj_damageWater
 	}
 	
 	if(image_index >= _image_index_min && damage == noone && image_index < _image_index_max && canAttack){
@@ -104,7 +101,7 @@ player_ultimate = function(_sprite_index, _dist_x, _dist_y, _xscale_damage, _ysc
 			if(image_index >= 5 && image_index <= 20){
 				//global.spd_mult = 0.5;
 				if((image_index % 2) == 1){
-					damage = instance_create_layer(x + _dist_x, y + _dist_y, layer, obj_damage);
+					damage = instance_create_layer(x + _dist_x, y + _dist_y, layer, obj_pDamages);
 					damage.image_xscale = _xscale_damage;
 					damage.image_yscale = _yscale_damage;
 				

@@ -14,7 +14,17 @@ global.actPlayer = global.playerID;
 global.pMaxLife = 100;
 global.pMaxAura = 150;
 global.pAtk = 20;
+global.dmgFire = 10;
 
+//BLADE VARIABLES
+global.currentBlade = 0;
+global.controllBlades = [
+false,	//Mana Blade
+false,	//Fire Blade
+false,	//Bloodstained Blade
+]
+
+//ULTIMATE VARIABLES
 global.power = noone;
 global.currentPower = -1;
 global.controllPowers = [
@@ -23,6 +33,7 @@ false,	//Holy Explosion
 false,	//Thunder Exectution
 ]
 
+//SPELL VARIABLES
 global.spell = noone;
 global.currentSpell = -1;
 global.controllSpells = [
@@ -38,15 +49,13 @@ for(global.numKey = 0; global.numKey<10; global.numKey++){
 global.numKey = 0;
 #endregion
 
-	#region BOSSESS
+#region BOSSESS
 //ALL BOSSES GLOBAL VARIABLES
 global.bossBattle = false;
-
 bossDead = false;
 
-for(i=1; i<=3; i++){
+for(i=1; i<=3 ; i++){
 	global.bossName[i] = noone;
 	global.destroyed[i] = false;
 }
-
 #endregion

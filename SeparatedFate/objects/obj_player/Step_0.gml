@@ -225,18 +225,23 @@ switch(state){
 	#region attack
 	case "attack":
 		hSpd = 0;
-
-		if(combo == 0){
+		
+		if(curBlade == 0){
+			if(combo == 0){
+				player_attacking(spr_pAttack, 4, 6, sprite_width/5, -sprite_height/2, 2, 1);
+			}
+			else
+				if(combo == 1){
+					player_attacking(spr_pAttack2, 4, 6, sprite_width/5, -sprite_height/2, 2, 1);
+				}
+			else
+				if(combo == 2){
+					player_attacking(spr_pAttack3, 4, 6, sprite_width/5, -sprite_height/2, 2, 1);
+				}
+		}
+		else if(curBlade == 1){
 			player_attacking(spr_pAttack, 4, 6, sprite_width/5, -sprite_height/2, 2, 1);
 		}
-		else
-			if(combo == 1){
-				player_attacking(spr_pAttack2, 4, 6, sprite_width/5, -sprite_height/2, 2, 1);
-			}
-		else
-			if(combo == 2){
-				player_attacking(spr_pAttack3, 4, 6, sprite_width/5, -sprite_height/2, 2, 1);
-			}
 		break;
 	#endregion
 	
@@ -296,7 +301,7 @@ switch(state){
 	
 	#region hit and death
 	case "hit":
-		get_hit(spr_pHit, 0);			
+		get_hit(spr_pHit, 0);	
 		break;
 			
 	case "dead":

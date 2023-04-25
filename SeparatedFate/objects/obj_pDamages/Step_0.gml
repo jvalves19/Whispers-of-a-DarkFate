@@ -5,7 +5,6 @@ var target_list = ds_list_create();
 //return "who collides? obj_father" "save at list? target_list"
 var qtd = instance_place_list(x, y, obj_father, target_list, 0);
 
-
 //Add every target in the damage list
 for(var i = 0; i < qtd; i++){
 	var actual = target_list[| i];
@@ -26,9 +25,24 @@ var tam = ds_list_size(apply_damage);
 for(var i = 0; i < tam; i++){
 	target = apply_damage[| i].id;	
 	
+	if(global.currentBlade == 0){
+		if(obj_player.combo == 2){
+			if(obj_player.aura < global.pMaxAura){
+				obj_player.aura = obj_player.aura+5;
+			}
+		}
+	}
+	if(global.currentBlade == 1){
+		damage = damage + (10*global.dmgFire)
+	}
+	
+	if(global.currentBlade == 2){
+		if(obj_player.life < global.pMaxLife){
+			obj_player.life = obj_player.life+15;
+		}
+	}
+	
 	if(target.life > 0){
-		//audio_play_sound(snd_hit, 1, false);
-
 		target.state = "hit";
 		target.life -= damage;
 	}

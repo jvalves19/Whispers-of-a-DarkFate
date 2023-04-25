@@ -1,10 +1,23 @@
+#region GAME CONTROLLERS
+global.currentBlade = global.currentBlade;
+
+if(keyboard_check_pressed(vk_lcontrol)){
+	global.currentBlade = 2;
+}
+if(keyboard_check_pressed(vk_lshift)){
+	global.currentBlade = 1;
+}
+if(keyboard_check_pressed(vk_alt)){
+	global.currentBlade = 0;
+}
+
 if(game_over){
 	instance_deactivate_object(obj_pause);
 	global.spd_mult = 0.5;
 } 
 if(bossDead){
-	global.spd_mult = 0.5;
 	instance_deactivate_object(obj_sensor);
+	global.spd_mult = 0.5;
 }
 
 if(keyboard_check_pressed(vk_enter) || gamepad_button_check_pressed(0, gp_face1)){
@@ -37,6 +50,7 @@ if(keyboard_check_pressed(vk_enter) || gamepad_button_check_pressed(0, gp_face1)
 		value = 0;	
 	}	
 }
+#endregion
 
 #region SPELLS
 for(i=0; i<3; i++){
@@ -95,7 +109,6 @@ if(global.actRoom == rm_world){
 	with(global.actPlayer){
 		instance_change(obj_owPlayer, true);
 	}
-	
 	global.actPlayer = global.owPlayerID;
 	
 
@@ -106,11 +119,9 @@ if(global.actRoom == rm_world){
 if(global.actRoom != rm_world){	
 	audio_stop_sound(msc_world);
 
-	
 	with(global.actPlayer){
 		instance_change(obj_player, true);
-	}
-	
+	}	
 	global.actPlayer = global.playerID;
 }
 #endregion
