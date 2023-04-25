@@ -1,4 +1,5 @@
 //check if is changing room or in a dialogue
+//if(instance_exists(obj_transition) || instance_exists(obj_dialogo)) || instance_exists(obj_dialogue) exit;
 if(instance_exists(obj_transition) || instance_exists(obj_dialogo)) || instance_exists(obj_dialogue) exit;
 
 //Initializing variables
@@ -93,7 +94,6 @@ if(global.currentPower == 0 || global.currentPower == 1 || global.currentPower =
 }
 #endregion	
 
-//State Machine
 switch(state){
 	#region idle
 	case "idle":
@@ -324,12 +324,14 @@ switch(state){
 }
 
 #region DIALOGUE SYSTEM
-if(distance_to_object(obj_npcFather) < 10){	
-	if(action && !global.dialogo){		
-		var _npc = instance_nearest(x, y, obj_npcFather);
-		var _dialogue = instance_create_layer(x, y, "Dialogue", obj_dialogo)
+if(distance_to_object(obj_npcFather) < 10){
+	if(vSpd == 0 && hSpd == 0){
+		if(action && !global.dialogo){		
+			var _npc = instance_nearest(x, y, obj_npcFather);
+			var _dialogue = instance_create_layer(x, y, "Dialogue", obj_dialogo)
 		
-		_dialogue.npc_nome = _npc.nome;
+			_dialogue.npc_nome = _npc.nome;
+		}
 	}
 }
 #endregion

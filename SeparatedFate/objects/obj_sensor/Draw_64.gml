@@ -1,4 +1,4 @@
-if(sense){	
+if(senseDraw){	
 	define_align(fa_middle, fa_center);
 	draw_set_font(fnt_game_over)
 	

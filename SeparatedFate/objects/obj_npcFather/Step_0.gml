@@ -10,7 +10,7 @@ var player = distance_to_object(obj_player)
 if(player < 10){
 	sense = true;
 	sense_draw = true;
-}else{
+} else{
 	sense = false;
 	sense_draw = false;
 }

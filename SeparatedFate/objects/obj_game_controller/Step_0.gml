@@ -65,10 +65,6 @@ if(global.currentPower == 1) global.power = spr_actPower2;
 if(instance_exists(obj_dialogo)){
 	global.dialogo = true;
 }
-
-if(global.dialogo){
-	instance_deactivate_object(obj_pause);
-} 
 #endregion
 
 #region KEY SYSTEM

@@ -9,6 +9,8 @@ else{
 }
 
 if(pagina < ds_grid_height(texto_grid) - 1){
+	instance_deactivate_object(obj_pause);
+	
 	obj_npcFather.sense_draw = false;
 	if(keyboard_check_pressed(vk_enter)) || (gamepad_button_check_pressed(0, gp_face1)){
 		pagina++;

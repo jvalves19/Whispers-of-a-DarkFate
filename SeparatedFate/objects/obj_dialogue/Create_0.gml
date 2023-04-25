@@ -26,6 +26,7 @@ save_game3 = function(){
 
 
 nave_game = function(){
+	instance_activate_object(obj_pause);
 	global.dialogo = false;
 	room_restart();
 }
