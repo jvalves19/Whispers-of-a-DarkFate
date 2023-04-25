@@ -1,4 +1,3 @@
-//check if is changing room or in a dialogue
 //if(instance_exists(obj_transition) || instance_exists(obj_dialogo)) || instance_exists(obj_dialogue) exit;
 if(instance_exists(obj_transition) || instance_exists(obj_dialogo)) || instance_exists(obj_dialogue) exit;
 
@@ -6,17 +5,17 @@ if(instance_exists(obj_transition) || instance_exists(obj_dialogo)) || instance_
 player_controls();
 var ground = place_meeting(x, y + 1, obj_block);
 var fall = vSpd!=0;
+//Gravity
+if(!ground && (vSpd < max_vSpd * 2 )){
+	vSpd += GRAVITY * weight * global.spd_mult;
+}
+if(left and right) state = "idle";
 
 //Spell direction variables
 //var flipped = direction;
 //var spell_x = (x + 4) * (flipped);
 //var y_offset = lengthdir_y(-20, image_angle);
 var _xx = x + lengthdir_x(0, image_angle);
-
-//Gravity
-if(!ground && (vSpd < max_vSpd * 2 )){
-	vSpd += GRAVITY * weight * global.spd_mult;
-}
 
 #region CHANGE SPELL
 if(changeSpell && global.currentSpell == 0){
@@ -226,22 +225,18 @@ switch(state){
 	case "attack":
 		hSpd = 0;
 		
-		if(curBlade == 0){
-			if(combo == 0){
-				player_attacking(spr_pAttack, 4, 6, sprite_width/5, -sprite_height/2, 2, 1);
-			}
-			else
-				if(combo == 1){
-					player_attacking(spr_pAttack2, 4, 6, sprite_width/5, -sprite_height/2, 2, 1);
-				}
-			else
-				if(combo == 2){
-					player_attacking(spr_pAttack3, 4, 6, sprite_width/5, -sprite_height/2, 2, 1);
-				}
-		}
-		else if(curBlade == 1){
+		if(combo == 0){
 			player_attacking(spr_pAttack, 4, 6, sprite_width/5, -sprite_height/2, 2, 1);
 		}
+		else
+			if(combo == 1){
+				player_attacking(spr_pAttack2, 4, 6, sprite_width/5, -sprite_height/2, 2, 1);
+			}
+		else
+			if(combo == 2){
+				player_attacking(spr_pAttack3, 4, 6, sprite_width/5, -sprite_height/2, 2, 1);
+			}
+
 		break;
 	#endregion
 	
@@ -268,7 +263,7 @@ switch(state){
 		}
 	
 		if(image_index >= 1 && canAttack && aura > 5){
-			setSpell(_xx, 10, 01, obj_pSpells);
+			setSpell(_xx, global.pDmgSpell, 01, obj_pSpells);
 		}
 		
 		if(image_index >= image_number-1){

@@ -33,7 +33,7 @@ for(var i = 0; i < tam; i++){
 		}
 	}
 	if(global.currentBlade == 1){
-		damage = damage + (10*global.dmgFire)
+		damage = damage + (2*global.dmgFire)
 	}
 	
 	if(global.currentBlade == 2){

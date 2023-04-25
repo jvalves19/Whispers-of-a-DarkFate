@@ -10,9 +10,23 @@ function saveGame(_slot){
 	ini_write_real(_slot, "Player Aura", global.pMaxAura);
 	ini_write_real(_slot, "Player Atk", global.pAtk);
 	
+	ini_write_real(_slot, "Player XP", global.playerXP);
+	ini_write_real(_slot, "Player Level", global.playerLevel);
+	ini_write_real(_slot, "Player MaxXp", global.playerMaxXP);
+	ini_write_real(_slot, "Player MaxLevel", global.playerMaxLevel);
+	ini_write_real(_slot, "Player Gold", global.playerGold);
+	
+	ini_write_real(_slot, "Damage Spell", global.pDmgSpell);
+	ini_write_real(_slot, "Damage Fire", global.dmgFire);
+	ini_write_real(_slot, "Damage Thunder", global.dmgThunder);
+	ini_write_real(_slot, "Damage Holy", global.dmgHoly);
+	
 	//SAVE BOSSES
-	ini_write_real(_slot, "boss", global.destroyed[1]);	
-	ini_write_real(_slot, "boss2", global.destroyed[2]);		
+	ini_write_real(_slot, "Boss1", global.destroyed[1]);	
+	ini_write_real(_slot, "Boss2", global.destroyed[2]);	
+	ini_write_real(_slot, "Boss3", global.destroyed[3]);
+	ini_write_real(_slot, "Boss4", global.destroyed[4]);
+	ini_write_real(_slot, "Boss5", global.destroyed[5]);
 	
 	//SAVE POWERS
 	ini_write_real(_slot, "Spell", global.currentSpell);
@@ -21,7 +35,9 @@ function saveGame(_slot){
 	ini_write_real(_slot, "Spell2", global.controllSpells[2]);
 	
 	ini_write_real(_slot, "Power", global.currentPower);
-	ini_write_real(_slot, "Powers", global.controllPowers[0]);	
+	ini_write_real(_slot, "Power0", global.controllPowers[0]);	
+	ini_write_real(_slot, "Power1", global.controllPowers[1]);	
+	ini_write_real(_slot, "Power2", global.controllPowers[2]);
 	
 	//INVENTORY AND KEYS SYSTEM
 	ini_write_real(_slot, "Keys1", global.key[1]);
@@ -33,6 +49,7 @@ function saveGame(_slot){
 	ini_write_real(_slot, "Dialogue", global.stateDialogue);
 	
 	//DEBUG
+	show_debug_message(global.pDmgSpell);
 	show_debug_message(global.pMaxLife);
 	show_debug_message(global.pAtk);
 	show_debug_message(global.destroyed[1]);
@@ -54,14 +71,27 @@ function loadGame(_slot){
 	global.pMaxAura = ini_read_real(_slot, "Player Aura", 0);
 	global.pAtk = ini_read_real(_slot, "Player Atk", 0);
 	
+	global.playerXP = ini_read_real(_slot, "Player XP", 0);
+	global.playerLevel = ini_read_real(_slot, "Player Level", 0);
+	global.playerMaxXP = ini_read_real(_slot, "Player MaxXp", 0);
+	global.playerMaxLevel = ini_read_real(_slot, "Player MaxLevel", 0);
+	global.playerGold = ini_read_real(_slot, "Player Gold", 0);
+	
+	global.pDmgSpell = ini_read_real(_slot, "Damage Spell", 0);
+	global.dmgFire = ini_read_real(_slot, "Damage Fire", 0);
+	global.dmgThunder = ini_read_real(_slot, "Damage Thunder", 0);
+	global.dmgHoly = ini_read_real(_slot, "Damage Holy", 0);
 	
 	global.actPlayer.life = global.pMaxLife;
 	global.actPlayer.aura = global.pMaxAura;	
 	global.actPlayer.atk = global.pAtk;
 	
 	//LOAD BOSSES
-	global.destroyed[1] = ini_read_real(_slot, "boss", 0);
-	global.destroyed[2] = ini_read_real(_slot, "boss2", 0);
+	global.destroyed[1] = ini_read_real(_slot, "Boss1", 0);
+	global.destroyed[2] = ini_read_real(_slot, "Boss2", 0);
+	global.destroyed[3] = ini_read_real(_slot, "Boss3", 0);
+	global.destroyed[4] = ini_read_real(_slot, "Boss4", 0);
+	global.destroyed[5] = ini_read_real(_slot, "Boss5", 0);
 	
 	//LOAD POWERS
 	global.currentSpell = ini_read_real(_slot, "Spell", 0);
@@ -70,7 +100,9 @@ function loadGame(_slot){
 	global.controllSpells[2] = ini_read_real(_slot, "Spell2", 0);
 	
 	global.currentPower = ini_read_real(_slot, "Power", 0);
-	global.controllPowers[0] = ini_read_real(_slot, "Powers", 0);
+	global.controllPowers[0] = ini_read_real(_slot, "Power0", 0);
+	global.controllPowers[1] = ini_read_real(_slot, "Power1", 0);
+	global.controllPowers[2] = ini_read_real(_slot, "Power2", 0);
 	
 	//INVENTORY AND KEYS SYSTEM
 	global.key[1] = ini_read_real(_slot, "Keys1", 0);

@@ -20,7 +20,6 @@ atk = global.pAtk;
 atkMult = 1;
 
 global.currentBlade = global.currentBlade;
-curBlade = global.currentBlade; 
 
 canAttack = true;
 canSpell = false;
@@ -45,7 +44,7 @@ player_attacking = function(_sprite_index, _image_index_min, _image_index_max, _
 	
 	//Use UNDEFINED cause _next_state receive a String Value
 	if(_next_state == undefined) _next_state = "idle";
-
+	
 	hSpd = 0;
 	if(sprite_index != _sprite_index){
 		sprite_index = _sprite_index;
@@ -58,7 +57,15 @@ player_attacking = function(_sprite_index, _image_index_min, _image_index_max, _
 		state = _next_state;
 	}
 	
-	if(image_index >= _image_index_min && damage == noone && image_index < _image_index_max && canAttack){
+	if(global.currentBlade == 2){
+		sprite_set_speed(_sprite_index, 20, spritespeed_framespersecond);
+	}
+	else{
+		sprite_set_speed(_sprite_index, 10, spritespeed_framespersecond);
+	}
+	
+	if(image_index >= _image_index_min && damage == noone && image_index < _image_index_max && canAttack){	
+		
 		damage = instance_create_layer(x + _dist_x, y + _dist_y, layer, _damage_obj);
 		damage.image_xscale = _xscale_damage;
 		damage.image_yscale = _yscale_damage;
@@ -84,6 +91,7 @@ player_attacking = function(_sprite_index, _image_index_min, _image_index_max, _
 	if(damage != noone && image_index >= _image_index_max){
 		instance_destroy(damage)
 		damage = noone;
+		
 	}
 }
 

@@ -1,6 +1,5 @@
 #region GAME CONTROLLERS
 global.currentBlade = global.currentBlade;
-
 if(keyboard_check_pressed(vk_lcontrol)){
 	global.currentBlade = 2;
 }
@@ -9,6 +8,23 @@ if(keyboard_check_pressed(vk_lshift)){
 }
 if(keyboard_check_pressed(vk_alt)){
 	global.currentBlade = 0;
+}
+
+global.playerXP = global.playerXP;
+global.playerLevel = global.playerLevel;
+global.playerGold = global.playerGold;
+
+if(global.playerLevel >= global.playerMaxLevel){
+	if(global.playerXP > global.playerMaxXP){
+		global.playerGold += 1000;
+		global.playerMaxXP = global.playerLevel * 500
+	}
+} 
+if(global.playerLevel < global.playerMaxLevel){
+	if(global.playerXP > global.playerMaxXP){
+		global.playerLevel += 1;
+		global.playerMaxXP = global.playerLevel * 500
+	}
 }
 
 if(game_over){
@@ -59,9 +75,18 @@ for(i=0; i<3; i++){
 	}
 }
 if(global.currentSpell == -1) global.spell = spr_actSpell;
-if(global.currentSpell == 0) global.spell = spr_actSpell1;
-if(global.currentSpell == 1) global.spell = spr_actSpell2;
-if(global.currentSpell == 2) global.spell = spr_actSpell3;
+if(global.currentSpell == 0) {
+	global.spell = spr_actSpell1;
+	global.pDmgSpell = global.dmgThunder
+}
+if(global.currentSpell == 1) {
+	global.spell = spr_actSpell2;
+	global.pDmgSpell = global.dmgFire
+}
+if(global.currentSpell == 2) {
+	global.spell = spr_actSpell3;
+	global.pDmgSpell = global.dmgHoly;
+}
 #endregion
 
 #region POWERS

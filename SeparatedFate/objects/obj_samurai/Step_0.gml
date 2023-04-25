@@ -1,7 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 if(instance_exists(obj_player)){
-	var _direction =  point_direction(x, y, obj_player.x, obj_player.y);
+	var _dist = point_distance(x, y, obj_player.x, obj_player.y);
+	var _dir = point_direction(x, y, obj_player.x, obj_player.y);
 }
 
 var ground = place_meeting(x, y + 1, obj_block);
@@ -17,14 +18,11 @@ switch(state){
 			sprite_index = spr_samIdle;
 			image_index = 0;
 		}
-		
-		if(instance_exists(obj_player)){
-			var _dist = point_distance(x, y, obj_player.x, obj_player.y);
-			
-			if(_dist < 300){
-				state = "walk";
-			}
+		if(_dist < 300){
+			state = "walk";
 		}
+		hSpd = lengthdir_x(1, _dir);
+		if(sign(hSpd) != 0) image_xscale = sign(hSpd);
 		
 		break;
 	#endregion
@@ -34,20 +32,14 @@ switch(state){
 		if(sprite_index != spr_samWalk){
 			sprite_index = spr_samWalk;
 			image_index = 0;
+		}	
+		if(_dist > 40){
+			hSpd = lengthdir_x(max_hSpd, _dir);
 		}
-		
-		if(instance_exists(obj_player)){
-			var _dist = point_distance(x, y, obj_player.x, obj_player.y);
-			var _dir = point_direction(x, y, obj_player.x, obj_player.y);
-			
-			if(_dist > 40){
-				hSpd = lengthdir_x(max_hSpd, _dir);
-			}
-			else{
-				hSpd = 0;
-				state = "attack";
-				state_atk = irandom(2);
-			}
+		else{
+			hSpd = 0;
+			state = "attack";
+			state_atk = irandom(2);
 		}
 	
 		
@@ -60,8 +52,6 @@ switch(state){
 			switch(state_atk){
 				case 0:
 					attacking(spr_samAttack1, 1, 5, sprite_width/10, -sprite_height/5, 2, 1, "idle");
-					hSpd = lengthdir_x(1, _direction);
-					if(sign(hSpd) != 0) image_xscale = sign(hSpd);
 					break;
 					
 				case 1:
@@ -80,7 +70,7 @@ switch(state){
 	case "hit":
 		get_hit(spr_samHit, 0);
 		
-		hSpd = lengthdir_x(1, _direction);
+		hSpd = lengthdir_x(1, _dir);
 		if(sign(hSpd) != 0) image_xscale = sign(hSpd);
 	
 		break;
@@ -99,6 +89,7 @@ switch(state){
 				global.destroyed[2] = true;
 				global.currentPower = 0;
 				global.currentSpell = 2;
+				global.playerXP = global.playerXP + 3000;
 			}
 		}		
 		

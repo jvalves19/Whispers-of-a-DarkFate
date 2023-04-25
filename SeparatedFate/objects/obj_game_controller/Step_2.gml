@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-for(i=1; i<=3; i++){
+for(i=1; i<=10; i++){
 	if(global.destroyed[i]){
 		instance_deactivate_object(global.bossName[i]);
 	}

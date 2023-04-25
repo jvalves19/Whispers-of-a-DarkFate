@@ -99,6 +99,12 @@ function dying (_sprite_index){
 			image_alpha -= 0.01;
 			
 			if(image_alpha <= 0){
+				if(object_index == obj_enemy1){
+					global.playerXP = global.playerXP + irandom_range(300, 400);
+				}
+				if(object_index == obj_bandit1){
+					global.playerXP = global.playerXP + irandom_range(800, 900);
+				}
 				instance_destroy();
 			}
 		}	
