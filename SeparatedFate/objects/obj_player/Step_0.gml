@@ -1,4 +1,3 @@
-//if(instance_exists(obj_transition) || instance_exists(obj_dialogo)) || instance_exists(obj_dialogue) exit;
 if(instance_exists(obj_transition) || instance_exists(obj_dialogo)) || instance_exists(obj_dialogue) exit;
 
 //Initializing variables
@@ -6,10 +5,10 @@ player_controls();
 var ground = place_meeting(x, y + 1, obj_block);
 var fall = vSpd!=0;
 //Gravity
+if(left && right) state = "idle"
 if(!ground && (vSpd < max_vSpd * 2 )){
 	vSpd += GRAVITY * weight * global.spd_mult;
 }
-if(left and right) state = "idle";
 
 //Spell direction variables
 //var flipped = direction;
@@ -92,6 +91,14 @@ if(global.currentPower == 0 || global.currentPower == 1 || global.currentPower =
 	canPower = true;
 }
 #endregion	
+
+if(invincible && time_invincible > 0){
+	time_invincible --;
+	image_alpha = max(sin(get_timer()/100000), 0.5);
+} else {
+	invincible = false;
+	image_alpha = 1;
+}
 
 switch(state){
 	#region idle
@@ -296,6 +303,8 @@ switch(state){
 	
 	#region hit and death
 	case "hit":
+		invincible = true;
+		time_invincible = invincible_timer;
 		get_hit(spr_pHit, 0);	
 		break;
 			

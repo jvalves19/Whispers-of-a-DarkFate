@@ -4,6 +4,8 @@
 //Make some datas randomic in game
 randomize();
 
+invincible = false;
+
 max_life = 1;
 life = max_life;
 

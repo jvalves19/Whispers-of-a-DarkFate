@@ -25,6 +25,10 @@ canAttack = true;
 canSpell = false;
 canPower = false;
 
+invincible = false;
+invincible_timer = room_speed*0.35;
+time_invincible = invincible_timer;
+
 global.playerID = object_index;
 
 //Methods to attack

@@ -94,10 +94,10 @@ function create_menu(_menu){
 		var _text = _menu[i][0];
 	
 		if(menu_sel[pag] == i){
-			_color = c_red;
+			_color = c_grey;
+			draw_text_color(20, (_alt / 2) + (i * _space_y+3), _text, _color, c_grey, _color, _color, 1);
 		}
-	
-		draw_text_color(20, (_alt / 2) + (i * _space_y), _text, _color, _color, _color, _color, 1); 
+		draw_text_color(20, (_alt / 2) + (i * _space_y), _text, _color, c_blue, _color, _color, 1); 
 	}
 
 	//Reseting Variables
