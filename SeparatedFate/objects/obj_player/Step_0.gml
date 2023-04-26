@@ -291,7 +291,6 @@ switch(state){
 			hSpd = 0;
 			aura -= 5;
 			life += 10;
-			
 		}
 		
 		if(image_index >= image_number-1){	
