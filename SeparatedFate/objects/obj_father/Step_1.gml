@@ -7,3 +7,5 @@ if(hSpd != 0){
 	xscale = sign(hSpd);
 }
 image_xscale = xscale; 
+
+image_speed = global.spd_mult;

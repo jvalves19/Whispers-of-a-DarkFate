@@ -1,28 +1,110 @@
-/// @description Insert description here
-// You can write your code in this editor
+if(instance_exists(obj_transition) || instance_exists(obj_dialogo)) || instance_exists(obj_dialogue) exit;
 
 //Initializing variables
-var right, left, jump, attack, dash;
+player_controls();
 var ground = place_meeting(x, y + 1, obj_block);
 var fall = vSpd!=0;
-
-right = keyboard_check(ord("D"));
-left = keyboard_check(ord("A"));
-jump = keyboard_check_pressed(ord("W"));
-attack = keyboard_check_pressed(ord("J"));
-dash = keyboard_check_pressed(vk_space);
-
 //Gravity
-if(!ground && (vSpd < max_vSpd *2 )){
-	vSpd += GRAVITY * weight;
+if(left && right) state = "idle"
+if(!ground && (vSpd < max_vSpd * 2 )){
+	vSpd += GRAVITY * weight * global.spd_mult;
 }
 
-//State Machine
+//Spell direction variables
+//var flipped = direction;
+//var spell_x = (x + 4) * (flipped);
+//var y_offset = lengthdir_y(-20, image_angle);
+var _xx = x + lengthdir_x(0, image_angle);
+
+#region CHANGE SPELL
+if(changeSpell && global.currentSpell == 0){
+	if(global.controllSpells[1]){
+		global.currentSpell = 1;
+		exit;
+	}
+	if(global.controllSpells[2]){
+		global.currentSpell = 2;	
+		exit;
+	}
+}
+	
+if(changeSpell && global.currentSpell == 1){
+	if(global.controllSpells[2]){
+		global.currentSpell = 2;
+		exit;
+	}
+	if(global.controllSpells[0]){
+		global.currentSpell = 0;	
+		exit;
+	}
+}
+	
+if(changeSpell && global.currentSpell == 2){
+	if(global.controllSpells[0]){
+		global.currentSpell = 0;
+		exit;
+	}
+	if(global.controllSpells[1]){
+		global.currentSpell = 1;
+		exit;
+	}
+}
+if(global.currentSpell == 0 || global.currentSpell == 1 || global.currentSpell == 2){
+	canSpell = true;
+}
+#endregion
+
+#region CHANGE POWER
+if(changeUltimate && global.currentPower == 0){
+	if(global.controllPowers[1]){
+		global.currentPower = 1;
+		exit;
+	}
+	if(global.controllSpells[2]){
+		global.currentPower = 2;	
+		exit;
+	}
+}
+	
+if(changeUltimate && global.currentPower == 1){
+	if(global.controllPowers[2]){
+		global.currentPower = 2;
+		exit;
+	}
+	if(global.controllPowers[0]){
+		global.currentPower = 0;	
+		exit;
+	}
+}
+	
+if(changeUltimate && global.currentPower == 2){
+	if(global.controllPowers[0]){
+		global.currentPower = 0;
+		exit;
+	}
+	if(global.controllPowers[1]){
+		global.currentPower = 1;
+		exit;
+	}
+}
+if(global.currentPower == 0 || global.currentPower == 1 || global.currentPower == 2){
+	canPower = true;
+}
+#endregion	
+
+if(invincible && time_invincible > 0){
+	time_invincible --;
+	image_alpha = max(sin(get_timer()/100000), 0.5);
+} else {
+	invincible = false;
+	image_alpha = 1;
+}
+
 switch(state){
 	#region idle
 	case "idle":
 		hSpd = 0;
-		sprite_index = spr_idle;
+		sprite_index = spr_pIdle;
 		
 		if(right || left){
 			state = "walk";
@@ -35,12 +117,26 @@ switch(state){
 			}
 		else
 			if(attack){
-				state = "attack";
-				hSpd = 0;
+				state_attack(ground);
 			}
 		else
 			if(dash){
 				state = "dash";
+				image_index = 0;
+			}
+		else
+			if(heal){
+				state = "heal";
+				image_index = 0;
+			}
+		else
+			if(ultimate && canPower){
+				state = "ultimate";
+				image_index = 0;
+			}
+		else
+			if(spell && canSpell){
+				state = "spell";
 				image_index = 0;
 			}
 		
@@ -49,8 +145,7 @@ switch(state){
 	
 	#region walk
 	case "walk":
-		sprite_index = spr_walk;
-		
+		sprite_index = spr_pWalk;
 		
 		//Movement to the direction
 		hSpd = (right - left) * max_hSpd;
@@ -67,13 +162,26 @@ switch(state){
 			}
 		else
 			if(attack){
-				state = "attack";
-				hSpd = 0;
-				image_index = 0;
+				state_attack(ground);
 			}
 		else
 			if(dash){
 				state = "dash";
+				image_index = 0;
+			}
+		else
+			if(heal){
+				state = "heal";
+				image_index = 0;
+			}
+		else
+			if(ultimate && canPower){
+				state = "ultimate";
+				image_index = 0;
+			}
+		else
+			if(spell && canSpell){
+				state = "spell";
 				image_index = 0;
 			}
 		
@@ -83,8 +191,10 @@ switch(state){
 	
 	#region jump
 	case "jump": 
+		hSpd = (right - left) * max_hSpd;
+		
 		if(vSpd < 0){
-			sprite_index = spr_jump;
+			sprite_index = spr_pJump;
 			
 			//Dont Repeat the Jump Animation 
 			if(image_index >= image_number-1){
@@ -92,7 +202,7 @@ switch(state){
 			}
 		}
 		else {
-			sprite_index = spr_fall;
+			sprite_index = spr_pFall;
 		}
 		
 		if(ground){
@@ -105,12 +215,11 @@ switch(state){
 	
 	#region dash
 	case "dash":
-		if(sprite_index != spr_dash){
+		if(sprite_index != spr_pDash){
+			sprite_index = spr_pDash;
 			image_index = 0;	
-		}
-		sprite_index = spr_dash;
-		
-		hSpd = image_xscale * dash_Spd;
+			hSpd = image_xscale * dash_Spd;
+		}		
 		
 		if(image_index >= image_number-1){
 			state = "idle";
@@ -124,92 +233,115 @@ switch(state){
 		hSpd = 0;
 		
 		if(combo == 0){
-			sprite_index = spr_attack;
+			player_attacking(spr_pAttack, 4, 6, sprite_width/5, -sprite_height/2, 2, 1);
 		}
 		else
 			if(combo == 1){
-				sprite_index = spr_attack2;
+				player_attacking(spr_pAttack2, 4, 6, sprite_width/5, -sprite_height/2, 2, 1);
 			}
 		else
 			if(combo == 2){
-				sprite_index = spr_attack3;
+				player_attacking(spr_pAttack3, 4, 6, sprite_width/5, -sprite_height/2, 2, 1);
 			}
-			
-		//Creatint attack object
-		if(image_index >= 3  && damage == noone && canAttack){
-			damage = instance_create_layer(x + sprite_width/6 , y-25 , layer, obj_damage);
-			damage.damage = atk * atkMult;
-			damage.father = id;
-			canAttack = false;
+
+		break;
+	#endregion
+	
+	#region ultimate
+	case "ultimate":
+		if(global.currentPower == 0){
+			player_ultimate(spr_pUltimate, sprite_width/5, -sprite_height/2, 2, 2);
 		}
-		
-		if(attack && combo < 2 && image_index >= image_number-3){
-			combo++;
-			image_index = 0;
-			canAttack = true;
-			atkMult += 0.5;
-			
-			if(damage){
-				instance_destroy(damage, false);
-				damage = noone;
-			}
-		}
-		
-		if(image_index > image_number-1){
-			state = "idle";
-			hSpd = 0;
-			combo = 0;
-			canAttack = true;
-			atkMult = 1;
-			
-			if(damage){
-				instance_destroy(damage, false);
-				damage = noone;
-			}
+		if(global.currentPower == 1){
+			player_ultimate(spr_pUltimate2, random_range
+				(camera_get_view_width(view_camera[0])-250, camera_get_view_width(view_camera[0])-550), 
+				(camera_get_view_height(view_camera[0])-470), 2, 5);
 		}
 	
 		break;
 	#endregion
+		
+	#region spell
+	case "spell":
+		if(sprite_index != spr_pHit){
+			sprite_index = spr_pHit;
+			image_index = 0;	
+			hSpd = 0;
+		}
+	
+		if(image_index >= 1 && canAttack && aura > 5){
+			setSpell(_xx, global.pDmgSpell, 01, obj_pSpells);
+		}
+		
+		if(image_index >= image_number-1){
+			canAttack = true;
+			state = "idle";
+		}
+		
+		break;
+	#endregion
+	
+	#region heal
+	case "heal":		
+		if(aura > 0 && life < global.pMaxLife){
+			if(sprite_index != spr_pHeal){
+				sprite_index = spr_pHeal;
+				image_index = 0;					
+			}
+			hSpd = 0;
+			aura -= 5;
+			life += 10;
+		}
+		
+		if(image_index >= image_number-1){	
+			state = "idle";
+		}
+		break;
+		
+	#endregion
 	
 	#region hit and death
 	case "hit":
-		if(sprite_index != spr_hit){
-			image_index = 0;
-		}
-		sprite_index = spr_hit;
-		hSpd = 0;
-			
-		if(life > 0){
-			if(image_index > image_number-1){
-				state = "idle";
-			}
-		}
-		else
-			if(image_index >= 0){
-				state = "dead";
-			}
-	
-			
+		invincible = true;
+		time_invincible = invincible_timer;
+		get_hit(spr_pHit, 0);	
 		break;
 			
 	case "dead":
 		hSpd = 0;
 		
 		if(sprite_index != spr_dead){
+			sprite_index = spr_dead;
 			image_index = 0;
+			hSpd = 0;
 		}
-		sprite_index = spr_dead;
 			
 		if(image_index > image_number-1){
 			image_speed = 0;
 		}
-	
+
+		if(instance_exists(obj_game_controller)){
+			with(obj_game_controller){	
+				game_over = true;
+			}
+		}	
+		
 		break;
 	#endregion
 		
 		default: 
-			state = "idle";
-			
+			state = "idle";			
 }
 
-if(keyboard_check(ord("R"))) room_restart();
+#region DIALOGUE SYSTEM
+if(distance_to_object(obj_npcFather) < 10){
+	if(vSpd == 0 && hSpd == 0){
+		if(action && !global.dialogo){		
+			var _npc = instance_nearest(x, y, obj_npcFather);
+			var _dialogue = instance_create_layer(x, y, "Dialogue", obj_dialogo)
+		
+			_dialogue.npc_nome = _npc.nome;
+		}
+	}
+}
+#endregion
