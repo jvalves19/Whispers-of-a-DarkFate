@@ -30,6 +30,7 @@ for(var inv = 0; inv < maxInvSlots; inv++){
 }
 
 showInventory = false;
+selectedItem = 0;
 #endregion
 
 #region LIFE AND AURA

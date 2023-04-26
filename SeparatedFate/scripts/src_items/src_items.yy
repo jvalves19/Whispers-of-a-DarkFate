@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "src_pickItems",
+  "name": "src_items",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {

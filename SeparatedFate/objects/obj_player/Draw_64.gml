@@ -50,6 +50,8 @@ if(showInventory){
 		item = a_inv[inv];
 	
 		if(item > -1) draw_sprite(spr_items, item, itemX, itemY);
+		
+		if(selectedItem == inv) draw_sprite(spr_selected_item, 0, itemX, itemY);
 	
 		//draw_text(itemX, itemY, string(a_inv[inv]));
 	}

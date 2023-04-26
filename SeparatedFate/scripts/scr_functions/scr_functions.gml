@@ -3,34 +3,36 @@
 
 #region PLAYER CONTROLS
 function player_controls(){
-	action = (
-		(gamepad_button_check_pressed(0, gp_face4)) ||
-		keyboard_check_pressed(ord("E")) 
-	);
 	right = (
 		//(gamepad_axis_value(0, gp_axislh) > 0)  ||
 		(gamepad_button_check(0, gp_padr)) ||
-		keyboard_check(vk_right) ||
+		//keyboard_check(vk_right) ||
 		keyboard_check(ord("D"))
 	);
 	left = (
 		//(gamepad_axis_value(0, gp_axislh) < 0) || 
 		(gamepad_button_check(0, gp_padl)) || 
-		keyboard_check(vk_left) || 
+		//keyboard_check(vk_left) || 
 		keyboard_check(ord("A")) 
 	);
 	down = (
 		(gamepad_button_check(0, gp_padd)) ||
-		keyboard_check(ord("S"))
+		keyboard_check(vk_down)
 	);
 	up = (
 		(gamepad_button_check(0, gp_padu)) ||
 		keyboard_check(ord("W"))
+		keyboard_check(vk_up)
+	);
+	action = (
+		(gamepad_button_check_pressed(0, gp_face4)) ||
+		keyboard_check_pressed(ord("E")) 
 	);
 	jump = (
 		(gamepad_button_check_pressed(0, gp_face1) || 
 		keyboard_check_pressed(ord("W")))
 	);
+	
 	changeSpell = (
 		(gamepad_button_check_pressed(0, gp_shoulderr))||
 		keyboard_check_pressed(ord("Q"))
@@ -55,7 +57,8 @@ function player_controls(){
 		(gamepad_button_check_pressed(0, gp_face2)) ||
 		keyboard_check_pressed(vk_space)
 	);	
-	heal = down && action;
+	heal = (keyboard_check(ord("S")) || (gamepad_button_check(0, gp_padd))) && 
+		(keyboard_check_pressed(ord("K")) || (gamepad_button_check_pressed(0, gp_face4)));
 }
 #endregion
 

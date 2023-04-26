@@ -1,11 +1,11 @@
 {
   "FolderOrderSettings": [
+    {"name":"Items","order":26,"path":"folders/Objects/Items.yy",},
+    {"name":"Areas","order":16,"path":"folders/Rooms/Areas.yy",},
     {"name":"Boss","order":13,"path":"folders/Rooms/Boss.yy",},
     {"name":"Interior","order":14,"path":"folders/Rooms/Interior.yy",},
     {"name":"Towns","order":15,"path":"folders/Rooms/Towns.yy",},
-    {"name":"Areas","order":16,"path":"folders/Rooms/Areas.yy",},
     {"name":"Inventory","order":15,"path":"folders/Sprites/UI_HUD/Inventory.yy",},
-    {"name":"Items","order":26,"path":"folders/Objects/Items.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"spr_bandit1Walk","order":3,"path":"sprites/spr_bandit1Walk/spr_bandit1Walk.yy",},
@@ -88,7 +88,7 @@
     {"name":"spr_dash","order":9,"path":"sprites/spr_dash/spr_dash.yy",},
     {"name":"spr_artGUI","order":14,"path":"sprites/spr_artGUI/spr_artGUI.yy",},
     {"name":"tl_World","order":1,"path":"tilesets/tl_World/tl_World.yy",},
-    {"name":"src_pickItems","order":7,"path":"scripts/src_pickItems/src_pickItems.yy",},
+    {"name":"src_items","order":7,"path":"scripts/src_items/src_items.yy",},
     {"name":"spr_thunder","order":3,"path":"sprites/spr_thunder/spr_thunder.yy",},
     {"name":"Scene03","order":8,"path":"sprites/Scene03/Scene03.yy",},
     {"name":"spr_owPlayerUp","order":4,"path":"sprites/spr_owPlayerUp/spr_owPlayerUp.yy",},
@@ -130,6 +130,7 @@
     {"name":"spr_tileForest02","order":1,"path":"sprites/spr_tileForest02/spr_tileForest02.yy",},
     {"name":"spr_samAttack1","order":2,"path":"sprites/spr_samAttack1/spr_samAttack1.yy",},
     {"name":"spr_pHit","order":2,"path":"sprites/spr_pHit/spr_pHit.yy",},
+    {"name":"spr_selected_item","order":5,"path":"sprites/spr_selected_item/spr_selected_item.yy",},
     {"name":"spr_sensor","order":1,"path":"sprites/spr_sensor/spr_sensor.yy",},
     {"name":"spr_samAttack2","order":3,"path":"sprites/spr_samAttack2/spr_samAttack2.yy",},
     {"name":"spr_water","order":4,"path":"sprites/spr_water/spr_water.yy",},

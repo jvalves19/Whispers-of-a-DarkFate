@@ -4,3 +4,4 @@
 image_speed = 0;
 image_index = irandom(sprite_get_number(spr_items16x16) - 1);
 
+canBePicked = true;

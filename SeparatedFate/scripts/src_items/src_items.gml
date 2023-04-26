@@ -16,3 +16,12 @@ function pickItems(_item, _itemInstance){
 		}
 	}
 }
+
+function dropItems(_item){
+	if(_item > -1){
+		newItem = instance_create_layer(obj_player.x, obj_player.y, "Items", obj_item);
+		newItem.image_index = _item;
+	}
+	
+	obj_player.a_inv[obj_player.selectedItem] = -1;
+}

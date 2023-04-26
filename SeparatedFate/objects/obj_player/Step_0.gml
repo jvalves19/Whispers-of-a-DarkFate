@@ -14,23 +14,46 @@ if(!ground && (vSpd < max_vSpd * 2 )){
 #region PICK ITEMS
 x1 = x;
 y1 = y;
-x2 = x - sprite_width;
+x2 = x + sprite_width/sprite_width;
 y2 = y - sprite_height;
 
 if(collision_rectangle(x1, y1, x2, y2, obj_item, false, false)){
 	itemInstanceID = collision_rectangle(x1, y1, x2, y2, obj_item, false, false);
 	item = itemInstanceID.image_index;
 	
-	pickItems(item, itemInstanceID);
+	if(itemInstanceID.canBePicked) pickItems(item, itemInstanceID);
 }
 #endregion
-#region SHOW INVENTORY
-	if(keyboard_check_pressed(vk_backspace) || gamepad_button_check_pressed(0, gp_select)){
-		showInventory = !showInventory;
+#region INVENTORY
+if(keyboard_check_pressed(ord("I")) || gamepad_button_check_pressed(0, gp_select)){
+	showInventory = !showInventory;
+}
+
+if(showInventory){	
+	//Change Items
+	if(gamepad_button_check(0, gp_padu) || keyboard_check_pressed(vk_down)){
+		if(selectedItem + 1) <= (maxInvSlots - 1) selectedItem++;
+		else selectedItem = 0;
 	}
+	if(gamepad_button_check(0, gp_padd) || keyboard_check_pressed(vk_up)){
+		if(selectedItem - 1) >= 0 selectedItem--;
+		else selectedItem = (maxInvSlots - 1);
+	}
+	
+	//Drop Items
+	if(keyboard_check_pressed(vk_backspace) || gamepad_button_check_pressed(0, gp_face3)){
+		item = a_inv[selectedItem];
+		
+		dropItems(item);
+	}
+	
+	//Use Items
+	if(keyboard_check_pressed(ord("E")) || gamepad_button_check_pressed(0, gp_face4)){
+		
+	}
+}
 
 #endregion
-
 
 //Spell direction variables
 //var flipped = direction;
