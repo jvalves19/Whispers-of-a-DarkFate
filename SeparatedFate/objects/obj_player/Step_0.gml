@@ -10,6 +10,28 @@ if(!ground && (vSpd < max_vSpd * 2 )){
 	vSpd += GRAVITY * weight * global.spd_mult;
 }
 
+
+#region PICK ITEMS
+x1 = x;
+y1 = y;
+x2 = x - sprite_width;
+y2 = y - sprite_height;
+
+if(collision_rectangle(x1, y1, x2, y2, obj_item, false, false)){
+	itemInstanceID = collision_rectangle(x1, y1, x2, y2, obj_item, false, false);
+	item = itemInstanceID.image_index;
+	
+	pickItems(item, itemInstanceID);
+}
+#endregion
+#region SHOW INVENTORY
+	if(keyboard_check_pressed(vk_backspace) || gamepad_button_check_pressed(0, gp_select)){
+		showInventory = !showInventory;
+	}
+
+#endregion
+
+
 //Spell direction variables
 //var flipped = direction;
 //var spell_x = (x + 4) * (flipped);
@@ -92,6 +114,7 @@ if(global.currentPower == 0 || global.currentPower == 1 || global.currentPower =
 }
 #endregion	
 
+#region PLAYER INVINCIBLE
 if(invincible && time_invincible > 0){
 	time_invincible --;
 	image_alpha = max(sin(get_timer()/100000), 0.5);
@@ -99,6 +122,7 @@ if(invincible && time_invincible > 0){
 	invincible = false;
 	image_alpha = 1;
 }
+#endregion
 
 switch(state){
 	#region idle

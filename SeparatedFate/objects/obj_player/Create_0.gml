@@ -1,7 +1,38 @@
 // Inherit the parent event
 event_inherited();
 
-#region Life and Aura
+#region INVENTORY SYSTEM
+enum e_item_stats{
+	name,
+	cost,
+}
+
+enum e_item_type{
+	red,
+	blue,
+	green,
+	yellow
+}
+a_items[e_item_type.red, e_item_stats.name] = "RED POTION";
+a_items[e_item_type.blue, e_item_stats.name] = "BLUE POTION";
+a_items[e_item_type.green, e_item_stats.name] = "GREEN POTION";
+a_items[e_item_type.yellow, e_item_stats.name] = "YELLOW POTION";
+
+maxInvSlots = 6;
+
+for(var inv = 0; inv < maxInvSlots; inv++){
+	a_inv[inv] = -1;
+	
+	roll = irandom(1);
+	
+	if(roll == 1) a_inv[inv] = irandom(sprite_get_number(spr_items) - 1);
+
+}
+
+showInventory = false;
+#endregion
+
+#region LIFE AND AURA
 max_hSpd = 4;
 max_vSpd = 6;
 dash_Spd = 6;
@@ -13,23 +44,30 @@ global.pMaxAura = global.pMaxAura;
 aura = global.pMaxAura ;
 #endregion
 
+#region PLAYER VARIABLES
 combo = 0;
 damage = noone;
 
 atk = global.pAtk;
 atkMult = 1;
-
-global.currentBlade = global.currentBlade;
-
 canAttack = true;
+
 canSpell = false;
+spellTimer = room_speed*5;
+time_spell = spellTimer;
+
 canPower = false;
+powerTimer = room_speed*15;
+time_Power = powerTimer;
 
 invincible = false;
 invincible_timer = room_speed*0.35;
 time_invincible = invincible_timer;
 
+global.currentBlade = global.currentBlade;
 global.playerID = object_index;
+
+#endregion
 
 //Methods to attack
 state_attack = function(ground){

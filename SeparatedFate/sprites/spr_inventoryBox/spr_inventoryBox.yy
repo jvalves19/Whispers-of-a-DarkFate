@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "UI_HUD",
-    "path": "folders/Sprites/UI_HUD.yy",
+    "name": "Inventory",
+    "path": "folders/Sprites/UI_HUD/Inventory.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

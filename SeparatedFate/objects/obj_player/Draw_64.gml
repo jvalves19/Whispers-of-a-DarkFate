@@ -35,3 +35,34 @@ draw_sprite_stretched(spr_mana, 0, w - 220, h/center_h + 100,
 draw_text(w - 240, h/center_h + 120, global.playerXP);
 draw_text(w - 240, h/center_h + 240, global.playerLevel);
 draw_text(w - 240, h/center_h + 360, global.playerGold);
+
+#region INVENTORY
+if(showInventory){
+	startInvX = (room_width / 2) - (sprite_get_width(spr_items) * 2.5);
+	startInvY = room_height + (sprite_get_height(spr_items) * 9); 
+
+	for (var inv = 0; inv < maxInvSlots; inv++){
+		itemX = startInvX + (inv * sprite_get_width(spr_items));
+		itemY = startInvY;
+	
+		draw_sprite(spr_inventoryItem, 0, itemX, itemY);
+	
+		item = a_inv[inv];
+	
+		if(item > -1) draw_sprite(spr_items, item, itemX, itemY);
+	
+		//draw_text(itemX, itemY, string(a_inv[inv]));
+	}
+}
+#endregion
+
+
+
+
+
+
+
+
+
+
+
