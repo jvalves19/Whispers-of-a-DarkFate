@@ -17,7 +17,6 @@ function saveGame(_slot){
 	ini_write_real(_slot, "Player Gold", global.playerGold);
 	
 	
-	ini_write_real(_slot, "Player Items", global.a_items[global.itemType, global.itemQtd]);
 	
 	ini_write_real(_slot, "Damage Spell", global.pDmgSpell);
 	ini_write_real(_slot, "Damage Fire", global.dmgFire);

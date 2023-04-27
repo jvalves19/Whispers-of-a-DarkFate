@@ -11,7 +11,29 @@ if(!ground && (vSpd < max_vSpd * 2 )){
 }
 
 
-
+#region INVENTORY
+with(obj_game_controller){
+	if(showInventory){	
+		//Change Items
+		if(gamepad_button_check(0, gp_padu) || keyboard_check_pressed(vk_down)){
+			if(selectedItem + 1) <= (maxInvSlots - 1) selectedItem++;
+			else selectedItem = 0;
+		}
+		if(gamepad_button_check(0, gp_padd) || keyboard_check_pressed(vk_up)){
+			if(selectedItem - 1) >= 0 selectedItem--;
+			else selectedItem = (maxInvSlots - 1);
+		}
+		item = global.a_inv[selectedItem, e_inventory.type];
+	
+		//Drop Items
+		if(keyboard_check_pressed(ord("I")) || gamepad_button_check_pressed(0, gp_face4)){
+			//item = a_inv[selectedItem];
+		
+			useItem(item);
+		}
+	}
+}
+#endregion
 
 //Spell direction variables
 //var flipped = direction;

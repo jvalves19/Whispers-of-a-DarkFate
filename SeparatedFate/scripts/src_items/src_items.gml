@@ -83,7 +83,7 @@ function useItem(_item){
 	
 	if(canItem){
 		global.a_inv[obj_game_controller.selectedItem, e_inventory.quantity] -= 1;
-		if(global.a_inv[obj_game_controller.selectedItem, e_inventory.type] <= 0){
+		if(global.a_inv[obj_game_controller.selectedItem, e_inventory.quantity] <= 0){
 			global.a_inv[obj_game_controller.selectedItem, e_inventory.type] = -1;
 		}
 	}
