@@ -21,7 +21,6 @@ draw_sprite_stretched(spr_spellBox10, 0, w/center_w - 15, h/center_h + 130, 200,
 #region SPELL & ULTIMATE BOX
 draw_sprite_stretched(global.spell, 0, w/center_w + 15, h/center_h + 145, 125, 125);
 draw_sprite_stretched(global.power, 0, w/center_w + 30, h/center_h + 145, 125, 125);
-draw_sprite_stretched(spr_items, global.currentItem, w/center_w + 30, h/center_h + 145, 125, 125);
 #endregion
 
 //Player HealthBar
@@ -38,6 +37,7 @@ draw_text(w - 240, h/center_h + 240, global.playerLevel);
 draw_text(w - 240, h/center_h + 360, global.playerGold);
 
 #region INVENTORY
+with(obj_game_controller){
 if(showInventory){
 	startInvX = sprite_get_width(spr_items);
 	startInvY = room_height + (sprite_get_height(spr_items) * 9); 
@@ -65,6 +65,7 @@ if(showInventory){
 		if(selectedItem == selectedItem) draw_sprite(spr_selected_item, 0, itemX, itemY);
 	
 		//draw_text(itemX, itemY, string(a_inv[inv]));
+}
 }
 #endregion
 

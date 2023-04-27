@@ -68,35 +68,42 @@ if(keyboard_check_pressed(vk_enter) || gamepad_button_check_pressed(0, gp_face1)
 }
 #endregion
 
+#region PICK ITEMS
+x1 = obj_player.x;
+y1 = obj_player.y;
+x2 = obj_player.x + obj_player.sprite_width/obj_player.sprite_width;
+y2 = obj_player.y - obj_player.sprite_height;
 
-
-if(gamepad_button_check(0, gp_padu) || keyboard_check_pressed(vk_down)){
-	if(global.currentItem + 1) <= (maxItems - 1) global.currentItem++;
-	else global.currentItem = 0;
-}
-if(gamepad_button_check(0, gp_padd) || keyboard_check_pressed(vk_up)){
-	if(global.currentItem - 1) >= 0 global.currentItem--;
-	else global.currentItem = (maxItems - 1);
-}
-
-maxItems = global.currentItem+1;
-
-for(var i=0; i<maxItems; i++){
-	if(global.currentItem == 0) maxQuantity = 10;
-	if(global.currentItem == 1) maxQuantity = 5;
+if(collision_rectangle(x1, y1, x2, y2, obj_item, false, false)){
+	itemInstanceID = collision_rectangle(x1, y1, x2, y2, obj_item, false, false);
+	item = itemInstanceID.image_index;
 	
-	if(global.currentItem == i){
-		global.Items[i] = global.currentItem;
+	if(itemInstanceID.canBePicked) pickItems(item, itemInstanceID);
+}
+#endregion
+#region INVENTORY
+
+if(showInventory){	
+	//Change Items
+	if(gamepad_button_check(0, gp_padu) || keyboard_check_pressed(vk_down)){
+		if(selectedItem + 1) <= (maxInvSlots - 1) selectedItem++;
+		else selectedItem = 0;
+	}
+	if(gamepad_button_check(0, gp_padd) || keyboard_check_pressed(vk_up)){
+		if(selectedItem - 1) >= 0 selectedItem--;
+		else selectedItem = (maxInvSlots - 1);
+	}
+	item = global.a_inv[selectedItem, e_inventory.type];
+	
+	//Drop Items
+	if(keyboard_check_pressed(ord("I")) || gamepad_button_check_pressed(0, gp_face4)){
+		//item = a_inv[selectedItem];
 		
-		if(global.currentItem == 0){
-			maxQuantity = 10;
-			for(var j=0; j<maxQuantity; j++){
-				global.Items[i, j] = global.qtdItem;
-			}
-		}
+		useItem(item);
 	}
 }
 
+#endregion
 #region SPELLS
 for(i=0; i<3; i++){
 	if(global.currentSpell == i){
