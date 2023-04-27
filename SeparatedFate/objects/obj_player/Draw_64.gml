@@ -21,6 +21,7 @@ draw_sprite_stretched(spr_spellBox10, 0, w/center_w - 15, h/center_h + 130, 200,
 #region SPELL & ULTIMATE BOX
 draw_sprite_stretched(global.spell, 0, w/center_w + 15, h/center_h + 145, 125, 125);
 draw_sprite_stretched(global.power, 0, w/center_w + 30, h/center_h + 145, 125, 125);
+draw_sprite_stretched(spr_items, global.currentItem, w/center_w + 30, h/center_h + 145, 125, 125);
 #endregion
 
 //Player HealthBar

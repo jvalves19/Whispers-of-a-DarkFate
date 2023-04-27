@@ -46,8 +46,8 @@ if(showInventory){
 	}
 	
 	//Use Items
-	if(keyboard_check_pressed(ord("E")) || gamepad_button_check_pressed(0, gp_face4)){
-		
+	if(keyboard_check_pressed(ord("I")) || gamepad_button_check_pressed(0, gp_face4)){
+		useItems(item);
 	}
 }
 

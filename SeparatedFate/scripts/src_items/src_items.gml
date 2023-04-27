@@ -52,6 +52,7 @@ function pickItems(_item, _itemInstance){
 	
 }
 
+
 function dropItems(_item){
 	if(_item > -1){
 		xx = obj_player.x + sprite_width/sprite_width;
@@ -60,9 +61,14 @@ function dropItems(_item){
 		newItem = instance_create_layer(xx, yy, "Items", obj_item);
 		newItem.image_index = _item;
 		newItem.canBePicked = false;
-		newItem.maxQuantity = global.a_inv[obj_player.item, e_inventory.quantity];
+		newItem.quantity = 1;
 	}
 	
-	global.a_inv[obj_player.item, e_inventory.type] = -1;
-	global.a_inv[obj_player.item, e_inventory.quantity] = 0;
+	
+	global.a_inv[obj_player.selectedItem, e_inventory.quantity] -= 1;
+	if(global.a_inv[obj_player.selectedItem, e_inventory.quantity] <= 0){
+		global.a_inv[obj_player.selectedItem, e_inventory.type] = -1;
+	}
+
+	
 }

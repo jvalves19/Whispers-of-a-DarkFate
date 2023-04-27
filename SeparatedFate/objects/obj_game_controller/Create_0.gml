@@ -24,16 +24,22 @@ global.pAtk = 20 * global.playerLevel;
 global.dmgFire = 20 * global.playerLevel;
 global.dmgHoly = 20 * global.playerLevel;
 global.dmgThunder = 20 * global.playerLevel;
-
 global.pDmgSpell = noone;
+
+//ULTIMATE VARIABLES
+global.qtdItem = 5;
+global.currentItem = 0;
+global.Items = [
+	[global.currentItem, global.qtdItem], //Life Potion
+]
 
 //BLADE VARIABLES
 global.currentBlade = 0;
 /*
 global.controllBlades = [
-false,	//Mana Blade
-false,	//Fire Blade
-false,	//Bloodstained Blade
+	false,	//Mana Blade
+	false,	//Fire Blade
+	false,	//Bloodstained Blade
 ]
 */
 
@@ -41,9 +47,9 @@ false,	//Bloodstained Blade
 global.power = noone;
 global.currentPower = -1;
 global.controllPowers = [
-false,	//Fast Sword
-false,	//Holy Explosion
-false,	//Thunder Exectution
+	false,	//Fast Sword
+	false,	//Holy Explosion
+	false,	//Thunder Exectution
 ]
 
 //SPELL VARIABLES

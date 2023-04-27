@@ -68,6 +68,35 @@ if(keyboard_check_pressed(vk_enter) || gamepad_button_check_pressed(0, gp_face1)
 }
 #endregion
 
+
+
+if(gamepad_button_check(0, gp_padu) || keyboard_check_pressed(vk_down)){
+	if(global.currentItem + 1) <= (maxItems - 1) global.currentItem++;
+	else global.currentItem = 0;
+}
+if(gamepad_button_check(0, gp_padd) || keyboard_check_pressed(vk_up)){
+	if(global.currentItem - 1) >= 0 global.currentItem--;
+	else global.currentItem = (maxItems - 1);
+}
+
+maxItems = global.currentItem+1;
+
+for(var i=0; i<maxItems; i++){
+	if(global.currentItem == 0) maxQuantity = 10;
+	if(global.currentItem == 1) maxQuantity = 5;
+	
+	if(global.currentItem == i){
+		global.Items[i] = global.currentItem;
+		
+		if(global.currentItem == 0){
+			maxQuantity = 10;
+			for(var j=0; j<maxQuantity; j++){
+				global.Items[i, j] = global.qtdItem;
+			}
+		}
+	}
+}
+
 #region SPELLS
 for(i=0; i<3; i++){
 	if(global.currentSpell == i){
