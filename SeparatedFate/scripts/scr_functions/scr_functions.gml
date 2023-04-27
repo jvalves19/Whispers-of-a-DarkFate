@@ -13,15 +13,18 @@ function player_controls(){
 		//(gamepad_axis_value(0, gp_axislh) < 0) || 
 		(gamepad_button_check(0, gp_padl)) || 
 		//keyboard_check(vk_left) || 
-		keyboard_check(ord("A")) 
+		keyboard_check(ord("A"))
 	);
 	down = (
 		(gamepad_button_check(0, gp_padd)) ||
-		keyboard_check(vk_down)
+		keyboard_check(vk_down) || 
+		keyboard_check(ord("S"))
+		
 	);
 	up = (
 		(gamepad_button_check(0, gp_padu)) ||
-		keyboard_check(vk_up)
+		keyboard_check(vk_up) ||
+		keyboard_check(ord("W"))
 	);
 	action = (
 		(gamepad_button_check_pressed(0, gp_face4)) ||

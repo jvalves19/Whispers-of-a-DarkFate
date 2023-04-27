@@ -25,9 +25,6 @@ if(collision_rectangle(x1, y1, x2, y2, obj_item, false, false)){
 }
 #endregion
 #region INVENTORY
-if(keyboard_check_pressed(ord("I")) || gamepad_button_check_pressed(0, gp_select)){
-	showInventory = !showInventory;
-}
 
 if(showInventory){	
 	//Change Items
@@ -39,7 +36,7 @@ if(showInventory){
 		if(selectedItem - 1) >= 0 selectedItem--;
 		else selectedItem = (maxInvSlots - 1);
 	}
-	item = a_inv[selectedItem];
+	item = global.a_inv[selectedItem, e_inventory.type];
 	
 	//Drop Items
 	if(keyboard_check_pressed(vk_backspace) || gamepad_button_check_pressed(0, gp_face3)){

@@ -46,7 +46,7 @@ function attacking(_sprite_index, _image_index_min, _image_index_max, _dist_x, _
 			damage.image_xscale = _xscale_damage;
 			damage.image_yscale = _yscale_damage;
 			canAttack = false;	
-			
+
 			if(damage != noone && image_index == _image_index_max-1){
 				instance_destroy(damage)
 				damage = noone;

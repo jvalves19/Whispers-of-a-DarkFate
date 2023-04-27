@@ -5,30 +5,36 @@ event_inherited();
 enum e_item_stats{
 	name,
 	cost,
-	qtd,
+	maxStack,
 }
-
 enum e_item_type{
 	red,
 	blue,
 	green,
 	yellow
 }
-a_items[e_item_type.red, e_item_stats.name] = "RED POTION";
-a_items[e_item_type.blue, e_item_stats.name] = "BLUE POTION";
-a_items[e_item_type.green, e_item_stats.name] = "GREEN POTION";
-a_items[e_item_type.yellow, e_item_stats.name] = "YELLOW POTION";
-
-maxInvSlots = 10;
-for(var inv = 0; inv < maxInvSlots; inv++){
-	a_inv[inv] = -1;
-	
-	roll = irandom(1);
-	
-	if(roll == 1) a_inv[inv] = irandom(sprite_get_number(spr_items) - 1);
-
+enum e_inventory{
+	type,
+	quantity,
 }
-showInventory = false;
+global.a_items[e_item_type.red, e_item_stats.name] = "RED POTION";
+global.a_items[e_item_type.red, e_item_stats.maxStack] = 10;
+
+global.a_items[e_item_type.blue, e_item_stats.name] = "BLUE POTION";
+global.a_items[e_item_type.blue, e_item_stats.maxStack] = 10;
+
+global.a_items[e_item_type.green, e_item_stats.name] = "GREEN POTION";
+global.a_items[e_item_type.green, e_item_stats.maxStack] = 5;
+
+global.a_items[e_item_type.yellow, e_item_stats.name] = "YELLOW POTION";
+global.a_items[e_item_type.yellow, e_item_stats.maxStack] = 5;
+
+maxInvSlots = 4;
+for(var inv = 0; inv < maxInvSlots; inv++){
+	global.a_inv[inv, e_inventory.type] = -1;
+	global.a_inv[inv, e_inventory.quantity] = 0;
+}
+showInventory = true;
 selectedItem = 0;
 #endregion
 

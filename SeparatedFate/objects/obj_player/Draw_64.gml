@@ -46,9 +46,20 @@ if(showInventory){
 	
 		draw_sprite(spr_inventoryItem, 0, itemX, itemY);
 	
-		item = a_inv[selectedItem];
+		var item = global.a_inv[selectedItem, e_inventory.type];
+		var quantity = global.a_inv[selectedItem, e_inventory.quantity];
 	
-		if(item > -1) draw_sprite(spr_items, item, itemX, itemY);
+		if(item > -1) {
+			draw_sprite(spr_items, item, itemX, itemY);
+			
+			if(quantity > 1){
+				define_align(fa_right, fa_bottom);
+				draw_set_font(-1);
+				draw_set_color(c_white);
+				
+				draw_text(itemX + (sprite_get_width(spr_items) / 2), itemY + (sprite_get_height(spr_items) / 2), "x" + string(quantity));
+			}
+		}
 		
 		if(selectedItem == selectedItem) draw_sprite(spr_selected_item, 0, itemX, itemY);
 	
