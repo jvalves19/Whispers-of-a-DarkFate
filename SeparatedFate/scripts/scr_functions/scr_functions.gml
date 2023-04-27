@@ -21,7 +21,6 @@ function player_controls(){
 	);
 	up = (
 		(gamepad_button_check(0, gp_padu)) ||
-		keyboard_check(ord("W"))
 		keyboard_check(vk_up)
 	);
 	action = (

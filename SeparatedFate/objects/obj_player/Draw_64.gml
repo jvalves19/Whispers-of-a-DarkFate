@@ -38,23 +38,21 @@ draw_text(w - 240, h/center_h + 360, global.playerGold);
 
 #region INVENTORY
 if(showInventory){
-	startInvX = (room_width / 2) - (sprite_get_width(spr_items) * 2.5);
+	startInvX = sprite_get_width(spr_items);
 	startInvY = room_height + (sprite_get_height(spr_items) * 9); 
 
-	for (var inv = 0; inv < maxInvSlots; inv++){
-		itemX = startInvX + (inv * sprite_get_width(spr_items));
+		itemX = startInvX;
 		itemY = startInvY;
 	
 		draw_sprite(spr_inventoryItem, 0, itemX, itemY);
 	
-		item = a_inv[inv];
+		item = a_inv[selectedItem];
 	
 		if(item > -1) draw_sprite(spr_items, item, itemX, itemY);
 		
-		if(selectedItem == inv) draw_sprite(spr_selected_item, 0, itemX, itemY);
+		if(selectedItem == selectedItem) draw_sprite(spr_selected_item, 0, itemX, itemY);
 	
 		//draw_text(itemX, itemY, string(a_inv[inv]));
-	}
 }
 #endregion
 

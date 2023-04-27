@@ -5,6 +5,7 @@ event_inherited();
 enum e_item_stats{
 	name,
 	cost,
+	qtd,
 }
 
 enum e_item_type{
@@ -18,8 +19,7 @@ a_items[e_item_type.blue, e_item_stats.name] = "BLUE POTION";
 a_items[e_item_type.green, e_item_stats.name] = "GREEN POTION";
 a_items[e_item_type.yellow, e_item_stats.name] = "YELLOW POTION";
 
-maxInvSlots = 6;
-
+maxInvSlots = 10;
 for(var inv = 0; inv < maxInvSlots; inv++){
 	a_inv[inv] = -1;
 	
@@ -28,7 +28,6 @@ for(var inv = 0; inv < maxInvSlots; inv++){
 	if(roll == 1) a_inv[inv] = irandom(sprite_get_number(spr_items) - 1);
 
 }
-
 showInventory = false;
 selectedItem = 0;
 #endregion

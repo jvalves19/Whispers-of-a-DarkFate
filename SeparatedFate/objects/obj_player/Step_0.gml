@@ -39,10 +39,11 @@ if(showInventory){
 		if(selectedItem - 1) >= 0 selectedItem--;
 		else selectedItem = (maxInvSlots - 1);
 	}
+	item = a_inv[selectedItem];
 	
 	//Drop Items
 	if(keyboard_check_pressed(vk_backspace) || gamepad_button_check_pressed(0, gp_face3)){
-		item = a_inv[selectedItem];
+		//item = a_inv[selectedItem];
 		
 		dropItems(item);
 	}
