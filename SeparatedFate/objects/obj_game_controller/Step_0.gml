@@ -88,19 +88,9 @@ for(i=0; i<3; i++){
 		global.controllSpells[i] = true;
 	}
 }
-if(global.currentSpell == -1) global.spell = spr_actSpell;
-if(global.currentSpell == 0) {
-	global.spell = spr_actSpell1;
-	global.pDmgSpell = global.dmgThunder
-}
-if(global.currentSpell == 1) {
-	global.spell = spr_actSpell2;
-	global.pDmgSpell = global.dmgFire
-}
-if(global.currentSpell == 2) {
-	global.spell = spr_actSpell3;
-	global.pDmgSpell = global.dmgHoly;
-}
+if(global.currentSpell == 0) global.pDmgSpell = global.dmgThunder;
+if(global.currentSpell == 1) global.pDmgSpell = global.dmgFire;
+if(global.currentSpell == 2) global.pDmgSpell = global.dmgHoly;
 #endregion
 
 #region POWERS
@@ -109,9 +99,6 @@ for(i=0; i<3; i++){
 		global.controllPowers[i] = true;
 	}
 }
-if(global.currentPower == -1) global.power = spr_actPower;
-if(global.currentPower == 0) global.power = spr_actPower1;
-if(global.currentPower == 1) global.power = spr_actPower2;
 #endregion
 
 #region DIALOGUE SYSTEM

@@ -65,9 +65,10 @@ function player_controls(){
 #endregion
 
 #region SCREEN ALIGN
-function define_align(_ver, _hor){
+function define_align_font(_ver, _hor, _font){
 	draw_set_halign(_hor);
 	draw_set_valign(_ver);
+	draw_set_font(_font);
 }
 #endregion
 
@@ -87,8 +88,7 @@ enum pause_list{
 }
 
 function create_menu(_menu){
-	draw_set_font(fnt_menu);
-	define_align(0, 0);
+	define_align_font(0, 0, fnt_menu);
 
 	var _qtd = array_length(_menu);
 	var _alt = display_get_gui_height();
@@ -106,8 +106,7 @@ function create_menu(_menu){
 	}
 
 	//Reseting Variables
-	draw_set_font(-1);
-	define_align(-1, -1);
+	define_align_font(-1, -1, -1);
 }
 #endregion
 
@@ -168,8 +167,7 @@ function draw_gameover_screen(_string, _desc){
 	draw_set_color(-1);
 	
 	//Writing Game Over
-	draw_set_font(fnt_game_over);
-	define_align(1,  1);
+	define_align_font(1, 1, fnt_game_over);
 	
 	//Shadow
 	draw_set_color(c_red);
@@ -178,20 +176,19 @@ function draw_gameover_screen(_string, _desc){
 	draw_set_color(c_white);
 	draw_text(center_w, center_h, _string);	
 	
-	draw_set_font(-1);
+	//Writing Description
+	define_align_font(1, 1, -1);
 	draw_set_color(c_black);
 	draw_text(center_w + 10, center_h + 50, _desc);
 	
 	draw_set_color(c_white);
 	draw_text(center_w + 11, center_h + 51, _desc);
 	
-	define_align(-1, -1);	
-	draw_set_font(-1);
+	define_align_font(-1, -1, -1);	
 }
 
 function draw_power_screen(_string, _desc){
-	define_align(fa_middle, fa_center);
-	draw_set_font(fnt_game_over)
+	define_align_font(fa_middle, fa_center, fnt_game_over);
 	
 	draw_sprite_ext(spr_pixel, 0, 1000, 0, 920, 400, 0, c_black, 0.5);
 	
@@ -207,16 +204,14 @@ function draw_power_screen(_string, _desc){
 	draw_set_color(c_white);
 	draw_text(1500, 250, _desc);
 	
-	define_align(-1, -1);	
-	draw_set_font(-1);
+	define_align_font(-1, -1, -1);	
 }
 
 #endregion
 
 #region BOSS HUD
 function draw_boss_hud(_string){
- 	draw_set_font(fnt_boss);
-	define_align(1,  1);
+	define_align_font(1,  1, fnt_boss);
 	
 	//Shadow
 	draw_set_color(c_red);
@@ -229,8 +224,6 @@ function draw_boss_hud(_string){
 	draw_sprite_stretched_ext(spr_boss_health, 0, healthbar_x, healthbar_y-260, (life/max_life) * healthbar_width, healthbar_height, -1, 0.5);
 
 
-	define_align(-1, -1);	
-	draw_set_font(-1);
+	define_align_font(-1, -1, -1);	
 }
-
 #endregion

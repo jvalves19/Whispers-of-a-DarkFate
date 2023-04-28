@@ -39,7 +39,7 @@ with(obj_game_controller){
 //var flipped = direction;
 //var spell_x = (x + 4) * (flipped);
 //var y_offset = lengthdir_y(-20, image_angle);
-var _xx = x + lengthdir_x(0, image_angle);
+var _xx = x + lengthdir_x(20 * image_xscale, image_angle);
 
 #region CHANGE SPELL
 if(changeSpell && global.currentSpell == 0){
@@ -297,7 +297,7 @@ switch(state){
 		}
 	
 		if(image_index >= 1 && canAttack && aura > 5){
-			setSpell(_xx, global.pDmgSpell, 01, obj_pSpells);
+			setSpell(_xx, global.pDmgSpell, 20, obj_pSpells);
 		}
 		
 		if(image_index >= image_number-1){

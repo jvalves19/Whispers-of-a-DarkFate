@@ -3,8 +3,7 @@
 
 draw_self();
 
-define_align(fa_right, fa_bottom);
-draw_set_font(-1);
+define_align_font(fa_right, fa_bottom, -1);
 draw_set_color(c_white);
 
 draw_text(x + sprite_width, y + sprite_height, "x" + string(quantity));

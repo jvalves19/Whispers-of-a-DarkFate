@@ -23,10 +23,10 @@ enum e_item_stats{
 	maxStack,
 }
 enum e_item_type{
-	red,
-	blue,
-	green,
-	yellow
+	red =0 ,
+	blue = 1,
+	green = 2,
+	yellow = 3
 }
 enum e_inventory{
 	type,
@@ -77,7 +77,6 @@ global.controllBlades = [
 */
 
 //ULTIMATE VARIABLES
-global.power = noone;
 global.currentPower = -1;
 global.controllPowers = [
 	false,	//Fast Sword
@@ -86,7 +85,6 @@ global.controllPowers = [
 ]
 
 //SPELL VARIABLES
-global.spell = noone;
 global.currentSpell = -1;
 global.controllSpells = [
 	false,	//electric

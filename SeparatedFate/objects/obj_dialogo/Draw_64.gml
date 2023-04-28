@@ -1,12 +1,10 @@
 if(inicializar){
-	define_align(fa_middle, fa_center);
-	draw_set_font(fnt_game_over)
+	define_align_font(fa_center, fa_middle, fnt_game_over);
 	
 	draw_sprite_ext(spr_pixel, 0, 1000, 0, 920, 100, 0, c_black, 0.5);
 	draw_text(1500, 50, "Enter ou x para Selecionar");
 	
-	draw_set_font(-1);
-	define_align(-1, -1);
+	define_align_font(-1, -1, -1);
 	
 	var _guiW = display_get_gui_width();
 	var _guiH = display_get_gui_height();
@@ -15,7 +13,7 @@ if(inicializar){
 	var _yy = _guiH - 100;
 	var _color = c_black;	
 
-	draw_set_font(fnt_dialogue);
+	define_align_font(-1, -1, fnt_dialogue);
 
 	draw_rectangle_color(_xx, _yy, _guiW, _guiH, _color, _color, _color, _color, false);
 	draw_text_ext(_xx + 32, _yy + 10, texto_grid[# Infos.Texto, pagina], 32, _guiW - 64);

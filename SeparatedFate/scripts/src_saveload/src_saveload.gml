@@ -16,8 +16,6 @@ function saveGame(_slot){
 	ini_write_real(_slot, "Player MaxLevel", global.playerMaxLevel);
 	ini_write_real(_slot, "Player Gold", global.playerGold);
 	
-	
-	
 	ini_write_real(_slot, "Damage Spell", global.pDmgSpell);
 	ini_write_real(_slot, "Damage Fire", global.dmgFire);
 	ini_write_real(_slot, "Damage Thunder", global.dmgThunder);
@@ -78,7 +76,7 @@ function loadGame(_slot){
 	global.playerMaxXP = ini_read_real(_slot, "Player MaxXp", 0);
 	global.playerMaxLevel = ini_read_real(_slot, "Player MaxLevel", 0);
 	global.playerGold = ini_read_real(_slot, "Player Gold", 0);
-	
+		
 	global.pDmgSpell = ini_read_real(_slot, "Damage Spell", 0);
 	global.dmgFire = ini_read_real(_slot, "Damage Fire", 0);
 	global.dmgThunder = ini_read_real(_slot, "Damage Thunder", 0);

@@ -10,13 +10,11 @@ if(pause){
 	var h = camera_get_view_height(view_camera[0]);
 	var center_h = y1 + h/2;
 
-	draw_set_font(fnt_game_over);
-	define_align(1,  1);
+	define_align_font(1,  1, fnt_game_over);
 	
 	draw_set_color(c_white);
 	draw_text(center_w, center_h, "Game Pause");
-	define_align(-1, -1);	
-	draw_set_font(-1);
+	define_align_font(-1, -1, -1);	
 	
 	draw_menu(menus[pag]);
 }

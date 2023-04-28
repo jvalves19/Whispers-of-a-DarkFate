@@ -19,8 +19,8 @@ draw_sprite_stretched(spr_art, 0, w/center_w + 25, h/center_h + 15, 120, 120);
 draw_sprite_stretched(spr_spellBox10, 0, w/center_w - 15, h/center_h + 130, 200, 125);
 
 #region SPELL & ULTIMATE BOX
-draw_sprite_stretched(global.spell, 0, w/center_w + 15, h/center_h + 145, 125, 125);
-draw_sprite_stretched(global.power, 0, w/center_w + 30, h/center_h + 145, 125, 125);
+draw_sprite_stretched(spr_hudSpell, global.currentSpell+1, w/center_w + 15, h/center_h + 145, 125, 125);
+draw_sprite_stretched(spr_hudPower, global.currentPower+1, w/center_w + 30, h/center_h + 145, 125, 125);
 #endregion
 
 //Player HealthBar
@@ -54,8 +54,7 @@ if(showInventory){
 			draw_sprite(spr_items, item, itemX, itemY);
 			
 			if(quantity > 1){
-				define_align(fa_right, fa_bottom);
-				draw_set_font(-1);
+				define_align_font(fa_right, fa_bottom, -1);
 				draw_set_color(c_white);
 				
 				draw_text(itemX + (sprite_get_width(spr_items) / 2), itemY + (sprite_get_height(spr_items) / 2), "x" + string(quantity));
