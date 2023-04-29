@@ -10,6 +10,8 @@ function saveGame(_slot){
 	ini_write_real(_slot, "Player Aura", global.pMaxAura);
 	ini_write_real(_slot, "Player Atk", global.pAtk);
 	
+	ini_write_real(_slot, "Inventory", global.a_inv[e_inventory.type, e_inventory.quantity]);
+	
 	ini_write_real(_slot, "Player XP", global.playerXP);
 	ini_write_real(_slot, "Player Level", global.playerLevel);
 	ini_write_real(_slot, "Player MaxXp", global.playerMaxXP);
@@ -71,12 +73,14 @@ function loadGame(_slot){
 	global.pMaxAura = ini_read_real(_slot, "Player Aura", 0);
 	global.pAtk = ini_read_real(_slot, "Player Atk", 0);
 	
+	global.a_inv[e_inventory.type, e_inventory.quantity] = ini_read_real(_slot, "Inventory", 0);
+	
 	global.playerXP = ini_read_real(_slot, "Player XP", 0);
 	global.playerLevel = ini_read_real(_slot, "Player Level", 0);
 	global.playerMaxXP = ini_read_real(_slot, "Player MaxXp", 0);
 	global.playerMaxLevel = ini_read_real(_slot, "Player MaxLevel", 0);
 	global.playerGold = ini_read_real(_slot, "Player Gold", 0);
-		
+	
 	global.pDmgSpell = ini_read_real(_slot, "Damage Spell", 0);
 	global.dmgFire = ini_read_real(_slot, "Damage Fire", 0);
 	global.dmgThunder = ini_read_real(_slot, "Damage Thunder", 0);

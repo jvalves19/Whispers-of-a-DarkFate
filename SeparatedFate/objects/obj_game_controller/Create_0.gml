@@ -23,7 +23,7 @@ enum e_item_stats{
 	maxStack,
 }
 enum e_item_type{
-	red =0 ,
+	red = 0 ,
 	blue = 1,
 	green = 2,
 	yellow = 3
