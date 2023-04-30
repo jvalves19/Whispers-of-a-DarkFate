@@ -1,8 +1,6 @@
 // Inherit the parent event
 event_inherited();
 
-
-
 #region LIFE AND AURA
 max_hSpd = 4;
 max_vSpd = 6;
@@ -23,13 +21,13 @@ atk = global.pAtk;
 atkMult = 1;
 canAttack = true;
 
-canSpell = false;
-spellTimer = room_speed*5;
+canSpell = true;
+spellTimer = room_speed*2;
 time_spell = spellTimer;
 
-canPower = false;
-powerTimer = room_speed*15;
-time_Power = powerTimer;
+canPower = true;
+powerTimer = room_speed*10;
+time_power = powerTimer;
 
 invincible = false;
 invincible_timer = room_speed*0.35;

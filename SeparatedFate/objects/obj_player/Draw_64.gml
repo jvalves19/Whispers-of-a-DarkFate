@@ -32,6 +32,20 @@ draw_sprite_stretched(spr_mBckg, 0, w - 240, h/center_h + 80, healthbar_width+20
 draw_sprite_stretched(spr_mana, 0, w - 220, h/center_h + 100, 
 (aura/global.pMaxAura ) * healthbar_width-10, healthbar_height - 20);
 
+if(!canPower){
+	draw_sprite_stretched(spr_disablePower, 0, w/center_w + 30, h/center_h + 145, 125, 125);
+	define_align_font(-1, -1, -1);
+	draw_text(w/center_w + 100, h/center_h + 160, string_format((time_power/100), 0, 0));
+	define_align_font(-1, -1, -1);
+}
+
+if(!canSpell){
+	draw_sprite_stretched(spr_disablePower, 0, w/center_w - 35, h/center_h + 145, 125, 125);
+	define_align_font(-1, -1, -1);
+	draw_text(w/center_w + 30, h/center_h + 160, string_format((time_spell/100), 0, 0));
+	define_align_font(-1, -1, -1);
+}
+
 draw_text(w - 240, h/center_h + 120, global.playerXP);
 draw_text(w - 240, h/center_h + 240, global.playerLevel);
 draw_text(w - 240, h/center_h + 360, global.playerGold);

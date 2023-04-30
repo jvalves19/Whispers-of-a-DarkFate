@@ -1,7 +1,7 @@
 if(instance_exists(obj_transition) || instance_exists(obj_dialogo)) || instance_exists(obj_dialogue) exit;
-
 //Initializing variables
 player_controls();
+
 var ground = place_meeting(x, y + 1, obj_block);
 var fall = vSpd!=0;
 //Gravity
@@ -9,7 +9,6 @@ if(left && right) state = "idle"
 if(!ground && (vSpd < max_vSpd * 2 )){
 	vSpd += GRAVITY * weight * global.spd_mult;
 }
-
 
 #region INVENTORY
 with(obj_game_controller){
@@ -75,12 +74,19 @@ if(changeSpell && global.currentSpell == 2){
 	}
 }
 if(global.currentSpell == 0 || global.currentSpell == 1 || global.currentSpell == 2){
-	canSpell = true;
+	if(!canSpell && time_spell > 0){
+		canSpell = false;
+		time_spell --;
+		//image_alpha = max(sin(get_timer()/100000), 0.5);
+	} else {
+		canSpell = true;
+		//image_alpha = 1;
+	}
 }
 #endregion
 
 #region CHANGE POWER
-if(changeUltimate && global.currentPower == 0){
+if(canPower && changeUltimate && global.currentPower == 0){
 	if(global.controllPowers[1]){
 		global.currentPower = 1;
 		exit;
@@ -91,7 +97,7 @@ if(changeUltimate && global.currentPower == 0){
 	}
 }
 	
-if(changeUltimate && global.currentPower == 1){
+if(canPower && changeUltimate && global.currentPower == 1){
 	if(global.controllPowers[2]){
 		global.currentPower = 2;
 		exit;
@@ -102,7 +108,7 @@ if(changeUltimate && global.currentPower == 1){
 	}
 }
 	
-if(changeUltimate && global.currentPower == 2){
+if(canPower && changeUltimate && global.currentPower == 2){
 	if(global.controllPowers[0]){
 		global.currentPower = 0;
 		exit;
@@ -112,9 +118,14 @@ if(changeUltimate && global.currentPower == 2){
 		exit;
 	}
 }
-if(global.currentPower == 0 || global.currentPower == 1 || global.currentPower == 2){
-	canPower = true;
-}
+	if(!canPower && time_power > 0){
+		canPower = false;
+		time_power --;
+		//image_alpha = max(sin(get_timer()/100000), 0.5);
+	} else {
+		canPower = true;
+		//image_alpha = 1;
+	}
 #endregion	
 
 #region PLAYER INVINCIBLE
@@ -284,7 +295,8 @@ switch(state){
 				(camera_get_view_width(view_camera[0])-250, camera_get_view_width(view_camera[0])-550), 
 				(camera_get_view_height(view_camera[0])-470), 2, 5);
 		}
-	
+		canPower = false;
+		time_power = powerTimer;
 		break;
 	#endregion
 		
@@ -295,16 +307,13 @@ switch(state){
 			image_index = 0;	
 			hSpd = 0;
 		}
-	
-		if(image_index >= 1 && canAttack && aura > 5){
-			setSpell(_xx, global.pDmgSpell, 20, obj_pSpells);
-		}
-		
+		if(image_index >= 1 && canAttack && aura > 5) setSpell(_xx, global.pDmgSpell, 20, obj_pSpells);
 		if(image_index >= image_number-1){
 			canAttack = true;
 			state = "idle";
 		}
-		
+		canSpell = false;
+		time_spell= spellTimer;
 		break;
 	#endregion
 	
