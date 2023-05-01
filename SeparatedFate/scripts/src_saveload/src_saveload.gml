@@ -51,11 +51,12 @@ function saveGame(_slot){
 	ini_write_real(_slot, "Dialogue", global.stateDialogue);
 	
 	//DEBUG
-	show_debug_message(global.pDmgSpell);
-	show_debug_message(global.pMaxLife);
-	show_debug_message(global.pAtk);
-	show_debug_message(global.destroyed[1]);
-	show_debug_message(global.destroyed[2]);
+	show_debug_message("Vida Máxima: " + string(global.pMaxLife));
+	show_debug_message("Aura Máxima: " + string(global.pMaxAura));
+	show_debug_message("Dano Ataque: " + string(global.pAtk));
+	show_debug_message("Dano Mágico: " + string(global.pDmgSpell));
+	show_debug_message("Boss 1 Destruído: " + string(global.destroyed[1]));
+	show_debug_message("Boss 2 Destruído: " + string(global.destroyed[2]));
 
 	ini_close();
 }
@@ -117,11 +118,12 @@ function loadGame(_slot){
 	
 	global.stateDialogue = ini_read_real(_slot, "Dialogue", 0);
 	
-	show_debug_message(global.destroyed[1]);
-	show_debug_message(global.destroyed[2]);
-	
-	show_debug_message(global.pMaxLife);
-	show_debug_message(global.pAtk);
+	show_debug_message("Vida Máxima: " + string(global.pMaxLife));
+	show_debug_message("Aura Máxima: " + string(global.pMaxAura));
+	show_debug_message("Dano Ataque: " + string(global.pAtk));
+	show_debug_message("Dano Mágico: " + string(global.pDmgSpell));
+	show_debug_message("Boss 1 Destruído: " + string(global.destroyed[1]));
+	show_debug_message("Boss 2 Destruído: " + string(global.destroyed[2]));
 	
 	ini_close();
 	room_goto(roomID);
