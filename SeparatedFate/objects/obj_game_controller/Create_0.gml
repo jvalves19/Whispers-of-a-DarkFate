@@ -30,7 +30,7 @@ global.pDmgSpell = noone;
 global.lifePotionQtd = 0;
 global.auraPotionQtd = 0;
 
-global.currentItem = -1;
+global.currentItem = 0;
 global.controllItems = [
 	false,	//Life Potion
 	false,	//Aura Potion

@@ -73,18 +73,7 @@ for(i=0; i<3; i++){
 	if(global.currentItem == i){
 		global.controllItems[i] = true;
 	}
-	
 }
-
-if(global.lifePotionQtd == 0){
-	global.controllItems[0] = false;
-	//global.currentItem = -1;
-}
-if(global.auraPotionQtd == 0){
-	global.controllItems[1] = false;
-	//global.currentItem = -1;
-}
-	
 
 #endregion
 

@@ -1,6 +1,9 @@
-if(instance_exists(obj_transition) || instance_exists(obj_dialogo)) || instance_exists(obj_dialogue) exit;
+if(instance_exists(obj_transition) || instance_exists(obj_dialogo)) || instance_exists(obj_dialogue) || obj_game_controller.game_over exit;
 //Initializing variables
 player_controls();
+
+var doorSense = place_meeting(x, y, obj_sensor);
+var npcSense = place_meeting(x, y, obj_npcFather);
 
 var ground = place_meeting(x, y + 1, obj_block);
 var fall = vSpd!=0;
@@ -17,7 +20,7 @@ if(!ground && (vSpd < max_vSpd * 2 )){
 var _xx = x + lengthdir_x(20 * image_xscale, image_angle);
 
 #region CHANGE ITEM
-if(keyboard_check_pressed(vk_down) && global.currentItem == 0){
+if((keyboard_check_pressed(vk_down) ||  gamepad_button_check_pressed(0, gp_padd))  && global.currentItem == 0){
 	if(global.controllItems[1]){
 		global.currentItem = 1;
 		exit;
@@ -27,7 +30,7 @@ if(keyboard_check_pressed(vk_down) && global.currentItem == 0){
 	}
 }
 
-if(keyboard_check_pressed(vk_down) && global.currentItem == 1){
+if((keyboard_check_pressed(vk_down) ||  gamepad_button_check_pressed(0, gp_padd)) && global.currentItem == 1){
 	if(global.controllItems[0]){
 		global.currentItem = 0;	
 		exit;
@@ -37,15 +40,13 @@ if(keyboard_check_pressed(vk_down) && global.currentItem == 1){
 	}
 }
 
-if(keyboard_check(ord("I"))){
+if(keyboard_check(ord("I")) || gamepad_button_check_pressed(0, gp_face4)){
 	if(global.currentItem == 0 && global.lifePotionQtd>0){
 		if(obj_player.life < global.pMaxLife){
 			if(global.lifePotionQtd - 1 == 0){
 				if(global.auraPotionQtd> 0){
 					global.currentItem = 1;
-					//exit;
 				}
-				else global.currentItem = -1;
 			}
 			
 			if((obj_player.life + 50) >= global.pMaxLife){
@@ -63,9 +64,7 @@ if(keyboard_check(ord("I"))){
 			if(global.auraPotionQtd - 1 == 0){
 				if(global.lifePotionQtd > 0){
 					global.currentItem = 0;	
-					//exit;
 				}
-				else global.currentItem = -1;
 			}
 			if((obj_player.aura + 50) >= global.pMaxAura){
 				obj_player.aura = global.pMaxAura;
@@ -195,7 +194,7 @@ switch(state){
 			state = "walk";
 		}	
 		else
-			if(jump || fall){
+			if((!doorSense && !npcSense) && (jump || fall)){
 				state = "jump";	
 				vSpd = (-max_vSpd * jump);
 				image_index = 0;
@@ -240,7 +239,7 @@ switch(state){
 			hSpd = 0;
 		}
 		else
-			if(jump || fall){
+			if((!doorSense && !npcSense) && (jump || fall)){
 				state = "jump";	
 				vSpd = (-max_vSpd * jump);
 				image_index = 0;
@@ -269,7 +268,6 @@ switch(state){
 				state = "spell";
 				image_index = 0;
 			}
-		
 	
 		break;
 	#endregion
@@ -395,6 +393,7 @@ switch(state){
 			sprite_index = spr_dead;
 			image_index = 0;
 			hSpd = 0;
+			vSpd = 0;
 		}
 			
 		if(image_index > image_number-1){

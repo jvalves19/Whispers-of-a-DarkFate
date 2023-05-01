@@ -13,6 +13,8 @@ function saveGame(_slot){
 	//ini_write_string(_slot, "Inventory", global.a_inv);
 	
 	ini_write_real(_slot, "Potin", global.currentItem);
+	ini_write_real(_slot, "Potion Life Qtd", global.lifePotionQtd);
+	ini_write_real(_slot, "Potion Aura Qtd", global.auraPotionQtd);
 	ini_write_real(_slot, "Potion Life", global.controllItems[0]);
 	ini_write_real(_slot, "Potion Aura", global.controllItems[1]);
 	
@@ -81,6 +83,8 @@ function loadGame(_slot){
 	
 	//global.a_inv = ini_read_string(_slot, "Inventory", 0);
 	global.currentItem = ini_read_real(_slot, "Potion", 0);
+	global.lifePotionQtd = ini_read_real(_slot, "Potion Life Qtd", 0);
+	global.auraPotionQtd = ini_read_real(_slot, "Potion Aura Qtd", 0);
 	global.controllItems[0] = ini_read_real(_slot, "Potion Life", 0);
 	global.controllItems[1] = ini_read_real(_slot, "Potion Aura", 0);
 	
