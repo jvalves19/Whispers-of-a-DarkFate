@@ -20,7 +20,7 @@ if(!ground && (vSpd < max_vSpd * 2 )){
 var _xx = x + lengthdir_x(20 * image_xscale, image_angle);
 
 #region CHANGE ITEM
-if((keyboard_check_pressed(vk_down) ||  gamepad_button_check_pressed(0, gp_padd))  && global.currentItem == 0){
+if(down  && global.currentItem == 0){
 	if(global.controllItems[1]){
 		global.currentItem = 1;
 		exit;
@@ -30,7 +30,7 @@ if((keyboard_check_pressed(vk_down) ||  gamepad_button_check_pressed(0, gp_padd)
 	}
 }
 
-if((keyboard_check_pressed(vk_down) ||  gamepad_button_check_pressed(0, gp_padd)) && global.currentItem == 1){
+if(down && global.currentItem == 1){
 	if(global.controllItems[0]){
 		global.currentItem = 0;	
 		exit;

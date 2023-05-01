@@ -16,13 +16,13 @@ function player_controls(){
 		keyboard_check(ord("A"))
 	);
 	down = (
-		(gamepad_button_check(0, gp_padd)) ||
-		keyboard_check(vk_down) 
+		(gamepad_button_check_pressed(0, gp_padd)) ||
+		keyboard_check_pressed(vk_down) 
 		//keyboard_check(ord("S"))
 	);
 	up = (
-		(gamepad_button_check(0, gp_padu)) ||
-		keyboard_check(vk_up)
+		(gamepad_button_check_pressed(0, gp_padu)) ||
+		keyboard_check_pressed(vk_up)
 		//keyboard_check(ord("W"))
 	);
 	action = (
