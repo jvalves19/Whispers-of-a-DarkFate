@@ -10,35 +10,82 @@ if(!ground && (vSpd < max_vSpd * 2 )){
 	vSpd += GRAVITY * weight * global.spd_mult;
 }
 
-#region INVENTORY
-with(obj_game_controller){
-	if(showInventory){	
-		//Change Items
-		if(gamepad_button_check(0, gp_padu) || keyboard_check_pressed(vk_down)){
-			if(selectedItem + 1) <= (maxInvSlots - 1) selectedItem++;
-			else selectedItem = 0;
-		}
-		if(gamepad_button_check(0, gp_padd) || keyboard_check_pressed(vk_up)){
-			if(selectedItem - 1) >= 0 selectedItem--;
-			else selectedItem = (maxInvSlots - 1);
-		}
-		item = global.a_inv[selectedItem, e_inventory.type];
-	
-		//Drop Items
-		if(keyboard_check_pressed(ord("I")) || gamepad_button_check_pressed(0, gp_face4)){
-			//item = a_inv[selectedItem];
-		
-			useItem(item);
-		}
-	}
-}
-#endregion
-
 //Spell direction variables
 //var flipped = direction;
 //var spell_x = (x + 4) * (flipped);
 //var y_offset = lengthdir_y(-20, image_angle);
 var _xx = x + lengthdir_x(20 * image_xscale, image_angle);
+
+#region CHANGE ITEM
+if(keyboard_check_pressed(vk_down) && global.currentItem == 0){
+	if(global.controllItems[1]){
+		global.currentItem = 1;
+		exit;
+	}
+	else{
+		global.currentItem = 0;
+	}
+}
+
+if(keyboard_check_pressed(vk_down) && global.currentItem == 1){
+	if(global.controllItems[0]){
+		global.currentItem = 0;	
+		exit;
+	}
+	else{
+		global.currentItem = 1;
+	}
+}
+
+if(keyboard_check(ord("I"))){
+	if(global.currentItem == 0 && global.lifePotionQtd>0){
+		if(obj_player.life < global.pMaxLife){
+			if(global.lifePotionQtd - 1 == 0){
+				if(global.auraPotionQtd> 0){
+					global.currentItem = 1;
+					//exit;
+				}
+				else global.currentItem = -1;
+			}
+			
+			if((obj_player.life + 50) >= global.pMaxLife){
+				obj_player.life = global.pMaxLife;
+			}	
+			else {
+				obj_player.life = obj_player.life + 50;
+			}
+			
+			global.lifePotionQtd -= 1
+		}
+	}
+	if(global.currentItem == 1 && global.auraPotionQtd>0){
+		if(obj_player.aura < global.pMaxAura){
+			if(global.auraPotionQtd - 1 == 0){
+				if(global.lifePotionQtd > 0){
+					global.currentItem = 0;	
+					//exit;
+				}
+				else global.currentItem = -1;
+			}
+			if((obj_player.aura + 50) >= global.pMaxAura){
+				obj_player.aura = global.pMaxAura;
+			}	
+			else {
+				obj_player.aura = obj_player.aura + 50;
+			}
+			global.auraPotionQtd -= 1;
+		}
+	}
+}
+
+quantity = 0;
+if(global.currentItem == 0){
+	quantity = global.lifePotionQtd;
+}
+if(global.currentItem == 1){
+	quantity = global.auraPotionQtd;
+}
+#endregion
 
 #region CHANGE SPELL
 if(changeSpell && global.currentSpell == 0){

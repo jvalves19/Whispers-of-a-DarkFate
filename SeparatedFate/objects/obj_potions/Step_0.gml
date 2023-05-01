@@ -1,15 +1,16 @@
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
 
-if(!canBePicked){
-	x1 = x;
-	y1 = y;
-	x2 = x + sprite_width/sprite_width;
-	y2 = y - sprite_height;
+
+if(place_meeting(x, y, global.actPlayer)){
+	global.currentItem = image_index;
 	
-	if(collision_rectangle(x1, y1, x2, y2, obj_player, false, false)){
-	
-	} else {
-		canBePicked = true;
+	if(image_index == 0){
+		global.lifePotionQtd += 1;
 	}
+	if(image_index == 1){
+		global.auraPotionQtd += 1;
+	}
+	
+	instance_destroy();
 }

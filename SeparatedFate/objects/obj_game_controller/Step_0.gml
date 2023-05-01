@@ -69,17 +69,23 @@ if(keyboard_check_pressed(vk_enter) || gamepad_button_check_pressed(0, gp_face1)
 #endregion
 
 #region PICK ITEMS
-x1 = obj_player.x;
-y1 = obj_player.y;
-x2 = obj_player.x + obj_player.sprite_width/obj_player.sprite_width;
-y2 = obj_player.y - obj_player.sprite_height;
-
-if(collision_rectangle(x1, y1, x2, y2, obj_item, false, false)){
-	itemInstanceID = collision_rectangle(x1, y1, x2, y2, obj_item, false, false);
-	item = itemInstanceID.image_index;
+for(i=0; i<3; i++){
+	if(global.currentItem == i){
+		global.controllItems[i] = true;
+	}
 	
-	if(itemInstanceID.canBePicked) pickItems(item, itemInstanceID);
 }
+
+if(global.lifePotionQtd == 0){
+	global.controllItems[0] = false;
+	//global.currentItem = -1;
+}
+if(global.auraPotionQtd == 0){
+	global.controllItems[1] = false;
+	//global.currentItem = -1;
+}
+	
+
 #endregion
 
 #region SPELLS

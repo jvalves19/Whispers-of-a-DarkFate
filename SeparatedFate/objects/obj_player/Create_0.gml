@@ -35,7 +35,6 @@ time_invincible = invincible_timer;
 
 global.currentBlade = global.currentBlade;
 global.playerID = object_index;
-
 #endregion
 
 //Methods to attack

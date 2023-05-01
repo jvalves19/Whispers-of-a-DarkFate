@@ -16,46 +16,6 @@ global.playerMaxLevel = 500;
 global.playerMaxXP = 500;
 global.playerGold = 100;
 
-#region INVENTORY SYSTEM
-enum e_item_stats{
-	name,
-	cost,
-	maxStack,
-}
-enum e_item_type{
-	red = 0 ,
-	blue = 1,
-	green = 2,
-	yellow = 3
-}
-enum e_inventory{
-	type,
-	quantity,
-}
-global.a_items[e_item_type.red, e_item_stats.name] = "RED POTION";
-global.a_items[e_item_type.red, e_item_stats.maxStack] = 10;
-
-global.a_items[e_item_type.blue, e_item_stats.name] = "BLUE POTION";
-global.a_items[e_item_type.blue, e_item_stats.maxStack] = 10;
-
-global.a_items[e_item_type.green, e_item_stats.name] = "GREEN POTION";
-global.a_items[e_item_type.green, e_item_stats.maxStack] = 5;
-
-global.a_items[e_item_type.yellow, e_item_stats.name] = "YELLOW POTION";
-global.a_items[e_item_type.yellow, e_item_stats.maxStack] = 5;
-
-global.itemType = -1;
-global.itemQtd = 0; 
-
-maxInvSlots = 4;
-for(var inv = 0; inv < maxInvSlots; inv++){
-	global.a_inv[inv, e_inventory.type] = global.itemType;
-	global.a_inv[inv, e_inventory.quantity] = global.itemQtd;
-}
-showInventory = true;
-selectedItem = 0;
-#endregion
-
 //PLAYER VARIABLES
 global.pMaxLife = 100;
 global.pMaxAura = 150;
@@ -65,6 +25,19 @@ global.dmgFire = 20 * global.playerLevel;
 global.dmgHoly = 20 * global.playerLevel;
 global.dmgThunder = 20 * global.playerLevel;
 global.pDmgSpell = noone;
+
+#region INVENTORY SYSTEM
+global.lifePotionQtd = 0;
+global.auraPotionQtd = 0;
+
+global.currentItem = -1;
+global.controllItems = [
+	false,	//Life Potion
+	false,	//Aura Potion
+	false,	
+	false,
+]
+#endregion
 
 //BLADE VARIABLES
 global.currentBlade = 0;

@@ -10,7 +10,10 @@ function saveGame(_slot){
 	ini_write_real(_slot, "Player Aura", global.pMaxAura);
 	ini_write_real(_slot, "Player Atk", global.pAtk);
 	
-	ini_write_string(_slot, "Inventory", global.a_inv);
+	//ini_write_string(_slot, "Inventory", global.a_inv);
+	//global.strInventario = string(global.a_inv);
+	
+	//ini_write_string(_slot, "Inventory", global.strInventario)
 	
 	ini_write_real(_slot, "Player XP", global.playerXP);
 	ini_write_real(_slot, "Player Level", global.playerLevel);
@@ -51,7 +54,7 @@ function saveGame(_slot){
 	ini_write_real(_slot, "Dialogue", global.stateDialogue);
 	
 	//DEBUG
-	show_debug_message(string(global.a_inv));
+	//show_debug_message(string(global.strInventario));
 	show_debug_message("Vida Máxima: " + string(global.pMaxLife));
 	show_debug_message("Aura Máxima: " + string(global.pMaxAura));
 	show_debug_message("Dano Ataque: " + string(global.pAtk));
@@ -76,6 +79,7 @@ function loadGame(_slot){
 	global.pAtk = ini_read_real(_slot, "Player Atk", 0);
 	
 	//global.a_inv = ini_read_string(_slot, "Inventory", 0);
+	//global.strInventario = ini_read_string(_slot, "Inventory", 0);
 	
 	global.playerXP = ini_read_real(_slot, "Player XP", 0);
 	global.playerLevel = ini_read_real(_slot, "Player Level", 0);
@@ -119,7 +123,7 @@ function loadGame(_slot){
 	
 	global.stateDialogue = ini_read_real(_slot, "Dialogue", 0);
 	
-	show_debug_message(string(global.a_inv));
+	//show_debug_message(string(global.a_inv));
 	show_debug_message("Vida Máxima: " + string(global.pMaxLife));
 	show_debug_message("Aura Máxima: " + string(global.pMaxAura));
 	show_debug_message("Dano Ataque: " + string(global.pAtk));
