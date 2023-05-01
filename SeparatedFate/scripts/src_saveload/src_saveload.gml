@@ -11,9 +11,10 @@ function saveGame(_slot){
 	ini_write_real(_slot, "Player Atk", global.pAtk);
 	
 	//ini_write_string(_slot, "Inventory", global.a_inv);
-	//global.strInventario = string(global.a_inv);
 	
-	//ini_write_string(_slot, "Inventory", global.strInventario)
+	ini_write_real(_slot, "Potin", global.currentItem);
+	ini_write_real(_slot, "Potion Life", global.controllItems[0]);
+	ini_write_real(_slot, "Potion Aura", global.controllItems[1]);
 	
 	ini_write_real(_slot, "Player XP", global.playerXP);
 	ini_write_real(_slot, "Player Level", global.playerLevel);
@@ -79,7 +80,9 @@ function loadGame(_slot){
 	global.pAtk = ini_read_real(_slot, "Player Atk", 0);
 	
 	//global.a_inv = ini_read_string(_slot, "Inventory", 0);
-	//global.strInventario = ini_read_string(_slot, "Inventory", 0);
+	global.currentItem = ini_read_real(_slot, "Potion", 0);
+	global.controllItems[0] = ini_read_real(_slot, "Potion Life", 0);
+	global.controllItems[1] = ini_read_real(_slot, "Potion Aura", 0);
 	
 	global.playerXP = ini_read_real(_slot, "Player XP", 0);
 	global.playerLevel = ini_read_real(_slot, "Player Level", 0);
