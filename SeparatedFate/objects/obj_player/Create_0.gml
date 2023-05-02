@@ -45,7 +45,6 @@ state_attack = function(ground){
 		image_index = 0;
 	}
 }
-
 ///@method player_attacking()
 player_attacking = function(_sprite_index, _image_index_min, _image_index_max, _dist_x, _dist_y, _xscale_damage, _yscale_damage, _next_state, _damage_obj){
 	if(!_xscale_damage) _xscale_damage = 1;
@@ -101,53 +100,49 @@ player_attacking = function(_sprite_index, _image_index_min, _image_index_max, _
 	if(damage != noone && image_index >= _image_index_max){
 		instance_destroy(damage)
 		damage = noone;
-		
 	}
 }
 
 ///@method player_ultimate()
-player_ultimate = function(_sprite_index, _dist_x, _dist_y, _xscale_damage, _yscale_damage){
-	if(aura > 0){			
+player_ultimate = function(_sprite_index, _aura, _dist_x, _dist_y, _xscale_damage, _yscale_damage){
+	if((aura - _aura) >= 0){
+		hSpd = 0;
 		if(sprite_index != _sprite_index){
 			sprite_index = _sprite_index;
 			image_index = 0;	
-			aura = aura - 40;
+			aura -= _aura;
 			hSpd = 0;
 		}	
-			
-		if(global.currentPower == 0){
-			if(image_index >= 5 && image_index <= 20){
-				//global.spd_mult = 0.5;
-				if((image_index % 2) == 1){
-					damage = instance_create_layer(x + _dist_x, y + _dist_y, layer, obj_pDamages);
-					damage.image_xscale = _xscale_damage;
-					damage.image_yscale = _yscale_damage;
+	}
+	if(global.currentPower == 0){
+		if(image_index >= 5 && image_index <= 20){
+			//global.spd_mult = 0.5;
+			if((image_index % 2) == 1){
+				damage = instance_create_layer(x + _dist_x, y + _dist_y, layer, obj_pDamages);
+				damage.image_xscale = _xscale_damage;
+				damage.image_yscale = _yscale_damage;
 				
-					damage.damage = atk/200;
-					damage.father = id;
-					canAttack = false;
-				}
+				damage.damage = atk/200;
+				damage.father = id;
 			}
 		}
-		else if(global.currentPower == 1){
-			if(image_index >= 4 && image_index <= 20){
-				//global.spd_mult = 0.5;
-				if((image_index % 2) == 1){
-					damage = instance_create_layer(x + _dist_x, y + _dist_y, layer, obj_damageThunder);
-					damage.image_xscale = _xscale_damage;
-					damage.image_yscale = _yscale_damage;
-				
-					damage.damage = atk/200;
-					damage.father = id;
-					canAttack = false;
-				}
-			}
-		}				
 	}
-		
+	else if(global.currentPower == 1){
+		if(image_index >= 4 && image_index <= 20){
+			//global.spd_mult = 0.5;
+			if((image_index % 2) == 1){
+				damage = instance_create_layer(x + _dist_x, y + _dist_y, layer, obj_damageThunder);
+				damage.image_xscale = _xscale_damage;
+				damage.image_yscale = _yscale_damage;
+				
+				damage.damage = atk/200;
+				damage.father = id;
+			}
+		}
+	}				
 	if(image_index > image_number-1){
 		state = "idle";
-		canAttack = true;
+		hSpd = 0;
 		if(damage){
 			instance_destroy(damage, false);
 			damage = noone;

@@ -26,7 +26,7 @@ draw_sprite_stretched(spr_mana, 0, w - 220, h/center_h + 100,
 
 //Player SplashArt
 draw_sprite_stretched(spr_artGUI, 0, w/center_w + 10, h/center_h + 10, 145, 145);
-draw_sprite_stretched(spr_art, 0, w/center_w + 25, h/center_h + 15, 120, 120);
+draw_sprite_stretched(spr_pArt, 0, w/center_w + 25, h/center_h + 30, 120, 100);
 draw_sprite_stretched(spr_spellBox10, 0, w/center_w - 15, h/center_h + 130, 200, 125);
 
 //SPELL e ULTIMATE
@@ -56,6 +56,7 @@ itemX = startInvX;
 itemY = startInvY;
 
 draw_sprite(spr_inventoryItem, 0, itemX + 1750, itemY/h);
+draw_sprite(spr_selected_item, 0, itemX + 1745, itemY/h);
 draw_sprite(spr_items, global.currentItem+1, itemX + 1766, (itemY/h) + 10);
 
 define_align_font(fa_right, fa_bottom, -1);
@@ -64,8 +65,6 @@ draw_set_color(c_white);
 
 draw_text(itemX + 1750 + (sprite_get_width(spr_items) / 2), itemY/h + (sprite_get_height(spr_items) / 2), "x" + string(quantity));
 #endregion
-
-
 
 draw_text(w - 240, h/center_h + 120, global.playerXP);
 draw_text(w - 240, h/center_h + 240, global.playerLevel);

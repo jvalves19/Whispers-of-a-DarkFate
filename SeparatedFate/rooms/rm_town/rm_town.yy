@@ -19,7 +19,6 @@
     {"name":"inst_64157A90","path":"rooms/rm_town/rm_town.yy",},
     {"name":"inst_12FF9DD7","path":"rooms/rm_town/rm_town.yy",},
     {"name":"inst_2C1ACDA7","path":"rooms/rm_town/rm_town.yy",},
-    {"name":"inst_39FD98F1","path":"rooms/rm_town/rm_town.yy",},
   ],
   "isDnd": false,
   "layers": [

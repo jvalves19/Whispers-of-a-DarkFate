@@ -20,7 +20,7 @@ if(!ground && (vSpd < max_vSpd * 2 )){
 var _xx = x + lengthdir_x(20 * image_xscale, image_angle);
 
 #region CHANGE ITEM
-if(down  && global.currentItem == 0){
+if(down && global.currentItem == 0){
 	if(global.controllItems[1]){
 		global.currentItem = 1;
 		exit;
@@ -40,7 +40,7 @@ if(down && global.currentItem == 1){
 	}
 }
 
-if(keyboard_check(ord("I")) || gamepad_button_check_pressed(0, gp_face4)){
+if(keyboard_check_released(ord("I")) || gamepad_button_check_released(0, gp_face4)){
 	if(global.currentItem == 0 && global.lifePotionQtd>0){
 		if(obj_player.life < global.pMaxLife){
 			if(global.lifePotionQtd - 1 == 0){
@@ -48,15 +48,14 @@ if(keyboard_check(ord("I")) || gamepad_button_check_pressed(0, gp_face4)){
 					global.currentItem = 1;
 				}
 			}
-			
 			if((obj_player.life + 50) >= global.pMaxLife){
 				obj_player.life = global.pMaxLife;
 			}	
 			else {
 				obj_player.life = obj_player.life + 50;
 			}
-			
 			global.lifePotionQtd -= 1
+			state = "potion"
 		}
 	}
 	if(global.currentItem == 1 && global.auraPotionQtd>0){
@@ -185,7 +184,7 @@ if(invincible && time_invincible > 0){
 #endregion
 
 switch(state){
-	#region idle
+	#region IDLE
 	case "idle":
 		hSpd = 0;
 		sprite_index = spr_pIdle;
@@ -216,6 +215,7 @@ switch(state){
 		else
 			if(ultimate && canPower){
 				state = "ultimate";
+				hSpd = 0;
 				image_index = 0;
 			}
 		else
@@ -227,7 +227,7 @@ switch(state){
 		break;
 	#endregion
 	
-	#region walk
+	#region WALK
 	case "walk":
 		sprite_index = spr_pWalk;
 		
@@ -261,6 +261,7 @@ switch(state){
 		else
 			if(ultimate && canPower){
 				state = "ultimate";
+				hSpd = 0;
 				image_index = 0;
 			}
 		else
@@ -268,11 +269,10 @@ switch(state){
 				state = "spell";
 				image_index = 0;
 			}
-	
 		break;
 	#endregion
 	
-	#region jump
+	#region JUMP
 	case "jump": 
 		hSpd = (right - left) * max_hSpd;
 		
@@ -296,7 +296,7 @@ switch(state){
 		break;
 	#endregion
 	
-	#region dash
+	#region DASH
 	case "dash":
 		if(sprite_index != spr_pDash){
 			sprite_index = spr_pDash;
@@ -310,8 +310,24 @@ switch(state){
 		
 		break;
 	#endregion
+	
+	#region POTION
+	case "potion":
+		if(sprite_index != spr_pPotion){
+			sprite_index = spr_pPotion;
+			image_index = 0;	
+			hSpd = 0;
+		}		
 		
-	#region attack
+		if(image_index >= image_number-1){
+			state = "idle";
+		}
+		break;
+		
+	
+	#endregion
+		
+	#region ATTACK
 	case "attack":
 		hSpd = 0;
 		
@@ -330,13 +346,15 @@ switch(state){
 		break;
 	#endregion
 	
-	#region ultimate
+	#region ULTIMATE
 	case "ultimate":
+		hSpd = 0;
+		
 		if(global.currentPower == 0){
-			player_ultimate(spr_pUltimate, sprite_width/5, -sprite_height/2, 2, 2);
+			player_ultimate(spr_pUltimate, 20, sprite_width/5, -sprite_height/2, 2, 2);
 		}
 		if(global.currentPower == 1){
-			player_ultimate(spr_pUltimate2, random_range
+			player_ultimate(spr_pUltimate2, 30, random_range
 				(camera_get_view_width(view_camera[0])-250, camera_get_view_width(view_camera[0])-550), 
 				(camera_get_view_height(view_camera[0])-470), 2, 5);
 		}
@@ -345,7 +363,7 @@ switch(state){
 		break;
 	#endregion
 		
-	#region spell
+	#region SPELL
 	case "spell":
 		if(sprite_index != spr_pHit){
 			sprite_index = spr_pHit;
@@ -362,16 +380,17 @@ switch(state){
 		break;
 	#endregion
 	
-	#region heal
+	#region HEAL
 	case "heal":		
-		if(aura > 0 && life < global.pMaxLife){
+		if(((aura - 5) >= 0) && life < global.pMaxLife){
 			if(sprite_index != spr_pHeal){
 				sprite_index = spr_pHeal;
-				image_index = 0;					
+				image_index = 0;
+				aura -= 5;
+				hSpd = 0;
+				if((life + 10) >= global.pMaxLife) life = global.pMaxLife;
+				else life += 10;
 			}
-			hSpd = 0;
-			aura -= 5;
-			life += 10;
 		}
 		
 		if(image_index >= image_number-1){	
@@ -381,13 +400,15 @@ switch(state){
 		
 	#endregion
 	
-	#region hit and death
+	#region HIT
 	case "hit":
 		invincible = true;
 		time_invincible = invincible_timer;
 		get_hit(spr_pHit, 0);	
 		break;
 			
+	#endregion
+	#region DEATH
 	case "dead":
 		if(sprite_index != spr_dead){
 			sprite_index = spr_dead;
