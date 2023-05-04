@@ -72,6 +72,7 @@ if(keyboard_check_released(ord("I")) || gamepad_button_check_released(0, gp_face
 				obj_player.aura = obj_player.aura + 50;
 			}
 			global.auraPotionQtd -= 1;
+			state = "potion"
 		}
 	}
 }
@@ -313,11 +314,20 @@ switch(state){
 	
 	#region POTION
 	case "potion":
-		if(sprite_index != spr_pPotion){
-			sprite_index = spr_pPotion;
-			image_index = 0;	
-			hSpd = 0;
-		}		
+		if(global.currentItem == 0){
+			if(sprite_index != spr_pPotion){
+				sprite_index = spr_pPotion;
+				image_index = 0;	
+				hSpd = 0;
+			}
+		}
+		if(global.currentItem == 1){
+			if(sprite_index != spr_pPotionMana){
+				sprite_index = spr_pPotionMana;
+				image_index = 0;	
+				hSpd = 0;
+			}
+		}
 		
 		if(image_index >= image_number-1){
 			state = "idle";
@@ -424,6 +434,8 @@ switch(state){
 		if(instance_exists(obj_game_controller)){
 			with(obj_game_controller){	
 				game_over = true;
+				//audio_stop_all();
+				audio_play_sound(snd_gameOver, 1000, false);
 			}
 		}	
 		

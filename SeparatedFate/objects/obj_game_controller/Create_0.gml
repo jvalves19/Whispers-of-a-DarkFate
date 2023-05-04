@@ -17,7 +17,7 @@ global.playerMaxXP = 500;
 global.playerGold = 100;
 
 //PLAYER VARIABLES
-global.pMaxLife = 100;
+global.pMaxLife = 200;
 global.pMaxAura = 150;
 global.pAtk = 20 * global.playerLevel;
 

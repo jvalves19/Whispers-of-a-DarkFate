@@ -10,14 +10,14 @@
   "bitRate": 128,
   "compression": 0,
   "conversionMode": 0,
-  "duration": 98.95183,
+  "duration": 76.04245,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",
   },
   "preload": false,
   "sampleRate": 44100,
-  "soundFile": "msc_bossbattle2.mp3",
+  "soundFile": "msc_bossBattle2.mp3",
   "type": 0,
-  "volume": 0.25,
+  "volume": 0.5,
 }

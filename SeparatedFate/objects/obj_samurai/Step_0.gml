@@ -99,3 +99,10 @@ switch(state){
 	default:
 		state = "idle";
 }
+
+with(obj_game_controller){
+	if(game_over){
+		audio_sound_gain(msc_bossBattle2, 0, 2000);
+		//audio_play_sound(msc_bossBattle, 1000, false);
+	}
+}

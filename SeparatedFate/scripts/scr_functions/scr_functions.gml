@@ -87,7 +87,7 @@ enum pause_list{
 }
 
 function create_menu(_menu){
-	define_align_font(0, 0, fnt_menu);
+	define_align_font(0, 0, fnt_menu2);
 
 	var _qtd = array_length(_menu);
 	var _alt = display_get_gui_height();
@@ -99,9 +99,9 @@ function create_menu(_menu){
 	
 		if(menu_sel[pag] == i){
 			_color = c_grey;
-			draw_text_color(20, (_alt / 2) + (i * _space_y+3), _text, _color, c_grey, _color, _color, 1);
+			draw_text_color(20, ((_alt) + 100) + (i * _space_y+2), _text, _color, c_grey, _color, _color, 1);
 		}
-		draw_text_color(20, (_alt / 2) + (i * _space_y), _text, _color, c_blue, _color, _color, 1); 
+		draw_text_color(20, ((_alt / 2) + 100)+ (i * _space_y), _text, _color, c_blue, _color, _color, 1); 
 	}
 
 	//Reseting Variables

@@ -25,7 +25,7 @@ draw_sprite_stretched(spr_mana, 0, w - 220, h/center_h + 100,
 (aura/global.pMaxAura ) * healthbar_width-10, healthbar_height - 20);
 
 //Player SplashArt
-draw_sprite_stretched(spr_artGUI, 0, w/center_w + 10, h/center_h + 10, 145, 145);
+draw_sprite_stretched(spr_pArtGUI, 0, w/center_w + 10, h/center_h + 10, 145, 145);
 draw_sprite_stretched(spr_pArt, 0, w/center_w + 25, h/center_h + 30, 120, 100);
 draw_sprite_stretched(spr_spellBox10, 0, w/center_w - 15, h/center_h + 130, 200, 125);
 

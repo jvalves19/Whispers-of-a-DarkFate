@@ -45,7 +45,7 @@ menu = [
 	["Começar História", menu_actions.roda_metodo, new_game], 
 	["Continuar História", menu_actions.carrega_menu, menu_list.load], 
 	["Opções", menu_actions.carrega_menu, menu_list.options], 
-	["Sair para Área de Trabalho", menu_actions.roda_metodo, end_game]
+	["Sair", menu_actions.roda_metodo, end_game]
 ];
 menu_load = [
 	["Livro 1", menu_actions.roda_metodo, load_game1], 
