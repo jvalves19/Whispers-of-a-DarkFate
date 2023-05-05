@@ -226,3 +226,9 @@ function draw_boss_hud(_string){
 	define_align_font(-1, -1, -1);	
 }
 #endregion
+
+function wave(_val0, _val1, _val2, _val3){
+	var A4 = (_val1 - _val0) * 0.5;
+	
+	return _val0 + A4 + sin((((current_time * 0.002) + _val2 * _val3) / _val2)) * (pi*2) * A4;
+}

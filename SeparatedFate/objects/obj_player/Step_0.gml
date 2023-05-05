@@ -435,7 +435,7 @@ switch(state){
 			with(obj_game_controller){	
 				game_over = true;
 				//audio_stop_all();
-				audio_play_sound(snd_gameOver, 1000, false);
+				audio_play_sound(snd_gameOver, 1, false);
 			}
 		}	
 		

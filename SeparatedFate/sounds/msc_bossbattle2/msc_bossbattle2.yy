@@ -19,5 +19,5 @@
   "sampleRate": 44100,
   "soundFile": "msc_bossBattle2.mp3",
   "type": 0,
-  "volume": 0.5,
+  "volume": 0.6,
 }

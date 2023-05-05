@@ -66,7 +66,7 @@ function attacking(_sprite_index, _image_index_min, _image_index_max, _dist_x, _
 ///@method get_hit()
 function get_hit(_sprite_index, _image_index){
 	if(sprite_index != _sprite_index){
-		if(object_index == obj_player) audio_play_sound(snd_hit, 1, false);
+		if(object_index == obj_player) audio_play_sound(snd_hit, 10, false);
 		if(object_index == obj_samurai) audio_play_sound(snd_hit2, 1, false);
 		
 		sprite_index = _sprite_index;
