@@ -23,6 +23,8 @@ if(inicializar){
 	define_align_font(-1, -1, fnt_name);
 	draw_text(_xx + 16, _yy - 35, texto_grid[# Infos.Nome, pagina]);
 	
+	
+	define_align_font(-1, -1, fnt_indicators);
 	if(op_draw){
 		var _opX = _xx + 32;
 		var _opY = _yy - 256;
@@ -34,8 +36,9 @@ if(inicializar){
 		
 		for(var i = 0; i < op_num; i++){
 			var _stringW = string_width(op[i]);
+			
 			draw_sprite_ext(spr_opBack, 0, _opX, _opY - (_opSep * i), (_stringW + _opBorda * 2)/32, 1, 0, c_white, 1);
-			draw_text(_opX + _opBorda, (_opY - (_opSep * i)) + 10, op[i]);
+			draw_text(_opX + _opBorda, (_opY - (_opSep * i)), op[i]);
 			
 			if(op_selecionada == i){	
 				draw_sprite(spr_seletor, 0, _xx + 8, _opY - (_opSep * i) + 8);

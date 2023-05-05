@@ -86,22 +86,26 @@ enum pause_list{
 	options
 }
 
-function create_menu(_menu){
+function create_menu(_menu, _y){
 	define_align_font(0, 0, fnt_menu2);
 
 	var _qtd = array_length(_menu);
 	var _alt = display_get_gui_height();
 	var _space_y = string_height("I") + 16;
+	var _opBorda = 6
+	
 
 	for(var i = 0 ; i < _qtd; i++){
 		var _color = c_white;
 		var _text = _menu[i][0];
 	
 		if(menu_sel[pag] == i){
+			var _stringW = string_width(menu_sel[pag]);
 			_color = c_grey;
-			draw_text_color(20, ((_alt) + 100) + (i * _space_y+2), _text, _color, c_grey, _color, _color, 1);
+			draw_sprite_ext(spr_opBack, 0, 32, ((_alt / 2) + _y) + (i * _space_y), (_stringW + _opBorda * 2)/2, 1, 0, c_white, 1);
+			draw_text_color(64, ((_alt)) + (i * _space_y+2), _text, _color, c_grey, _color, _color, 1);
 		}
-		draw_text_color(20, ((_alt / 2) + 100)+ (i * _space_y), _text, _color, c_blue, _color, _color, 1); 
+		draw_text_color(64, ((_alt / 2) + _y)+ (i * _space_y), _text, _color, c_blue, _color, _color, 1); 
 	}
 
 	//Reseting Variables

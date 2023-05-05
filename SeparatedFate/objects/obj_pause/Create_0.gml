@@ -39,7 +39,7 @@ restart_game = function(){
 }
 
 draw_menu = function(menu){
-	if(pause) create_menu(menu);
+	if(pause) create_menu(menu, -150);
 }
 
 select_menu = function(menu){

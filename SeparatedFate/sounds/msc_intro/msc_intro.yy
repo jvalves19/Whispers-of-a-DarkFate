@@ -19,5 +19,5 @@
   "sampleRate": 44100,
   "soundFile": "msc_intro.mp3",
   "type": 0,
-  "volume": 0.8,
+  "volume": 0.6,
 }

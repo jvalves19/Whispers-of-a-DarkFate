@@ -34,7 +34,7 @@ end_game = function(){
 //find the functions Create_menu() and
 //Change_option() on scripts src_functions
 draw_menu = function(menu){
-	create_menu(menu);
+	create_menu(menu, 150);
 }
 select_menu = function(menu){
 	change_option(menu);

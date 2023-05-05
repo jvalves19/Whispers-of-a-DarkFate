@@ -20,6 +20,7 @@ function attacking(_sprite_index, _image_index_min, _image_index_max, _dist_x, _
 		image_index = 0;
 		canAttack = true;
 		damage = noone;
+		damageMove = noone;
 	}
 	
 	if(image_index > image_number-1){
@@ -36,25 +37,27 @@ function attacking(_sprite_index, _image_index_min, _image_index_max, _dist_x, _
 		
 		if(_sprite_index == spr_samAttack3){
 			var _xx = x + lengthdir_x(0, image_angle);
-			damage = instance_create_layer(_xx, y - 30, layer, obj_damMove)
-			damage.speed = 5;
-			damage.direction = -90 + 90 * other.image_xscale;
-			damage.image_angle = direction;
+			damageMove = instance_create_layer(_xx, y - 30, layer, obj_damMove)
+			damageMove.speed = 5;
+			damageMove.direction = -90 + 90 * other.image_xscale;
+			damageMove.image_angle = direction;
 			
-			damage.damage = atk;
-			damage.father = id;
-			damage.image_xscale = _xscale_damage;
-			damage.image_yscale = _yscale_damage;
+			damageMove.damage = atk;
+			damageMove.father = id;
+			damageMove.image_xscale = _xscale_damage;
+			damageMove.image_yscale = _yscale_damage;
 			canAttack = false;	
-
-			if(damage != noone && image_index == _image_index_max-1){
-				instance_destroy(damage)
-				damage = noone;
-			}
+			//if(instance_exists(damageMove)) instance_destroy(damageMove);
+			
 		}
+		
 		
 	}
 	
+	if(damageMove != noone && image_index >= _image_index_max - 5){
+		instance_destroy(damageMove)
+		damageMove = noone;
+	}
 	
 	if(damage != noone && image_index >= _image_index_max){
 		instance_destroy(damage)

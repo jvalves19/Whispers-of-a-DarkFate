@@ -33,7 +33,7 @@ nave_game = function(){
 //find the functions Create_menu() and
 //Change_option() on scripts src_functions
 draw_menu = function(menu){
-	create_menu(menu);
+	create_menu(menu, -50);
 }
 select_menu = function(menu){
 	change_option(menu);
@@ -41,8 +41,8 @@ select_menu = function(menu){
 #endregion
 
 menu = [
-	["Sim", menu_actions.carrega_menu, pause_list.options], 
-	["Não", menu_actions.roda_metodo, nave_game]
+	["Sim, Salvar", menu_actions.carrega_menu, pause_list.options], 
+	["Não, Cancelar", menu_actions.roda_metodo, nave_game]
 ];
 menu_options = [
 	["Livro 1", menu_actions.roda_metodo, save_game1], 

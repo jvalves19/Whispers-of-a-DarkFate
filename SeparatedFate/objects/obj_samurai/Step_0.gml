@@ -51,15 +51,15 @@ switch(state){
 		//SubState Attack
 			switch(state_atk){
 				case 0:
-					attacking(spr_samAttack1, 1, 5, sprite_width/10, -sprite_height/5, 2, 1, "idle");
+					attacking(spr_samAttack1, 1, 5, sprite_width/9, -sprite_height/5, 2, 1, "idle");
 					break;
 					
 				case 1:
-					attacking(spr_samAttack2, 2, 8, sprite_width/10, -sprite_height/5, 2, 4, "idle");
+					attacking(spr_samAttack2, 2, 8, sprite_width/9, -sprite_height/5, 2, 4, "idle");
 					break;
 					
 				case 2:
-					attacking(spr_samAttack3, 7, 15, sprite_width/10, -sprite_height/5, 1, 4, "idle");
+					attacking(spr_samAttack3, 7, 15, sprite_width/5, -sprite_height/5, 1, 4, "idle");
 					break;
 			}
 		
