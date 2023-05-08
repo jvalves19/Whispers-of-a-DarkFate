@@ -1,4 +1,3 @@
-
 function cutscene_wait(_seconds){
 	timer++;
 	
@@ -121,6 +120,16 @@ function cutscene_moveCharacter(_obj, _x, _y, _relative, _spd){
 	}
 }
 
+function create_cutscene(_scene_info){
+	var inst = instance_create_layer(0, 0, "Instances", obj_cutscene);
+	
+	
+	with(inst){
+		scene_info = _scene_info
+		event_perform(ev_other, ev_user0)
+	}	
+}
+
 function script_execute_alt(_s, _a){
 	var s = _s;
 	var a = _a;
@@ -144,14 +153,4 @@ function script_execute_alt(_s, _a){
 	    case 14: script_execute(s, a[0], a[1], a[2], a[3], a[4], a[5], a[6], a[7], a[8], a[9], a[10], a[11], a[12], a[13]); break;
 	    case 15: script_execute(s, a[0], a[1], a[2], a[3], a[4], a[5], a[6], a[7], a[8], a[9], a[10], a[11], a[12], a[13], a[14]); break;
 	}
-}
-
-function create_cutscene(_scene_info){
-	var inst = instance_create_layer(0, 0, "Instances", obj_cutscene);
-	
-	
-	with(inst){
-		scene_info = _scene_info
-		event_perform(ev_other, ev_user0)
-	}	
 }

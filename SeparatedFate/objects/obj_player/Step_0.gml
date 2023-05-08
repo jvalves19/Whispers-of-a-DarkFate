@@ -418,6 +418,7 @@ switch(state){
 		break;
 			
 	#endregion
+	
 	#region DEATH
 	case "dead":
 		if(sprite_index != spr_dead){

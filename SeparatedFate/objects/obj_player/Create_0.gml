@@ -1,6 +1,8 @@
 // Inherit the parent event
 event_inherited();
 
+nome = "Ílkael";
+
 charSprite(spr_pIdle, spr_pWalk);
 
 #region LIFE AND AURA

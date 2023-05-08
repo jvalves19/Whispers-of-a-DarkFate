@@ -1,6 +1,13 @@
 // Script assets have changed for v2.3.0 see
 function scr_dialogue(){
 	switch npc_nome{
+		#region ÍLKAEL
+		case "Ílkael":
+			ds_grid_add_text("Acredito que Sylvir esteja aqui\nPosso sentir sua magia", 1, "Ilkael");
+			
+			break;
+		#endregion
+		
 		#region BARDO
 		case "Bardo":		
 			switch global.stateDialogue{	
