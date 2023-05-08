@@ -1,4 +1,4 @@
-if(instance_exists(obj_transition) || instance_exists(obj_dialogo)) || instance_exists(obj_dialogue) || obj_game_controller.game_over exit;
+if(instance_exists(obj_transition) || instance_exists(obj_dialogo)) || instance_exists(obj_dialogue) || instance_exists(obj_cutscene) || obj_game_controller.game_over exit;
 //Initializing variables
 player_controls();
 

@@ -19,6 +19,7 @@
     {"name":"inst_64157A90","path":"rooms/rm_town/rm_town.yy",},
     {"name":"inst_12FF9DD7","path":"rooms/rm_town/rm_town.yy",},
     {"name":"inst_2C1ACDA7","path":"rooms/rm_town/rm_town.yy",},
+    {"name":"inst_7CE9A9D0","path":"rooms/rm_town/rm_town.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -34,8 +35,9 @@
           ],"rotation":0.0,"scaleX":0.5,"scaleY":0.75,"x":1160.0,"y":384.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Instances","depth":300,"effectEnabled":true,"effectType":null,"gridX":6,"gridY":6,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_6079B57A","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_bard2","path":"objects/obj_bard2/obj_bard2.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":48.0,"y":330.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_6079B57A","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_bard2","path":"objects/obj_bard2/obj_bard2.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":42.0,"y":330.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_36C5EA85","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_villagerWoman","path":"objects/obj_villagerWoman/obj_villagerWoman.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":828.0,"y":336.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7CE9A9D0","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_triggerPerm","path":"objects/obj_triggerPerm/obj_triggerPerm.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":132.0,"y":354.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Items","depth":400,"effectEnabled":true,"effectType":null,"gridX":6,"gridY":6,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_62FB76A4","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_potions","path":"objects/obj_potions/obj_potions.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":246.0,"y":366.0,},

@@ -55,12 +55,12 @@ function cutscene_changeXscale(_obj, _imageXscale){
 	}
 	
 	if(argument_count > 1){
-		with(arg[0]){
-			image_xscale = arg[1];
+		with(_obj){
+			image_xscale = _obj;
 		}
 	}
 	else{
-		with(arg[0]){
+		with(_imageXscale){
 			image_xscale = -image_xscale;
 		}
 	}
