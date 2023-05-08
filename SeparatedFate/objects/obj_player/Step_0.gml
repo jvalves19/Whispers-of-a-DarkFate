@@ -188,7 +188,7 @@ switch(state){
 	#region IDLE
 	case "idle":
 		hSpd = 0;
-		sprite_index = spr_pIdle;
+		sprite_index = sprIdle;
 		
 		if(right || left){
 			state = "walk";
@@ -230,7 +230,7 @@ switch(state){
 	
 	#region WALK
 	case "walk":
-		sprite_index = spr_pWalk;
+		sprite_index = sprWalk;
 		
 		//Movement to the direction
 		hSpd = (right - left) * max_hSpd;

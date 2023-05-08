@@ -4,6 +4,8 @@
 // Inherit the parent event
 event_inherited();
 
+charSprite(spr_samIdle, spr_samWalk);
+
 max_life = 500;
 life = max_life;
 

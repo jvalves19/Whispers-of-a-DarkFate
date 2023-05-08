@@ -14,8 +14,8 @@ if(!ground){
 switch(state){
 	#region idle
 	case "idle":
-		if(sprite_index != spr_samIdle){
-			sprite_index = spr_samIdle;
+		if(sprite_index != sprIdle){
+			sprite_index = sprIdle;
 			image_index = 0;
 		}
 		if(_dist < 300){
@@ -29,8 +29,8 @@ switch(state){
 	
 	#region walk
 	case "walk":
-		if(sprite_index != spr_samWalk){
-			sprite_index = spr_samWalk;
+		if(sprite_index != sprWalk){
+			sprite_index = sprWalk;
 			image_index = 0;
 		}	
 		if(_dist > 40){

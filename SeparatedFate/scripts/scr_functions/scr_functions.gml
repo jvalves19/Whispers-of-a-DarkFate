@@ -1,6 +1,15 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 
+#region CHARACTERS SPRITES
+function charSprite(_sprIdle, _sprWalk){
+	sprIdle = _sprIdle;
+	sprWalk = _sprWalk
+}
+
+
+#endregion
+
 #region PLAYER CONTROLS
 function player_controls(){
 	right = (

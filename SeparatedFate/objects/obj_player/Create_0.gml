@@ -1,6 +1,8 @@
 // Inherit the parent event
 event_inherited();
 
+charSprite(spr_pIdle, spr_pWalk);
+
 #region LIFE AND AURA
 max_hSpd = 4;
 max_vSpd = 6;
