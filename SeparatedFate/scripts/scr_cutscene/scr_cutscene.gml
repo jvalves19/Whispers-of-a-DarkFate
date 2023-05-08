@@ -20,7 +20,7 @@ function cutscene_wait(_seconds){
 function cutscene_end(){
 	scene++;
 	
-	if(scene > array_length_1d(scene_info) - 1){
+	if(scene > array_length(scene_info) - 1){
 		instance_destroy();
 		exit;
 	}
@@ -133,7 +133,7 @@ function cutscene_moveCharacter(_obj, _x, _y, _relative, _spd){
 function script_execute_alt(_s, _a){
 	var s = _s;
 	var a = _a;
-	var len = array_length_1d(_a);
+	var len = array_length(_a);
 	
 	switch(len){
 		case 0 : script_execute(s); break;
@@ -153,4 +153,14 @@ function script_execute_alt(_s, _a){
 	    case 14: script_execute(s, a[0], a[1], a[2], a[3], a[4], a[5], a[6], a[7], a[8], a[9], a[10], a[11], a[12], a[13]); break;
 	    case 15: script_execute(s, a[0], a[1], a[2], a[3], a[4], a[5], a[6], a[7], a[8], a[9], a[10], a[11], a[12], a[13], a[14]); break;
 	}
+}
+
+function create_cutscene(_scene_info){
+	var inst = instance_create_layer(0, 0, "Instances", obj_cutscene);
+	
+	
+	with(inst){
+		scene_info = _scene_info
+		event_perform(ev_other, ev_user0)
+	}	
 }

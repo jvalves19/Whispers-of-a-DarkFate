@@ -16,21 +16,21 @@ var lay_id = layer_get_id("Background");
 var back_id = layer_background_get_id(lay_id);
 
 print = string_copy(str, 1, l);
-if((l > string_length(str) + 100) && next < array_length_1d(strings) - 1){
+if((l > string_length(str) + 100) && next < array_length(strings) - 1){
 	l = 0;
 	next++;
 	
-	if(next == array_length_1d(strings) - 9){
+	if(next == array_length(strings) - 9){
 		xpos = 640
 		layer_background_sprite(back_id, Scene02);
 		holdspace++;	
 	}
-	if(next == array_length_1d(strings) - 5){
+	if(next == array_length(strings) - 5){
 		xpos = 640
 		layer_background_sprite(back_id, Scene03);
 		holdspace++;	
 	}
-	if(next == array_length_1d(strings) - 2){
+	if(next == array_length(strings) - 2){
 		layer_background_sprite(back_id, Scene03);
 		holdspace++;	
 	}
