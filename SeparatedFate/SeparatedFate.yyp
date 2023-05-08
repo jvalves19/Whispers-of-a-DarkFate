@@ -203,6 +203,7 @@
     {"id":{"name":"msc_menu","path":"sounds/msc_menu/msc_menu.yy",},},
     {"id":{"name":"rm_0init","path":"rooms/rm_0init/rm_0init.yy",},},
     {"id":{"name":"obj_damMove","path":"objects/obj_damMove/obj_damMove.yy",},},
+    {"id":{"name":"obj_teleporte","path":"objects/obj_teleporte/obj_teleporte.yy",},},
     {"id":{"name":"tl_worldRPG","path":"tilesets/tl_worldRPG/tl_worldRPG.yy",},},
     {"id":{"name":"spr_pHeal","path":"sprites/spr_pHeal/spr_pHeal.yy",},},
     {"id":{"name":"spr_boss_healthBg","path":"sprites/spr_boss_healthBg/spr_boss_healthBg.yy",},},

@@ -1,12 +1,3 @@
-// Os recursos de script mudaram para a v2.3.0; veja
-// https://help.yoyogames.com/hc/en-us/articles/360005277377 para obter mais informações
-
-function create_box_at_mouse(){
-	if(mouse_check_button_pressed(mb_left)){
-		instance_create_layer(mouse_x, mouse_y, "Instances", obj_boxTrigger);
-		cutscene_end();	
-	}
-}
 
 function cutscene_wait(_seconds){
 	timer++;

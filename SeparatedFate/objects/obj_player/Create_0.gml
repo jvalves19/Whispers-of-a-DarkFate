@@ -16,6 +16,7 @@ aura = global.pMaxAura ;
 #endregion
 
 #region PLAYER VARIABLES
+quantity = 0;
 combo = 0;
 damage = noone;
 

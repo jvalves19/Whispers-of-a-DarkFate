@@ -77,7 +77,7 @@ if(keyboard_check_released(ord("I")) || gamepad_button_check_released(0, gp_face
 	}
 }
 
-quantity = 0;
+
 if(global.currentItem == 0){
 	quantity = global.lifePotionQtd;
 }
