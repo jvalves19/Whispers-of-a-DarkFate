@@ -10,7 +10,7 @@
   "bitRate": 128,
   "compression": 0,
   "conversionMode": 0,
-  "duration": 173.81877,
+  "duration": 61.048164,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",
@@ -19,5 +19,5 @@
   "sampleRate": 44100,
   "soundFile": "msc_scene01.mp3",
   "type": 0,
-  "volume": 0.6,
+  "volume": 1.0,
 }

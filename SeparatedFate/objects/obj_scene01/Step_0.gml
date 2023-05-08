@@ -20,11 +20,17 @@ if((l > string_length(str) + 100) && next < array_length_1d(strings) - 1){
 	l = 0;
 	next++;
 	
-	if(next == array_length_1d(strings) - 5){
+	if(next == array_length_1d(strings) - 9){
+		xpos = 640
 		layer_background_sprite(back_id, Scene02);
 		holdspace++;	
 	}
-	if(next == array_length_1d(strings) - 3){
+	if(next == array_length_1d(strings) - 5){
+		xpos = 640
+		layer_background_sprite(back_id, Scene03);
+		holdspace++;	
+	}
+	if(next == array_length_1d(strings) - 2){
 		layer_background_sprite(back_id, Scene03);
 		holdspace++;	
 	}
@@ -34,7 +40,7 @@ str = strings[next];
 
 if((keyboard_check_direct(vk_space))||(gamepad_button_check(0, gp_face2))) holdspace++;
 
-if((holdspace > 80) || (xpos < 10)){
+if((holdspace > 80) || (xpos < 50)){
 	fadeout = 1;
 }
 if((a == 1) && (fadeout == 1)){	
