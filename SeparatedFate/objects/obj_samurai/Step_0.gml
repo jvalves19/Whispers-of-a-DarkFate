@@ -87,7 +87,6 @@ switch(state){
 				bossDead = true;	
 				global.stateDialogue = 2;
 				global.destroyed[2] = true;
-				global.currentPower = 0;
 				global.currentSpell = 2;
 				global.playerXP = global.playerXP + 3000;
 			}

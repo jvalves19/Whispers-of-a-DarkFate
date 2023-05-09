@@ -124,4 +124,10 @@ function setSpell(_xx, _damage, _aura, _objSpell){
 	damage.father = id;
 	canAttack = false;
 	aura -= _aura;
+	
+	with(obj_player){
+		if(aura - _aura <= 0){
+			canSpell = false;
+		}
+	}
 }

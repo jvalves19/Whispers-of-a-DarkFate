@@ -31,12 +31,12 @@ draw_sprite_stretched(spr_spellBox10, 0, w/center_w - 15, h/center_h + 130, 200,
 
 //SPELL e ULTIMATE
 draw_sprite_stretched(spr_hudSpell, global.currentSpell+1, w/center_w + 15, h/center_h + 145, 125, 125);
-draw_sprite_stretched(spr_hudPower, global.currentPower+1, w/center_w + 30, h/center_h + 145, 125, 125);
+draw_sprite_stretched(spr_hudPower, global.currentUltimate+1, w/center_w + 30, h/center_h + 145, 125, 125);
 
-if(!canPower){
+if(!canUltimate){
 	draw_sprite_stretched(spr_disablePower, 0, w/center_w + 30, h/center_h + 145, 125, 125);
 	define_align_font(-1, -1, -1);
-	draw_text(w/center_w + 100, h/center_h + 160, string_format((time_power/100), 0, 0));
+	draw_text(w/center_w + 100, h/center_h + 160, string_format((time_ultimate/100), 0, 0));
 	define_align_font(-1, -1, -1);
 }
 

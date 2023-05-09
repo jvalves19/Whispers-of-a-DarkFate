@@ -87,91 +87,98 @@ if(global.currentItem == 1){
 #endregion
 
 #region CHANGE SPELL
-if(changeSpell && global.currentSpell == 0){
-	if(global.controllSpells[1]){
-		global.currentSpell = 1;
-		exit;
-	}
-	if(global.controllSpells[2]){
-		global.currentSpell = 2;	
-		exit;
-	}
+if(!canSpell && time_spell > 0){
+	canSpell = false;
+	time_spell --;
+	//image_alpha = max(sin(get_timer()/100000), 0.5);
+} else {
+	canSpell = true;
+	//image_alpha = 1;
 }
-	
-if(changeSpell && global.currentSpell == 1){
-	if(global.controllSpells[2]){
-		global.currentSpell = 2;
-		exit;
-	}
-	if(global.controllSpells[0]){
-		global.currentSpell = 0;	
-		exit;
-	}
+
+if(aura - global.auraGasta <= 0){
+	canSpell = false;
 }
-	
-if(changeSpell && global.currentSpell == 2){
-	if(global.controllSpells[0]){
-		global.currentSpell = 0;
-		exit;
+
+if(changeSpell){
+	if(global.currentSpell == 0){
+		if(global.controllSpells[1]){
+			global.currentSpell = 1;
+			exit;
+		}
+		if(global.controllSpells[2]){
+			global.currentSpell = 2;	
+			exit;
+		}
 	}
-	if(global.controllSpells[1]){
-		global.currentSpell = 1;
-		exit;
+	if(global.currentSpell == 1){
+		if(global.controllSpells[2]){
+			global.currentSpell = 2;
+			exit;
+		}
+		if(global.controllSpells[0]){
+			global.currentSpell = 0;	
+			exit;
+		}
 	}
-}
-if(global.currentSpell == 0 || global.currentSpell == 1 || global.currentSpell == 2){
-	if(!canSpell && time_spell > 0){
-		canSpell = false;
-		time_spell --;
-		//image_alpha = max(sin(get_timer()/100000), 0.5);
-	} else {
-		canSpell = true;
-		//image_alpha = 1;
+	if(global.currentSpell == 2){
+		if(global.controllSpells[0]){
+			global.currentSpell = 0;
+			exit;
+		}
+		if(global.controllSpells[1]){
+			global.currentSpell = 1;
+			exit;
+		}
 	}
 }
 #endregion
 
-#region CHANGE POWER
-if(canPower && changeUltimate && global.currentPower == 0){
-	if(global.controllPowers[1]){
-		global.currentPower = 1;
-		exit;
+#region CHANGE ULTIMATE
+if(!canUltimate && time_ultimate > 0){
+	canUltimate = false;
+	time_ultimate --;
+	//image_alpha = max(sin(get_timer()/100000), 0.5);
+} else {
+	canUltimate = true;
+	//image_alpha = 1;
+}
+if(aura - global.auraGasta <= 0){
+	canUltimate = false;
+}
+
+if(changeUltimate && canUltimate){
+	if(global.currentUltimate == 0){
+		if(global.controllPowers[1]){
+			global.currentUltimate = 1;
+			exit;
+		}
+		if(global.controllPowers[2]){
+			global.currentUltimate = 2;	
+			exit;
+		}
 	}
-	if(global.controllSpells[2]){
-		global.currentPower = 2;	
-		exit;
+	if(global.currentUltimate == 1){
+		if(global.controllPowers[2]){
+			global.currentUltimate = 2;
+			exit;
+		}
+		if(global.controllPowers[0]){
+			global.currentUltimate = 0;	
+			exit;
+		}
+	}
+	if(global.currentUltimate == 2){
+		if(global.controllPowers[0]){
+			global.currentUltimate = 0;
+			exit;
+		}
+		if(global.controllPowers[1]){
+			global.currentUltimate = 1;
+			exit;
+		}
 	}
 }
-	
-if(canPower && changeUltimate && global.currentPower == 1){
-	if(global.controllPowers[2]){
-		global.currentPower = 2;
-		exit;
-	}
-	if(global.controllPowers[0]){
-		global.currentPower = 0;	
-		exit;
-	}
-}
-	
-if(canPower && changeUltimate && global.currentPower == 2){
-	if(global.controllPowers[0]){
-		global.currentPower = 0;
-		exit;
-	}
-	if(global.controllPowers[1]){
-		global.currentPower = 1;
-		exit;
-	}
-}
-	if(!canPower && time_power > 0){
-		canPower = false;
-		time_power --;
-		//image_alpha = max(sin(get_timer()/100000), 0.5);
-	} else {
-		canPower = true;
-		//image_alpha = 1;
-	}
 #endregion	
 
 #region PLAYER INVINCIBLE
@@ -214,7 +221,7 @@ switch(state){
 				image_index = 0;
 			}
 		else
-			if(ultimate && canPower){
+			if(ultimate && canUltimate){
 				state = "ultimate";
 				hSpd = 0;
 				image_index = 0;
@@ -260,7 +267,7 @@ switch(state){
 				image_index = 0;
 			}
 		else
-			if(ultimate && canPower){
+			if(ultimate && canUltimate){
 				state = "ultimate";
 				hSpd = 0;
 				image_index = 0;
@@ -360,16 +367,16 @@ switch(state){
 	case "ultimate":
 		hSpd = 0;
 		
-		if(global.currentPower == 0){
-			player_ultimate(spr_pUltimate, 20, sprite_width/5, -sprite_height/2, 2, 2);
+		if(global.currentUltimate == 0){
+			player_ultimate(spr_pUltimate, global.auraGasta, sprite_width/5, -sprite_height/2, 2, 2);
 		}
-		if(global.currentPower == 1){
-			player_ultimate(spr_pUltimate2, 30, random_range
+		if(global.currentUltimate == 1){
+			player_ultimate(spr_pUltimate2, global.auraGasta, random_range
 				(camera_get_view_width(view_camera[0])-250, camera_get_view_width(view_camera[0])-550), 
 				(camera_get_view_height(view_camera[0])-470), 2, 5);
 		}
-		canPower = false;
-		time_power = powerTimer;
+		canUltimate = false;
+		time_ultimate = ultimateTimer;
 		break;
 	#endregion
 		
@@ -380,7 +387,7 @@ switch(state){
 			image_index = 0;	
 			hSpd = 0;
 		}
-		if(image_index >= 1 && canAttack && aura > 5) setSpell(_xx, global.pDmgSpell, 20, obj_pSpells);
+		if(image_index >= 1 && canAttack && aura > 5) setSpell(_xx, global.pDmgSpell, global.auraGasta, obj_pSpells);
 		if(image_index >= image_number-1){
 			canAttack = true;
 			state = "idle";

@@ -30,9 +30,9 @@ canSpell = true;
 spellTimer = room_speed*2;
 time_spell = spellTimer;
 
-canPower = true;
-powerTimer = room_speed*10;
-time_power = powerTimer;
+canUltimate = true;
+ultimateTimer = room_speed*10;
+time_ultimate = ultimateTimer;
 
 invincible = false;
 invincible_timer = room_speed*0.35;
@@ -119,7 +119,7 @@ player_ultimate = function(_sprite_index, _aura, _dist_x, _dist_y, _xscale_damag
 			hSpd = 0;
 		}	
 	}
-	if(global.currentPower == 0){
+	if(global.currentUltimate == 0){
 		if(image_index >= 5 && image_index <= 20){
 			//global.spd_mult = 0.5;
 			if((image_index % 2) == 1){
@@ -127,12 +127,12 @@ player_ultimate = function(_sprite_index, _aura, _dist_x, _dist_y, _xscale_damag
 				damage.image_xscale = _xscale_damage;
 				damage.image_yscale = _yscale_damage;
 				
-				damage.damage = atk/200;
+				damage.damage = atk;
 				damage.father = id;
 			}
 		}
 	}
-	else if(global.currentPower == 1){
+	else if(global.currentUltimate == 1){
 		if(image_index >= 4 && image_index <= 20){
 			//global.spd_mult = 0.5;
 			if((image_index % 2) == 1){
@@ -140,7 +140,7 @@ player_ultimate = function(_sprite_index, _aura, _dist_x, _dist_y, _xscale_damag
 				damage.image_xscale = _xscale_damage;
 				damage.image_yscale = _yscale_damage;
 				
-				damage.damage = atk/200;
+				damage.damage = atk;
 				damage.father = id;
 			}
 		}

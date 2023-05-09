@@ -25,7 +25,7 @@ function scr_dialogue(){
 					
 					ds_grid_add_text("A proposito... Tome esse novo poder para você", 0, "Bardo")
 					global.currentSpell = 0;
-					global.currentPower = 0;
+					global.currentUltimate = 0;
 					
 					global.stateDialogue = global.stateDialogue - global.stateDialogue;
 				break;
@@ -37,7 +37,7 @@ function scr_dialogue(){
 					ds_grid_add_text("O nome dele é Garleand", 0, "Bardo")
 					ds_grid_add_text("Também tenho essa chave pra você", 0, "Bardo")
 					global.currentSpell = 1;
-					global.currentPower = 1;
+					global.currentUltimate = 1;
 					global.key[1] = true;
 					
 					global.stateDialogue = global.stateDialogue - global.stateDialogue

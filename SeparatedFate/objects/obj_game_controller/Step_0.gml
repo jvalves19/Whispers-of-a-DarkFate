@@ -83,16 +83,31 @@ for(i=0; i<3; i++){
 		global.controllSpells[i] = true;
 	}
 }
-if(global.currentSpell == 0) global.pDmgSpell = global.dmgThunder;
-if(global.currentSpell == 1) global.pDmgSpell = global.dmgFire;
-if(global.currentSpell == 2) global.pDmgSpell = global.dmgHoly;
+if(global.currentSpell == 0) {
+	global.pDmgSpell = global.dmgThunder; 
+	global.auraGasta = 50;
+}
+if(global.currentSpell == 1) {
+	global.pDmgSpell = global.dmgFire; 
+	global.auraGasta = 100;
+}
+if(global.currentSpell == 2) {
+	global.pDmgSpell = global.dmgHoly; 
+	global.auraGasta = 50;
+}
 #endregion
 
 #region POWERS
 for(i=0; i<3; i++){
-	if(global.currentPower == i){
+	if(global.currentUltimate == i){
 		global.controllPowers[i] = true;
 	}
+}
+if(global.currentUltimate == 0) {
+	global.auraGasta = 30;
+}
+if(global.currentUltimate == 1) {
+	global.auraGasta = 50;
 }
 #endregion
 

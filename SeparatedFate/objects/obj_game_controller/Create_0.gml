@@ -19,6 +19,7 @@ global.playerGold = 100;
 //PLAYER VARIABLES
 global.pMaxLife = 100;
 global.pMaxAura = 50;
+global.auraGasta = 0;
 global.pAtk = 20 * global.playerLevel;
 
 global.dmgFire = 20 * global.playerLevel;
@@ -50,7 +51,7 @@ global.controllBlades = [
 */
 
 //ULTIMATE VARIABLES
-global.currentPower = -1;
+global.currentUltimate = -1;
 global.controllPowers = [
 	false,	//Fast Sword
 	false,	//Holy Explosion
