@@ -1,8 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
-
 if(instance_exists(obj_player)){
-	var _direction =  point_direction(x, y, obj_player.x, obj_player.y);
+	var _dist = point_distance(x, y, obj_player.x, obj_player.y);
+	var _dir = point_direction(x, y, obj_player.x, obj_player.y);
 }
 
 var ground = place_meeting(x, y + 1, obj_block);
@@ -18,14 +18,11 @@ switch(state){
 			sprite_index = sprIdle;
 			image_index = 0;
 		}
-		
-		if(instance_exists(obj_player)){
-			var _dist = point_distance(x, y, obj_player.x, obj_player.y);
-			
-			if(_dist < 300){
-				state = "walk";
-			}
+		if(_dist < 300){
+			state = "walk";
 		}
+		hSpd = lengthdir_x(1, _dir);
+		if(sign(hSpd) != 0) image_xscale = sign(hSpd);
 		
 		break;
 	#endregion
@@ -36,22 +33,15 @@ switch(state){
 			sprite_index = sprWalk;
 			image_index = 0;
 		}
-		
-		if(instance_exists(obj_player)){
-			var _dist = point_distance(x, y, obj_player.x, obj_player.y);
-			var _dir = point_direction(x, y, obj_player.x, obj_player.y);
-			
-			if(_dist > 50){
-				hSpd = lengthdir_x(max_hSpd, _dir);
-				if(sign(hSpd) != 0) image_xscale = sign(hSpd);
-			}
-			else{
-				hSpd = 0;
-				state = "attack";
-				state_atk = irandom(2);
-			}
+		if(_dist > 50){
+			hSpd = lengthdir_x(max_hSpd, _dir);
+			if(sign(hSpd) != 0) image_xscale = sign(hSpd);
 		}
-	
+		else{
+			hSpd = 0;
+			state = "attack";
+			state_atk = irandom(2);
+		}	
 		
 		break;
 	#endregion
@@ -62,7 +52,7 @@ switch(state){
 			switch(state_atk){
 				case 0:
 					attacking(spr_garlAttack1, 3, 8, sprite_width/10, -sprite_height/5, 5, 2, "idle");
-					hSpd = lengthdir_x(1, _direction);
+					hSpd = lengthdir_x(1, _dir);
 					if(sign(hSpd) != 0) image_xscale = sign(hSpd);
 					
 					
@@ -70,14 +60,14 @@ switch(state){
 					
 				case 1:
 					attacking(spr_garlAttack2, 5, 8, sprite_width/6, -sprite_height/5, 3, 4, "idle");
-					hSpd = lengthdir_x(1, _direction);
+					hSpd = lengthdir_x(1, _dir);
 					if(sign(hSpd) != 0) image_xscale = sign(hSpd);
 					
 					break;
 					
 				case 2:
 					attacking(spr_garlAttack3, 3, 6, sprite_width/6, -sprite_height/5, 2, 3, "idle");
-					hSpd = lengthdir_x(1, _direction);
+					hSpd = lengthdir_x(1, _dir);
 					if(sign(hSpd) != 0) image_xscale = sign(hSpd);
 					
 					break;
@@ -89,7 +79,7 @@ switch(state){
 	#region hit and death
 	case "hit":
 		get_hit(spr_garlHit, 0);
-		hSpd = lengthdir_x(1, _direction);
+		hSpd = lengthdir_x(1, _dir);
 		if(sign(hSpd) != 0) image_xscale = sign(hSpd);		
 	
 		break;

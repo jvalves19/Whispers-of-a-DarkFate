@@ -1,6 +1,11 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+if(instance_exists(obj_player)){
+	var _dist = point_distance(x, y, obj_player.x, obj_player.y);
+	var _dir = point_direction(x, y, obj_player.x, obj_player.y);
+}
+
 var ground = place_meeting(x, y + 1, obj_block);
 
 if(!ground){
@@ -14,14 +19,11 @@ switch(state){
 			sprite_index = sprIdle;
 			image_index = 0;
 		}
-		
-		if(instance_exists(obj_player)){
-			var _dist = point_distance(x, y, obj_player.x, obj_player.y);
-			
-			if(_dist < 300){
-				state = "walk";
-			}
+		if(_dist < 300){
+			state = "walk";
 		}
+		hSpd = lengthdir_x(1, _dir);
+		if(sign(hSpd) != 0) image_xscale = sign(hSpd);
 		
 		break;
 	#endregion
@@ -33,20 +35,14 @@ switch(state){
 			image_index = 0;
 		}
 		
-		if(instance_exists(obj_player)){
-			var _dist = point_distance(x, y, obj_player.x, obj_player.y);
-			var _dir = point_direction(x, y, obj_player.x, obj_player.y);
-			
-			if(_dist > 50){
-				hSpd = lengthdir_x(max_hSpd, _dir);
-			}
-			else{
-				hSpd = 0;
-				state = "attack";
-				state_atk = irandom(2);
-			}
+		if(_dist > 50){
+			hSpd = lengthdir_x(max_hSpd, _dir);
 		}
-	
+		else{
+			hSpd = 0;
+			state = "attack";
+			state_atk = irandom(2);
+		}
 		
 		break;
 	#endregion
@@ -74,6 +70,9 @@ switch(state){
 	#region hit and death
 	case "hit":
 		get_hit(spr_graveHit, 0);
+		
+		hSpd = lengthdir_x(1, _dir);
+		if(sign(hSpd) != 0) image_xscale = sign(hSpd);
 	
 		break;
 	
@@ -88,7 +87,6 @@ switch(state){
 				bossDead = true;	
 				global.stateDialogue = 2;
 				global.destroyed[3] = true;
-				//global.controlleUltimate[0] = true;
 			}
 		}		
 		
@@ -97,4 +95,11 @@ switch(state){
 	
 	default:
 		state = "idle";
+}
+
+
+with(obj_game_controller){
+	if(game_over){
+		audio_sound_gain(msc_bossBattle3, 0, 2000);
+	}
 }

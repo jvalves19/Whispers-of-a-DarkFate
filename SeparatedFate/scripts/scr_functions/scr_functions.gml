@@ -223,19 +223,21 @@ function draw_power_screen(_string, _desc){
 
 #region BOSS HUD
 function draw_boss_hud(_string){
-	define_align_font(1,  1, fnt_boss);
+	if(global.bossBattle){
+		define_align_font(1,  1, fnt_boss);
 	
-	//Shadow
-	draw_set_color(c_red);
-	draw_text(healthbar_x+210, healthbar_y-290, _string);	
-	//Text
-	draw_set_color(c_white);
-	draw_text(healthbar_x+211, healthbar_y-291, _string);	
+		//Shadow
+		draw_set_color(c_red);
+		draw_text(healthbar_x+210, healthbar_y-290, _string);	
+		//Text
+		draw_set_color(c_white);
+		draw_text(healthbar_x+211, healthbar_y-291, _string);	
 
-	draw_sprite(spr_boss_healthBg, 0, healthbar_x-5, healthbar_y-265);
-	draw_sprite_stretched_ext(spr_boss_health, 0, healthbar_x, healthbar_y-260, (life/max_life) * healthbar_width, healthbar_height, -1, 0.5);
+		draw_sprite(spr_boss_healthBg, 0, healthbar_x-5, healthbar_y-265);
+		draw_sprite_stretched_ext(spr_boss_health, 0, healthbar_x, healthbar_y-260, (life/max_life) * healthbar_width, healthbar_height, -1, 0.5);
 
-	define_align_font(-1, -1, -1);	
+		define_align_font(-1, -1, -1);	
+	}
 }
 #endregion
 

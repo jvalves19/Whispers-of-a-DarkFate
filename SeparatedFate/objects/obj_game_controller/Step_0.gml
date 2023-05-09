@@ -74,7 +74,6 @@ for(i=0; i<3; i++){
 		global.controllItems[i] = true;
 	}
 }
-
 #endregion
 
 #region SPELLS
@@ -100,7 +99,7 @@ if(global.currentSpell == 2) {
 #region POWERS
 for(i=0; i<3; i++){
 	if(global.currentUltimate == i){
-		global.controllPowers[i] = true;
+		global.controlleUltimate[i] = true;
 	}
 }
 if(global.currentUltimate == 0) {
@@ -125,14 +124,28 @@ if(object_exists(obj_player)){
 
 #region BOSS
 //BOSS EVENTS
+
+if(!global.destroyed[2]){
+	if(room == rm_firstBoss2){
+		if(!instance_exists(obj_samurai)){
+			instance_create_layer(572, 320, "Instances", obj_samurai);
+		}
+	}
+}
+if(!global.destroyed[3]){
+	if(room == rm_firstBoss3){
+		if(!instance_exists(obj_cultist)){
+			instance_create_layer(440, 336, "Instances", obj_cultist);
+		}
+	}
+}
+
 if(global.bossBattle){
 	instance_deactivate_object(obj_sensor);
 }
 else{
 	instance_activate_object(obj_sensor);
 }
-
-
 #endregion
 
 #region PLAYER

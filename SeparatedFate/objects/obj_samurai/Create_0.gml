@@ -4,6 +4,13 @@
 // Inherit the parent event
 event_inherited();
 
+global.bossName[2] = object_index;
+global.destroyed[2] = global.destroyed[2];
+
+if(!global.destroyed[2]){
+	global.bossBattle = true;
+}
+
 charSprite(spr_samIdle, spr_samWalk);
 
 max_life = 500;
@@ -30,10 +37,3 @@ audio_sound_gain(msc_bossBattle2, 1, 0);
 
 //Function Attack - Substate
 state_atk = irandom(2);
-
-global.bossName[2] = object_index;
-global.destroyed[2] = global.destroyed[2];
-
-if(!global.destroyed[2]){
-	global.bossBattle = true;
-}

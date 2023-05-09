@@ -13,7 +13,6 @@
     {"name":"inst_569255BA_2_1","path":"rooms/rm_firstBoss2/rm_firstBoss2.yy",},
     {"name":"inst_7813363A_1","path":"rooms/rm_firstBoss2/rm_firstBoss2.yy",},
     {"name":"inst_3227E888_1","path":"rooms/rm_firstBoss2/rm_firstBoss2.yy",},
-    {"name":"inst_470C9699","path":"rooms/rm_firstBoss2/rm_firstBoss2.yy",},
     {"name":"inst_4B24642C","path":"rooms/rm_firstBoss2/rm_firstBoss2.yy",},
     {"name":"inst_5FEE0EBB","path":"rooms/rm_firstBoss2/rm_firstBoss2.yy",},
   ],
@@ -29,7 +28,6 @@
             {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_sensor","path":"objects/obj_sensor/obj_sensor.yy",},"propertyId":{"name":"destionation_x","path":"objects/obj_sensor/obj_sensor.yy",},"value":"192",},
             {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_sensor","path":"objects/obj_sensor/obj_sensor.yy",},"propertyId":{"name":"destionation_y","path":"objects/obj_sensor/obj_sensor.yy",},"value":"160",},
           ],"rotation":0.0,"scaleX":0.5,"scaleY":0.75,"x":928.0,"y":320.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_470C9699","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_samurai","path":"objects/obj_samurai/obj_samurai.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":572.0,"y":320.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_4B24642C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_sensor","path":"objects/obj_sensor/obj_sensor.yy",},"properties":[
             {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_sensor","path":"objects/obj_sensor/obj_sensor.yy",},"propertyId":{"name":"destination","path":"objects/obj_sensor/obj_sensor.yy",},"value":"rm_town",},
             {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_sensor","path":"objects/obj_sensor/obj_sensor.yy",},"propertyId":{"name":"destionation_x","path":"objects/obj_sensor/obj_sensor.yy",},"value":"1160",},

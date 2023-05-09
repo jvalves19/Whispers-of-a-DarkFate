@@ -52,7 +52,7 @@ global.controllBlades = [
 
 //ULTIMATE VARIABLES
 global.currentUltimate = -1;
-global.controllPowers = [
+global.controlleUltimate = [
 	false,	//Fast Sword
 	false,	//Holy Explosion
 	false,	//Thunder Exectution
