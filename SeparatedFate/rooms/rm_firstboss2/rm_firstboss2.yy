@@ -15,6 +15,7 @@
     {"name":"inst_3227E888_1","path":"rooms/rm_firstBoss2/rm_firstBoss2.yy",},
     {"name":"inst_4B24642C","path":"rooms/rm_firstBoss2/rm_firstBoss2.yy",},
     {"name":"inst_5FEE0EBB","path":"rooms/rm_firstBoss2/rm_firstBoss2.yy",},
+    {"name":"inst_7CE9A9D0","path":"rooms/rm_firstBoss2/rm_firstBoss2.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -34,6 +35,7 @@
             {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_sensor","path":"objects/obj_sensor/obj_sensor.yy",},"propertyId":{"name":"destionation_y","path":"objects/obj_sensor/obj_sensor.yy",},"value":"384",},
           ],"rotation":0.0,"scaleX":0.5,"scaleY":0.75,"x":96.0,"y":320.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_5FEE0EBB","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_bard2","path":"objects/obj_bard2/obj_bard2.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":860.0,"y":268.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7CE9A9D0","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_triggerPerm","path":"objects/obj_triggerPerm/obj_triggerPerm.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":268.0,"y":316.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Collision","depth":300,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_64518BA2_2_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_block","path":"objects/obj_block/obj_block.yy",},"properties":[],"rotation":0.0,"scaleX":34.0,"scaleY":1.0,"x":-64.0,"y":320.0,},

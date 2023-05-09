@@ -45,7 +45,7 @@ if((holdspace > 80) || (xpos < 50)){
 }
 if((a == 1) && (fadeout == 1)){	
 	audio_sound_gain(msc_scene01, 0, 500);
-	audio_play_sound(msc_scene01, 1000, false);
+	audio_play_sound(msc_scene01, 10, false);
 
 	room_goto(rm_town);
 	obj_player.x = 70;

@@ -3,7 +3,7 @@ function scr_dialogue(){
 	switch npc_nome{
 		#region ÍLKAEL
 		case "Ílkael":
-			ds_grid_add_text("Acredito que Sylvir esteja aqui\nPosso sentir sua magia", 1, "Ilkael");
+			ds_grid_add_text("MORRA seu demônio", 1, "Ilkael");
 			
 			break;
 		#endregion

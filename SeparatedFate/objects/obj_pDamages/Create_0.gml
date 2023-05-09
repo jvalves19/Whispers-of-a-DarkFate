@@ -22,5 +22,5 @@ if(global.currentBlade == 1){
 if(global.currentBlade == 2){
 	image_alpha = 1;
 
-	audio_play_sound(snd_spell, 1, false);
+	audio_play_sound(snd_spell, 15, false);
 }

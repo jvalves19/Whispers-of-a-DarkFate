@@ -26,5 +26,5 @@ strings[7] = "Ele se questiona quem era aquele guerreiro\n e porque havia resqu�
 
 strings[8] = "Ele então se levanta, e vai tirar algumas informações \nna taverna onde está";
 
-audio_play_sound(msc_scene01, 1000, true);
+audio_play_sound(msc_scene01, 10, false);
 audio_sound_gain(msc_scene01, 1, 0);

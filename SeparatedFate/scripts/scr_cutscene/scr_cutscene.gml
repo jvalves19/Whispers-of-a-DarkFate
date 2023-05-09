@@ -18,6 +18,16 @@ function cutscene_end(){
 	event_perform(ev_other, ev_user0);
 }
 
+function cutscene_soundGain(_sound, _level, _time){
+	audio_sound_gain(_sound, _level, _time);
+	
+	cutscene_end();
+}
+function cutscene_stopSound(_sound){
+	audio_stop_sound(_sound);
+	
+	cutscene_end();
+}
 function cutscene_playSound(_sound, _priority, _loop){
 	audio_play_sound(_sound, _priority, _loop);
 	

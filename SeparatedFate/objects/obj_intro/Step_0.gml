@@ -56,7 +56,7 @@ if((holdspace > 80) || (xpos < 100)){
 }
 if((a == 1) && (fadeout == 1)){	
 	audio_sound_gain(msc_intro, 0, 500);
-	audio_play_sound(msc_intro, 1000, false);
+	audio_play_sound(msc_intro, 10, false);
 
 	room_goto(rm_castle);
 	obj_player.x = 96;

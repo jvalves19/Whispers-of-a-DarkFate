@@ -4,12 +4,7 @@
 // Inherit the parent event
 event_inherited();
 
-global.bossName[2] = object_index;
-global.destroyed[2] = global.destroyed[2];
-
-if(!global.destroyed[2]){
-	global.bossBattle = true;
-}
+bossBattle = false;
 
 charSprite(spr_samIdle, spr_samWalk);
 
@@ -30,10 +25,6 @@ dist_player = 100;
 damage = noone;
 atk = 25;
 canAttack = true;
-
-audio_stop_sound(msc_bossBattle2);
-audio_play_sound(msc_bossBattle2, 1000, true);
-audio_sound_gain(msc_bossBattle2, 1, 0);
 
 //Function Attack - Substate
 state_atk = irandom(2);

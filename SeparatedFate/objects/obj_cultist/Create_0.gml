@@ -25,7 +25,7 @@ atk = 75;
 canAttack = true;
 
 audio_stop_sound(msc_bossBattle3);
-audio_play_sound(msc_bossBattle3, 1000, true);
+audio_play_sound(msc_bossBattle3, 1, true);
 audio_sound_gain(msc_bossBattle3, 1, 0);
 
 //Function Attack - Substate

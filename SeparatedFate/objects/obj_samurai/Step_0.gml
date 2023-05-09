@@ -1,5 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
+global.bossBattle = bossBattle;
+
 if(instance_exists(obj_player)){
 	var _dist = point_distance(x, y, obj_player.x, obj_player.y);
 	var _dir = point_direction(x, y, obj_player.x, obj_player.y);
@@ -18,11 +20,13 @@ switch(state){
 			sprite_index = sprIdle;
 			image_index = 0;
 		}
-		if(_dist < 300){
-			state = "walk";
+		if(bossBattle){
+			if(_dist < 300){
+				state = "walk";
+			}
+			hSpd = lengthdir_x(1, _dir);
+			if(sign(hSpd) != 0) image_xscale = sign(hSpd);
 		}
-		hSpd = lengthdir_x(1, _dir);
-		if(sign(hSpd) != 0) image_xscale = sign(hSpd);
 		
 		break;
 	#endregion
@@ -41,7 +45,6 @@ switch(state){
 			state = "attack";
 			state_atk = irandom(2);
 		}
-	
 		
 		break;
 	#endregion

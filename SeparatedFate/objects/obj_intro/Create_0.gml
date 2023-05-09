@@ -35,5 +35,5 @@ strings[13] = "...";
 strings[14] = "Ílkael encontra um rastro de magia de Sylvir.\ne acredita estar perto dela...";
 
 
-audio_play_sound(msc_intro, 1000, true);
+audio_play_sound(msc_intro, 10, false);
 audio_sound_gain(msc_intro, 1, 0);
