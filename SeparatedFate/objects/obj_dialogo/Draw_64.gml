@@ -21,7 +21,7 @@ if(inicializar){
 	draw_text_ext(_xx + 32, _yy + 10, texto_grid[# Infos.Texto, pagina], 32, _guiW - 64);
 	
 	define_align_font(-1, -1, fnt_name);
-	draw_text(_xx + 16, _yy - 35, texto_grid[# Infos.Nome, pagina]);
+	draw_text(_xx + 16, _yy - 75, texto_grid[# Infos.Nome, pagina]);
 	
 	
 	define_align_font(-1, -1, fnt_indicators);
