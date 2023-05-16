@@ -24,7 +24,7 @@ if(inicializar){
 	draw_text(_xx + 16, _yy - 75, texto_grid[# Infos.Nome, pagina]);
 	
 	
-	define_align_font(-1, -1, fnt_indicators);
+	define_align_font(-1, -1, fnt_dialogue);
 	if(op_draw){
 		var _opX = _xx + 32;
 		var _opY = _yy - 256;

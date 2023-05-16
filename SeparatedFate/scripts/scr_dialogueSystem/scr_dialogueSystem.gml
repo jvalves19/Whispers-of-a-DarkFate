@@ -1,9 +1,9 @@
 // Script assets have changed for v2.3.0 see
 function scr_dialogue(){
 	switch npc_nome{
-		#region ÍLKAEL
-		case "Ílkael":
-			ds_grid_add_text("MORRA seu demônio", 1, "Ilkael");
+		#region Cassius
+		case "Cassius":
+			ds_grid_add_text("MORRA seu demônio", 1, "Cassius");
 			
 			break;
 		#endregion
@@ -17,8 +17,8 @@ function scr_dialogue(){
 				break;
 				
 				case 1:
-					ds_grid_add_text("Ola, Ilkael", 0, "Bardo")
-					ds_grid_add_text("Como sabe meu nome? Quem e voce?", 1, "Ilkael")
+					ds_grid_add_text("Ola, Cassius", 0, "Bardo")
+					ds_grid_add_text("Como sabe meu nome? Quem e voce?", 1, "Cassius")
 					ds_grid_add_text("Eu sei de muitas coisas, camarada", 0, "Bardo")
 					ds_grid_add_text("Sei que acabou de tomar uma surra", 0, "Bardo")
 					ds_grid_add_text("A proposito... Sou o Bardo. Pode me chamar de Jonas", 0, "Bardo")
@@ -32,7 +32,7 @@ function scr_dialogue(){
 				
 				
 				case 2:
-					ds_grid_add_text("Ola, Ilkael", 0, "Bardo")
+					ds_grid_add_text("Ola, Cassius", 0, "Bardo")
 					ds_grid_add_text("Tenho umas informações pra você sobre o cara que te espancou", 0, "Bardo")
 					ds_grid_add_text("O nome dele é Garleand", 0, "Bardo")
 					ds_grid_add_text("Também tenho essa chave pra você", 0, "Bardo")
@@ -49,7 +49,7 @@ function scr_dialogue(){
 		#region MULHER
 		case "Mulher":
 			ds_grid_add_text("Você acredita no Amor?", 0, "Mulher");
-			ds_grid_add_text("...", 1, "Ilkael");
+			ds_grid_add_text("...", 1, "Cassius");
 				add_op("Sim, Acredito sim", "Resposta 1");
 				add_op("Não, Acho isso uma palhaçada", "Resposta 2");		
 		break;

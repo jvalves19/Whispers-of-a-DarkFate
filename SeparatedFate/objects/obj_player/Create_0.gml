@@ -1,7 +1,7 @@
 // Inherit the parent event
 event_inherited();
 
-nome = "Ílkael";
+nome = "Cassius";
 
 charSprite(spr_pIdle, spr_pWalk);
 
