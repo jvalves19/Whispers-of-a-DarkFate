@@ -47,11 +47,7 @@ function attacking(_sprite_index, _image_index_min, _image_index_max, _dist_x, _
 			damageMove.image_xscale = _xscale_damage;
 			damageMove.image_yscale = _yscale_damage;
 			canAttack = false;	
-			//if(instance_exists(damageMove)) instance_destroy(damageMove);
-			
-		}
-		
-		
+		}		
 	}
 	
 	if(damageMove != noone && image_index >= _image_index_max - 5){
@@ -65,6 +61,45 @@ function attacking(_sprite_index, _image_index_min, _image_index_max, _dist_x, _
 		
 	}
 }
+
+function enemyUltimate(_sprite_index, _dist_x, _dist_y, _xscale_damage, _yscale_damage){
+	hSpd = 0;
+	if(sprite_index != _sprite_index){
+		sprite_index = _sprite_index;
+		image_index = 0;	
+		hSpd = 0;
+	}	
+	
+	if(_sprite_index == spr_samUltimate){
+		if(image_index >= 3 && image_index <= 30){
+			//global.spd_mult = 0.5;
+			if((image_index % 2) == 1){			
+				obj_samurai.x = obj_player.x;
+				obj_samurai.y = obj_samurai.y;
+			}
+			
+			if((image_index % 2) == 0){
+				damage = instance_create_layer(x + _dist_x, y + _dist_y, layer, obj_damage);
+				damage.image_xscale = _xscale_damage;
+				damage.image_yscale = _yscale_damage;
+				
+				damage.damage = atk;
+				damage.father = id;
+			}
+			
+		}
+	}
+			
+	if(image_index > image_number-1){
+		state = "idle";
+		hSpd = 0;
+		if(damage){
+			instance_destroy(damage, false);
+			damage = noone;
+		}
+	}	
+}
+
 
 ///@method get_hit()
 function get_hit(_sprite_index, _image_index){

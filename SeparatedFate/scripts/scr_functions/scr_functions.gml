@@ -111,7 +111,7 @@ function create_menu(_menu, _y){
 		if(menu_sel[pag] == i){
 			var _stringW = string_width(menu_sel[pag]);
 			_color = c_grey;
-			draw_sprite_ext(spr_opBack, 0, 32, ((_alt / 2) + _y) + (i * _space_y), (_stringW + _opBorda * 2)/2, 1, 0, c_white, 1);
+			draw_sprite_ext(spr_opBcg, 0, 32, ((_alt / 2) + _y) + (i * _space_y), (_stringW + _opBorda * 2)/2, 1, 0, c_white, 1);
 			draw_text_color(64, ((_alt)) + (i * _space_y+2), _text, _color, c_grey, _color, _color, 1);
 		}
 		draw_text_color(64, ((_alt / 2) + _y)+ (i * _space_y), _text, _color, c_blue, _color, _color, 1); 

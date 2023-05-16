@@ -9,6 +9,11 @@ var qtd = instance_place_list(x, y, obj_father, target_list, 0);
 for(var i = 0; i < qtd; i++){
 	var actual = target_list[| i];
 	
+	//Check if actual its invincible
+	if(actual.invincible){
+		continue;
+	}
+	
 	//check if the actual target != father obj
 	if(object_get_parent(actual.object_index) != object_get_parent(father.object_index)){		
 		var pos = ds_list_find_index(apply_damage, actual);

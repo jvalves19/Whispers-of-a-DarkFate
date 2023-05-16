@@ -43,9 +43,9 @@ function saveGame(_slot){
 	ini_write_real(_slot, "Spell2", global.controllSpells[2]);
 	
 	ini_write_real(_slot, "Power", global.currentUltimate);
-	ini_write_real(_slot, "Power0", global.controlleUltimate[0]);	
-	ini_write_real(_slot, "Power1", global.controlleUltimate[1]);	
-	ini_write_real(_slot, "Power2", global.controlleUltimate[2]);
+	ini_write_real(_slot, "Power0", global.controllUltimate[0]);	
+	ini_write_real(_slot, "Power1", global.controllUltimate[1]);	
+	ini_write_real(_slot, "Power2", global.controllUltimate[2]);
 	
 	//INVENTORY AND KEYS SYSTEM
 	ini_write_real(_slot, "Keys1", global.key[1]);
@@ -117,9 +117,9 @@ function loadGame(_slot){
 	global.controllSpells[2] = ini_read_real(_slot, "Spell2", 0);
 	
 	global.currentUltimate = ini_read_real(_slot, "Power", 0);
-	global.controlleUltimate[0] = ini_read_real(_slot, "Power0", 0);
-	global.controlleUltimate[1] = ini_read_real(_slot, "Power1", 0);
-	global.controlleUltimate[2] = ini_read_real(_slot, "Power2", 0);
+	global.controllUltimate[0] = ini_read_real(_slot, "Power0", 0);
+	global.controllUltimate[1] = ini_read_real(_slot, "Power1", 0);
+	global.controllUltimate[2] = ini_read_real(_slot, "Power2", 0);
 	
 	//INVENTORY AND KEYS SYSTEM
 	global.key[1] = ini_read_real(_slot, "Keys1", 0);

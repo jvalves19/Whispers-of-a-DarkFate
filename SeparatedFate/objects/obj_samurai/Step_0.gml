@@ -23,6 +23,10 @@ switch(state){
 		if(bossBattle){
 			if(_dist < 300){
 				state = "walk";
+				
+				if(battleFase == 2){
+					if(random(10) >= 9) state = "ultimate";
+				}
 			}
 			hSpd = lengthdir_x(1, _dir);
 			if(sign(hSpd) != 0) image_xscale = sign(hSpd);
@@ -44,6 +48,28 @@ switch(state){
 			hSpd = 0;
 			state = "attack";
 			state_atk = irandom(2);
+			if(battleFase == 2){
+				if(random(10) >= 8){
+					state = "dash";
+				}
+			}
+		}
+		
+		break;
+	#endregion
+	
+	#region DASH
+	case "dash":
+		if(sprite_index != spr_samDash){
+			invincible = true;
+			sprite_index = spr_samDash;
+			image_index = 0;	
+			hSpd = image_xscale * dash_Spd;
+		}		
+		
+		if(image_index >= image_number-1){
+			state = "idle";
+			invincible = false;
 		}
 		
 		break;
@@ -69,9 +95,26 @@ switch(state){
 		break;
 	#endregion
 
+	#region ULTIMATE
+	case "ultimate":
+		enemyUltimate(spr_samUltimate, sprite_width/18, -sprite_height/4, 1, 4);
+		
+		break;
+	#endregion
+
 	#region hit and death
 	case "hit":
 		get_hit(spr_samHit, 0);
+		
+		if(life < max_life * (70/100) ){
+			battleFase = 2;
+		}
+		
+		if(battleFase == 2){
+			if(random(10) >= 5){
+				state = "dash";
+			}
+		}
 		
 		hSpd = lengthdir_x(1, _dir);
 		if(sign(hSpd) != 0) image_xscale = sign(hSpd);
@@ -93,6 +136,7 @@ switch(state){
 				global.currentSpell = 2;
 				global.playerXP = global.playerXP + 3000;
 			}
+			//instance_create_layer(obj_player.x, obj_player.y, layer, obj_trigger);
 		}		
 		
 		break;

@@ -96,9 +96,10 @@ if(!canSpell && time_spell > 0){
 	//image_alpha = 1;
 }
 
-if(aura - global.auraGasta <= 0){
+if(aura - global.auraSpell <= 0){
 	canSpell = false;
 }
+
 
 if(changeSpell){
 	if(global.currentSpell == 0){
@@ -143,37 +144,37 @@ if(!canUltimate && time_ultimate > 0){
 	canUltimate = true;
 	//image_alpha = 1;
 }
-if(aura - global.auraGasta <= 0){
+if(aura - global.auraUltimate <= 0){
 	canUltimate = false;
 }
 
 if(changeUltimate && canUltimate){
 	if(global.currentUltimate == 0){
-		if(global.controllPowers[1]){
+		if(global.controllUltimate[1]){
 			global.currentUltimate = 1;
 			exit;
 		}
-		if(global.controllPowers[2]){
+		if(global.controllUltimate[2]){
 			global.currentUltimate = 2;	
 			exit;
 		}
 	}
 	if(global.currentUltimate == 1){
-		if(global.controllPowers[2]){
+		if(global.controllUltimate[2]){
 			global.currentUltimate = 2;
 			exit;
 		}
-		if(global.controllPowers[0]){
+		if(global.controllUltimate[0]){
 			global.currentUltimate = 0;	
 			exit;
 		}
 	}
 	if(global.currentUltimate == 2){
-		if(global.controllPowers[0]){
+		if(global.controllUltimate[0]){
 			global.currentUltimate = 0;
 			exit;
 		}
-		if(global.controllPowers[1]){
+		if(global.controllUltimate[1]){
 			global.currentUltimate = 1;
 			exit;
 		}
@@ -264,6 +265,7 @@ switch(state){
 		else
 			if(heal){
 				state = "heal";
+				hSpd = 0;
 				image_index = 0;
 			}
 		else
@@ -275,6 +277,7 @@ switch(state){
 		else
 			if(spell && canSpell){
 				state = "spell";
+				hSpd = 0;
 				image_index = 0;
 			}
 		break;
@@ -365,16 +368,15 @@ switch(state){
 	
 	#region ULTIMATE
 	case "ultimate":
-		hSpd = 0;
-		
 		if(global.currentUltimate == 0){
-			player_ultimate(spr_pUltimate, global.auraGasta, sprite_width/5, -sprite_height/2, 2, 2);
+			player_ultimate(spr_pUltimate, global.auraUltimate, sprite_width/5, -sprite_height/2, 2, 2);
 		}
 		if(global.currentUltimate == 1){
-			player_ultimate(spr_pUltimate2, global.auraGasta, random_range
+			player_ultimate(spr_pUltimate2, global.auraUltimate, random_range
 				(camera_get_view_width(view_camera[0])-250, camera_get_view_width(view_camera[0])-550), 
 				(camera_get_view_height(view_camera[0])-470), 2, 5);
 		}
+		
 		canUltimate = false;
 		time_ultimate = ultimateTimer;
 		break;
@@ -382,16 +384,12 @@ switch(state){
 		
 	#region SPELL
 	case "spell":
-		if(sprite_index != spr_pHit){
-			sprite_index = spr_pHit;
-			image_index = 0;	
-			hSpd = 0;
-		}
-		if(image_index >= 1 && canAttack && aura > 5) setSpell(_xx, global.pDmgSpell, global.auraGasta, obj_pSpells);
+		if(sprite_index != spr_pSpell) sprite_index = spr_pSpell; 
+		if(canSpell && image_index > 0) setSpell(_xx, global.pDmgSpell, global.auraSpell, obj_pSpells);
 		if(image_index >= image_number-1){
-			canAttack = true;
 			state = "idle";
 		}
+		
 		canSpell = false;
 		time_spell= spellTimer;
 		break;

@@ -84,29 +84,29 @@ for(i=0; i<3; i++){
 }
 if(global.currentSpell == 0) {
 	global.pDmgSpell = global.dmgThunder; 
-	global.auraGasta = 50;
+	global.auraSpell = 20;
 }
 if(global.currentSpell == 1) {
 	global.pDmgSpell = global.dmgFire; 
-	global.auraGasta = 100;
+	global.auraSpell = 50;
 }
 if(global.currentSpell == 2) {
 	global.pDmgSpell = global.dmgHoly; 
-	global.auraGasta = 50;
+	global.auraSpell = 20;
 }
 #endregion
 
-#region POWERS
+#region ULTIMATE
 for(i=0; i<3; i++){
 	if(global.currentUltimate == i){
-		global.controlleUltimate[i] = true;
+		global.controllUltimate[i] = true;
 	}
 }
 if(global.currentUltimate == 0) {
-	global.auraGasta = 30;
+	global.auraUltimate = 30;
 }
 if(global.currentUltimate == 1) {
-	global.auraGasta = 50;
+	global.auraUltimate = 50;
 }
 #endregion
 
