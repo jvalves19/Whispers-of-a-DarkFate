@@ -9,7 +9,7 @@ battleFase = 1;
 
 charSprite(spr_samIdle, spr_samWalk);
 
-max_life = 500;
+max_life = 200;
 life = max_life;
 invincible = false;
 

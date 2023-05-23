@@ -129,6 +129,7 @@ if(!global.destroyed[2]){
 	if(room == rm_firstBoss2){
 		if(!instance_exists(obj_samurai)){
 			instance_create_layer(572, 320, "Instances", obj_samurai);
+			
 		}
 	}
 }

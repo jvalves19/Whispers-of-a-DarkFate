@@ -110,7 +110,7 @@ switch(state){
 			battleFase = 2;
 		}
 		
-		if(battleFase == 2){
+		if(life > 0 && battleFase == 2){
 			if(random(10) >= 5){
 				state = "dash";
 			}

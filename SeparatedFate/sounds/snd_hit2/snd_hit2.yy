@@ -10,7 +10,7 @@
   "bitRate": 128,
   "compression": 0,
   "conversionMode": 0,
-  "duration": 0.96,
+  "duration": 1.750204,
   "parent": {
     "name": "Combat",
     "path": "folders/Sounds/Combat.yy",
