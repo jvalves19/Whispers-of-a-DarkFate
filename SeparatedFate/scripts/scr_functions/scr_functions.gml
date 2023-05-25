@@ -56,7 +56,7 @@ function player_controls(){
 		keyboard_check_pressed(ord("J"))
 	);
 	ultimate = (
-		(gamepad_button_check_pressed(0, gp_stickl) + gamepad_button_check_pressed(0, gp_stickr)) ||
+		(gamepad_button_check_pressed(0, gp_shoulderr)) + (gamepad_button_check_pressed(0, gp_shoulderl))  ||
 		keyboard_check_pressed(ord("K"))
 	);
 	spell = (
