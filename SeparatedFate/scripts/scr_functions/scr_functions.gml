@@ -6,8 +6,6 @@ function charSprite(_sprIdle, _sprWalk){
 	sprIdle = _sprIdle;
 	sprWalk = _sprWalk
 }
-
-
 #endregion
 
 #region PLAYER CONTROLS
