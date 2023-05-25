@@ -8,7 +8,7 @@ npc_nome = "";
 texto_grid = ds_grid_create(3, 0);
 pagina = 0;
 
-global.stateDialogue = global.stateDialogue;
+global.bardoDialogue = global.bardoDialogue;
 
 op[0] = "";
 op_resposta[0] = "";

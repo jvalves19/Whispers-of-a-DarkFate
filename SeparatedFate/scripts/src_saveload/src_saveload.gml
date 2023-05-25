@@ -9,15 +9,7 @@ function saveGame(_slot){
 	ini_write_real(_slot, "Player Life", global.pMaxLife);
 	ini_write_real(_slot, "Player Aura", global.pMaxAura);
 	ini_write_real(_slot, "Player Atk", global.pAtk);
-	
-	//ini_write_string(_slot, "Inventory", global.a_inv);
-	
-	ini_write_real(_slot, "Potin", global.currentItem);
-	ini_write_real(_slot, "Potion Life Qtd", global.lifePotionQtd);
-	ini_write_real(_slot, "Potion Aura Qtd", global.auraPotionQtd);
-	ini_write_real(_slot, "Potion Life", global.controllItems[0]);
-	ini_write_real(_slot, "Potion Aura", global.controllItems[1]);
-	
+		
 	ini_write_real(_slot, "Player XP", global.playerXP);
 	ini_write_real(_slot, "Player Level", global.playerLevel);
 	ini_write_real(_slot, "Player MaxXp", global.playerMaxXP);
@@ -29,12 +21,26 @@ function saveGame(_slot){
 	ini_write_real(_slot, "Damage Thunder", global.dmgThunder);
 	ini_write_real(_slot, "Damage Holy", global.dmgHoly);
 	
+	//ini_write_string(_slot, "Inventory", global.a_inv);
+	
+	ini_write_real(_slot, "Potin", global.currentItem);
+	ini_write_real(_slot, "Potion Life Qtd", global.lifePotionQtd);
+	ini_write_real(_slot, "Potion Aura Qtd", global.auraPotionQtd);
+	ini_write_real(_slot, "Potion Life", global.controllItems[0]);
+	ini_write_real(_slot, "Potion Aura", global.controllItems[1]);
+	
 	//SAVE BOSSES
 	ini_write_real(_slot, "Boss1", global.destroyed[1]);	
 	ini_write_real(_slot, "Boss2", global.destroyed[2]);	
 	ini_write_real(_slot, "Boss3", global.destroyed[3]);
 	ini_write_real(_slot, "Boss4", global.destroyed[4]);
 	ini_write_real(_slot, "Boss5", global.destroyed[5]);
+	
+	//SAVE BLADES
+	ini_write_real(_slot, "Blade", global.currentBlade);
+	ini_write_real(_slot, "Blade0", global.controllBlades[0]);
+	ini_write_real(_slot, "Blade1", global.controllBlades[1]);
+	ini_write_real(_slot, "Blade2", global.controllBlades[2]);
 	
 	//SAVE POWERS
 	ini_write_real(_slot, "Spell", global.currentSpell);
@@ -54,7 +60,8 @@ function saveGame(_slot){
 	ini_write_real(_slot, "Keys4", global.key[4]);
 	ini_write_real(_slot, "Keys5", global.key[5]);
 	
-	ini_write_real(_slot, "Dialogue", global.stateDialogue);
+	ini_write_real(_slot, "Bardo Dialogue", global.bardoDialogue);
+	ini_write_real(_slot, "Ferreiro Dialogue", global.blackSmithDialogue);
 	
 	//DEBUG
 	//show_debug_message(string(global.strInventario));
@@ -110,6 +117,11 @@ function loadGame(_slot){
 	global.destroyed[4] = ini_read_real(_slot, "Boss4", 0);
 	global.destroyed[5] = ini_read_real(_slot, "Boss5", 0);
 	
+	global.currentBlade = ini_read_real(_slot, "Blade", 0);
+	global.controllBlades[0] = ini_read_real(_slot, "Blade0", 0);
+	global.controllBlades[1] = ini_read_real(_slot, "Blade1", 0);
+	global.controllBlades[2] = ini_read_real(_slot, "Blade2", 0);
+	
 	//LOAD POWERS
 	global.currentSpell = ini_read_real(_slot, "Spell", 0);
 	global.controllSpells[0] = ini_read_real(_slot, "Spell0", 0);
@@ -128,7 +140,9 @@ function loadGame(_slot){
 	global.key[4] = ini_read_real(_slot, "Keys4", 0);
 	global.key[5] = ini_read_real(_slot, "Keys5", 0);
 	
-	global.stateDialogue = ini_read_real(_slot, "Dialogue", 0);
+	global.bardoDialogue = ini_read_real(_slot, "Bardo Dialogue", 0);
+	global.blackSmithDialogue = ini_read_real(_slot, "Ferreiro Dialogue", 0);
+	
 	
 	//show_debug_message(string(global.a_inv));
 	show_debug_message("Vida Máxima: " + string(global.pMaxLife));

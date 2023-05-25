@@ -131,7 +131,7 @@ switch(state){
 			with(obj_game_controller){
 				instance_deactivate_object(obj_sensor);
 				bossDead = true;	
-				global.stateDialogue = 2;
+				global.bardoDialogue = 2;
 				global.destroyed[2] = true;
 				global.currentSpell = 2;
 				global.playerXP = global.playerXP + 3000;

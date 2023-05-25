@@ -1,15 +1,5 @@
 #region GAME CONTROLLERS
 global.currentBlade = global.currentBlade;
-if(keyboard_check_pressed(vk_lcontrol)){
-	global.currentBlade = 2;
-}
-if(keyboard_check_pressed(vk_lshift)){
-	global.currentBlade = 1;
-}
-if(keyboard_check_pressed(vk_alt)){
-	global.currentBlade = 0;
-}
-
 global.playerXP = global.playerXP;
 global.playerLevel = global.playerLevel;
 global.playerGold = global.playerGold;

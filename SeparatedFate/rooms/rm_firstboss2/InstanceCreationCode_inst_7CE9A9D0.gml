@@ -15,7 +15,7 @@ t_scene_info = [
 	[cutscene_moveCharacter, obj_player, 140, 0, true, 1],
 	
 	[cutscene_instance_create, x, y, "Dialogue", _dialogue],
-	[cutscene_changeVariable, _dialogue, "npc_nome", "Cassius"],
+	[cutscene_changeVariable, _dialogue, "npc_nome", "Kassius"],
 	
 	[cutscene_wait, 1],
 	

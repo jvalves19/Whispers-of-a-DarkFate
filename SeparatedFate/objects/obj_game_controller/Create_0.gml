@@ -2,9 +2,6 @@ global.spd_mult = 1;
 game_over = false;
 value = 0;
 
-global.dialogo = false;
-global.stateDialogue = 1;
-
 global.actRoom = noone;
 global.playerID = noone;
 global.owPlayerID = noone;
@@ -28,6 +25,10 @@ global.dmgHoly = 20 * global.playerLevel;
 global.dmgThunder = 20 * global.playerLevel;
 global.pDmgSpell = noone;
 
+global.dialogo = false;
+global.bardoDialogue = 1;
+global.blackSmithDialogue = 1;
+
 #region INVENTORY SYSTEM
 global.lifePotionQtd = 0;
 global.auraPotionQtd = 0;
@@ -41,31 +42,33 @@ global.controllItems = [
 ]
 #endregion
 
-//BLADE VARIABLES
-global.currentBlade = 0;
-/*
+#region BLADES SYSTEM
+global.currentBlade = -1;
 global.controllBlades = [
 	false,	//Mana Blade
 	false,	//Fire Blade
 	false,	//Bloodstained Blade
 ]
-*/
 
-//ULTIMATE VARIABLES
+#endregion
+
+#region ULTIMATE SYSTEM
 global.currentUltimate = -1;
 global.controllUltimate = [
 	false,	//Fast Sword
 	false,	//Holy Explosion
 	false,	//Thunder Exectution
 ]
+#endregion
 
-//SPELL VARIABLES
+#region SPELL SYSTEM
 global.currentSpell = -1;
 global.controllSpells = [
 	false,	//electric
 	false,	//fire
 	false	//holy
 ]
+#endregion
 
 #region KEY SYSTEM
 for(global.numKey = 0; global.numKey<10; global.numKey++){
