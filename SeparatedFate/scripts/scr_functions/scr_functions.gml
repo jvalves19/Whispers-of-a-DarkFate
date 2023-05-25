@@ -43,6 +43,11 @@ function player_controls(){
 		keyboard_check_pressed(ord("W")))
 	);
 	
+	ultimate = (
+		(gamepad_button_check_pressed(0, gp_stickl)) + (gamepad_button_check_pressed(0, gp_stickr))  ||
+		keyboard_check_pressed(ord("K"))
+	);
+	
 	changeSpell = (
 		(gamepad_button_check_pressed(0, gp_shoulderr))||
 		keyboard_check_pressed(ord("Q"))
@@ -55,10 +60,7 @@ function player_controls(){
 		(gamepad_button_check_pressed(0, gp_face3)) || 
 		keyboard_check_pressed(ord("J"))
 	);
-	ultimate = (
-		(gamepad_button_check_pressed(0, gp_shoulderr)) + (gamepad_button_check_pressed(0, gp_shoulderl))  ||
-		keyboard_check_pressed(ord("K"))
-	);
+	
 	spell = (
 		(gamepad_button_check_pressed(0, gp_shoulderrb)) ||
 		keyboard_check_pressed(ord("L"))
@@ -67,8 +69,8 @@ function player_controls(){
 		(gamepad_button_check_pressed(0, gp_face2)) ||
 		keyboard_check_pressed(vk_space)
 	);	
-	heal = (keyboard_check(ord("S")) || (gamepad_button_check(0, gp_padd))) && 
-		(keyboard_check_pressed(ord("K")) || (gamepad_button_check_pressed(0, gp_face4)));
+	heal = (keyboard_check(ord("S"))  && (keyboard_check_pressed(ord("K"))))
+		|| (gamepad_button_check_pressed(0, gp_shoulderlb))
 }
 #endregion
 
