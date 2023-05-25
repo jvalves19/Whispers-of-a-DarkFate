@@ -3,8 +3,8 @@ if(instance_exists(obj_transition)) exit;
 player_controls();
 
 hSpd = (right-left) * spd;
-var _up = keyboard_check(ord("W")) || (gamepad_button_check_pressed(0, gp_padu))
-var _down = keyboard_check(ord("S")) || (gamepad_button_check_pressed(0, gp_padd))
+var _up = keyboard_check(ord("W")) || (gamepad_button_check(0, gp_padu))
+var _down = keyboard_check(ord("S")) || (gamepad_button_check(0, gp_padd))
 vSpd = (_down-_up) * spd;
 
 if(place_meeting(x + hSpd, y, obj_block)){
