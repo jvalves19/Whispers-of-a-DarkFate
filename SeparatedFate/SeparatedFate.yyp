@@ -119,6 +119,7 @@
     {"id":{"name":"spr_vBckg","path":"sprites/spr_vBckg/spr_vBckg.yy",},},
     {"id":{"name":"spr_heal","path":"sprites/spr_heal/spr_heal.yy",},},
     {"id":{"name":"spr_holyHit","path":"sprites/spr_holyHit/spr_holyHit.yy",},},
+    {"id":{"name":"obj_creditScreen","path":"objects/obj_creditScreen/obj_creditScreen.yy",},},
     {"id":{"name":"spr_samIdle","path":"sprites/spr_samIdle/spr_samIdle.yy",},},
     {"id":{"name":"rm_forest","path":"rooms/rm_forest/rm_forest.yy",},},
     {"id":{"name":"spr_health","path":"sprites/spr_health/spr_health.yy",},},
@@ -152,6 +153,7 @@
     {"id":{"name":"Scene02","path":"sprites/Scene02/Scene02.yy",},},
     {"id":{"name":"spr_garlAttack3","path":"sprites/spr_garlAttack3/spr_garlAttack3.yy",},},
     {"id":{"name":"spr_mdGrave02","path":"sprites/spr_mdGrave02/spr_mdGrave02.yy",},},
+    {"id":{"name":"rm_cutscEnd1","path":"rooms/rm_cutscEnd1/rm_cutscEnd1.yy",},},
     {"id":{"name":"obj_garleand","path":"objects/obj_garleand/obj_garleand.yy",},},
     {"id":{"name":"spr_bandit2Idle","path":"sprites/spr_bandit2Idle/spr_bandit2Idle.yy",},},
     {"id":{"name":"spr_bgTown","path":"sprites/spr_bgTown/spr_bgTown.yy",},},
@@ -358,6 +360,7 @@
     {"roomId":{"name":"rm_graveyard","path":"rooms/rm_graveyard/rm_graveyard.yy",},},
     {"roomId":{"name":"rm_firstBoss3","path":"rooms/rm_firstBoss3/rm_firstBoss3.yy",},},
     {"roomId":{"name":"rm_forest","path":"rooms/rm_forest/rm_forest.yy",},},
+    {"roomId":{"name":"rm_cutscEnd1","path":"rooms/rm_cutscEnd1/rm_cutscEnd1.yy",},},
   ],
   "TextureGroups": [
     {"resourceType":"GMTextureGroup","resourceVersion":"1.3","name":"Default","autocrop":true,"border":2,"compressFormat":"bz2","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"targets":-1,},

@@ -8,7 +8,7 @@ nome = "Garleand";
 
 charSprite(spr_garlIdle, spr_garlWalk);
 
-max_life = 1000;
+max_life = 5;
 life = max_life;
 
 healthbar_width = 1630;

@@ -43,6 +43,12 @@ if(keyboard_check_pressed(vk_enter) || gamepad_button_check_pressed(0, gp_face1)
 	}
 
 	if(bossDead){	
+		if(room == rm_firstBoss){
+			game_over = false;
+			instance_deactivate_object(obj_pause);
+			room_goto(rm_cutscEnd1);
+		}
+		
 		global.pMaxLife += 400;
 		global.pMaxAura += 250;
 		global.pAtk += 20;
