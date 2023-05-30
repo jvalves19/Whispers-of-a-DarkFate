@@ -42,7 +42,7 @@ global.controllItems = [
 	true,	//Life Potion
 	true,	//Aura Potion
 	true,	//Damage Potion
-	true,  //Spell Potion
+	true,   //Spell Potion
 	false
 ]
 #endregion

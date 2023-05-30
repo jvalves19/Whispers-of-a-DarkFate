@@ -133,7 +133,6 @@ switch(state){
 				bossDead = true;	
 				global.bardoDialogue = 2;
 				global.destroyed[2] = true;
-				global.controllSpells[1] = true;
 				global.currentSpell = 1;
 				global.playerXP = global.playerXP + 3000;
 			}

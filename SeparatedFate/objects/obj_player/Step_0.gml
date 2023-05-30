@@ -34,7 +34,8 @@ for(i=0; i<=array_items; i++){
 	}
 }
 
-if(keyboard_check_released(ord("I")) || gamepad_button_check_released(0, gp_face4)){
+if(useItem){
+	//Poção Vida
 	if(global.currentItem == 0 && global.lifePotionQtd>0){
 		if(obj_player.life < global.pMaxLife){
 			if((obj_player.life + 50) >= global.pMaxLife){
@@ -44,9 +45,11 @@ if(keyboard_check_released(ord("I")) || gamepad_button_check_released(0, gp_face
 				obj_player.life = obj_player.life + 50;
 			}
 			global.lifePotionQtd -= 1
-			state = "potion"
+			state = "potion";
+			exit;
 		}
 	}
+	//Poção Mana
 	if(global.currentItem == 1 && global.auraPotionQtd>0){
 		if(obj_player.aura < global.pMaxAura){
 			if(global.auraPotionQtd - 1 == 0){
@@ -61,29 +64,30 @@ if(keyboard_check_released(ord("I")) || gamepad_button_check_released(0, gp_face
 				obj_player.aura = obj_player.aura + 50;
 			}
 			global.auraPotionQtd -= 1;
-			state = "potion"
+			state = "potion";
+			exit;
 		}
 	}
-	
+	//Poção Dano
 	if(global.currentItem == 2 && global.damagePotionQtd>0){
 		if(global.damagePotionQtd - 1 == 0) global.currentItem = 0;	
 		
 		obj_player.atk = global.pAtk * 2;
 		global.damagePotionQtd -= 1;
-		state = "potion"
+		state = "potion";
+		exit;
 		
 	}
-	
+	//Poção Dano Mágico
 	if(global.currentItem == 3 && global.spellPotionQtd>0){
 		if(global.spellPotionQtd - 1 == 0) global.currentItem = 0;	
 		
 		obj_player.atk = global.pAtk * 2;
 		global.spellPotionQtd -= 1;
-		state = "potion"
-		
+		state = "potion";
+		exit;
 	}
 }
-
 
 if(global.currentItem == 0){
 	quantity = global.lifePotionQtd;
@@ -301,9 +305,7 @@ switch(state){
 		if(image_index >= image_number-1){
 			state = "idle";
 		}
-		break;
-		
-	
+		break;	
 	#endregion
 		
 	#region ATTACK

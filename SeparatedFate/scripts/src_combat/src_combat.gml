@@ -100,7 +100,6 @@ function enemyUltimate(_sprite_index, _dist_x, _dist_y, _xscale_damage, _yscale_
 	}	
 }
 
-
 ///@method get_hit()
 function get_hit(_sprite_index, _image_index){
 	if(sprite_index != _sprite_index){
