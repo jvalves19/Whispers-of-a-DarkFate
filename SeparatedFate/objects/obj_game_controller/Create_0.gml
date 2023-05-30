@@ -40,9 +40,9 @@ global.spellPotionQtd = 0;
 global.currentItem = 0;
 global.controllItems = [
 	true,	//Life Potion
-	true,	//Aura Potion
-	true,	//Damage Potion
-	true,   //Spell Potion
+	false,	//Aura Potion
+	false,	//Damage Potion
+	false,  //Spell Potion
 	false
 ]
 #endregion

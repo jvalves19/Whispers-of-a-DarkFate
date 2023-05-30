@@ -23,14 +23,15 @@ var _xx = x + lengthdir_x(20 * image_xscale, image_angle);
 array_items = array_length(global.controllItems)
 for(i=0; i<=array_items; i++){
 	if(changeItem && global.currentItem == i){
-		if(global.controllItems[i+1]){
-			global.currentItem = i+1;
-			exit;
+		while(i < array_items-1){
+			i++;
+			if(global.controllItems[i]){
+				global.currentItem = i;
+				exit;
+			}			
 		}
-		else{
-			global.currentItem = 0;
-		}
-		i++;
+		global.currentItem = 0;
+		exit;
 	}
 }
 
@@ -52,11 +53,8 @@ if(useItem){
 	//Poção Mana
 	if(global.currentItem == 1 && global.auraPotionQtd>0){
 		if(obj_player.aura < global.pMaxAura){
-			if(global.auraPotionQtd - 1 == 0){
-				if(global.lifePotionQtd > 0){
-					global.currentItem = 0;	
-				}
-			}
+			if(global.auraPotionQtd - 1 == 0) global.currentItem = 0;	
+			
 			if((obj_player.aura + 50) >= global.pMaxAura){
 				obj_player.aura = global.pMaxAura;
 			}	
@@ -89,18 +87,10 @@ if(useItem){
 	}
 }
 
-if(global.currentItem == 0){
-	quantity = global.lifePotionQtd;
-}
-if(global.currentItem == 1){
-	quantity = global.auraPotionQtd;
-}
-if(global.currentItem == 2){
-	quantity = global.damagePotionQtd;
-}
-if(global.currentItem == 3){
-	quantity = global.spellPotionQtd;
-}
+if(global.currentItem == 0) quantity = global.lifePotionQtd;
+if(global.currentItem == 1) quantity = global.auraPotionQtd;
+if(global.currentItem == 2) quantity = global.damagePotionQtd;
+if(global.currentItem == 3) quantity = global.spellPotionQtd;
 #endregion
 
 #region CHANGE SPELL
@@ -114,17 +104,20 @@ if(!canSpell && time_spell > 0){
 }
 if(aura - global.auraSpell <= 0){
 	canSpell = false;
-}
-for(i=0; i<=array_length(global.controllSpells); i++){
+}	
+
+array_spells = array_length(global.controllSpells);
+for(i=0; i<=array_spells; i++){
 	if(changeSpell && global.currentSpell == i){
-		if(global.controllSpells[i+1]){
-			global.currentSpell = i+1;
-			exit;
+		while(i < array_spells-1){
+			i++;
+			if(global.controllSpells[i]){
+				global.currentSpell = i;
+				exit;
+			}
 		}
-		else{
-			global.currentSpell = 0;
-		}
-		i++;
+		global.currentSpell = 0;
+		exit;
 	}
 }
 #endregion
@@ -141,16 +134,19 @@ if(!canUltimate && time_ultimate > 0){
 if(aura - global.auraUltimate <= 0){
 	canUltimate = false;
 }
-for(i=0; i<=array_length(global.controllUltimate); i++){
-	if((changeUltimate && canUltimate)  && global.currentUltimate == i){
-		if(global.controllUltimate[i+1]){
-			global.currentUltimate = i+1;
-			exit;
+
+array_ultimate = array_length(global.controllUltimate);
+for(i=0; i<=array_ultimate; i++){
+	if((changeUltimate && canUltimate) && global.currentUltimate == i){
+		while(i < array_ultimate-1){
+			i++;
+			if(global.controllUltimate[i]){
+				global.currentUltimate = i;
+				exit;
+			}
 		}
-		else{
-			global.currentUltimate = 0;
-		}
-		i++;
+		global.currentUltimate = 0;
+		exit;
 	}
 }
 #endregion	

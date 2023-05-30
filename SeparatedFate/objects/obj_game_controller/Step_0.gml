@@ -64,6 +64,9 @@ for(i=0; i<=array_length(global.controllItems); i++){
 		global.controllItems[i] = true;
 	}
 }
+if(global.auraPotionQtd == 0)	global.controllItems[1] = false;
+if(global.damagePotionQtd == 0)	global.controllItems[2] = false;
+if(global.spellPotionQtd == 0)	global.controllItems[3] = false;
 #endregion
 
 #region SPELLS
