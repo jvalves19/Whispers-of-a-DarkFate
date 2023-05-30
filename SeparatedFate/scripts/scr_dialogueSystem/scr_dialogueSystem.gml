@@ -35,7 +35,9 @@ function scr_dialogue(){
 					ds_grid_add_text("Tenho umas informações pra você sobre o cara que te espancou", 0, "Bardo")
 					ds_grid_add_text("O nome dele é Garleand", 0, "Bardo")
 					ds_grid_add_text("Também tenho essa chave pra você", 0, "Bardo")
-					global.currentSpell = 1;
+					global.controllSpells[2] = true;
+					global.controllUltimate[1] = true;
+					global.currentSpell = 2;
 					global.currentUltimate = 1;
 					global.key[1] = true;
 					

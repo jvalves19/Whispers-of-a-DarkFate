@@ -25,20 +25,25 @@ global.dmgHoly = 20 * global.playerLevel;
 global.dmgThunder = 20 * global.playerLevel;
 global.pDmgSpell = noone;
 
+#region DIALOGUES
 global.dialogo = false;
 global.bardoDialogue = 1;
 global.blackSmithDialogue = 1;
+#endregion
 
 #region INVENTORY SYSTEM
 global.lifePotionQtd = 0;
 global.auraPotionQtd = 0;
+global.damagePotionQtd = 0;
+global.spellPotionQtd = 0;
 
 global.currentItem = 0;
 global.controllItems = [
-	false,	//Life Potion
-	false,	//Aura Potion
-	false,	
-	false,
+	true,	//Life Potion
+	true,	//Aura Potion
+	true,	//Damage Potion
+	true,  //Spell Potion
+	false
 ]
 #endregion
 
@@ -49,7 +54,6 @@ global.controllBlades = [
 	false,	//Fire Blade
 	false,	//Bloodstained Blade
 ]
-
 #endregion
 
 #region ULTIMATE SYSTEM
@@ -57,7 +61,7 @@ global.currentUltimate = -1;
 global.controllUltimate = [
 	false,	//Fast Sword
 	false,	//Holy Explosion
-	false,	//Thunder Exectution
+	false,	
 ]
 #endregion
 
@@ -66,7 +70,8 @@ global.currentSpell = -1;
 global.controllSpells = [
 	false,	//electric
 	false,	//fire
-	false	//holy
+	false,	//holy
+	false,
 ]
 #endregion
 

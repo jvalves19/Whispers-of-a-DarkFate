@@ -26,8 +26,13 @@ function saveGame(_slot){
 	ini_write_real(_slot, "Potin", global.currentItem);
 	ini_write_real(_slot, "Potion Life Qtd", global.lifePotionQtd);
 	ini_write_real(_slot, "Potion Aura Qtd", global.auraPotionQtd);
+	ini_write_real(_slot, "Potion Damage Qtd", global.damagePotionQtd);
+	ini_write_real(_slot, "Potion Spell Qtd", global.spellPotionQtd);
 	ini_write_real(_slot, "Potion Life", global.controllItems[0]);
 	ini_write_real(_slot, "Potion Aura", global.controllItems[1]);
+	ini_write_real(_slot, "Potion Damage", global.controllItems[2]);
+	ini_write_real(_slot, "Potion Spell", global.controllItems[3]);
+	
 	
 	//SAVE BOSSES
 	ini_write_real(_slot, "Boss1", global.destroyed[1]);	
@@ -92,8 +97,13 @@ function loadGame(_slot){
 	global.currentItem = ini_read_real(_slot, "Potion", 0);
 	global.lifePotionQtd = ini_read_real(_slot, "Potion Life Qtd", 0);
 	global.auraPotionQtd = ini_read_real(_slot, "Potion Aura Qtd", 0);
+	global.damagePotionQtd = ini_read_real(_slot, "Potion Damage Qtd", 0);
+	global.spellPotionQtd = ini_read_real(_slot, "Potion Spell Qtd", 0);
+	
 	global.controllItems[0] = ini_read_real(_slot, "Potion Life", 0);
 	global.controllItems[1] = ini_read_real(_slot, "Potion Aura", 0);
+	global.controllItems[2]	= ini_read_real(_slot, "Potion Damage", 0);
+	global.controllItems[3] = ini_read_real(_slot, "Potion Spell", 0);
 	
 	global.playerXP = ini_read_real(_slot, "Player XP", 0);
 	global.playerLevel = ini_read_real(_slot, "Player Level", 0);

@@ -59,7 +59,7 @@ if(keyboard_check_pressed(vk_enter) || gamepad_button_check_pressed(0, gp_face1)
 #endregion
 
 #region PICK ITEMS
-for(i=0; i<3; i++){
+for(i=0; i<=array_length(global.controllItems); i++){
 	if(global.currentItem == i){
 		global.controllItems[i] = true;
 	}
@@ -67,7 +67,7 @@ for(i=0; i<3; i++){
 #endregion
 
 #region SPELLS
-for(i=0; i<3; i++){
+for(i=0; i<=array_length(global.controllSpells); i++){
 	if(global.currentSpell == i){
 		global.controllSpells[i] = true;
 	}
@@ -87,7 +87,7 @@ if(global.currentSpell == 2) {
 #endregion
 
 #region ULTIMATE
-for(i=0; i<3; i++){
+for(i=0; i<=array_length(global.controllUltimate); i++){
 	if(global.currentUltimate == i){
 		global.controllUltimate[i] = true;
 	}
@@ -96,6 +96,9 @@ if(global.currentUltimate == 0) {
 	global.auraUltimate = 30;
 }
 if(global.currentUltimate == 1) {
+	global.auraUltimate = 50;
+}
+if(global.currentUltimate == 2) {
 	global.auraUltimate = 50;
 }
 #endregion

@@ -139,6 +139,7 @@ function dying (_sprite_index){
 			if(image_alpha <= 0){
 				if(object_index == obj_enemy1){
 					global.playerXP = global.playerXP + irandom_range(300, 400);
+					instance_create_layer(x, y-10, layer, obj_potions)
 				}
 				if(object_index == obj_bandit1){
 					global.playerXP = global.playerXP + irandom_range(800, 900);

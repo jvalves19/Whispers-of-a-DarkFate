@@ -19,5 +19,19 @@ if(place_meeting(x, y, global.actPlayer)){
 		}
 		else  {}
 	}
+	if(image_index == 2){
+		if(global.damagePotionQtd+1 <= 5){
+			global.damagePotionQtd += 1;
+			instance_destroy();
+		}
+		else {}
+	}
+	if(image_index == 3){
+		if(global.spellPotionQtd+1 <= 5){
+			global.spellPotionQtd += 1;
+			instance_destroy();
+		}
+		else {}
+	}
 	
 }

@@ -42,7 +42,7 @@ function player_controls(){
 	);
 	
 	ultimate = (
-		(gamepad_button_check_pressed(0, gp_stickl)) + (gamepad_button_check_pressed(0, gp_stickr))  ||
+		(gamepad_button_check_pressed(0, gp_stickl)) && (gamepad_button_check_pressed(0, gp_stickr))  ||
 		keyboard_check_pressed(ord("K"))
 	);
 	
@@ -52,6 +52,10 @@ function player_controls(){
 	);
 	changeUltimate = (
 		(gamepad_button_check_pressed(0, gp_shoulderl)) ||
+		keyboard_check_pressed(ord("R"))
+	);
+	changeItem = (
+		(gamepad_button_check_pressed(0, gp_padd)) ||
 		keyboard_check_pressed(vk_tab)
 	);
 	attack = (
@@ -101,7 +105,7 @@ function create_menu(_menu, _y){
 	var _qtd = array_length(_menu);
 	var _alt = display_get_gui_height();
 	var _space_y = string_height("I") + 16;
-	var _opBorda = 6
+	var _opBorda = 4
 	
 
 	for(var i = 0 ; i < _qtd; i++){
@@ -111,7 +115,7 @@ function create_menu(_menu, _y){
 		if(menu_sel[pag] == i){
 			var _stringW = string_width(menu_sel[pag]);
 			_color = c_grey;
-			draw_sprite_ext(spr_opBcg, 0, 32, ((_alt / 2) + _y) + (i * _space_y), (_stringW + _opBorda * 2)/2, 1, 0, c_white, 1);
+			draw_sprite_ext(spr_opBcg, 0, 32, ((_alt / 2) + _y) + (i * _space_y), (_stringW/2)+_opBorda, 1, 0, c_white, 1);
 			draw_text_color(64, ((_alt)) + (i * _space_y+2), _text, _color, c_grey, _color, _color, 1);
 		}
 		draw_text_color(64, ((_alt / 2) + _y)+ (i * _space_y), _text, _color, c_blue, _color, _color, 1); 

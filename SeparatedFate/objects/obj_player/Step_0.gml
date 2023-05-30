@@ -20,34 +20,23 @@ if(!ground && (vSpd < max_vSpd * 2 )){
 var _xx = x + lengthdir_x(20 * image_xscale, image_angle);
 
 #region CHANGE ITEM
-if(down && global.currentItem == 0){
-	if(global.controllItems[1]){
-		global.currentItem = 1;
-		exit;
-	}
-	else{
-		global.currentItem = 0;
-	}
-}
-
-if(down && global.currentItem == 1){
-	if(global.controllItems[0]){
-		global.currentItem = 0;	
-		exit;
-	}
-	else{
-		global.currentItem = 1;
+array_items = array_length(global.controllItems)
+for(i=0; i<=array_items; i++){
+	if(changeItem && global.currentItem == i){
+		if(global.controllItems[i+1]){
+			global.currentItem = i+1;
+			exit;
+		}
+		else{
+			global.currentItem = 0;
+		}
+		i++;
 	}
 }
 
 if(keyboard_check_released(ord("I")) || gamepad_button_check_released(0, gp_face4)){
 	if(global.currentItem == 0 && global.lifePotionQtd>0){
 		if(obj_player.life < global.pMaxLife){
-			if(global.lifePotionQtd - 1 == 0){
-				if(global.auraPotionQtd> 0){
-					global.currentItem = 1;
-				}
-			}
 			if((obj_player.life + 50) >= global.pMaxLife){
 				obj_player.life = global.pMaxLife;
 			}	
@@ -75,6 +64,24 @@ if(keyboard_check_released(ord("I")) || gamepad_button_check_released(0, gp_face
 			state = "potion"
 		}
 	}
+	
+	if(global.currentItem == 2 && global.damagePotionQtd>0){
+		if(global.damagePotionQtd - 1 == 0) global.currentItem = 0;	
+		
+		obj_player.atk = global.pAtk * 2;
+		global.damagePotionQtd -= 1;
+		state = "potion"
+		
+	}
+	
+	if(global.currentItem == 3 && global.spellPotionQtd>0){
+		if(global.spellPotionQtd - 1 == 0) global.currentItem = 0;	
+		
+		obj_player.atk = global.pAtk * 2;
+		global.spellPotionQtd -= 1;
+		state = "potion"
+		
+	}
 }
 
 
@@ -83,6 +90,12 @@ if(global.currentItem == 0){
 }
 if(global.currentItem == 1){
 	quantity = global.auraPotionQtd;
+}
+if(global.currentItem == 2){
+	quantity = global.damagePotionQtd;
+}
+if(global.currentItem == 3){
+	quantity = global.spellPotionQtd;
 }
 #endregion
 
@@ -95,42 +108,19 @@ if(!canSpell && time_spell > 0){
 	canSpell = true;
 	//image_alpha = 1;
 }
-
 if(aura - global.auraSpell <= 0){
 	canSpell = false;
 }
-
-
-if(changeSpell){
-	if(global.currentSpell == 0){
-		if(global.controllSpells[1]){
-			global.currentSpell = 1;
+for(i=0; i<=array_length(global.controllSpells); i++){
+	if(changeSpell && global.currentSpell == i){
+		if(global.controllSpells[i+1]){
+			global.currentSpell = i+1;
 			exit;
 		}
-		if(global.controllSpells[2]){
-			global.currentSpell = 2;	
-			exit;
-		}
-	}
-	if(global.currentSpell == 1){
-		if(global.controllSpells[2]){
-			global.currentSpell = 2;
-			exit;
-		}
-		if(global.controllSpells[0]){
-			global.currentSpell = 0;	
-			exit;
-		}
-	}
-	if(global.currentSpell == 2){
-		if(global.controllSpells[0]){
+		else{
 			global.currentSpell = 0;
-			exit;
 		}
-		if(global.controllSpells[1]){
-			global.currentSpell = 1;
-			exit;
-		}
+		i++;
 	}
 }
 #endregion
@@ -147,37 +137,16 @@ if(!canUltimate && time_ultimate > 0){
 if(aura - global.auraUltimate <= 0){
 	canUltimate = false;
 }
-
-if(changeUltimate && canUltimate){
-	if(global.currentUltimate == 0){
-		if(global.controllUltimate[1]){
-			global.currentUltimate = 1;
+for(i=0; i<=array_length(global.controllUltimate); i++){
+	if((changeUltimate && canUltimate)  && global.currentUltimate == i){
+		if(global.controllUltimate[i+1]){
+			global.currentUltimate = i+1;
 			exit;
 		}
-		if(global.controllUltimate[2]){
-			global.currentUltimate = 2;	
-			exit;
-		}
-	}
-	if(global.currentUltimate == 1){
-		if(global.controllUltimate[2]){
-			global.currentUltimate = 2;
-			exit;
-		}
-		if(global.controllUltimate[0]){
-			global.currentUltimate = 0;	
-			exit;
-		}
-	}
-	if(global.currentUltimate == 2){
-		if(global.controllUltimate[0]){
+		else{
 			global.currentUltimate = 0;
-			exit;
 		}
-		if(global.controllUltimate[1]){
-			global.currentUltimate = 1;
-			exit;
-		}
+		i++;
 	}
 }
 #endregion	
@@ -324,21 +293,11 @@ switch(state){
 	
 	#region POTION
 	case "potion":
-		if(global.currentItem == 0){
-			if(sprite_index != spr_pPotion){
-				sprite_index = spr_pPotion;
-				image_index = 0;	
-				hSpd = 0;
-			}
-		}
-		if(global.currentItem == 1){
-			if(sprite_index != spr_pPotionMana){
-				sprite_index = spr_pPotionMana;
-				image_index = 0;	
-				hSpd = 0;
-			}
-		}
-		
+		if(sprite_index != spr_pPotion){
+			sprite_index = spr_pPotion;
+			image_index = 0;	
+			hSpd = 0;
+		}		
 		if(image_index >= image_number-1){
 			state = "idle";
 		}

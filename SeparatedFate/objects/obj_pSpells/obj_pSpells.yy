@@ -30,10 +30,7 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": {
-    "name": "spr_damage",
-    "path": "sprites/spr_damage/spr_damage.yy",
-  },
+  "spriteId": null,
   "spriteMaskId": null,
   "visible": true,
 }
