@@ -383,6 +383,8 @@ switch(state){
 	
 	#region DEATH
 	case "dead":
+		hSpd = 0;
+		
 		if(sprite_index != spr_dead){
 			sprite_index = spr_dead;
 			image_index = 0;
