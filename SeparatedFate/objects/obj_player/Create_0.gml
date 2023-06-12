@@ -79,7 +79,6 @@ player_attacking = function(_sprite_index, _image_index_min, _image_index_max, _
 	}
 	
 	if(image_index >= _image_index_min && damage == noone && image_index < _image_index_max && canAttack){	
-		
 		damage = instance_create_layer(x + _dist_x, y + _dist_y, layer, _damage_obj);
 		damage.image_xscale = _xscale_damage;
 		damage.image_yscale = _yscale_damage;

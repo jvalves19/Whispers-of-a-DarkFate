@@ -297,9 +297,17 @@ switch(state){
 			sprite_index = spr_pPotion;
 			image_index = 0;	
 			hSpd = 0;
+			effects = noone;
+		}	
+		if(image_index > 0 && effects == noone && image_index < 7){
+			effects = instance_create_layer(obj_player.x - 66, y - sprite_height*2, layer, obj_effects);
+			effects.image_xscale = 4;
+			effects.image_yscale = 4;
 		}		
 		if(image_index >= image_number-1){
-			state = "idle";
+			state = "idle";	
+			instance_destroy(effects);
+			effects = noone;
 		}
 		break;	
 	#endregion
