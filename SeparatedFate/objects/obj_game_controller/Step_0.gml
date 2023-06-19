@@ -21,7 +21,7 @@ if(game_over){
 	instance_deactivate_object(obj_pause);
 	global.spd_mult = 0.5;
 } 
-if(bossDead){
+if(bossDead){	
 	instance_deactivate_object(obj_sensor);
 	global.spd_mult = 0.5;
 }
@@ -127,11 +127,17 @@ if(object_exists(obj_player)){
 #region BOSS
 //BOSS EVENTS
 
+if(!global.destroyed[1]){
+	if(room == rm_firstBoss){
+		if(!instance_exists(obj_garleand)){
+			instance_create_layer(552, 312, "Instances", obj_garleand);
+		}
+	}
+}
 if(!global.destroyed[2]){
 	if(room == rm_firstBoss2){
 		if(!instance_exists(obj_samurai)){
 			instance_create_layer(572, 320, "Instances", obj_samurai);
-			
 		}
 	}
 }
