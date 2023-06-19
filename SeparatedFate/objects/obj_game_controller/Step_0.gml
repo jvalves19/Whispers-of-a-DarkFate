@@ -125,8 +125,6 @@ if(object_exists(obj_player)){
 #endregion
 
 #region BOSS
-//BOSS EVENTS
-
 if(!global.destroyed[1]){
 	if(room == rm_firstBoss){
 		if(!instance_exists(obj_garleand)){
