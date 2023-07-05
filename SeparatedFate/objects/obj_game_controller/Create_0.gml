@@ -2,6 +2,8 @@ global.spd_mult = 1;
 game_over = false;
 value = 0;
 
+global.scene_info = -1;
+
 global.actRoom = noone;
 global.playerID = noone;
 global.owPlayerID = noone;
