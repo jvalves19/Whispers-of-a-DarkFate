@@ -124,7 +124,9 @@ if(object_exists(obj_player)){
 }
 #endregion
 
-if(room == rm_town){
+
+
+if(room == rm_town && global.sceneNumber == -1){
 	var _dialogue = obj_dialogo
 	
 	global.scene_info = [
@@ -132,20 +134,39 @@ if(room == rm_town){
 	
 		[cutscene_instance_create, x, y, "Dialogue", _dialogue],
 		[cutscene_changeVariable, _dialogue, "npc_nome", "Kassius"],
+		[cutscene_wait, 1],
+		[cutscene_changeGVariable, "sceneNumber", 0]
+	];	
+	
+	if(!instance_exists(obj_cutscene) && global.sceneNumber == -1) create_cutscene(global.scene_info);
+	if(global.sceneNumber == 0) instance_destroy(obj_cutscene);
+}
+if(room == rm_firstBoss2 && !global.destroyed[2]){
+	var _dialogue = obj_dialogo
+	
+	global.scene_info = [
+		[cutscene_moveCharacter, obj_player, 140, 0, true, 1],
+	
+		[cutscene_instance_create, x, y, "Dialogue", _dialogue],
+		[cutscene_changeVariable, _dialogue, "npc_nome", "Kassius"],
 	
 		[cutscene_wait, 1],
 	
-		[cutscene_changeVariable, obj_samurai, "bossBattle", true],
 		[cutscene_stopSound, msc_bossBattle2],
 		[cutscene_playSound, msc_bossBattle2, 1, true],
 		[cutscene_soundGain, msc_bossBattle2, 1, 0],
+		
+		[cutscene_changeGVariable, "sceneNumber", 1]
 	];
 	
-	if(!instance_exists(obj_cutscene)){
-		create_cutscene(global.scene_info);
-		instance_destroy();
+	if(!instance_exists(obj_cutscene) && global.sceneNumber == 0) create_cutscene(global.scene_info);
+	if(global.sceneNumber == 1){
+		instance_destroy(obj_cutscene);
+		global.bossBattle = true;
 	}
 }
+
+
 
 #region BOSS
 if(!global.destroyed[1]){
