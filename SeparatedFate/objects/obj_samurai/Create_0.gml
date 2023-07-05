@@ -4,7 +4,6 @@
 // Inherit the parent event
 event_inherited();
 
-bossBattle = false;
 battleFase = 1;
 
 charSprite(spr_samIdle, spr_samWalk);

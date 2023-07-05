@@ -4,8 +4,6 @@ function saveGame(_slot){
 	ini_write_real(_slot, "roomID", global.actRoom);
 	ini_write_real(_slot, "xPos", global.actPlayer.x);
 	ini_write_real(_slot, "yPos", global.actPlayer.y);
-	
-	ini_write_real(_slot, "Scene Info", global.scene_info);
 	ini_write_real(_slot, "Scene Number", global.sceneNumber);
 	
 	//PLAYER STATUS
@@ -91,9 +89,6 @@ function loadGame(_slot){
 	roomID = ini_read_real(_slot, "roomID", 0);
 	global.actPlayer.x  = ini_read_real(_slot, "xPos", 0);
 	global.actPlayer.y= ini_read_real(_slot, "yPos", 0);
-	
-		
-	global.scene_info = ini_read_real(_slot, "Scene Info", 0);
 	global.sceneNumber = ini_read_real(_slot, "Scene Number", 0);
 	
 	global.pMaxLife = ini_read_real(_slot, "Player Life", 0);
