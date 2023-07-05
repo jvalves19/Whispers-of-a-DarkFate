@@ -145,7 +145,7 @@ if(room == rm_firstBoss2 && !global.destroyed[2]){
 	var _dialogue = obj_dialogo
 	
 	global.scene_info = [
-		[cutscene_moveCharacter, obj_player, 140, 0, true, 1],
+		[cutscene_moveCharacter, obj_player, 140, 0, true, 4],
 	
 		[cutscene_instance_create, x, y, "Dialogue", _dialogue],
 		[cutscene_changeVariable, _dialogue, "npc_nome", "Kassius"],
@@ -162,7 +162,7 @@ if(room == rm_firstBoss2 && !global.destroyed[2]){
 	if(!instance_exists(obj_cutscene) && global.sceneNumber == 0) create_cutscene(global.scene_info);
 	if(global.sceneNumber == 1){
 		instance_destroy(obj_cutscene);
-		global.bossBattle = true;
+		if(!instance_exists(obj_dialogo)) global.bossBattle = true;
 	}
 }
 
