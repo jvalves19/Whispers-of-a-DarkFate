@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_bard_idle",
-    "path": "sprites/spr_bard_idle/spr_bard_idle.yy",
+    "name": "spr_bardo_idle2",
+    "path": "sprites/spr_bardo_idle2/spr_bardo_idle2.yy",
   },
   "spriteMaskId": null,
   "visible": true,
