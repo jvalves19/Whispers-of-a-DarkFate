@@ -31,6 +31,16 @@ end_game = function(){
 	 game_end();
 }
 
+screen_config = function(_val){
+	switch(_val){
+		//fullscreen
+		case 0: 
+			window_set_fullscreen(true); break;
+		case 1: 
+			window_set_fullscreen(false); break;
+	}
+}
+
 //find the functions Create_menu() and
 //Change_option() on scripts src_functions
 draw_menu = function(menu){
@@ -43,20 +53,32 @@ select_menu = function(menu){
 
 menu = [
 	["Começar História", menu_actions.roda_metodo, new_game], 
-	["Continuar História", menu_actions.carrega_menu, menu_list.load], 
-	["Opções", menu_actions.carrega_menu, menu_list.options], 
+	["Continuar História", menu_actions.load_menu, menu_list.load], 
+	["Opções", menu_actions.load_menu, menu_list.options], 
 	["Sair", menu_actions.roda_metodo, end_game]
 ];
 menu_load = [
 	["Livro 1", menu_actions.roda_metodo, load_game1], 
 	["Livro 2", menu_actions.roda_metodo, load_game2],
 	["Livro 3", menu_actions.roda_metodo, load_game3],
-	["Voltar", menu_actions.carrega_menu, menu_list.main]
+	["Voltar", menu_actions.load_menu, menu_list.main]
 ];
+
+
 menu_options = [
-	["Áudio", menu_actions.roda_metodo, end_game], 
-	["Video", menu_actions.roda_metodo, end_game],
-	["Voltar", menu_actions.carrega_menu, menu_list.main]
+	["Áudio", menu_actions.load_menu, menu_list.audio], 
+	["Video", menu_actions.load_menu, menu_list.video],
+	["Voltar", menu_actions.load_menu, menu_list.main]
 ];
-menus = [menu, menu_load, menu_options];
+
+menu_audio = [
+	["Volume", menu_actions.config_menu, screen_config, 1, ["Menos/Mais"]],
+	["Voltar", menu_actions.load_menu, menu_list.options]
+];
+menu_video = [
+	["Tela Cheia", menu_actions.config_menu, screen_config, 1, ["On/Off"] ],
+	["Voltar", menu_actions.load_menu, menu_list.options]
+];
+
+menus = [menu, menu_load, menu_options, menu_audio, menu_video];
 menu_sel = array_create(array_length(menus), 0);

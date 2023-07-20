@@ -49,14 +49,14 @@ select_menu = function(menu){
 
 menu = [
 	["Continuar", menu_actions.roda_metodo, pause_game], 
-	["Opções", menu_actions.carrega_menu, pause_list.options], 
+	["Opções", menu_actions.load_menu, pause_list.options], 
 	["Voltar ao Menu", menu_actions.roda_metodo, restart_game]
 
 ];
 menu_options = [
 	["Áudio", menu_actions.roda_metodo, restart_game], 
 	["Video", menu_actions.roda_metodo, restart_game],
-	["Voltar", menu_actions.carrega_menu, pause_list.main]
+	["Voltar", menu_actions.load_menu, pause_list.main]
 ];
 menus = [menu, menu_options];
 menu_sel = array_create(array_length(menus), 0);

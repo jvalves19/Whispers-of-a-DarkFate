@@ -69,12 +69,15 @@ function define_align_font(_ver, _hor, _font){
 #region MENU
 enum menu_actions{
 	roda_metodo,
-	carrega_menu
+	load_menu,
+	config_menu
 }
 enum menu_list{
 	main,
 	load,
-	options
+	options,
+	audio,
+	video
 }
 enum pause_list{
 	main,
@@ -90,7 +93,7 @@ function create_menu(_menu, _y){
 	var _opBorda = 4
 	
 
-	for(var i = 0 ; i < _qtd; i++){
+	for(var i=0 ; i<_qtd; i++){
 		var _color = c_white;
 		var _text = _menu[i][0];
 	
@@ -125,9 +128,8 @@ function change_option(_menu){
 	
 	if(_option){
 		switch(_menu[_sel][1]){
-			case 0: _menu[_sel][2](); break;
-			case 1: pag = _menu[_sel][2]; break;
-			case 2: pag = _menu[_sel][2]; break;
+			case menu_actions.roda_metodo: _menu[_sel][2](); break;
+			case menu_actions.load_menu: pag = _menu[_sel][2]; break;
 		}
 	}
 	

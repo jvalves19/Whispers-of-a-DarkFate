@@ -41,7 +41,7 @@ select_menu = function(menu){
 #endregion
 
 menu = [
-	["Sim, Salvar", menu_actions.carrega_menu, pause_list.options], 
+	["Sim, Salvar", menu_actions.load_menu, pause_list.options], 
 	["Não, Cancelar", menu_actions.roda_metodo, nave_game]
 ];
 menu_options = [
