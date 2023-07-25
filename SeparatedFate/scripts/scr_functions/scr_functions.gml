@@ -76,8 +76,8 @@ enum menu_list{
 	main,
 	load,
 	options,
-	audio,
-	video
+	video,
+	audio	
 }
 enum pause_list{
 	main,
@@ -89,9 +89,10 @@ function create_menu(_menu, _y){
 
 	var _qtd = array_length(_menu);
 	var _alt = display_get_gui_height();
+	var _lar = display_get_gui_width();
+	
 	var _space_y = string_height("I") + 16;
 	var _opBorda = 4
-	
 
 	for(var i=0 ; i<_qtd; i++){
 		var _color = c_white;
@@ -105,7 +106,28 @@ function create_menu(_menu, _y){
 		}
 		draw_text_color(64, ((_alt / 2) + _y)+ (i * _space_y), _text, _color, c_blue, _color, _color, 1); 
 	}
-
+		
+	//Desenha opçoes Menu
+	for(var i=0; i<_qtd; i++){
+		switch(_menu[i][1]){
+			case menu_actions.config_menu: 
+				var _indice = _menu[i][3];
+				var _txt	= _menu[i][4][_indice];
+				
+				//somente vou para a esquerda se eu nao estou no indice 0
+				var _esq = _indice > 0 ? "<< " : "";
+				var _dir = _indice < array_length(_menu[i][4]) - 1 ? " >>" : "";
+				
+				_color = c_grey
+				if(alterando && menu_sel[pag] == i)	_color = c_red;
+				
+				draw_text_color(_lar / 2, ((_alt / 2) + _y)+ (i * _space_y), _esq + _txt + _dir, c_grey, _color, _color, c_grey, 1);
+				
+				break;
+			
+		}
+	}
+		
 	//Reseting Variables
 	define_align_font(-1, -1, -1);
 }
@@ -118,18 +140,40 @@ function change_option(_menu){
 
 	_up = keyboard_check_pressed(vk_up) || (gamepad_button_check_pressed(0, gp_padu));
 	_down = keyboard_check_pressed(vk_down) || (gamepad_button_check_pressed(0, gp_padd));
+	_left = keyboard_check_pressed(vk_left) || (gamepad_button_check_pressed(0, gp_padl));
+	_right = keyboard_check_pressed(vk_right) || (gamepad_button_check_pressed(0, gp_padr));
 	_option = keyboard_check_pressed(vk_enter) || (gamepad_button_check_pressed(0, gp_face1));
-
-	//Changing Selection
-	if(_up || _down){
-		_sel += _down - _up;
-		menu_sel[pag] = clamp(_sel, 0, _qtd);
-	}
 	
+	//Checando se nao está nas subopções
+	if(!alterando){
+		//Changing Selection
+		if(_up || _down){
+			_sel += _down - _up;
+			menu_sel[pag] = clamp(_sel, 0, _qtd);
+		}
+		
+	} 
+	else {
+		if(_right || _left){
+			var _limite = array_length(_menu[_sel][4]) - 1;
+			
+			menus[pag][_sel][3] += _right - _left; 
+			menus[pag][_sel][3] = clamp(menus[pag][_sel][3], 0, _limite);
+		}
+	}
 	if(_option){
 		switch(_menu[_sel][1]){
 			case menu_actions.roda_metodo: _menu[_sel][2](); break;
 			case menu_actions.load_menu: pag = _menu[_sel][2]; break;
+			case menu_actions.config_menu: 
+				alterando = !alterando;
+				if(!alterando){
+					//Salvar Parametro metodo fullscreen
+					var _arg = _menu[_sel][3];
+					_menu[_sel][2](_arg);
+				}
+				
+				break;
 		}
 	}
 	
