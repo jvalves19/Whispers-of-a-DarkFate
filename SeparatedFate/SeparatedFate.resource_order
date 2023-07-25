@@ -100,6 +100,7 @@
     {"name":"obj_fire","order":4,"path":"objects/obj_fire/obj_fire.yy",},
     {"name":"spr_garlUltimate","order":7,"path":"sprites/spr_garlUltimate/spr_garlUltimate.yy",},
     {"name":"spr_blackSmithStand","order":2,"path":"sprites/spr_blackSmithStand/spr_blackSmithStand.yy",},
+    {"name":"src_languages","order":9,"path":"scripts/src_languages/src_languages.yy",},
     {"name":"spr_dash","order":9,"path":"sprites/spr_dash/spr_dash.yy",},
     {"name":"spr_artGUI","order":14,"path":"sprites/spr_artGUI/spr_artGUI.yy",},
     {"name":"spr_pPotion","order":14,"path":"sprites/spr_pPotion/spr_pPotion.yy",},

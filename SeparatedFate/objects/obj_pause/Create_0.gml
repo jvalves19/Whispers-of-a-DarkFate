@@ -37,7 +37,12 @@ pause_game = function(){
 restart_game = function(){
 	game_restart();
 }
-
+screen_config = function(_val){
+	config_screen(_val);
+}
+language_config = function(_val){
+	config_language(_val);
+}
 draw_menu = function(menu){
 	if(pause) create_menu(menu, -150);
 }
@@ -48,15 +53,23 @@ select_menu = function(menu){
 #endregion
 
 menu = [
-	["Continuar", menu_actions.roda_metodo, pause_game], 
-	["Opções", menu_actions.load_menu, pause_list.options], 
-	["Voltar ao Menu", menu_actions.roda_metodo, restart_game]
-
+	[translateText("menu_continue"), menu_actions.roda_metodo, pause_game], 
+	[translateText("menu_options"), menu_actions.load_menu, pause_list.options], 
+	[translateText("menu_backMenu"), menu_actions.roda_metodo, restart_game]
 ];
 menu_options = [
-	["Áudio", menu_actions.roda_metodo, restart_game], 
-	["Video", menu_actions.roda_metodo, restart_game],
-	["Voltar", menu_actions.load_menu, pause_list.main]
+	[translateText("Video"), menu_actions.load_menu, menu_list.video],
+	[translateText("Áudio"), menu_actions.load_menu, menu_list.audio], 
+	[translateText("menu_back"), menu_actions.load_menu, pause_list.main]
 ];
-menus = [menu, menu_options];
+menu_audio = [
+	[translateText("Volume"), menu_actions.config_menu, screen_config, 1, ["Menos", "Mais"]],
+	[translateText("menu_back"), menu_actions.load_menu, pause_list.options]
+];
+menu_video = [
+	[translateText("fullscreen"), menu_actions.config_menu, screen_config, global.screenIndex, ["On", "Off"]],
+	[translateText("menu_back"), menu_actions.load_menu, pause_list.options]
+];
+menus = [menu, menu_options, menu_options, menu_video, menu_audio];
 menu_sel = array_create(array_length(menus), 0);
+alterando = false;

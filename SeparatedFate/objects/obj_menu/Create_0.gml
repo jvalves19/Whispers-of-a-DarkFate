@@ -31,12 +31,10 @@ end_game = function(){
 	 game_end();
 }
 screen_config = function(_val){
-	switch(_val){
-		case 0: 
-			window_set_fullscreen(true); break;
-		case 1: 
-			window_set_fullscreen(false); break;
-	}
+	config_screen(_val);
+}
+language_config = function(_val){
+	config_language(_val);
 }
 //find the functions Create_menu() and
 //Change_option() on scripts src_functions
@@ -49,30 +47,30 @@ select_menu = function(menu){
 #endregion
 
 menu = [
-	["Começar História", menu_actions.roda_metodo, new_game], 
-	["Continuar História", menu_actions.load_menu, menu_list.load], 
-	["Opções", menu_actions.load_menu, menu_list.options], 
-	["Sair", menu_actions.roda_metodo, end_game]
+	[translateText("menu_begin"), menu_actions.roda_metodo, new_game], 
+	[translateText("menu_continue"), menu_actions.load_menu, menu_list.load], 
+	[translateText("menu_options"), menu_actions.load_menu, menu_list.options], 
+	[translateText("menu_exit"), menu_actions.roda_metodo, end_game]
 ];
 menu_load = [
-	["Livro 1", menu_actions.roda_metodo, load_game1], 
-	["Livro 2", menu_actions.roda_metodo, load_game2],
-	["Livro 3", menu_actions.roda_metodo, load_game3],
-	["Voltar", menu_actions.load_menu, menu_list.main]
+	[translateText("menu_load1"), menu_actions.roda_metodo, load_game1], 
+	[translateText("menu_load2"), menu_actions.roda_metodo, load_game2],
+	[translateText("menu_load3"), menu_actions.roda_metodo, load_game3],
+	[translateText("menu_back"), menu_actions.load_menu, menu_list.main]
 ];
 menu_options = [
-	["Video", menu_actions.load_menu, menu_list.video],
-	["Áudio", menu_actions.load_menu, menu_list.audio], 
-	["Voltar", menu_actions.load_menu, menu_list.main]
+	[translateText("Video"), menu_actions.load_menu, menu_list.video],
+	[translateText("Áudio"), menu_actions.load_menu, menu_list.audio], 
+	[translateText("menu_back"), menu_actions.load_menu, menu_list.main]
 ];
 menu_audio = [
-	["Volume", menu_actions.config_menu, screen_config, 1, ["Menos", "Mais"]],
-	["Idioma", menu_actions.config_menu, screen_config, 1, ["Português", "English"]],
-	["Voltar", menu_actions.load_menu, menu_list.options]
+	[translateText("Volume"), menu_actions.config_menu, screen_config, 1, ["Menos", "Mais"]],
+	[translateText("locate"), menu_actions.config_menu, language_config, global.langIndex, ["Português", "English"]],
+	[translateText("menu_back"), menu_actions.load_menu, menu_list.options]
 ];
 menu_video = [
-	["Tela Cheia", menu_actions.config_menu, screen_config, 1, ["On", "Off"]],
-	["Voltar", menu_actions.load_menu, menu_list.options]
+	[translateText("fullscreen"), menu_actions.config_menu, screen_config, global.screenIndex, ["On", "Off"]],
+	[translateText("menu_back"), menu_actions.load_menu, menu_list.options]
 ];
 
 menus = [menu, menu_load, menu_options, menu_video, menu_audio];

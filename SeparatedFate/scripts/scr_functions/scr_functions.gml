@@ -81,7 +81,37 @@ enum menu_list{
 }
 enum pause_list{
 	main,
-	options
+	options,
+	video,
+	audio
+}
+
+global.screenIndex = 1;
+function config_screen(_val){
+	switch(_val){
+		case 0: 
+			window_set_fullscreen(true); 
+			global.screenIndex = 0;
+			break;
+		case 1: 
+			window_set_fullscreen(false); 
+			global.screenIndex = 1;
+			break;
+	}
+}
+function config_language(_val){
+	switch(_val){
+		case 0: 
+			global.locale = LOCALE.PT; 
+			global.langIndex = 0;
+			game_restart();
+			break;
+		case 1: 
+			global.locale = LOCALE.EN; 
+			global.langIndex = 1;
+			game_restart();
+			break;
+	}
 }
 
 function create_menu(_menu, _y){

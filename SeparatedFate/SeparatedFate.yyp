@@ -80,6 +80,8 @@
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"HD wallpaper_ Red, Sony, PS4, Bloodborne, Moon Presence.jfif","CopyToMask":-1,"filePath":"datafiles",},
+    {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"languages.csv","CopyToMask":-1,"filePath":"datafiles",},
+    {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"languages.xlsx","CopyToMask":3035426170322551022,"filePath":"datafiles",},
   ],
   "isEcma": false,
   "LibraryEmitters": [],
@@ -199,6 +201,7 @@
     {"id":{"name":"obj_fire","path":"objects/obj_fire/obj_fire.yy",},},
     {"id":{"name":"spr_garlUltimate","path":"sprites/spr_garlUltimate/spr_garlUltimate.yy",},},
     {"id":{"name":"spr_blackSmithStand","path":"sprites/spr_blackSmithStand/spr_blackSmithStand.yy",},},
+    {"id":{"name":"src_languages","path":"scripts/src_languages/src_languages.yy",},},
     {"id":{"name":"spr_dash","path":"sprites/spr_dash/spr_dash.yy",},},
     {"id":{"name":"spr_artGUI","path":"sprites/spr_artGUI/spr_artGUI.yy",},},
     {"id":{"name":"spr_pPotion","path":"sprites/spr_pPotion/spr_pPotion.yy",},},
