@@ -19,15 +19,7 @@ print = string_copy(str, 1, l);
 if((l > string_length(str) + 100) && next < array_length(strings) - 1){
 	l = 0;
 	next++;
-	
-	if(next == array_length(strings) - 15){
-		xpos = 640
-		layer_background_sprite(back_id, intro);			
-	}
-	if(next == array_length(strings) - 13){
-		xpos = 640
-		layer_background_sprite(back_id, Moon);		
-	}
+
 	if(next == array_length(strings) - 9){
 		xpos = 640
 		layer_background_sprite(back_id, intro);			
