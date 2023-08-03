@@ -65,7 +65,8 @@ function saveGame(_slot){
 	ini_write_real(_slot, "Keys3", global.key[3]);
 	ini_write_real(_slot, "Keys4", global.key[4]);
 	ini_write_real(_slot, "Keys5", global.key[5]);
-	
+
+	ini_write_real(_slot, "Kassius Dialogue", global.kassiusDialogue);
 	ini_write_real(_slot, "Bardo Dialogue", global.bardoDialogue);
 	ini_write_real(_slot, "Ferreiro Dialogue", global.blackSmithDialogue);
 	
@@ -152,6 +153,7 @@ function loadGame(_slot){
 	global.key[4] = ini_read_real(_slot, "Keys4", 0);
 	global.key[5] = ini_read_real(_slot, "Keys5", 0);
 	
+	global.kassiusDialogue = ini_read_real(_slot, "Kassius Dialogue", 0);
 	global.bardoDialogue = ini_read_real(_slot, "Bardo Dialogue", 0);
 	global.blackSmithDialogue = ini_read_real(_slot, "Ferreiro Dialogue", 0);
 	

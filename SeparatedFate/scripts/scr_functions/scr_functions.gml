@@ -86,29 +86,44 @@ enum pause_list{
 	audio
 }
 
-global.screenIndex = 1;
+global.screenIndex = 0;
 function config_screen(_val){
 	switch(_val){
 		case 0: 
 			window_set_fullscreen(true); 
 			global.screenIndex = 0;
+			
 			break;
 		case 1: 
 			window_set_fullscreen(false); 
 			global.screenIndex = 1;
+			
 			break;
 	}
+	
+	
 }
 function config_language(_val){
 	switch(_val){
 		case 0: 
 			global.locale = LOCALE.PT; 
 			global.langIndex = 0;
+			
+			ini_open("config.ini");
+			ini_write_real("config", "Locale", global.locale);
+			ini_write_real("config", "Language", global.langIndex);
+			ini_close();
 			game_restart();
 			break;
 		case 1: 
 			global.locale = LOCALE.EN; 
 			global.langIndex = 1;
+			
+			ini_open("config.ini");
+			ini_write_real("config", "Locale", global.locale);
+			ini_write_real("config", "Language", global.langIndex);
+			ini_close();
+		
 			game_restart();
 			break;
 	}

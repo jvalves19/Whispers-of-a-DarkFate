@@ -252,6 +252,7 @@
     {"id":{"name":"spr_idle","path":"sprites/spr_idle/spr_idle.yy",},},
     {"id":{"name":"spr_darkWalk","path":"sprites/spr_darkWalk/spr_darkWalk.yy",},},
     {"id":{"name":"rm_firstBoss2","path":"rooms/rm_firstBoss2/rm_firstBoss2.yy",},},
+    {"id":{"name":"rm_graveyard1","path":"rooms/rm_graveyard1/rm_graveyard1.yy",},},
     {"id":{"name":"spr_pAttack3","path":"sprites/spr_pAttack3/spr_pAttack3.yy",},},
     {"id":{"name":"spr_heal2","path":"sprites/spr_heal2/spr_heal2.yy",},},
     {"id":{"name":"title_screen","path":"sprites/title_screen/title_screen.yy",},},
@@ -300,6 +301,7 @@
     {"id":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},},
     {"id":{"name":"obj_enemy_father","path":"objects/obj_enemy_father/obj_enemy_father.yy",},},
     {"id":{"name":"spr_bard_idle","path":"sprites/spr_bard_idle/spr_bard_idle.yy",},},
+    {"id":{"name":"obj_sense","path":"objects/obj_sense/obj_sense.yy",},},
     {"id":{"name":"scr_dialogueSystem","path":"scripts/scr_dialogueSystem/scr_dialogueSystem.yy",},},
     {"id":{"name":"spr_tileGarlCastle","path":"sprites/spr_tileGarlCastle/spr_tileGarlCastle.yy",},},
     {"id":{"name":"snd_spell","path":"sounds/snd_spell/snd_spell.yy",},},
@@ -370,6 +372,7 @@
     {"roomId":{"name":"rm_firstBoss3","path":"rooms/rm_firstBoss3/rm_firstBoss3.yy",},},
     {"roomId":{"name":"rm_forest","path":"rooms/rm_forest/rm_forest.yy",},},
     {"roomId":{"name":"rm_cutscEnd1","path":"rooms/rm_cutscEnd1/rm_cutscEnd1.yy",},},
+    {"roomId":{"name":"rm_graveyard1","path":"rooms/rm_graveyard1/rm_graveyard1.yy",},},
   ],
   "TextureGroups": [
     {"resourceType":"GMTextureGroup","resourceVersion":"1.3","name":"Default","autocrop":true,"border":2,"compressFormat":"bz2","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"targets":-1,},

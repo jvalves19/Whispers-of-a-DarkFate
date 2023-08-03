@@ -64,6 +64,7 @@ menu_options = [
 ];
 menu_audio = [
 	[translateText("Volume"), menu_actions.config_menu, screen_config, 1, ["Menos", "Mais"]],
+	[translateText("locate"), menu_actions.config_menu, language_config, global.langIndex, ["Português", "English"]],
 	[translateText("menu_back"), menu_actions.load_menu, pause_list.options]
 ];
 menu_video = [

@@ -50,7 +50,7 @@ if((a == 1) && (fadeout == 1)){
 	audio_sound_gain(msc_intro, 0, 500);
 	audio_play_sound(msc_intro, 10, false);
 
-	room_goto(rm_castle);
-	obj_player.x = 96;
-	obj_player.y = 380;
+	room_goto(rm_graveyard1);
+	obj_player.x = 88;
+	obj_player.y = 384;
 }

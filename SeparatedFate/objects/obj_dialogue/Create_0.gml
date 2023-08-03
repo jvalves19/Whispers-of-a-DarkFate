@@ -45,10 +45,11 @@ menu = [
 	["Não, Cancelar", menu_actions.roda_metodo, nave_game]
 ];
 menu_options = [
-	["Livro 1", menu_actions.roda_metodo, save_game1], 
-	["Livro 2", menu_actions.roda_metodo, save_game2],
-	["Livro 3", menu_actions.roda_metodo, save_game3],
-	["Cancelar", menu_actions.roda_metodo, nave_game]
+	[translateText("menu_load1"), menu_actions.roda_metodo, save_game1], 
+	[translateText("menu_load2"), menu_actions.roda_metodo, save_game2],
+	[translateText("menu_load3"), menu_actions.roda_metodo, save_game3],
+	[translateText("menu_back"), menu_actions.roda_metodo, nave_game]
 ];
 menus = [menu, menu_options];
 menu_sel = array_create(array_length(menus), 0);
+alterando = false

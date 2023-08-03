@@ -112,25 +112,23 @@ if(global.currentUltimate == 2) {
 }
 #endregion
 
-#region DIALOGUE SYSTEM
-if(instance_exists(obj_dialogo)){
-	global.dialogo = true;
-}
-#endregion
-
 #region KEY SYSTEM
 if(object_exists(obj_player)){
 	global.key[global.numKey] = global.key[global.numKey];
 }
 #endregion
 
+#region DIALOGUE SYSTEM
+if(instance_exists(obj_dialogo)){
+	global.dialogo = true;
+}
 
-
-if(room == rm_town && global.sceneNumber == -1){
+if(room == rm_graveyard1 && global.sceneNumber == -1){
 	var _dialogue = obj_dialogo
 	
 	global.scene_info = [
-		[cutscene_moveCharacter, obj_player, 140, 0, true, 4],
+		[cutscene_changeVariable, obj_player, "obj_player.state", "idle"],
+		[cutscene_moveCharacter, obj_player, 4, 0, true, 4],
 	
 		[cutscene_instance_create, x, y, "Dialogue", _dialogue],
 		[cutscene_changeVariable, _dialogue, "npc_nome", "Kassius"],
@@ -165,8 +163,7 @@ if(room == rm_firstBoss2 && !global.destroyed[2]){
 		if(!instance_exists(obj_dialogo)) global.bossBattle = true;
 	}
 }
-
-
+#endregion
 
 #region BOSS
 if(!global.destroyed[1]){

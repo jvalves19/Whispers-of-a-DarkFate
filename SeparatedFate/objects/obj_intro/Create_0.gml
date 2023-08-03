@@ -26,10 +26,10 @@ strings[7] = "Após o feitiço, Kassius morre";
 
 strings[8] = "....";
 
-strings[9] = "Após um tempo Kassius acorda fraco e imponente";
+strings[9] = "Após um longo período de tempo\nKassius acorda fraco e imponente";
 strings[10] = "Ele teve sua alma dividida em várias partes\ndurante a tentativa de salvar Sylvir";
 strings[11] = "Agora, lhe resta tentar descobrir onde Sylvir está\nE o que aconteceu com seus poderes...";
-strings[12] = "... com sua essência";
+strings[12] = "... com sua Aura";
 
 audio_play_sound(msc_intro, 10, false);
 audio_sound_gain(msc_intro, 1, 0);

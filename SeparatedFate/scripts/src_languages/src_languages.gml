@@ -3,10 +3,15 @@ enum LOCALE {
 	EN
 }
 
-global.langIndex = 0;
-global.locale = LOCALE.PT;
-
-
+ini_open("config.ini");
+if(ini_read_real("config", "Language", 0) == ""){
+	global.langIndex = 0;
+	global.locale = LOCALE.PT;
+} else {
+	global.locale = ini_read_real("config", "Locale", 0);
+	global.langIndex = ini_read_real("config", "Language", 0);
+}
+ini_close();
 
 initTranslations();
 
