@@ -13,7 +13,7 @@ if(pause){
 	define_align_font(1,  1, fnt_game_over);
 	
 	draw_set_color(c_white);
-	draw_text(center_w, center_h, "Game Pause");
+	draw_text(center_w, center_h, translateText("pauseMsg"));
 	define_align_font(-1, -1, -1);	
 	
 	draw_menu(menus[pag]);

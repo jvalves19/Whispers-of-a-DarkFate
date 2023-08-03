@@ -69,7 +69,7 @@ menu_audio = [
 	[translateText("menu_back"), menu_actions.load_menu, menu_list.options]
 ];
 menu_video = [
-	[translateText("fullscreen"), menu_actions.config_menu, screen_config, global.screenIndex, ["On", "Off"]],
+	[translateText("fullscreen"), menu_actions.config_menu, screen_config, global.screenIndex, [translateText("opYes"), translateText("opNo")]],
 	[translateText("menu_back"), menu_actions.load_menu, menu_list.options]
 ];
 

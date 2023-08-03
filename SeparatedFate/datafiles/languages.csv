@@ -18,6 +18,17 @@ locate,Idioma,Language,,
 menu_continue,Continuar,Continue,,
 menu_backMenu,Voltar ao Menu,Main Menu,,
 
+needKey,Precisa da Chave,Need a Key,,
+actionButton,E ou X para Interagir,E or X to Action,,
+selectButton,E ou X para Selecionar,E or X to Select,,
+skipCutscene,Segure ESPAÇO ou O,Hold BACKSPACE or O,,
+pauseMsg,Jogo Pausado,Game Paused,,
+
+opNo,Não,No,,
+opYes, Sim,Yes,,
+opYesSave,Salvar,Save,,
+opNoSave,Cancelar,Cancel,,
+
 cutIntro0Ln1,Em um tempo tão distante que até mesmo os imortais,A long time ago when even the imortals,,
 cutIntro0Ln2,poderiam esquecer de seus acontecimentos,could forget about this story,,
 
