@@ -24,7 +24,7 @@ switch(state){
 				state = "walk";
 				
 				if(battleFase == 2){
-					if(random(10) >= 9) state = "ultimate";
+					if(random(10) >= 7) state = "ultimate";
 				}
 			}
 			hSpd = lengthdir_x(1, _dir);
@@ -48,7 +48,7 @@ switch(state){
 			state = "attack";
 			state_atk = irandom(2);
 			if(battleFase == 2){
-				if(random(10) >= 8){
+				if(random(10) >= 7){
 					state = "dash";
 				}
 			}
@@ -115,9 +115,11 @@ switch(state){
 			}
 		}
 		
+		/*
 		hSpd = lengthdir_x(1, _dir);
 		if(sign(hSpd) != 0) image_xscale = sign(hSpd);
-	
+		*/
+		
 		break;
 	
 	//You re dead now

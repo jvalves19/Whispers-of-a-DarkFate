@@ -268,6 +268,10 @@ switch(state){
 			sprite_index = spr_pFall;
 		}
 		
+		if(attack){
+			state = "air attack";
+		}
+		
 		if(ground){
 			state = "idle";
 			hSpd = 0;
@@ -284,7 +288,7 @@ switch(state){
 			hSpd = image_xscale * dash_Spd;
 		}		
 		
-		if(image_index >= image_number-1){
+		if(image_index >= image_number-1 || !ground){
 			state = "idle";
 		}
 		
@@ -311,7 +315,42 @@ switch(state){
 		}
 		break;	
 	#endregion
+	
+	#region AIR ATTACK
+	case "air attack":
+		if(sprite_index != spr_pAttackAir1){
+			sprite_index = spr_pAttackAir1;
+			image_index = 0;
+		}
 		
+		if(image_index >= 1 && damage == noone && canAttack){
+			damage = instance_create_layer(x + sprite_width/4 + hSpd*2, y - sprite_height/2, layer, obj_pDamages);
+			damage.image_xscale = 2;
+			damage.image_yscale = 1;
+			damage.damage = atk * atkMult;
+			damage.father = id;
+			canAttack = false;
+		}
+		
+		if(image_index >= image_number-1){
+			state = "jump";
+			canAttack = true;
+			if(damage){
+				instance_destroy(damage, false);
+			}
+		}
+		if(ground){
+			state = "idle";
+			canAttack = true;
+			if(damage){
+				instance_destroy(damage, false);
+			}
+		}
+	
+		break;
+	
+	#endregion
+	
 	#region ATTACK
 	case "attack":
 		hSpd = 0;
