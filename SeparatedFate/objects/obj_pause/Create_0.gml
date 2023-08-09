@@ -13,6 +13,7 @@ pag = 0;
 pause_game = function(){
 	if(pause){
 		pause = false;
+		global.showTutorial = true;
 		instance_activate_all();
 		
 		if(surface_exists(pauseSurf)) surface_free(pauseSurf);
@@ -20,7 +21,7 @@ pause_game = function(){
 	}
 	else{		
 		pause = true;
-		
+		global.showTutorial = true;
 		instance_deactivate_all(true);
 		
 		pauseSurf = surface_create(resW, resH);
@@ -74,3 +75,4 @@ menu_video = [
 menus = [menu, menu_options, menu_options, menu_video, menu_audio];
 menu_sel = array_create(array_length(menus), 0);
 alterando = false;
+global.showTutorial = true;

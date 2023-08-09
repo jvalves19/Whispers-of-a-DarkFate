@@ -2,6 +2,8 @@
 // You can write your code in this editor
 
 if(pause){
+
+	
 	var x1 = camera_get_view_x(view_camera[1]);
 	var w = camera_get_view_width(view_camera[1]);
 	var center_w = x1 + w/2;
@@ -18,7 +20,7 @@ if(pause){
 	
 	draw_menu(menus[pag]);
 	
-	draw_sprite_stretched(spr_gameKeys, 0, (center_w / 2) + 800, center_h / 2 + 150, 1000, 600);
+	if(global.showTutorial)draw_sprite_stretched(spr_gameKeys, 0, (center_w / 2) + 500, center_h / 2 + 150, 1000, 600);
 	
 } else{
 	value = 0;

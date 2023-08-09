@@ -191,6 +191,7 @@ function change_option(_menu){
 	
 	//Checando se nao está nas subopções
 	if(!alterando){
+		
 		//Changing Selection
 		if(_up || _down){
 			_sel += _down - _up;
@@ -207,9 +208,15 @@ function change_option(_menu){
 		}
 	}
 	if(_option){
+		
+		
 		switch(_menu[_sel][1]){
 			case menu_actions.roda_metodo: _menu[_sel][2](); break;
-			case menu_actions.load_menu: pag = _menu[_sel][2]; break;
+			case menu_actions.load_menu: 
+				pag = _menu[_sel][2]; 
+				global.showTutorial = false; 
+				
+				break;
 			case menu_actions.config_menu: 
 				alterando = !alterando;
 				if(!alterando){
