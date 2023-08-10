@@ -325,7 +325,7 @@ switch(state){
 			attackDown = true;
 		}
 		if(sprite_index == spr_pAttackAirDownBeg){
-			if(image_index > .07){
+			if(image_index > .05){
 				sprite_index = spr_pAttackAirDownLoop;
 				image_index = 0;
 			}
@@ -338,7 +338,7 @@ switch(state){
 				image_index = 0;
 			}
 			else {
-				if(image_index >= image_number - .2){
+				if(image_index >= image_number - .5){
 					state = "idle";
 					attackDown = false;	
 					end_attack();

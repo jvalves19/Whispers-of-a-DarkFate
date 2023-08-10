@@ -1,6 +1,6 @@
 //check how much collide with the object
 //return "who collides? obj_father" "save at list? target_list"
-var target = instance_place(x, y, obj_father);
+var target;
 var target_list = ds_list_create();
 var qtd = instance_place_list(x, y, obj_father, target_list, 0);
 
@@ -41,4 +41,13 @@ ds_list_destroy(apply_damage);
 ds_list_destroy(target_list);
 
 
-instance_destroy();
+if(destroy){
+	instance_destroy();
+}
+else{
+	y = father.y - father.sprite_height/4;
+
+	if(qtd){
+		instance_destroy();
+	}
+}

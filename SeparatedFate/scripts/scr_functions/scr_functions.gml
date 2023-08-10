@@ -6,7 +6,6 @@ function screenshake(_shake){
 	var shake = instance_create_layer(0, 0, "instances", obj_screenshake);
 	shake.shake = _shake;
 }
-
 #endregion
 
 #region CHARACTERS SPRITES
