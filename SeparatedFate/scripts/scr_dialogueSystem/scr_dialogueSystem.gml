@@ -39,6 +39,7 @@ function scr_dialogue(){
 					ds_grid_add_text("Pode falar comigo se quiser registrar seu progresso em sua busca", 0, "Bardo")
 					global.currentSpell = 0;
 					global.currentUltimate = 0;
+					global.controllBlades[0] = true;
 					
 					global.bardoDialogue = global.bardoDialogue - global.bardoDialogue;
 				break;

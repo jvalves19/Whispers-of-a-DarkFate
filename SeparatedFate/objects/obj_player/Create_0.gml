@@ -104,13 +104,11 @@ player_attacking = function(_sprite_index, _image_index_min, _image_index_max, _
 		damage.father = id;
 		canAttack = false;
 	}
-	
 	if(attack && combo < 2 && image_index >= image_number-3){
 		combo++;
 		image_index = 0;
 		atkMult += 0.5;	
 	}
-		
 	if(image_index > image_number-1){
 		state = _next_state;
 		hSpd = 0;

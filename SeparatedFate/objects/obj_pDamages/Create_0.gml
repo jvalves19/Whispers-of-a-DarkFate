@@ -10,7 +10,7 @@ apply_damage = ds_list_create();
 destroy = true;
 
 if(global.currentBlade == 0){
-	image_alpha = 0;
+	image_alpha = 1;
 	audio_play_sound(snd_sword, 10, false);
 }
 
