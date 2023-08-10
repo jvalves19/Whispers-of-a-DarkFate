@@ -153,7 +153,7 @@ player_ultimate = function(_sprite_index, _aura, _dist_x, _dist_y, _xscale_damag
 		}
 	}
 	else if(global.currentUltimate == 1){
-		if(image_index >= 4 && image_index <= 20){
+		if(spr_pUltimate2){
 			//global.spd_mult = 0.5;
 			if((image_index % 2) == 1){
 				screenshake(10);

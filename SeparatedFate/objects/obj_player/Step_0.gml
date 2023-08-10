@@ -347,9 +347,9 @@ switch(state){
 		}
 		
 		if(sprite_index == spr_pAttackAirDownBeg && damage == noone && canAttack){
-			damage = instance_create_layer(x + sprite_width / 3.2, y - sprite_height / 2, layer, obj_pDamages);
-			damage.image_xscale = 1;
-			damage.image_yscale = 4;
+			damage = instance_create_layer(x + sprite_width / 4, y - sprite_height / 2, layer, obj_pDamages);
+			damage.image_xscale = 0.5;
+			damage.image_yscale = 3;
 			damage.damage = atk;
 			damage.father = id;
 			damage.destroy = false;
