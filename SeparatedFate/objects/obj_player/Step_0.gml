@@ -349,10 +349,10 @@ switch(state){
 			damage = instance_create_layer(x + sprite_width/4 + hSpd*4, y - sprite_height/2, layer, obj_pDamages);
 			damage.image_xscale = 2;
 			damage.image_yscale = 1;
-			damage.damage = atk * atkMult;
+			damage.damage = atk;
 			damage.father = id;
 			damage.destroy = false;
-			canAttack = false;
+			canAttack = false;		
 		}
 		
 		break;
@@ -370,7 +370,7 @@ switch(state){
 			damage = instance_create_layer(x + sprite_width/4 + hSpd*4, y - sprite_height/2, layer, obj_pDamages);
 			damage.image_xscale = 2;
 			damage.image_yscale = 1;
-			damage.damage = atk * atkMult;
+			damage.damage = atk;
 			damage.father = id;
 			canAttack = false;
 		}
