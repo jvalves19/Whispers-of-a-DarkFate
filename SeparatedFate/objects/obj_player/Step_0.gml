@@ -269,7 +269,7 @@ switch(state){
 		}
 		
 		if(attack){
-			state = "air attack";
+			state_attack(ground);
 		}
 		
 		if(ground){
@@ -314,6 +314,37 @@ switch(state){
 			effects = noone;
 		}
 		break;	
+	#endregion
+	
+	#region AIR ATTACK DOWN
+	case "air attack down":
+		vSpd += .5;
+		if(!attackDown){
+			sprite_index = spr_pAttackAirDownBeg;
+			image_index = 0;
+			attackDown = true;
+		}
+		if(sprite_index == spr_pAttackAirDownBeg){
+			if(image_index > image_number - .05){
+				sprite_index = spr_pAttackAirDownLoop;
+				image_index = 0;
+			}
+		}
+		
+		if(ground){
+			if(sprite_index != spr_pAttackAirDownEnd){
+				sprite_index = spr_pAttackAirDownEnd;
+				image_index = 0;
+			}
+			else if(image_index >= image_number - .2){
+				state = "idle";
+				attackDown = false;
+			}
+		}
+		
+		
+		break;
+	
 	#endregion
 	
 	#region AIR ATTACK

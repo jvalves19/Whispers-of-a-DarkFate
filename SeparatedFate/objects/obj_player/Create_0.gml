@@ -25,6 +25,7 @@ damage = noone;
 atk = global.pAtk;
 atkMult = 1;
 canAttack = true;
+attackDown = false;
 
 canSpell = true;
 spellTimer = room_speed*2;
@@ -48,6 +49,15 @@ state_attack = function(ground){
 		state = "attack";
 		hSpd = 0;
 		image_index = 0;
+	} else {
+		if(keyboard_check(ord("S")) || gamepad_button_check_pressed(0, gp_padd)){
+			state = "air attack down";
+			image_index = 0;
+		}
+		else{
+			state = "air attack";
+			image_index = 0;
+		}
 	}
 }
 ///@method player_attacking()
@@ -95,6 +105,7 @@ player_attacking = function(_sprite_index, _image_index_min, _image_index_max, _
 	}
 		
 	if(image_index > image_number-1){
+		canAttack = true;
 		state = _next_state;
 		hSpd = 0;
 		combo = 0;
@@ -102,7 +113,8 @@ player_attacking = function(_sprite_index, _image_index_min, _image_index_max, _
 	}
 	
 	if(damage != noone && image_index >= _image_index_max){
-		instance_destroy(damage)
+		canAttack = true;
+		instance_destroy(damage);
 		damage = noone;
 	}
 }

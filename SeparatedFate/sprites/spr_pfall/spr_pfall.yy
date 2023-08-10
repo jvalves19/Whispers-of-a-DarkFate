@@ -26,8 +26,8 @@
   "nineSlice": null,
   "origin": 7,
   "parent": {
-    "name": "Assets",
-    "path": "folders/Sprites/Player/Assets.yy",
+    "name": "Movement",
+    "path": "folders/Sprites/Player/Assets/Movement.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

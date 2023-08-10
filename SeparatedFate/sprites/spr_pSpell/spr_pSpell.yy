@@ -29,8 +29,8 @@
   "nineSlice": null,
   "origin": 7,
   "parent": {
-    "name": "Assets",
-    "path": "folders/Sprites/Player/Assets.yy",
+    "name": "Combat",
+    "path": "folders/Sprites/Player/Assets/Combat.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
