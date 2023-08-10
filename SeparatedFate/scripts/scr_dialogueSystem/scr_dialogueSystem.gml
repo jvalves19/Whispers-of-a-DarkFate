@@ -33,7 +33,7 @@ function scr_dialogue(){
 					ds_grid_add_text("Como sabe meu nome? Quem e voce?", 1, "Kassius")
 					ds_grid_add_text("Eu sei de muitas coisas, camarada", 0, "Bardo")
 					ds_grid_add_text("Sei que está procurando por algo que\nhá muito você não sabe onde está", 0, "Bardo")
-					ds_grid_add_text("porético, não é?", 0, "Bardo")
+					ds_grid_add_text("poético, não é?", 0, "Bardo")
 					ds_grid_add_text("A proposito... Sou o Bardo. Pode me chamar de Jonas", 0, "Bardo")
 					
 					ds_grid_add_text("Pode falar comigo se quiser registrar seu progresso em sua busca", 0, "Bardo")

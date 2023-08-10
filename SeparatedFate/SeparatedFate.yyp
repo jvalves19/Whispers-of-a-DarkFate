@@ -19,6 +19,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Characters","folderPath":"folders/Objects/Characters.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Cutscenes","folderPath":"folders/Objects/Cutscenes.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Damages","folderPath":"folders/Objects/Damages.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Player","folderPath":"folders/Objects/Damages/Player.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Enemys","folderPath":"folders/Objects/Enemys.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Bandits","folderPath":"folders/Objects/Enemys/Bandits.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Bosses","folderPath":"folders/Objects/Enemys/Bosses.yy",},
@@ -80,7 +81,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Town","folderPath":"folders/Tile Sets/Town.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"World","folderPath":"folders/Tile Sets/World.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Player","folderPath":"folders/Objects/Damages/Player.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"HD wallpaper_ Red, Sony, PS4, Bloodborne, Moon Presence.jfif","CopyToMask":-1,"filePath":"datafiles",},

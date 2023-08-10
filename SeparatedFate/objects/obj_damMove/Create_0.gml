@@ -1,4 +1,4 @@
-damage = 0;
+damage = 1;
 
 father = noone;
 

@@ -1,5 +1,6 @@
 {
   "FolderOrderSettings": [
+    {"name":"Player","order":11,"path":"folders/Objects/Damages/Player.yy",},
     {"name":"Items","order":26,"path":"folders/Objects/Items.yy",},
     {"name":"Areas","order":16,"path":"folders/Rooms/Areas.yy",},
     {"name":"Boss","order":13,"path":"folders/Rooms/Boss.yy",},
@@ -10,7 +11,6 @@
     {"name":"Movement","order":13,"path":"folders/Sprites/Player/Assets/Movement.yy",},
     {"name":"World","order":1,"path":"folders/Sprites/Player/World.yy",},
     {"name":"Inventory","order":15,"path":"folders/Sprites/UI_HUD/Inventory.yy",},
-    {"name":"Player","order":11,"path":"folders/Objects/Damages/Player.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"spr_bandit1Walk","order":3,"path":"sprites/spr_bandit1Walk/spr_bandit1Walk.yy",},
