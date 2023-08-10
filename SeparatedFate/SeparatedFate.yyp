@@ -284,6 +284,7 @@
     {"id":{"name":"spr_samAttack2","path":"sprites/spr_samAttack2/spr_samAttack2.yy",},},
     {"id":{"name":"spr_water","path":"sprites/spr_water/spr_water.yy",},},
     {"id":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
+    {"id":{"name":"obj_screenshake","path":"objects/obj_screenshake/obj_screenshake.yy",},},
     {"id":{"name":"spr_attack2","path":"sprites/spr_attack2/spr_attack2.yy",},},
     {"id":{"name":"spr_bgForest01","path":"sprites/spr_bgForest01/spr_bgForest01.yy",},},
     {"id":{"name":"spr_owPlayerLeft","path":"sprites/spr_owPlayerLeft/spr_owPlayerLeft.yy",},},

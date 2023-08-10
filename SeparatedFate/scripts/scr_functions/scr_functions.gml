@@ -1,6 +1,14 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 
+#region SCREENSHAKE
+function screenshake(_shake){
+	var shake = instance_create_layer(0, 0, "instances", obj_screenshake);
+	shake.shake = _shake;
+}
+
+#endregion
+
 #region CHARACTERS SPRITES
 function charSprite(_sprIdle, _sprWalk){
 	sprIdle = _sprIdle;

@@ -169,6 +169,7 @@
     {"name":"spr_samAttack2","order":3,"path":"sprites/spr_samAttack2/spr_samAttack2.yy",},
     {"name":"spr_water","order":4,"path":"sprites/spr_water/spr_water.yy",},
     {"name":"rm_menu","order":3,"path":"rooms/rm_menu/rm_menu.yy",},
+    {"name":"obj_screenshake","order":28,"path":"objects/obj_screenshake/obj_screenshake.yy",},
     {"name":"spr_attack2","order":5,"path":"sprites/spr_attack2/spr_attack2.yy",},
     {"name":"spr_bgForest01","order":4,"path":"sprites/spr_bgForest01/spr_bgForest01.yy",},
     {"name":"spr_owPlayerLeft","order":2,"path":"sprites/spr_owPlayerLeft/spr_owPlayerLeft.yy",},

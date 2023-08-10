@@ -54,7 +54,7 @@ select_menu = function(menu){
 #endregion
 
 menu = [
-	[translateText("menu_continue"), menu_actions.roda_metodo, pause_game], 
+	[translateText("menu_resume"), menu_actions.roda_metodo, pause_game], 
 	[translateText("menu_options"), menu_actions.load_menu, pause_list.options], 
 	[translateText("menu_backMenu"), menu_actions.roda_metodo, restart_game]
 ];

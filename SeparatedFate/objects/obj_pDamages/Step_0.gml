@@ -1,4 +1,4 @@
-var target = instance_place(x, y, obj_father);
+var target;
 var target_list = ds_list_create();
 
 //check how much collide with the object
@@ -50,6 +50,7 @@ for(var i = 0; i < tam; i++){
 	if(target.life > 0){
 		target.state = "hit";
 		target.life -= damage;
+		if(object_get_parent(target.object_index) == obj_enemy_father) screenshake(irandom_range(1, 3));
 	}
 	
 }
