@@ -63,8 +63,8 @@ if(destroy){
 	instance_destroy();
 }
 else{
-	y = father.y - father.sprite_height/4;
-
+	y = father.y - father.sprite_height/3;
+	
 	if(qtd){
 		instance_destroy();
 	}

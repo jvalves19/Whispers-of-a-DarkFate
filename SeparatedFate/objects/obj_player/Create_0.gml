@@ -45,6 +45,7 @@ global.playerID = object_index;
 
 //Methods to attack
 state_attack = function(ground){
+	damage = noone;
 	if(ground){
 		state = "attack";
 		hSpd = 0;

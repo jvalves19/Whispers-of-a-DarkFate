@@ -338,7 +338,7 @@ switch(state){
 				image_index = 0;
 			}
 			else {
-				if(image_index >= image_number - .5){
+				if(image_index >= image_number - 1){
 					state = "idle";
 					attackDown = false;	
 					end_attack();
@@ -347,15 +347,14 @@ switch(state){
 		}
 		
 		if(sprite_index == spr_pAttackAirDownBeg && damage == noone && canAttack){
-			damage = instance_create_layer(x + sprite_width/4 + hSpd*4, y - sprite_height/2, layer, obj_pDamages);
-			damage.image_xscale = 2;
-			damage.image_yscale = 1;
+			damage = instance_create_layer(x + sprite_width / 3.2, y - sprite_height / 2, layer, obj_pDamages);
+			damage.image_xscale = 1;
+			damage.image_yscale = 4;
 			damage.damage = atk;
 			damage.father = id;
 			damage.destroy = false;
 			canAttack = false;		
 		}
-		
 		break;
 	
 	#endregion

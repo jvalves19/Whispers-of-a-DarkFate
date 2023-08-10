@@ -24,7 +24,7 @@ switch(state){
 				state = "walk";
 				
 				if(battleFase == 2){
-					if(random(10) >= 7) state = "ultimate";
+					if(random(10) >= 8) state = "ultimate";
 				}
 			}
 			hSpd = lengthdir_x(1, _dir);
