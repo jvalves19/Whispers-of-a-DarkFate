@@ -58,5 +58,13 @@ for(var i = 0; i < tam; i++){
 ds_list_destroy(apply_damage);
 ds_list_destroy(target_list);
 
+if(destroy){
+	instance_destroy();
+}
+else{
+	y = father.y - father.sprite_height/4;
 
-instance_destroy();
+	if(qtd){
+		instance_destroy();
+	}
+}

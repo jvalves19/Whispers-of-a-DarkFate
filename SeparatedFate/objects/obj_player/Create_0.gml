@@ -50,8 +50,9 @@ state_attack = function(ground){
 		hSpd = 0;
 		image_index = 0;
 	} else {
-		if(keyboard_check(ord("S")) || gamepad_button_check_pressed(0, gp_padd)){
+		if(keyboard_check(ord("S")) || gamepad_button_check(0, gp_padd)){
 			state = "air attack down";
+			hSpd = 0;
 			image_index = 0;
 		}
 		else{
@@ -60,6 +61,14 @@ state_attack = function(ground){
 		}
 	}
 }
+
+end_attack = function(){
+	canAttack = true;
+	if(damage){
+		instance_destroy(damage, false);
+	}
+}
+
 ///@method player_attacking()
 player_attacking = function(_sprite_index, _image_index_min, _image_index_max, _dist_x, _dist_y, _xscale_damage, _yscale_damage, _next_state, _damage_obj){
 	if(!_xscale_damage) _xscale_damage = 1;
@@ -69,7 +78,6 @@ player_attacking = function(_sprite_index, _image_index_min, _image_index_max, _
 	//Use UNDEFINED cause _next_state receive a String Value
 	if(_next_state == undefined) _next_state = "idle";
 	
-	hSpd = 0;
 	if(sprite_index != _sprite_index){
 		sprite_index = _sprite_index;
 		image_index = 0;
@@ -77,10 +85,9 @@ player_attacking = function(_sprite_index, _image_index_min, _image_index_max, _
 		damage = noone;
 	}
 	
-	if(image_index > image_number-1){
-		state = _next_state;
-	}
+	if(image_index > image_number-1) state = _next_state;
 	
+	//BLADES
 	if(global.currentBlade == 2){
 		sprite_set_speed(_sprite_index, 20, spritespeed_framespersecond);
 	}
@@ -88,7 +95,7 @@ player_attacking = function(_sprite_index, _image_index_min, _image_index_max, _
 		sprite_set_speed(_sprite_index, 10, spritespeed_framespersecond);
 	}
 	
-	if(image_index >= _image_index_min && damage == noone && image_index < _image_index_max && canAttack){	
+	if(image_index >= _image_index_min && image_index < _image_index_max && damage == noone && canAttack){	
 		damage = instance_create_layer(x + _dist_x, y + _dist_y, layer, _damage_obj);
 		damage.image_xscale = _xscale_damage;
 		damage.image_yscale = _yscale_damage;
@@ -105,18 +112,14 @@ player_attacking = function(_sprite_index, _image_index_min, _image_index_max, _
 	}
 		
 	if(image_index > image_number-1){
-		canAttack = true;
 		state = _next_state;
 		hSpd = 0;
 		combo = 0;
 		atkMult = 1;
-	}
-	
-	if(damage != noone && image_index >= _image_index_max){
-		canAttack = true;
-		instance_destroy(damage);
-		damage = noone;
-	}
+		end_attack();
+	}	
+	//if(damage != noone && image_index >= _image_index_max) end_attack();
+
 }
 
 ///@method player_ultimate()
@@ -158,10 +161,7 @@ player_ultimate = function(_sprite_index, _aura, _dist_x, _dist_y, _xscale_damag
 	}				
 	if(image_index > image_number-1){
 		state = "idle";
-		hSpd = 0;
-		if(damage){
-			instance_destroy(damage, false);
-			damage = noone;
-		}
+		hSpd = 0;	
+		end_attack();	
 	}	
 }
