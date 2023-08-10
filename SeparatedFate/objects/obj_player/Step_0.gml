@@ -355,6 +355,15 @@ switch(state){
 			damage.destroy = false;
 			canAttack = false;		
 		}
+		
+		if(sprite_index == spr_pAttackAirDownEnd && damageArea == noone && canAttack){
+			damageArea = instance_create_layer(x + sprite_width / 8, y - sprite_height / 8, layer, obj_damage);
+			damageArea.image_xscale = 2;
+			damageArea.image_yscale = 1;
+			damageArea.damage = atk;
+			damageArea.father = id;
+		}
+		
 		break;
 	
 	#endregion
@@ -362,6 +371,7 @@ switch(state){
 	#region AIR ATTACK
 	case "air attack":
 		if(sprite_index != spr_pAttackAir1){
+			vSpd = -.5;
 			sprite_index = spr_pAttackAir1;
 			image_index = 0;
 		}

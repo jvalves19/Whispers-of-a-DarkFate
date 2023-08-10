@@ -21,6 +21,7 @@ aura = global.pMaxAura ;
 quantity = 0;
 combo = 0;
 damage = noone;
+damageArea = noone
 
 atk = global.pAtk;
 atkMult = 1;
@@ -46,6 +47,7 @@ global.playerID = object_index;
 //Methods to attack
 state_attack = function(ground){
 	damage = noone;
+	damageArea = noone;
 	if(ground){
 		state = "attack";
 		hSpd = 0;
@@ -68,6 +70,9 @@ end_attack = function(){
 	if(damage){
 		instance_destroy(damage, false);
 	}
+	if(damageArea){
+		instance_destroy(damageArea, false);
+	}
 }
 
 ///@method player_attacking()
@@ -84,6 +89,7 @@ player_attacking = function(_sprite_index, _image_index_min, _image_index_max, _
 		image_index = 0;
 		canAttack = true;
 		damage = noone;
+		damageArea = noone;
 	}
 	
 	if(image_index > image_number-1) state = _next_state;
@@ -97,6 +103,7 @@ player_attacking = function(_sprite_index, _image_index_min, _image_index_max, _
 	}
 	
 	if(image_index >= _image_index_min && image_index < _image_index_max && damage == noone && canAttack){	
+		hSpd += 2*xscale;
 		damage = instance_create_layer(x + _dist_x, y + _dist_y, layer, _damage_obj);
 		damage.image_xscale = _xscale_damage;
 		damage.image_yscale = _yscale_damage;
@@ -149,6 +156,7 @@ player_ultimate = function(_sprite_index, _aura, _dist_x, _dist_y, _xscale_damag
 		if(image_index >= 4 && image_index <= 20){
 			//global.spd_mult = 0.5;
 			if((image_index % 2) == 1){
+				screenshake(10);
 				damage = instance_create_layer(x + _dist_x, y + _dist_y, layer, obj_damageThunder);
 				damage.image_xscale = _xscale_damage;
 				damage.image_yscale = _yscale_damage;
