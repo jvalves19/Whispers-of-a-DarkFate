@@ -235,7 +235,6 @@
     {"name":"spr_attack","order":2,"path":"sprites/spr_attack/spr_attack.yy",},
     {"name":"spr_pArt","order":13,"path":"sprites/spr_pArt/spr_pArt.yy",},
     {"name":"spr_boss_health","order":1,"path":"sprites/spr_boss_health/spr_boss_health.yy",},
-    {"name":"obj_sensorTutorial","order":24,"path":"objects/obj_sensorTutorial/obj_sensorTutorial.yy",},
     {"name":"spr_graveDead","order":9,"path":"sprites/spr_graveDead/spr_graveDead.yy",},
     {"name":"spr_bandit1Attack1","order":2,"path":"sprites/spr_bandit1Attack1/spr_bandit1Attack1.yy",},
     {"name":"fnt_indicators","order":5,"path":"fonts/fnt_indicators/fnt_indicators.yy",},

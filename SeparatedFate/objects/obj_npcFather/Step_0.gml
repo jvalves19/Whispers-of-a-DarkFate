@@ -7,7 +7,7 @@ if(!ground && (vSpd < max_vSpd * 2 )){
 
 var player = distance_to_object(obj_player)
 
-if(player < 10){
+if(player < .05){
 	sense = true;
 	sense_draw = true;
 } else{

@@ -360,7 +360,6 @@
     {"id":{"name":"spr_garlIdle","path":"sprites/spr_garlIdle/spr_garlIdle.yy",},},
     {"id":{"name":"spr_pArt","path":"sprites/spr_pArt/spr_pArt.yy",},},
     {"id":{"name":"spr_boss_health","path":"sprites/spr_boss_health/spr_boss_health.yy",},},
-    {"id":{"name":"obj_sensorTutorial","path":"objects/obj_sensorTutorial/obj_sensorTutorial.yy",},},
     {"id":{"name":"spr_graveDead","path":"sprites/spr_graveDead/spr_graveDead.yy",},},
     {"id":{"name":"spr_bandit1Attack1","path":"sprites/spr_bandit1Attack1/spr_bandit1Attack1.yy",},},
     {"id":{"name":"fnt_indicators","path":"fonts/fnt_indicators/fnt_indicators.yy",},},

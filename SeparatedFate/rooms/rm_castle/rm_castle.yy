@@ -15,7 +15,6 @@
     {"name":"inst_23CAEF84","path":"rooms/rm_castle/rm_castle.yy",},
     {"name":"inst_5735E064","path":"rooms/rm_castle/rm_castle.yy",},
     {"name":"inst_2A7C3C2D","path":"rooms/rm_castle/rm_castle.yy",},
-    {"name":"inst_3361D285","path":"rooms/rm_castle/rm_castle.yy",},
     {"name":"inst_EDEAE68","path":"rooms/rm_castle/rm_castle.yy",},
     {"name":"inst_1BB7BC30","path":"rooms/rm_castle/rm_castle.yy",},
     {"name":"inst_6E876899","path":"rooms/rm_castle/rm_castle.yy",},
@@ -33,7 +32,6 @@
             {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_sensor","path":"objects/obj_sensor/obj_sensor.yy",},"propertyId":{"name":"destionation_x","path":"objects/obj_sensor/obj_sensor.yy",},"value":"160",},
             {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_sensor","path":"objects/obj_sensor/obj_sensor.yy",},"propertyId":{"name":"destionation_y","path":"objects/obj_sensor/obj_sensor.yy",},"value":"320",},
           ],"rotation":0.0,"scaleX":0.5,"scaleY":0.75,"x":1072.0,"y":384.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_3361D285","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_sensorTutorial","path":"objects/obj_sensorTutorial/obj_sensorTutorial.yy",},"properties":[],"rotation":0.0,"scaleX":0.5,"scaleY":0.75,"x":80.0,"y":384.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Instances","depth":300,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_5735E064","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_enemy1","path":"objects/obj_enemy1/obj_enemy1.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":480.0,"y":384.0,},

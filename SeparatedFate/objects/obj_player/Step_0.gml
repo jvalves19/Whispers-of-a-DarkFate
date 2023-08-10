@@ -477,34 +477,35 @@ switch(state){
 	
 	#region DEATH
 	case "dead":
-		if(sprite_index != spr_dead){
-			sprite_index = spr_dead;
-			image_index = 0;
-			hSpd = 0;
-			vSpd = 0;
-		}
-			
-		if(image_index > image_number-1){
-			image_speed = 0;
-		}
-
 		if(instance_exists(obj_game_controller)){
 			with(obj_game_controller){	
 				game_over = true;
-				//audio_stop_all();
 				audio_play_sound(snd_gameOver, 1, false);
 			}
-		}	
+		}
+		
+		vSpd = 4;
+		hSpd = 0;
+		if(sprite_index != spr_dead){
+			sprite_index = spr_dead;
+			image_index = 0;
+		}
+		
+		if(image_index > image_number-1){
+			image_index = image_number-1;
+			image_speed = 0;
+			image_alpha -= 0.01;
+		}		
 		
 		break;
 	#endregion
 		
-		default: 
-			state = "idle";			
+	default: 
+		state = "idle";			
 }
 
 #region DIALOGUE SYSTEM
-if(distance_to_object(obj_npcFather) < 10){
+if(distance_to_object(obj_npcFather) < 1){
 	if(vSpd == 0 && hSpd == 0){
 		if(action && !global.dialogo){		
 			var _npc = instance_nearest(x, y, obj_npcFather);
