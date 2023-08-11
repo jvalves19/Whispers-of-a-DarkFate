@@ -2,6 +2,11 @@ if(instance_exists(obj_transition)) exit;
 
 player_controls();
 
+halfViewW = camera_get_view_height(view_camera[0]) / 2;
+halfViewH = camera_get_view_height(view_camera[0]) / 2;
+
+camera_set_view_pos(view_camera[0], x - halfViewW, y - halfViewH);
+
 hSpd = (right-left) * spd;
 var _up = keyboard_check(ord("W")) || (gamepad_button_check(0, gp_padu))
 var _down = keyboard_check(ord("S")) || (gamepad_button_check(0, gp_padd))
