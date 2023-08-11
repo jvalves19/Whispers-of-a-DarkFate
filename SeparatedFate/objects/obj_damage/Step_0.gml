@@ -1,6 +1,6 @@
 //check how much collide with the object
 //return "who collides? obj_father" "save at list? target_list"
-var target;
+var target = instance_place(x, y, obj_father);
 var target_list = ds_list_create();
 var qtd = instance_place_list(x, y, obj_father, target_list, 0);
 

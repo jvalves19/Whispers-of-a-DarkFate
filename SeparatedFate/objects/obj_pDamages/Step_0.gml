@@ -1,4 +1,4 @@
-var target;
+var target = instance_place(x, y, obj_father);
 var target_list = ds_list_create();
 
 //check how much collide with the object
