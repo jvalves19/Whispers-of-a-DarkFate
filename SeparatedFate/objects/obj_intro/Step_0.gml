@@ -52,5 +52,5 @@ if((a == 1) && (fadeout == 1)){
 
 	room_goto(rm_graveyard1);
 	obj_player.x = 60;
-	obj_player.y = 460;
+	obj_player.y = 479;
 }

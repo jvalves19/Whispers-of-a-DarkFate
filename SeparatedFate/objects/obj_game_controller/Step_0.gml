@@ -128,7 +128,7 @@ if(room == rm_graveyard1 && global.sceneNumber == -1){
 	
 	global.scene_info = [
 		[cutscene_changeVariable, obj_player, "obj_player.state", "idle"],
-		[cutscene_moveCharacter, obj_player, 4, 0, true, 4],
+		[cutscene_moveCharacter, obj_player, 80, 479, false, 4],
 	
 		[cutscene_instance_create, x, y, "Dialogue", _dialogue],
 		[cutscene_changeVariable, _dialogue, "npc_nome", "Kassius"],
