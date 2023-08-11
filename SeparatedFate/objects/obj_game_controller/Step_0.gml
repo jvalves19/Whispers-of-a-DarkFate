@@ -28,7 +28,7 @@ if(bossDead){
 
 if(keyboard_check_pressed(vk_enter) || gamepad_button_check_pressed(0, gp_face1)){
 	if(game_over){
-		if(room == rm_firstBoss){
+		if(room == rm_boss){
 			game_over = false;
 			instance_deactivate_object(obj_pause);
 			room_goto(rm_cutsc01);
@@ -43,7 +43,7 @@ if(keyboard_check_pressed(vk_enter) || gamepad_button_check_pressed(0, gp_face1)
 	}
 
 	if(bossDead){	
-		if(room == rm_firstBoss){
+		if(room == rm_boss){
 			game_over = false;
 			instance_deactivate_object(obj_pause);
 			room_goto(rm_cutscEnd1);
@@ -139,7 +139,7 @@ if(room == rm_graveyard1 && global.sceneNumber == -1){
 	if(!instance_exists(obj_cutscene) && global.sceneNumber == -1) create_cutscene(global.scene_info);
 	if(global.sceneNumber == 0) instance_destroy(obj_cutscene);
 }
-if(room == rm_firstBoss2 && !global.destroyed[2]){
+if(room == rm_boss2 && !global.destroyed[2]){
 	var _dialogue = obj_dialogo
 	
 	global.scene_info = [
@@ -149,7 +149,7 @@ if(room == rm_firstBoss2 && !global.destroyed[2]){
 		[cutscene_changeVariable, _dialogue, "npc_nome", "Kassius"],
 	
 		[cutscene_wait, 1],
-	
+		
 		[cutscene_stopSound, msc_bossBattle2],
 		[cutscene_playSound, msc_bossBattle2, 1, true],
 		[cutscene_soundGain, msc_bossBattle2, 1, 0],
@@ -167,21 +167,21 @@ if(room == rm_firstBoss2 && !global.destroyed[2]){
 
 #region BOSS
 if(!global.destroyed[1]){
-	if(room == rm_firstBoss){
+	if(room == rm_boss){
 		if(!instance_exists(obj_garleand)){
 			instance_create_layer(552, 312, "Instances", obj_garleand);
 		}
 	}
 }
 if(!global.destroyed[2]){
-	if(room == rm_firstBoss2){
+	if(room == rm_boss2){
 		if(!instance_exists(obj_samurai)){
 			instance_create_layer(572, 320, "Instances", obj_samurai);
 		}
 	}
 }
 if(!global.destroyed[3]){
-	if(room == rm_firstBoss3){
+	if(room == rm_boss3){
 		if(!instance_exists(obj_cultist)){
 			instance_create_layer(440, 336, "Instances", obj_cultist);
 		}

@@ -9,7 +9,7 @@ apply_damage = ds_list_create();
 
 destroy = true;
 
-image_alpha = 0;
+image_alpha = 1;
 
 if(global.currentBlade == 0){
 	image_alpha = 0;

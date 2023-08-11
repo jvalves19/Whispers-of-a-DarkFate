@@ -4,7 +4,6 @@ player_controls();
 
 var doorSense = place_meeting(x, y, obj_sensor);
 var npcSense = place_meeting(x, y, obj_npcFather);
-
 var ground = place_meeting(x, y + 1, obj_block);
 var fall = vSpd!=0;
 //Gravity
@@ -177,9 +176,7 @@ switch(state){
 				image_index = 0;
 			}
 		else
-			if(attack){
-				state_attack(ground);
-			}
+			if(attack) state_attack(ground);
 		else
 			if(dash){
 				state = "dash";
@@ -223,9 +220,7 @@ switch(state){
 				image_index = 0;
 			}
 		else
-			if(attack){
-				state_attack(ground);
-			}
+			if(attack) state_attack(ground);
 		else
 			if(dash){
 				state = "dash";
@@ -264,13 +259,9 @@ switch(state){
 				image_index = image_number-1
 			}
 		}
-		else {
-			sprite_index = spr_pFall;
-		}
+		else { sprite_index = spr_pFall; }
 		
-		if(attack){
-			state_attack(ground);
-		}
+		if(attack) state_attack(ground);
 		
 		if(ground){
 			state = "idle";

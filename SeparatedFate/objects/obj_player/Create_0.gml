@@ -37,7 +37,7 @@ ultimateTimer = room_speed*10;
 time_ultimate = ultimateTimer;
 
 invincible = false;
-invincible_timer = room_speed*0.35;
+invincible_timer = room_speed*0.5;
 time_invincible = invincible_timer;
 
 global.currentBlade = global.currentBlade;
@@ -67,12 +67,8 @@ state_attack = function(ground){
 
 end_attack = function(){
 	canAttack = true;
-	if(damage){
-		instance_destroy(damage, false);
-	}
-	if(damageArea){
-		instance_destroy(damageArea, false);
-	}
+	if(damage) instance_destroy(damage, false);
+	if(damageArea) instance_destroy(damageArea, false);
 }
 
 ///@method player_attacking()
@@ -89,7 +85,6 @@ player_attacking = function(_sprite_index, _image_index_min, _image_index_max, _
 		image_index = 0;
 		canAttack = true;
 		damage = noone;
-		damageArea = noone;
 	}
 	
 	if(image_index > image_number-1) state = _next_state;
