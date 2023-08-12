@@ -3,7 +3,7 @@ function scr_enemy_attack(target, dist_player, xscale){
 	var player = collision_line(x, y - sprite_height/4, x + ((dist_player/3)*xscale), y - sprite_height/4, target, 0, 1);
 
 	if(player){
-		state = "attack";
+		state = choose("idle", "attack", "attack");
 	}
 }
 

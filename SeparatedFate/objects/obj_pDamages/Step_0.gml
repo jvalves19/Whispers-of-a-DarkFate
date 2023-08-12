@@ -48,9 +48,12 @@ for(var i = 0; i < tam; i++){
 	}
 	
 	if(target.life > 0){
-		target.state = "hit";
+		if(target.stagger <= 0)target.state = "hit";
 		target.life -= damage;
-		if(object_get_parent(target.object_index) == obj_enemy_father) screenshake(6, true, irandom_range(0, 180));
+		if(object_get_parent(target.object_index) == obj_enemy_father){
+			screenshake(6, true, irandom_range(0, 180));
+			if(target.life <= 0) target.state = "dead"
+		}
 	}
 	
 }

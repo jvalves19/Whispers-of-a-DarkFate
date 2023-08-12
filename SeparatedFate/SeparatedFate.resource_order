@@ -1,7 +1,9 @@
 {
   "FolderOrderSettings": [
     {"name":"Player","order":11,"path":"folders/Objects/Damages/Player.yy",},
+    {"name":"Enemys","order":1,"path":"folders/Objects/Characters/Enemys.yy",},
     {"name":"Items","order":26,"path":"folders/Objects/Items.yy",},
+    {"name":"NPCs","order":2,"path":"folders/Objects/Characters/NPCs.yy",},
     {"name":"Areas","order":16,"path":"folders/Rooms/Areas.yy",},
     {"name":"Boss","order":13,"path":"folders/Rooms/Boss.yy",},
     {"name":"Interior","order":14,"path":"folders/Rooms/Interior.yy",},
@@ -119,7 +121,7 @@
     {"name":"Scene03","order":8,"path":"sprites/Scene03/Scene03.yy",},
     {"name":"spr_owPlayerUp","order":4,"path":"sprites/spr_owPlayerUp/spr_owPlayerUp.yy",},
     {"name":"msc_bossBattle2","order":2,"path":"sounds/msc_bossBattle2/msc_bossBattle2.yy",},
-    {"name":"obj_father","order":2,"path":"objects/obj_father/obj_father.yy",},
+    {"name":"obj_father","order":3,"path":"objects/obj_father/obj_father.yy",},
     {"name":"msc_menu","order":1,"path":"sounds/msc_menu/msc_menu.yy",},
     {"name":"rm_0init","order":1,"path":"rooms/rm_0init/rm_0init.yy",},
     {"name":"obj_damMove","order":7,"path":"objects/obj_damMove/obj_damMove.yy",},

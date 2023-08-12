@@ -1,11 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-if(instance_exists(obj_player)){
-	var _dist = point_distance(x, y, obj_player.x, obj_player.y);
-	var _dir = point_direction(x, y, obj_player.x, obj_player.y);
-}
-
 var ground = place_meeting(x, y + 1, obj_block);
 
 if(!ground){
@@ -19,10 +14,10 @@ switch(state){
 			sprite_index = sprIdle;
 			image_index = 0;
 		}
-		if(_dist < 300){
+		if(dist < 300){
 			state = "walk";
 		}
-		hSpd = lengthdir_x(1, _dir);
+		hSpd = lengthdir_x(1, dir);
 		if(sign(hSpd) != 0) image_xscale = sign(hSpd);
 		
 		break;
@@ -35,8 +30,8 @@ switch(state){
 			image_index = 0;
 		}
 		
-		if(_dist > 50){
-			hSpd = lengthdir_x(max_hSpd, _dir);
+		if(dist > 50){
+			hSpd = lengthdir_x(max_hSpd, dir);
 		}
 		else{
 			hSpd = 0;
@@ -71,7 +66,7 @@ switch(state){
 	case "hit":
 		get_hit(spr_graveHit, 0);
 		
-		hSpd = lengthdir_x(1, _dir);
+		hSpd = lengthdir_x(1, dir);
 		if(sign(hSpd) != 0) image_xscale = sign(hSpd);
 	
 		break;

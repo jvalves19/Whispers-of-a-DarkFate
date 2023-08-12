@@ -22,9 +22,13 @@ switch(state){
 		if(irandom(timer_state > 100)){
 			state = "walk";
 			timer_state = 0;
+			
+			if(dist < 10) state = "walk";
+			
+			hSpd = lengthdir_x(1, dir);
+			if(sign(hSpd) != 0) image_xscale = sign(hSpd);
 		}
-		scr_enemy_attack(obj_player, dist_player, xscale);
-	
+			
 		break;
 	#endregion
 	
@@ -38,7 +42,9 @@ switch(state){
 			//Horizontal Speed can be alternated between 1 or -1
 			hSpd = choose(1, -1) * global.spd_mult;
 		}
-		
+		if(dist > 10){
+			hSpd = lengthdir_x(max_hSpd, dir);
+		}		
 		//Patrol State End
 		if(irandom(timer_state > 300)){
 			state = "idle";
@@ -58,6 +64,8 @@ switch(state){
 
 	#region hit and death
 	case "hit":
+		stagger = room_speed * 1.2;
+		
 		get_hit(spr_enemy1Hit, 0);
 	
 		break;
