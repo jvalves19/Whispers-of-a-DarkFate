@@ -2,9 +2,11 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 
 #region SCREENSHAKE
-function screenshake(_shake){
+function screenshake(_shake, _dir_mode, _direction){
 	var shake = instance_create_layer(0, 0, "instances", obj_screenshake);
 	shake.shake = _shake;
+	shake.dir_mode = _dir_mode;
+	shake.dir = _direction;
 }
 #endregion
 

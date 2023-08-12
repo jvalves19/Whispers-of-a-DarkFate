@@ -1,6 +1,3 @@
-var cam = instance_create_layer(x, y, layer, obj_camera);
-cam.target = id;
-
 // Inherit the parent event
 event_inherited();
 
@@ -154,7 +151,7 @@ player_ultimate = function(_sprite_index, _aura, _dist_x, _dist_y, _xscale_damag
 		if(spr_pUltimate2){
 			//global.spd_mult = 0.5;
 			if((image_index % 2) == 1){
-				screenshake(10);
+				screenshake(10, false, 0);
 				damage = instance_create_layer(x + _dist_x, y + _dist_y, layer, obj_damageThunder);
 				damage.image_xscale = _xscale_damage;
 				damage.image_yscale = _yscale_damage;

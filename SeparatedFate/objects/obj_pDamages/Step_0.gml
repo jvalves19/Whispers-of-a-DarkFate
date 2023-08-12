@@ -50,7 +50,7 @@ for(var i = 0; i < tam; i++){
 	if(target.life > 0){
 		target.state = "hit";
 		target.life -= damage;
-		if(object_get_parent(target.object_index) == obj_enemy_father) screenshake(irandom_range(1, 3));
+		if(object_get_parent(target.object_index) == obj_enemy_father) screenshake(6, true, irandom_range(0, 180));
 	}
 	
 }

@@ -330,7 +330,7 @@ switch(state){
 		
 		if(ground){
 			if(sprite_index != spr_pAttackAirDownEnd){
-				screenshake(10);
+				screenshake(10, false, 0);
 				sprite_index = spr_pAttackAirDownEnd;
 				image_index = 0;
 			}

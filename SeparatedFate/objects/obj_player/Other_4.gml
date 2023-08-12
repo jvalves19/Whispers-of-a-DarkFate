@@ -1,9 +1,5 @@
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
 
-shake = 1;
-
-dir_mode = false;
-dir = 0;
-
-reset = false;
+var cam = instance_create_layer(x, y, layer, obj_camera);
+cam.target = id;
