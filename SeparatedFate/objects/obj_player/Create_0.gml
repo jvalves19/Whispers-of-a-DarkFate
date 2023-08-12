@@ -8,7 +8,7 @@ charSprite(spr_pIdle, spr_pWalk);
 #region LIFE AND AURA
 max_hSpd = 4;
 max_vSpd = 6;
-dash_Spd = 5;
+dash_Spd = 6;
 
 global.pMaxLife = global.pMaxLife;
 life = global.pMaxLife;
