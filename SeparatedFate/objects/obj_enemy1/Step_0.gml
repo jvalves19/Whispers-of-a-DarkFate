@@ -20,13 +20,11 @@ switch(state){
 		
 		//Patrol State Begin
 		if(irandom(timer_state > 100)){
-			state = "walk";
-			timer_state = 0;
+			if(dist < 10) {
+				hSpd = lengthdir_x(1, dir);
+				if(sign(hSpd) != 0) image_xscale = sign(hSpd);
+			}
 			
-			if(dist < 10) state = "walk";
-			
-			hSpd = lengthdir_x(1, dir);
-			if(sign(hSpd) != 0) image_xscale = sign(hSpd);
 		}
 			
 		break;
