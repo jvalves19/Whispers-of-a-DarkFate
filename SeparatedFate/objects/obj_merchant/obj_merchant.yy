@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_bard2",
+  "name": "obj_merchant",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
   ],
@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_bardo_idle2",
-    "path": "sprites/spr_bardo_idle2/spr_bardo_idle2.yy",
+    "name": "spr_merchant_idle",
+    "path": "sprites/spr_merchant_idle/spr_merchant_idle.yy",
   },
   "spriteMaskId": null,
   "visible": true,

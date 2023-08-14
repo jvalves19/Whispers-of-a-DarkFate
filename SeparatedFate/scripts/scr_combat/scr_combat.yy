@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "src_combat",
+  "name": "scr_combat",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {

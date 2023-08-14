@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "src_languages",
+  "name": "scr_languages",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {

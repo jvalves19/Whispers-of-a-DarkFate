@@ -1,7 +1,7 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "spr_bard_idle",
+  "name": "spr_merchant_idle",
   "bbox_bottom": 51,
   "bbox_left": 12,
   "bbox_right": 27,
@@ -28,14 +28,14 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "Bard",
-    "path": "folders/Sprites/NPCs/Bard.yy",
+    "name": "NPCs",
+    "path": "folders/Sprites/NPCs.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "spr_bard_idle",
+    "name": "spr_merchant_idle",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -57,10 +57,10 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"d1d00efc-fa5f-4017-9045-b96dfb39cc0d","path":"sprites/spr_bard_idle/spr_bard_idle.yy",},},},"Disabled":false,"id":"38766dd5-2229-48d3-8e57-4aaef5988a7c","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"dabd1f56-5842-4c3f-a25a-af046eb7cc10","path":"sprites/spr_bard_idle/spr_bard_idle.yy",},},},"Disabled":false,"id":"2915c6d0-e332-4815-89d3-a48fb1c6d59b","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"9c648012-d4be-4446-ab21-8aa7e0c12030","path":"sprites/spr_bard_idle/spr_bard_idle.yy",},},},"Disabled":false,"id":"aca34e12-ebf5-4915-836e-a498b26df1a8","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"9bf20b31-1eb0-4fbc-bf95-930c15ad7938","path":"sprites/spr_bard_idle/spr_bard_idle.yy",},},},"Disabled":false,"id":"28fc1c25-7968-41db-8d64-14fabb08852a","IsCreationKey":false,"Key":3.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"d1d00efc-fa5f-4017-9045-b96dfb39cc0d","path":"sprites/spr_merchant_idle/spr_merchant_idle.yy",},},},"Disabled":false,"id":"38766dd5-2229-48d3-8e57-4aaef5988a7c","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"dabd1f56-5842-4c3f-a25a-af046eb7cc10","path":"sprites/spr_merchant_idle/spr_merchant_idle.yy",},},},"Disabled":false,"id":"2915c6d0-e332-4815-89d3-a48fb1c6d59b","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"9c648012-d4be-4446-ab21-8aa7e0c12030","path":"sprites/spr_merchant_idle/spr_merchant_idle.yy",},},},"Disabled":false,"id":"aca34e12-ebf5-4915-836e-a498b26df1a8","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"9bf20b31-1eb0-4fbc-bf95-930c15ad7938","path":"sprites/spr_merchant_idle/spr_merchant_idle.yy",},},},"Disabled":false,"id":"28fc1c25-7968-41db-8d64-14fabb08852a","IsCreationKey":false,"Key":3.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

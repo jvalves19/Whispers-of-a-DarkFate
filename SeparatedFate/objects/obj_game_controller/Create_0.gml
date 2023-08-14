@@ -36,6 +36,7 @@ global.blackSmithDialogue = 1;
 #endregion
 
 #region INVENTORY SYSTEM
+global.potionStash = 5;
 global.lifePotionQtd = 0;
 global.auraPotionQtd = 0;
 global.damagePotionQtd = 0;

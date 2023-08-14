@@ -20,6 +20,46 @@ function scr_dialogue(){
 			break;
 		#endregion
 		
+		#region MERCHANT
+		case "Merchant":
+			ds_grid_add_text("O que deseja?", 0, "Merchant");
+				ds_grid_add_text("...", 1, "Kassius");
+					if(global.destroyed[2] && global.potionStash == 5){
+						add_op("Aumentar Espaços de Poção +5", "Aumentar Espaços de Poção");
+					}
+					if(global.damagePotionQtd <= global.potionStash/2){
+						add_op("Comprar Poção de Forca +1", "Comprar Poção de Força");
+					}
+					if(global.spellPotionQtd <= global.potionStash/2){
+						add_op("Comprar Poção de Dano Mágico +1", "Comprar Poção de Dano Mágico");
+					}
+					
+					add_op("Não Desejo nada", "Cancelar");	
+				break;
+				
+				
+			case "Aumentar Espaços de Poção":
+				ds_grid_add_text("Seus espaçoes de poção foram aumentados em +5", 0, "Merchant");
+				global.potionStash = global.potionStash+5;
+			break;
+			
+			case "Comprar Poção de Força":
+				ds_grid_add_text("...", 0, "Merchant");
+				global.damagePotionQtd = global.damagePotionQtd+1;
+				global.controllItems[2] = true;
+			break;
+			case "Comprar Poção de Dano Mágico":
+				ds_grid_add_text("...", 0, "Merchant");
+				global.spellPotionQtd = global.spellPotionQtd+1;
+				global.controllItems[3] = true;
+			break;
+						
+			case "Não Desejo nada":
+				ds_grid_add_text("Volte quando quiser", 0, "Merchant");
+		
+			break;
+		#endregion
+		
 		#region BARDO
 		case "Bardo":		
 			switch global.bardoDialogue{	
