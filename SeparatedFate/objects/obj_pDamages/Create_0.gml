@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+image_alpha = 1;
 damage = 0;
 father = noone;
 
@@ -8,8 +9,6 @@ father = noone;
 apply_damage = ds_list_create();
 
 destroy = true;
-
-image_alpha = 1;
 
 if(global.currentBlade == 0){
 	image_alpha = 0;
