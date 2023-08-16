@@ -279,6 +279,7 @@
     {"id":{"name":"tl_town2","path":"tilesets/tl_town2/tl_town2.yy",},},
     {"id":{"name":"fnt_dungeon","path":"fonts/fnt_dungeon/fnt_dungeon.yy",},},
     {"id":{"name":"spr_pAttack2","path":"sprites/spr_pAttack2/spr_pAttack2.yy",},},
+    {"id":{"name":"msc_DarkSoulsEpilogue","path":"sounds/msc_DarkSoulsEpilogue/msc_DarkSoulsEpilogue.yy",},},
     {"id":{"name":"msc_bossBattle3","path":"sounds/msc_bossBattle3/msc_bossBattle3.yy",},},
     {"id":{"name":"spr_tileForest02","path":"sprites/spr_tileForest02/spr_tileForest02.yy",},},
     {"id":{"name":"spr_samAttack1","path":"sprites/spr_samAttack1/spr_samAttack1.yy",},},

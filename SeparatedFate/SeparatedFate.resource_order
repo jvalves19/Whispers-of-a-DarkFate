@@ -166,6 +166,7 @@
     {"name":"tl_town2","order":2,"path":"tilesets/tl_town2/tl_town2.yy",},
     {"name":"fnt_dungeon","order":2,"path":"fonts/fnt_dungeon/fnt_dungeon.yy",},
     {"name":"spr_pAttack2","order":1,"path":"sprites/spr_pAttack2/spr_pAttack2.yy",},
+    {"name":"msc_DarkSoulsEpilogue","order":10,"path":"sounds/msc_DarkSoulsEpilogue/msc_DarkSoulsEpilogue.yy",},
     {"name":"msc_bossBattle3","order":7,"path":"sounds/msc_bossBattle3/msc_bossBattle3.yy",},
     {"name":"spr_tileForest02","order":1,"path":"sprites/spr_tileForest02/spr_tileForest02.yy",},
     {"name":"spr_samAttack1","order":2,"path":"sprites/spr_samAttack1/spr_samAttack1.yy",},
