@@ -351,8 +351,7 @@ switch(state){
 			damage.father = id;
 			damage.destroy = false;
 			canAttack = false;		
-		}
-		
+		}  				
 		if(sprite_index == spr_pAttackAirDownEnd && damageArea == noone && canAttack){
 			damageArea = instance_create_layer(x + sprite_width / 8, y - sprite_height / 8, layer, obj_pDamages);
 			damageArea.image_xscale = 2;
