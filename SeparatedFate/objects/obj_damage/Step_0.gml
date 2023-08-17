@@ -33,12 +33,10 @@ for(var i = 0; i < tam; i++){
 	if(target.life > 0){
 		if(target.stagger <= 0) {
 			target.state = "hit";
+			target.image_index = 0;
 		}
-		target.state = "hit";
-		target.image_index = 0;
 		target.life -= damage;
-	}
-	
+	}	
 }
 
 //Destroying the lists to clear space

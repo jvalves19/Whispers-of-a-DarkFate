@@ -51,16 +51,14 @@ if ds_exists(apply_damage, ds_type_list){
 		if(target.life > 0){
 			if(target.stagger <= 0) {
 				target.state = "hit";
+				target.image_index = 0;
 			}
-			target.state = "hit";
-			target.image_index = 0;
 			target.life -= damage;
 			if(object_get_parent(target.object_index) == obj_enemy_father){
 				screenshake(6, true, irandom_range(0, 180));
 				if(target.life <= 0) target.state = "dead"
 			}
-		}
-	
+		}	
 	}
 
 	//Destroying the lists to clear space

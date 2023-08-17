@@ -2,12 +2,12 @@ if(instance_exists(obj_transition) || instance_exists(obj_dialogo)) || instance_
 //Initializing variables
 
 player_controls();
-
+/*
 halfViewW = camera_get_view_height(view_camera[0]) / 2;
 halfViewH = camera_get_view_height(view_camera[0]) / 1.5;
 
 camera_set_view_pos(view_camera[0], x - halfViewW, y - halfViewH);
-
+*/
 var doorSense = place_meeting(x, y, obj_sensor);
 var npcSense = place_meeting(x, y, obj_npcFather);
 var ground = place_meeting(x, y + 1, obj_block);

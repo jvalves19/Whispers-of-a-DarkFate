@@ -15,13 +15,13 @@ var center_h = y1 + h/2;
 
 #region PLAYER HUD
 //Player HealthBar
-draw_sprite_stretched(spr_vBckg, 0, w - 250, h/center_h + 10, healthbar_width+35, healthbar_height + 30);
-draw_sprite_stretched(spr_vida, 0, w - 230, h/center_h + 30, 
+draw_sprite_stretched(spr_vBckg, 0, w - 300, h/center_h + 10, healthbar_width+35, healthbar_height + 30);
+draw_sprite_stretched(spr_vida, 0, w - 280, h/center_h + 30, 
 (life/global.pMaxLife) * healthbar_width, healthbar_height - 10);
 
 //Player AuraBar
-draw_sprite_stretched(spr_mBckg, 0, w - 240, h/center_h + 80, healthbar_width+20, healthbar_height + 20);
-draw_sprite_stretched(spr_mana, 0, w - 220, h/center_h + 100, 
+draw_sprite_stretched(spr_mBckg, 0, w - 290, h/center_h + 80, healthbar_width+20, healthbar_height + 20);
+draw_sprite_stretched(spr_mana, 0, w - 270, h/center_h + 100, 
 (aura/global.pMaxAura ) * healthbar_width-10, healthbar_height - 20);
 
 //Player SplashArt
