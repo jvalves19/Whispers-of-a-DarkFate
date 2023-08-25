@@ -168,8 +168,7 @@ function scr_dialogue(){
 			
 			case "Resposta 2":
 				ds_grid_add_text("Não me admira. Você tem uma aparência horrenda", 0, "Mulher");
-			break;
-			
+			break;	
 		#endregion
 		
 	}
