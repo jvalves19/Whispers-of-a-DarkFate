@@ -33,6 +33,7 @@
     {"name":"tl_grave00","order":2,"path":"tilesets/tl_grave00/tl_grave00.yy",},
     {"name":"obj_sensorKey","order":23,"path":"objects/obj_sensorKey/obj_sensorKey.yy",},
     {"name":"spr_tileTown3","order":3,"path":"sprites/spr_tileTown3/spr_tileTown3.yy",},
+    {"name":"spr_capitain","order":5,"path":"sprites/spr_capitain/spr_capitain.yy",},
     {"name":"obj_blackSmith","order":3,"path":"objects/obj_blackSmith/obj_blackSmith.yy",},
     {"name":"obj_dialogue","order":17,"path":"objects/obj_dialogue/obj_dialogue.yy",},
     {"name":"spr_bgGarlCastle","order":1,"path":"sprites/spr_bgGarlCastle/spr_bgGarlCastle.yy",},

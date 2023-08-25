@@ -16,6 +16,6 @@ if(sense && action && global.key[keyNum]){
 	var tran = instance_create_layer(0, 0, layer, obj_transition);
 	
 	tran.destination = destination;
-	tran.destionation_x = destionation_x;
-	tran.destionation_y = destionation_y;
+	tran.destination_x = destination_x;
+	tran.destination_y = destination_y;
 }

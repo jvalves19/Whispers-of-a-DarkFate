@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_merchant_idle",
-    "path": "sprites/spr_merchant_idle/spr_merchant_idle.yy",
+    "name": "spr_seaman",
+    "path": "sprites/spr_seaman/spr_seaman.yy",
   },
   "spriteMaskId": null,
   "visible": true,

@@ -117,6 +117,7 @@
     {"id":{"name":"spr_owPlayerDown","path":"sprites/spr_owPlayerDown/spr_owPlayerDown.yy",},},
     {"id":{"name":"obj_sensorKey","path":"objects/obj_sensorKey/obj_sensorKey.yy",},},
     {"id":{"name":"spr_tileTown3","path":"sprites/spr_tileTown3/spr_tileTown3.yy",},},
+    {"id":{"name":"spr_capitain","path":"sprites/spr_capitain/spr_capitain.yy",},},
     {"id":{"name":"obj_blackSmith","path":"objects/obj_blackSmith/obj_blackSmith.yy",},},
     {"id":{"name":"obj_dialogue","path":"objects/obj_dialogue/obj_dialogue.yy",},},
     {"id":{"name":"spr_bgGarlCastle","path":"sprites/spr_bgGarlCastle/spr_bgGarlCastle.yy",},},

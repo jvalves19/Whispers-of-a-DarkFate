@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_merchant_idle",
-    "path": "sprites/spr_merchant_idle/spr_merchant_idle.yy",
+    "name": "spr_capitain",
+    "path": "sprites/spr_capitain/spr_capitain.yy",
   },
   "spriteMaskId": null,
   "visible": true,

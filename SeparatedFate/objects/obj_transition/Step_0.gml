@@ -11,8 +11,8 @@ else{
 if(alpha >= 1){	
 	room_goto(destination);
 
-	global.actPlayer.x = destionation_x; 
-	global.actPlayer.y = destionation_y;	
+	global.actPlayer.x = destination_x; 
+	global.actPlayer.y = destination_y;	
 
 	instance_activate_object(obj_pause);
 }

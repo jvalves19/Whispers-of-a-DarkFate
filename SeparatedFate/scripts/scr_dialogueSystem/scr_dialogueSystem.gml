@@ -161,14 +161,63 @@ function scr_dialogue(){
 		break;
 			case "Resposta 1":
 				ds_grid_add_text("O amor é...", 0, "Mulher");
-				ds_grid_add_text("Esqueça. Eu só iria dizer bobagem\nPegue essa chave", 0, "Mulher");
-				global.key[2] = true;
-				
+				if(!global.key[2]){
+					ds_grid_add_text("Esqueça. Eu só iria dizer bobagem\nPegue essa chave", 0, "Mulher");
+					global.key[2] = true;
+				}				
 			break;
 			
 			case "Resposta 2":
 				ds_grid_add_text("Não me admira. Você tem uma aparência horrenda", 0, "Mulher");
 			break;	
+		#endregion
+		
+		#region SEAMAN
+		case "Marujo":
+			ds_grid_add_text("Vocês estão se preparando para viajar?", 1, "Kassius");
+			ds_grid_add_text("Negativo viajante", 0, "Marujo");
+			ds_grid_add_text("Não temos um capitão", 0, "Marujo");
+			ds_grid_add_text("O quê? O que houve?", 1, "Kassius");
+			ds_grid_add_text("Por que quer tanto saber?", 0, "Marujo");
+			ds_grid_add_text("Preciso viajar para o outro continente", 0, "Kassius");
+			ds_grid_add_text("Bem...", 0, "Marujo");
+			ds_grid_add_text("A filha do Capitão foi sequestrada por uma gangue de piratas", 0, "Marujo");
+			ds_grid_add_text("O capitão é extremamente forte e foi atrás deles", 0, "Marujo");
+			ds_grid_add_text("Infelizmente não tem muito o que possamos fazer", 0, "Marujo");
+			ds_grid_add_text("Me leve até onde ele está. Acredito que posso ajudar", 1, "Kassius");
+			ds_grid_add_text("Quer ajudar o capitão a salvar sua filha?", 0, "Marujo");
+				add_op("Sim", "Ajudar Capitão");
+				add_op("Não", "Não Ajudar Capitão");		
+		break;
+			case "Ajudar Capitão":
+				ds_grid_add_text("Levarei você até o último rastro do capitão", 0, "Marujo");
+				ds_grid_add_text("Mas não conte comigo para ajudar, ficarei de longe apenas a olhar", 0, "Marujo");
+				global.sceneNumber = 5;
+				
+				instance_create_layer(x, y, layer, obj_transition);
+				with(obj_transition){
+					destination = rm_forest;
+					destination_x = 160;
+					destination_y = 394;
+					
+					
+				}
+				
+			break;
+			
+			case "Não Ajudar Capitão":
+				ds_grid_add_text("Não tem o que possamos fazer então", 0, "Marujo");
+			break;	
+		#endregion
+		
+		#region CAPITÃO
+		case "Capitão":
+			ds_grid_add_text("Soltem Minha filha seus capangas", 0, "Capitão");
+			ds_grid_add_text("Depois de todos esses anos você amoleceu capitão", 0, "Capangas");
+			ds_grid_add_text("Por todo esse tempo achavamos que você estava morto", 0, "Capangas");
+			ds_grid_add_text("Mas após anos descobrimos que aquela noite você fugiu e forjou sua morte", 0, "Capangas");
+			ds_grid_add_text("Isso é passado...", 0, "Capitão");
+		break;
 		#endregion
 		
 	}
