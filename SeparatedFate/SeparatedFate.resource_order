@@ -177,6 +177,7 @@
     {"name":"spr_pHit","order":7,"path":"sprites/spr_pHit/spr_pHit.yy",},
     {"name":"spr_selected_item","order":5,"path":"sprites/spr_selected_item/spr_selected_item.yy",},
     {"name":"spr_sensor","order":1,"path":"sprites/spr_sensor/spr_sensor.yy",},
+    {"name":"scr_cutsceneScript","order":10,"path":"scripts/scr_cutsceneScript/scr_cutsceneScript.yy",},
     {"name":"spr_samAttack2","order":3,"path":"sprites/spr_samAttack2/spr_samAttack2.yy",},
     {"name":"spr_water","order":4,"path":"sprites/spr_water/spr_water.yy",},
     {"name":"rm_menu","order":3,"path":"rooms/rm_menu/rm_menu.yy",},

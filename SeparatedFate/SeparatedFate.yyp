@@ -291,6 +291,7 @@
     {"id":{"name":"spr_selected_item","path":"sprites/spr_selected_item/spr_selected_item.yy",},},
     {"id":{"name":"spr_sensor","path":"sprites/spr_sensor/spr_sensor.yy",},},
     {"id":{"name":"tl_WGrave","path":"tilesets/tl_WGrave/tl_WGrave.yy",},},
+    {"id":{"name":"scr_cutsceneScript","path":"scripts/scr_cutsceneScript/scr_cutsceneScript.yy",},},
     {"id":{"name":"spr_samAttack2","path":"sprites/spr_samAttack2/spr_samAttack2.yy",},},
     {"id":{"name":"spr_water","path":"sprites/spr_water/spr_water.yy",},},
     {"id":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
