@@ -42,11 +42,10 @@ function cutsceneScript(_sceneNumber){
 	}
 
 	if(room == rm_forest && _sceneNumber == 5){
-	
 		//if(!instance_exists(obj_capitain)) instance_create_layer(160, 344, layer, obj_capitain)
 	
 		global.scene_info = [
-	
+			[cutscene_instance_create, 184, 344, "Instances", obj_capitain],
 			[cutscene_moveCharacter, obj_player, 140, 0, true, 4],
 	
 			[cutscene_instance_create, x, y, "Dialogue", _dialogue],
@@ -54,7 +53,7 @@ function cutsceneScript(_sceneNumber){
 	
 			[cutscene_wait, 1],
 		
-			[cutscene_changeGVariable, "sceneNumber", 10]
+			[cutscene_changeGVariable, "sceneNumber", 10],
 		];
 	
 		if(!instance_exists(obj_cutscene) && _sceneNumber == 5) create_cutscene(global.scene_info);

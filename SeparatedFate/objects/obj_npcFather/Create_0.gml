@@ -5,3 +5,4 @@ max_hSpd = 4;
 max_vSpd = 6;
 
 sense_draw = false;
+sense = false;
