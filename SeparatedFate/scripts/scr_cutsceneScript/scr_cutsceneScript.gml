@@ -4,6 +4,7 @@
 function cutsceneScript(_sceneNumber){	
 	var _dialogue = obj_dialogo
 	
+	#region First Scene
 	if(room == rm_graveyard1 && _sceneNumber == -1){
 		global.scene_info = [
 			[cutscene_changeVariable, obj_player, "obj_player.state", "idle"],
@@ -18,6 +19,9 @@ function cutsceneScript(_sceneNumber){
 		if(!instance_exists(obj_cutscene) && _sceneNumber == -1) create_cutscene(global.scene_info);
 		if(_sceneNumber != -1) instance_destroy(obj_cutscene);
 	}
+	#endregion
+	
+	#region MORRA SEU DEMONION
 	if(room == rm_boss2 && !global.destroyed[2]){
 		global.scene_info = [
 			[cutscene_moveCharacter, obj_player, 140, 0, true, 4],
@@ -35,30 +39,33 @@ function cutsceneScript(_sceneNumber){
 		];
 	
 		if(!instance_exists(obj_cutscene) && _sceneNumber == 0) create_cutscene(global.scene_info);
-		if(global._sceneNumber != 0){
+		if(global.sceneNumber != 0){
 			instance_destroy(obj_cutscene);
 			if(!instance_exists(obj_dialogo)) global.bossBattle = true;
 		}
 	}
-
-	if(room == rm_forest && _sceneNumber == 5){
-		//if(!instance_exists(obj_capitain)) instance_create_layer(160, 344, layer, obj_capitain)
+	#endregion
 	
+	#region Questo do Barqueiro
+	if(room == rm_forest && _sceneNumber == 5){
 		global.scene_info = [
 			[cutscene_instance_create, 184, 344, "Instances", obj_capitain],
 			[cutscene_moveCharacter, obj_player, 140, 0, true, 4],
 	
 			[cutscene_instance_create, x, y, "Dialogue", _dialogue],
 			[cutscene_changeVariable, _dialogue, "npc_nome", "Capitão"],
-	
+			
 			[cutscene_wait, 1],
-		
+			
+			[cutscene_changeGVariable, "questStatus", true],
 			[cutscene_changeGVariable, "sceneNumber", 10],
 		];
 	
 		if(!instance_exists(obj_cutscene) && _sceneNumber == 5) create_cutscene(global.scene_info);
+
 		if(_sceneNumber != 5){
 			instance_destroy(obj_cutscene);
 		}
 	}
+	#endregion
 }

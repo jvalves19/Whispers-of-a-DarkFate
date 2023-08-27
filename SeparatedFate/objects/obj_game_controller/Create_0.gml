@@ -2,6 +2,7 @@ global.spd_mult = 1;
 game_over = false;
 value = 0;
 
+global.questStatus = false;
 global.scene_info = -1;
 global.sceneNumber = -1;
 

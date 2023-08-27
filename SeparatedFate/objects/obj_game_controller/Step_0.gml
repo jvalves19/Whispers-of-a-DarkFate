@@ -122,8 +122,17 @@ if(object_exists(obj_player)){
 if(instance_exists(obj_dialogo)){
 	global.dialogo = true;
 }
-cutsceneScript(global.sceneNumber);
+#endregion
 
+#region QUEST SYSTEM
+cutsceneScript(global.sceneNumber);
+if(keyboard_check_pressed(ord("P"))) show_debug_message("Quest Status: " + string(questStatus));
+
+if(instance_number(obj_bandit1) <= 0){
+	global.questStatus = false;
+}
+
+//if(questStatus) instance_deactivate_object(obj_sensor);
 #endregion
 
 #region BOSS
@@ -149,7 +158,7 @@ if(!global.destroyed[3]){
 	}
 }
 
-if(global.bossBattle){
+if(global.bossBattle || global.questStatus){
 	instance_deactivate_object(obj_sensor);
 }
 else{

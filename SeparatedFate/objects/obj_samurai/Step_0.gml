@@ -132,7 +132,6 @@ switch(state){
 				global.currentSpell = 1;
 				global.playerXP = global.playerXP + 3000;
 			}
-			//instance_create_layer(obj_player.x, obj_player.y, layer, obj_trigger);
 		}		
 		
 		break;

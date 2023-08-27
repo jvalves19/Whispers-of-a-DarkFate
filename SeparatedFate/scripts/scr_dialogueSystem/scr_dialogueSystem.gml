@@ -195,12 +195,11 @@ function scr_dialogue(){
 				global.sceneNumber = 5;
 				
 				instance_create_layer(x, y, layer, obj_transition);
+				
 				with(obj_transition){
 					destination = rm_forest;
 					destination_x = 160;
-					destination_y = 394;
-					
-					
+					destination_y = 394;	
 				}
 				
 			break;
