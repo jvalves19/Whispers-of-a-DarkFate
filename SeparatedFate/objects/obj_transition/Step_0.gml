@@ -18,6 +18,5 @@ if(alpha >= 1){
 }
 
 if(changeRoom && alpha <= 0){
-
 	instance_destroy();
 }

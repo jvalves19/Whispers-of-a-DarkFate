@@ -31,6 +31,10 @@ else{
 				instance_activate_object(obj_pause);
 				instance_destroy();
 			}
+			if(instance_exists(obj_transition)){
+				global.dialogo = false;
+				instance_destroy();
+			}
 		}
 	}
 }

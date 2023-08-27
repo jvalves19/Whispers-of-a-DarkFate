@@ -13,7 +13,6 @@
     {"name":"inst_569255BA_1_1_2_1","path":"rooms/rm_seaport02/rm_seaport02.yy",},
     {"name":"inst_3E83D9C7_2_1","path":"rooms/rm_seaport02/rm_seaport02.yy",},
     {"name":"inst_1195FC44_1_1","path":"rooms/rm_seaport02/rm_seaport02.yy",},
-    {"name":"inst_6079B57A_1_1","path":"rooms/rm_seaport02/rm_seaport02.yy",},
     {"name":"inst_29EEF30_1_1","path":"rooms/rm_seaport02/rm_seaport02.yy",},
     {"name":"inst_2D2EFD33_1","path":"rooms/rm_seaport02/rm_seaport02.yy",},
   ],
@@ -31,7 +30,6 @@
           ],"rotation":0.0,"scaleX":0.5,"scaleY":0.75,"x":1160.0,"y":384.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Instances","depth":300,"effectEnabled":true,"effectType":null,"gridX":6,"gridY":6,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_6079B57A_1_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_bard","path":"objects/obj_bard/obj_bard.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":42.0,"y":384.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_29EEF30_1_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":null,"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":36.0,"y":30.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_2D2EFD33_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_seaman","path":"objects/obj_seaman/obj_seaman.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":552.0,"y":330.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},

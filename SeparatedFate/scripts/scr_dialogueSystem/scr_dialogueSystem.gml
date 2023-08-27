@@ -109,13 +109,11 @@ function scr_dialogue(){
 					
 					ds_grid_add_text("Me traga as matérias necessárias, tais como almas de demônio\nE posso encantar sua Lâmina", 0, "Ferreiro")
 					global.blackSmithDialogue = global.blackSmithDialogue - global.blackSmithDialogue;
-					obj_blackSmith.state = "work";
 				break;			
 			}
 			
-			
 			ds_grid_add_text("Deseja Encantar sua Lâmina?", 0, "Ferreiro");
-			
+			obj_blackSmith.state = "work";
 			ds_grid_add_text("...", 1, "Kassius");
 				if(global.controllBlades[0]){
 					add_op("Encantar com Lâmina do Arcano", "Encantar Blade 0");
@@ -234,19 +232,52 @@ function scr_dialogue(){
 				break;	
 			}
 			
-			ds_grid_add_text("Para onde quer viajar?", 0, "Capitão");
-			ds_grid_add_text("...", 1, "Kassius");
-				add_op("Viajar para o Continente Norte", "Norte");
-				add_op("Não Viajar", "Não Viajar");	
+			case 0:
+				if(global.actRoom != rm_forest){
+					ds_grid_add_text("Para onde quer viajar?", 0, "Capitão");
+					ds_grid_add_text("...", 1, "Kassius");
+				
+					if(global.actRoom == rm_seaport01){
+						add_op("Viajar para o Continente Norte", "Norte");
+						add_op("Não Viajar", "Não Viajar");	
+					break;
+					}
+				
+					if(global.actRoom == rm_seaport02){
+						add_op("Viajar para o Continente Sul", "Sul");
+						add_op("Não Viajar", "Não Viajar");	
+					break;
+					}
+				}
+
+			
+				case "Norte":
+					ds_grid_add_text("Iremos para o Norte então!", 0, "Capitão");
+					instance_create_layer(x, y, layer, obj_transition);
+				
+					with(obj_transition){
+						destination = rm_seaport02;
+						destination_x = 150;
+						destination_y = 350;	
+					}	
 				break;
-					
-			case "Norte":
-				ds_grid_add_text("Iremos para o Norte então!", 0, "Capitão");
+			
+				case "Sul":
+					ds_grid_add_text("Iremos para o Sul então!", 0, "Capitão");
+					instance_create_layer(x, y, layer, obj_transition);
+				
+					with(obj_transition){
+						destination = rm_seaport01;
+						destination_x = 1000;
+						destination_y = 350;	
+					}	
+				break;
+			
+				case "Não Viajar":
+					ds_grid_add_text("Estaremos aqui quando voltar", 0, "Capitão");
+				break;
 			break;
-					
-			case "Não Viajar":
-				ds_grid_add_text("Estaremos aqui quando voltar", 0, "Capitão");
-			break;
+			
 		break;
 		#endregion
 	}	

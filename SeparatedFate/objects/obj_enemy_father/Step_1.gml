@@ -4,6 +4,8 @@
 // Inherit the parent event
 event_inherited();
 
+if(instance_exists(obj_dialogo)) || instance_exists(obj_dialogue) state = "idle";
+
 if(instance_exists(obj_player)){
 	dist = point_distance(x, y, obj_player.x, obj_player.y);
 	dir = point_direction(x, y, obj_player.x, obj_player.y);
