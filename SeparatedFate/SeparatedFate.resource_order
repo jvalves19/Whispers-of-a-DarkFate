@@ -13,6 +13,7 @@
     {"name":"Movement","order":13,"path":"folders/Sprites/Player/Assets/Movement.yy",},
     {"name":"World","order":1,"path":"folders/Sprites/Player/World.yy",},
     {"name":"Inventory","order":15,"path":"folders/Sprites/UI_HUD/Inventory.yy",},
+    {"name":"Capitain","order":6,"path":"folders/Sprites/NPCs/Capitain.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"spr_bandit1Walk","order":3,"path":"sprites/spr_bandit1Walk/spr_bandit1Walk.yy",},
@@ -33,7 +34,6 @@
     {"name":"tl_grave00","order":2,"path":"tilesets/tl_grave00/tl_grave00.yy",},
     {"name":"obj_sensorKey","order":23,"path":"objects/obj_sensorKey/obj_sensorKey.yy",},
     {"name":"spr_tileTown3","order":3,"path":"sprites/spr_tileTown3/spr_tileTown3.yy",},
-    {"name":"spr_capitain","order":5,"path":"sprites/spr_capitain/spr_capitain.yy",},
     {"name":"obj_blackSmith","order":3,"path":"objects/obj_blackSmith/obj_blackSmith.yy",},
     {"name":"obj_dialogue","order":17,"path":"objects/obj_dialogue/obj_dialogue.yy",},
     {"name":"spr_bgGarlCastle","order":1,"path":"sprites/spr_bgGarlCastle/spr_bgGarlCastle.yy",},
@@ -244,6 +244,7 @@
     {"name":"tl_forest02","order":1,"path":"tilesets/tl_forest02/tl_forest02.yy",},
     {"name":"fnt_menu","order":1,"path":"fonts/fnt_menu/fnt_menu.yy",},
     {"name":"spr_walk","order":1,"path":"sprites/spr_walk/spr_walk.yy",},
+    {"name":"spr_capitainWalk","order":1,"path":"sprites/spr_capitainWalk/spr_capitainWalk.yy",},
     {"name":"title_screen_2","order":10,"path":"sprites/title_screen_2/title_screen_2.yy",},
     {"name":"Scene01","order":6,"path":"sprites/Scene01/Scene01.yy",},
     {"name":"spr_attack","order":2,"path":"sprites/spr_attack/spr_attack.yy",},

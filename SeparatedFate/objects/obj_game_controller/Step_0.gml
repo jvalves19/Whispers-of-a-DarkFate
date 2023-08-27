@@ -21,6 +21,7 @@ if(game_over){
 	instance_deactivate_object(obj_pause);
 	global.spd_mult = 0.5;
 } 
+
 if(bossDead){	
 	instance_deactivate_object(obj_sensor);
 	global.spd_mult = 0.5;
@@ -126,13 +127,17 @@ if(instance_exists(obj_dialogo)){
 
 #region QUEST SYSTEM
 cutsceneScript(global.sceneNumber);
-if(keyboard_check_pressed(ord("P"))) show_debug_message("Quest Status: " + string(questStatus));
 
-if(instance_number(obj_bandit1) <= 0){
-	global.questStatus = false;
+if(room == rm_forest){
+	if(instance_number(obj_bandit1) <= 0){
+		if(global.questStatus){
+			global.sceneNumber = 6;
+		}
+		if(global.questStatus == false){
+			if(!instance_exists(obj_dialogo)) instance_destroy(obj_capitain);
+		}
+	}	
 }
-
-//if(questStatus) instance_deactivate_object(obj_sensor);
 #endregion
 
 #region BOSS

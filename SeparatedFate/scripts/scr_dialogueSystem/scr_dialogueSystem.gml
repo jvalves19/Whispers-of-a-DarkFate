@@ -1,7 +1,7 @@
 // Script assets have changed for v2.3.0 see
 function scr_dialogue(){
 	switch npc_nome{
-		#region Kassius
+		#region KASSIUS
 		case "Kassius":
 			switch global.kassiusDialogue{
 				case 1:
@@ -211,15 +211,68 @@ function scr_dialogue(){
 		
 		#region CAPITÃO
 		case "Capitão":
-			ds_grid_add_text("Soltem Minha filha seus capangas", 0, "Capitão");
-			ds_grid_add_text("Depois de todos esses anos você amoleceu capitão", 0, "Capangas");
-			ds_grid_add_text("Por todo esse tempo achavamos que você estava morto", 0, "Capangas");
-			ds_grid_add_text("Mas após anos descobrimos que aquela noite você fugiu e forjou sua morte", 0, "Capangas");
-			ds_grid_add_text("Isso é passado...", 0, "Capitão");
-		break;
+			switch(global.capitainDialogue){
+				case 0:
+					ds_grid_add_text("Para onde quer viajar?", 0, "Capitão");
+					ds_grid_add_text("...", 1, "Kassius");
+					
+					if(global.actRoom == rm_seaport01){
+						add_op("Viajar para o Continente Norte", "Norte");
+					}
+					add_op("Não Viajar", "Não Viajar");	
+					
+					break;
+				
+					case "Norte":
+						ds_grid_add_text("Iremos para o Norte então!", 0, "Capitão");
+						instance_create_layer(x, y, layer, obj_transition);
+				
+						with(obj_transition){
+							destination = rm_forest;
+							destination_x = 160;
+							destination_y = 394;	
+						}
+				
+						break;
+			
+					case "Sul":
+						ds_grid_add_text("Iremos para o Sul então!", 0, "Capitão");
+						instance_create_layer(x, y, layer, obj_transition);
+				
+						with(obj_transition){
+							destination = rm_forest;
+							destination_x = 160;
+							destination_y = 394;	
+						}
+					
+						break;
+						
+					case "Não Viajar":
+						ds_grid_add_text("Estaremos aqui quando voltar", 0, "Capitão");
+						break;
+					
+				case 1:
+					ds_grid_add_text("Soltem Minha filha seus capangas", 0, "Capitão");
+					ds_grid_add_text("Depois de todos esses anos você amoleceu capitão", 0, "Capangas");
+					ds_grid_add_text("Por todo esse tempo achavamos que você estava morto", 0, "Capangas");
+					ds_grid_add_text("Mas após anos descobrimos que aquela noite você fugiu e forjou sua morte", 0, "Capangas");
+					ds_grid_add_text("Isso é passado...", 0, "Capitão");
+					
+					global.capitainDialogue = 2;
+					break;
+					
+				case 2: ds_grid_add_text("...", 0, "Capitão"); break;
+				
+				case 3:
+					ds_grid_add_text("Obrigado por me ajudar, voltarei para a cidade agora", 0, "Capitão");
+					ds_grid_add_text("Pode contar comigo caso precise viajar para o exterior", 0, "Capitão");
+					
+					global.capitainDialogue = 0;
+					
+					break;				
+			}
 		#endregion
-		
-	}
+	}	
 }
 
 function ds_grid_add_row(){
