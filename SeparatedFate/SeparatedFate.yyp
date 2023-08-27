@@ -347,6 +347,7 @@
     {"id":{"name":"snd_hit2","path":"sounds/snd_hit2/snd_hit2.yy",},},
     {"id":{"name":"spr_vida","path":"sprites/spr_vida/spr_vida.yy",},},
     {"id":{"name":"spr_healthBg","path":"sprites/spr_healthBg/spr_healthBg.yy",},},
+    {"id":{"name":"rm_seaport02","path":"rooms/rm_seaport02/rm_seaport02.yy",},},
     {"id":{"name":"spr_box","path":"sprites/spr_box/spr_box.yy",},},
     {"id":{"name":"spr_graveAttack1","path":"sprites/spr_graveAttack1/spr_graveAttack1.yy",},},
     {"id":{"name":"spr_graveWalk","path":"sprites/spr_graveWalk/spr_graveWalk.yy",},},
@@ -398,6 +399,7 @@
     {"roomId":{"name":"rm_cutscEnd1","path":"rooms/rm_cutscEnd1/rm_cutscEnd1.yy",},},
     {"roomId":{"name":"rm_graveyard1","path":"rooms/rm_graveyard1/rm_graveyard1.yy",},},
     {"roomId":{"name":"rm_seaport01","path":"rooms/rm_seaport01/rm_seaport01.yy",},},
+    {"roomId":{"name":"rm_seaport02","path":"rooms/rm_seaport02/rm_seaport02.yy",},},
   ],
   "TextureGroups": [
     {"resourceType":"GMTextureGroup","resourceVersion":"1.3","name":"Default","autocrop":true,"border":2,"compressFormat":"bz2","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"targets":-1,},

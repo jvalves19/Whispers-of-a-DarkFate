@@ -35,6 +35,7 @@ global.kassiusDialogue = 1;
 global.bardoDialogue = 1;
 global.blackSmithDialogue = 1;
 global.capitainDialogue = 1;
+global.marujoDialogue = 1;
 #endregion
 
 #region INVENTORY SYSTEM

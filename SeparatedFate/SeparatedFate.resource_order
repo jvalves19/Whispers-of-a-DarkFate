@@ -229,6 +229,7 @@
     {"name":"snd_hit2","order":3,"path":"sounds/snd_hit2/snd_hit2.yy",},
     {"name":"spr_vida","order":6,"path":"sprites/spr_vida/spr_vida.yy",},
     {"name":"spr_healthBg","order":4,"path":"sprites/spr_healthBg/spr_healthBg.yy",},
+    {"name":"rm_seaport02","order":2,"path":"rooms/rm_seaport02/rm_seaport02.yy",},
     {"name":"spr_box","order":6,"path":"sprites/spr_box/spr_box.yy",},
     {"name":"spr_graveWalk","order":6,"path":"sprites/spr_graveWalk/spr_graveWalk.yy",},
     {"name":"fnt_menu2","order":6,"path":"fonts/fnt_menu2/fnt_menu2.yy",},

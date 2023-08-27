@@ -128,6 +128,16 @@ if(instance_exists(obj_dialogo)){
 #region QUEST SYSTEM
 cutsceneScript(global.sceneNumber);
 
+
+if(global.capitainDialogue == 0){
+	if(room == rm_seaport01){
+		if(!instance_exists(obj_capitain)) instance_create_layer(1070, 330, "Instances", obj_capitain);
+	}
+	if(room == rm_seaport02){
+		if(!instance_exists(obj_capitain)) instance_create_layer(42, 330, "Instances", obj_capitain);
+	}
+}
+	
 if(room == rm_forest){
 	if(instance_number(obj_bandit1) <= 0){
 		if(global.questStatus){

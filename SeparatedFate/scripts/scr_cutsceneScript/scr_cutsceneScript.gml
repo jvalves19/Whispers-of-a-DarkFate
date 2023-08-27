@@ -62,14 +62,13 @@ function cutsceneScript(_sceneNumber){
 		];
 	
 		if(!instance_exists(obj_cutscene) && _sceneNumber == 5) create_cutscene(global.scene_info);
-
-		if(_sceneNumber != 5){
-			instance_destroy(obj_cutscene);
-		}
+		if(_sceneNumber != 5) instance_destroy(obj_cutscene);
+		
 	}
 	
 	if(room == rm_forest && _sceneNumber == 6){
 		global.scene_info = [
+			[cutscene_moveCharacter, obj_capitain, -150, 0, true, 4],
 			[cutscene_changeGVariable, "capitainDialogue", 3],
 			[cutscene_instance_create, x, y, "Dialogue", _dialogue],
 			[cutscene_changeVariable, _dialogue, "npc_nome", "Capitão"],
@@ -81,9 +80,8 @@ function cutsceneScript(_sceneNumber){
 		];
 	
 		if(!instance_exists(obj_cutscene) && _sceneNumber == 6) create_cutscene(global.scene_info);
-		if(_sceneNumber != 6){
-			instance_destroy(obj_cutscene);			
-		}
+		if(_sceneNumber != 6) instance_destroy(obj_cutscene);			
+		
 	}
 	#endregion
 }
