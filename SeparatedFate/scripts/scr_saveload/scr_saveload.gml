@@ -67,6 +67,8 @@ function saveGame(_slot){
 	ini_write_real(_slot, "Kassius Dialogue", global.kassiusDialogue);
 	ini_write_real(_slot, "Bardo Dialogue", global.bardoDialogue);
 	ini_write_real(_slot, "Ferreiro Dialogue", global.blackSmithDialogue);
+	ini_write_real(_slot, "Barqueiro Dialogue", global.capitainDialogue);
+	ini_write_real(_slot, "Marujo Dialogue", global.marujoDialogue);
 	
 	//DEBUG
 	//show_debug_message(string(global.strInventario));
@@ -160,6 +162,8 @@ function loadGame(_slot){
 	global.kassiusDialogue = ini_read_real(_slot, "Kassius Dialogue", 0);
 	global.bardoDialogue = ini_read_real(_slot, "Bardo Dialogue", 0);
 	global.blackSmithDialogue = ini_read_real(_slot, "Ferreiro Dialogue", 0);
+	global.capitainDialogue = ini_read_real(_slot, "Barqueiro Dialogue", 0);
+	global.marujoDialogue = ini_read_real(_slot, "Marujo Dialogue", 0);
 	
 	//show_debug_message(string(global.a_inv));
 	show_debug_message("Vida Máxima: " + string(global.pMaxLife));

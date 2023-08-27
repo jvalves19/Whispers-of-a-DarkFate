@@ -240,42 +240,41 @@ function scr_dialogue(){
 					if(global.actRoom == rm_seaport01){
 						add_op("Viajar para o Continente Norte", "Norte");
 						add_op("Não Viajar", "Não Viajar");	
-					break;
+						break;
 					}
 				
 					if(global.actRoom == rm_seaport02){
 						add_op("Viajar para o Continente Sul", "Sul");
 						add_op("Não Viajar", "Não Viajar");	
-					break;
+						break;
 					}
 				}
+			break;
 
-			
-				case "Norte":
-					ds_grid_add_text("Iremos para o Norte então!", 0, "Capitão");
-					instance_create_layer(x, y, layer, obj_transition);
+			case "Não Viajar":
+				ds_grid_add_text("Estaremos aqui quando voltar", 0, "Capitão");
+			break;
 				
-					with(obj_transition){
-						destination = rm_seaport02;
-						destination_x = 150;
-						destination_y = 350;	
-					}	
-				break;
-			
-				case "Sul":
-					ds_grid_add_text("Iremos para o Sul então!", 0, "Capitão");
-					instance_create_layer(x, y, layer, obj_transition);
+			case "Norte":
+				ds_grid_add_text("Iremos para o Norte então!", 0, "Capitão");
+				instance_create_layer(x, y, layer, obj_transition);
 				
-					with(obj_transition){
-						destination = rm_seaport01;
-						destination_x = 1000;
-						destination_y = 350;	
-					}	
-				break;
+				with(obj_transition){
+					destination = rm_seaport02;
+					destination_x = 150;
+					destination_y = 350;	
+				}	
+			break;
 			
-				case "Não Viajar":
-					ds_grid_add_text("Estaremos aqui quando voltar", 0, "Capitão");
-				break;
+			case "Sul":
+				ds_grid_add_text("Iremos para o Sul então!", 0, "Capitão");
+				instance_create_layer(x, y, layer, obj_transition);
+				
+				with(obj_transition){
+					destination = rm_seaport01;
+					destination_x = 1000;
+					destination_y = 350;	
+				}	
 			break;
 			
 		break;
