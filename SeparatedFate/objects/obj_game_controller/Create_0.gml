@@ -31,7 +31,7 @@ global.pDmgSpell = noone;
 
 #region DIALOGUES
 global.dialogo = false;
-global.kassiusDialogue = 1;
+global.kassius_dialogue = 1;
 global.bardoDialogue = 1;
 global.blackSmithDialogue = 1;
 global.capitainDialogue = 1;

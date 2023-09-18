@@ -47,7 +47,7 @@ if(inicializar){
 		
 		if(keyboard_check_pressed(vk_enter) || gamepad_button_check_pressed(0, gp_face1)){
 			var _dialogue = instance_create_layer(x, y, "Dialogue", obj_dialogo)
-			_dialogue.npc_nome = op_resposta[op_selecionada];
+			_dialogue.npc_name = op_resposta[op_selecionada];
 			
 			instance_destroy();
 		}

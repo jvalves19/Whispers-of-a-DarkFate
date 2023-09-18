@@ -9,11 +9,11 @@
     {"name":"Interior","order":14,"path":"folders/Rooms/Interior.yy",},
     {"name":"Towns","order":15,"path":"folders/Rooms/Towns.yy",},
     {"name":"BlackSmith","order":2,"path":"folders/Sprites/NPCs/BlackSmith.yy",},
+    {"name":"Capitain","order":6,"path":"folders/Sprites/NPCs/Capitain.yy",},
     {"name":"Assets","order":22,"path":"folders/Sprites/Player/Assets.yy",},
     {"name":"Movement","order":13,"path":"folders/Sprites/Player/Assets/Movement.yy",},
     {"name":"World","order":1,"path":"folders/Sprites/Player/World.yy",},
     {"name":"Inventory","order":15,"path":"folders/Sprites/UI_HUD/Inventory.yy",},
-    {"name":"Capitain","order":6,"path":"folders/Sprites/NPCs/Capitain.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"spr_bandit1Walk","order":3,"path":"sprites/spr_bandit1Walk/spr_bandit1Walk.yy",},

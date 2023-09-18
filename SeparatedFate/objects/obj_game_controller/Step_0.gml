@@ -126,7 +126,33 @@ if(instance_exists(obj_dialogo)){
 #endregion
 
 #region QUEST SYSTEM
-cutsceneScript(global.sceneNumber);
+cutscene_script(global.sceneNumber);
+
+#region MORRA SEU DEMONION
+if(room == rm_boss2 && !global.destroyed[2]){
+		
+	global.scene_info = [
+		[cutscene_moveCharacter, obj_player, 140, 0, true, 4],
+	
+		[cutscene_instance_create, x, y, "Dialogue", obj_dialogo],
+		[cutscene_changeVariable, obj_dialogo, "npc_name", "Kassius"],
+	
+		[cutscene_wait, 1],
+		
+		[cutscene_stopSound, msc_bossBattle2],
+		[cutscene_playSound, msc_bossBattle2, 1, true],
+		[cutscene_soundGain, msc_bossBattle2, 1, 0],
+		
+		[cutscene_changeGVariable, "sceneNumber", 1]
+	];
+	
+	if(!instance_exists(obj_cutscene) && global.sceneNumber == 0) create_cutscene(global.scene_info);
+	if(global.sceneNumber != 0){
+		instance_destroy(obj_cutscene);
+		if(!instance_exists(obj_dialogo)) global.bossBattle = true;
+	}
+}
+#endregion
 
 
 if(global.capitainDialogue == 0){

@@ -1,19 +1,19 @@
 // Script assets have changed for v2.3.0 see
 function scr_dialogue(){
-	switch npc_nome{
+	switch npc_name{
 		#region KASSIUS
 		case "Kassius":
-			switch global.kassiusDialogue{
+			switch global.kassius_dialogue{
 				case 1:
 					ds_grid_add_text("Estranho... Após um longo período\nbuscando por Sylvir", 1, "Kassius");
 					ds_grid_add_text("Sua Aura me trouxe à esse cemitério.", 1, "Kassius");
 					ds_grid_add_text("Se ela estivesse morta, como eu poderia\nrastrear seus resquícios de Magia?", 1, "Kassius");
 					ds_grid_add_text("Será que ela está realmente aqui?", 1, "Kassius");
-					global.kassiusDialogue = global.kassiusDialogue+1;
+					global.kassius_dialogue = global.kassius_dialogue+1;
 				break;
 				case 2:
 					ds_grid_add_text("MORRA seu demônio", 1, "Kassius");
-					global.kassiusDialogue = global.kassiusDialogue+1;
+					global.kassius_dialogue = global.kassius_dialogue+1;
 				break;
 			}
 			

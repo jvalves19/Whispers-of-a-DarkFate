@@ -343,6 +343,7 @@ switch(state){
 			}
 		}
 		
+		//*
 		if(sprite_index == spr_pAttackAirDownBeg && damage == noone && canAttack){
 			damage = instance_create_layer(x + sprite_width / 4, y - sprite_height / 2, layer, obj_pDamages);
 			damage.image_xscale = 0.5;
@@ -351,7 +352,8 @@ switch(state){
 			damage.father = id;
 			damage.destroy = false;
 			canAttack = false;		
-		}  				
+		}  	
+		//*/
 		if(sprite_index == spr_pAttackAirDownEnd && damageArea == noone && canAttack){
 			damageArea = instance_create_layer(x + sprite_width / 8, y - sprite_height / 8, layer, obj_pDamages);
 			damageArea.image_xscale = 2;
@@ -507,7 +509,7 @@ if(distance_to_object(obj_npcFather) < 1){
 			var _npc = instance_nearest(x, y, obj_npcFather);
 			var _dialogue = instance_create_layer(x, y, "Dialogue", obj_dialogo)
 		
-			_dialogue.npc_nome = _npc.nome;
+			_dialogue.npc_name = _npc.nome;
 		}
 	}
 }
