@@ -62,6 +62,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"NPCs","folderPath":"folders/Sprites/NPCs.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Bard","folderPath":"folders/Sprites/NPCs/Bard.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"BlackSmith","folderPath":"folders/Sprites/NPCs/BlackSmith.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Capitain","folderPath":"folders/Sprites/NPCs/Capitain.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Player","folderPath":"folders/Sprites/Player.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Assets","folderPath":"folders/Sprites/Player/Assets.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Combat","folderPath":"folders/Sprites/Player/Assets/Combat.yy",},
@@ -82,7 +83,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Town","folderPath":"folders/Tile Sets/Town.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"World","folderPath":"folders/Tile Sets/World.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Capitain","folderPath":"folders/Sprites/NPCs/Capitain.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"HD wallpaper_ Red, Sony, PS4, Bloodborne, Moon Presence.jfif","CopyToMask":-1,"filePath":"datafiles",},
