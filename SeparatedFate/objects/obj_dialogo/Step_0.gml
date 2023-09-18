@@ -32,8 +32,10 @@ else{
 				instance_destroy();
 			}
 			if(instance_exists(obj_transition)){
-				global.dialogo = false;
-				instance_destroy();
+				if(obj_transition.destination == rm_seaport02 || obj_transition.destination == rm_seaport01){
+					global.dialogo = false;
+					instance_destroy();
+				}
 			}
 		}
 	}

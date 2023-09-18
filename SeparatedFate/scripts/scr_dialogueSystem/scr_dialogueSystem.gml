@@ -10,11 +10,11 @@ function scr_dialogue(){
 					ds_grid_add_text("Se ela estivesse morta, como eu poderia\nrastrear seus resquícios de Magia?", 1, "Kassius");
 					ds_grid_add_text("Será que ela está realmente aqui?", 1, "Kassius");
 					global.kassiusDialogue = global.kassiusDialogue+1;
-				break;
+					break;
 				case 2:
 					ds_grid_add_text("MORRA seu demônio", 1, "Kassius");
 					global.kassiusDialogue = global.kassiusDialogue+1;
-				break;
+					break;
 			}
 			
 		break;
@@ -23,24 +23,23 @@ function scr_dialogue(){
 		#region MERCHANT
 		case "Merchant":
 			ds_grid_add_text("O que deseja?", 0, "Merchant");
-			ds_grid_add_text("...", 1, "Kassius");
-				if(global.destroyed[2] && global.potionStash == 5){
-					add_op("Aumentar Espaços de Poção +5", "Aumentar Espaços de Poção");
-				}
-				if(global.damagePotionQtd <= global.potionStash/2){
-					add_op("Comprar Poção de Forca +1", "Comprar Poção de Força");
-				}
-				if(global.spellPotionQtd <= global.potionStash/2){
-					add_op("Comprar Poção de Dano Mágico +1", "Comprar Poção de Dano Mágico");
-				}					
-				add_op("Não Desejo nada", "Não Desejo nada");	
+				ds_grid_add_text("...", 1, "Kassius");
+					if(global.destroyed[2] && global.potionStash == 5){
+						add_op("Aumentar Espaços de Poção +5", "Aumentar Espaços de Poção");
+					}
+					if(global.damagePotionQtd <= global.potionStash/2){
+						add_op("Comprar Poção de Forca +1", "Comprar Poção de Força");
+					}
+					if(global.spellPotionQtd <= global.potionStash/2){
+						add_op("Comprar Poção de Dano Mágico +1", "Comprar Poção de Dano Mágico");
+					}					
+					add_op("Não Desejo nada", "Não Desejo nada");	
 				break;
 				
 			case "Aumentar Espaços de Poção":
 				ds_grid_add_text("Seus espaçoes de poção foram aumentados em +5", 0, "Merchant");
 				global.potionStash = global.potionStash+5;
-			break;
-			
+			break;			
 			case "Comprar Poção de Força":
 				ds_grid_add_text("...", 0, "Merchant");
 				global.damagePotionQtd = global.damagePotionQtd+1;
@@ -55,7 +54,6 @@ function scr_dialogue(){
 			case "Não Desejo nada":
 				ds_grid_add_text("Volte quando quiser", 0, "Merchant");		
 			break;
-		break;
 		#endregion
 		
 		#region BARDO
@@ -113,18 +111,19 @@ function scr_dialogue(){
 			}
 			
 			ds_grid_add_text("Deseja Encantar sua Lâmina?", 0, "Ferreiro");
-			obj_blackSmith.state = "work";
-			ds_grid_add_text("...", 1, "Kassius");
-				if(global.controllBlades[0]){
-					add_op("Encantar com Lâmina do Arcano", "Encantar Blade 0");
-				}
-				if(global.controllBlades[1]){
-					add_op("Encantar com Lâmina das Chamas", "Encantar Blade 1");
-				}
-				if(global.controllBlades[2]){
-					add_op("Encantar com Lâmina de Sangue", "Encantar Blade 2");
-				}
-				add_op("Cancelar", "Cancelar");	
+				obj_blackSmith.state = "work";
+				ds_grid_add_text("...", 1, "Kassius");
+					if(global.controllBlades[0]){
+						add_op("Encantar com Lâmina do Arcano", "Encantar Blade 0");
+					}
+					if(global.controllBlades[1]){
+						add_op("Encantar com Lâmina das Chamas", "Encantar Blade 1");
+					}
+					if(global.controllBlades[2]){
+						add_op("Encantar com Lâmina de Sangue", "Encantar Blade 2");
+					}
+					add_op("Cancelar", "Cancelar");	
+					
 				break;
 			case "Encantar Blade 0":
 				ds_grid_add_text("A Lâmina do Arcano possibilita que você\nrecupere sua lâmina acertando 3x o inimigo", 0, "Ferreiro");
@@ -143,7 +142,8 @@ function scr_dialogue(){
 						
 			case "Cancelar":
 				ds_grid_add_text("Volte quando tiver as Matérias necesárias", 0, "Ferreiro");
-			break;				
+			break;	
+			
 		break;
 		#endregion
 		
@@ -166,7 +166,6 @@ function scr_dialogue(){
 			case "Resposta 2":
 				ds_grid_add_text("Não me admira. Você tem uma aparência horrenda", 0, "Mulher");
 			break;
-		break;
 		#endregion
 		
 		#region SEAMAN
@@ -203,7 +202,6 @@ function scr_dialogue(){
 			case "Não Ajudar Capitão":
 				ds_grid_add_text("Não tem o que possamos fazer então", 0, "Marujo");
 			break;	
-		break;
 		#endregion
 		
 		#region CAPITÃO
@@ -257,13 +255,14 @@ function scr_dialogue(){
 				
 			case "Norte":
 				ds_grid_add_text("Iremos para o Norte então!", 0, "Capitão");
-				instance_create_layer(x, y, layer, obj_transition);
+				instance_create_layer(x, y, layer, obj_transition);				
 				
 				with(obj_transition){
 					destination = rm_seaport02;
 					destination_x = 150;
-					destination_y = 350;	
+					destination_y = 350;
 				}	
+				
 			break;
 			
 			case "Sul":

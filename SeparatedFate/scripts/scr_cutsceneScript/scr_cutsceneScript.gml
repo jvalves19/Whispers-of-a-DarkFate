@@ -38,7 +38,7 @@ function cutsceneScript(_sceneNumber){
 			[cutscene_changeGVariable, "sceneNumber", 1]
 		];
 	
-		if(!instance_exists(obj_cutscene) && _sceneNumber == 0) create_cutscene(global.scene_info);
+		if(!instance_exists(obj_cutscene) && global.sceneNumber == 0) create_cutscene(global.scene_info);
 		if(global.sceneNumber != 0){
 			instance_destroy(obj_cutscene);
 			if(!instance_exists(obj_dialogo)) global.bossBattle = true;
