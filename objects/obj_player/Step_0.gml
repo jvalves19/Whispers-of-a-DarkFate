@@ -280,6 +280,7 @@ switch(state){
 	#region DASH
 	case "dash":
 		if(sprite_index != spr_pDash){
+			invincible = true;
 			sprite_index = spr_pDash;
 			image_index = 0;	
 			hSpd = image_xscale * dash_Spd;
@@ -287,6 +288,7 @@ switch(state){
 		
 		if(image_index >= image_number-1 || !ground){
 			state = "idle";
+			invincible = false;
 		}
 		
 		break;

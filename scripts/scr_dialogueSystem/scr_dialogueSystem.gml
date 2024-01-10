@@ -170,6 +170,11 @@ function scr_dialogue(){
 		
 		#region SEAMAN
 		case "Marujo":
+			if(global.marujoDialogue == 0){
+				ds_grid_add_text("Obrigado pela ajuda viajante", 0, "Marujo");
+				break;
+			}
+			
 			ds_grid_add_text("Vocês estão se preparando para viajar?", 1, "Kassius");
 			ds_grid_add_text("Negativo viajante", 0, "Marujo");
 			ds_grid_add_text("Não temos um capitão", 0, "Marujo");
@@ -225,6 +230,7 @@ function scr_dialogue(){
 				case 3:
 					ds_grid_add_text("Obrigado por me ajudar, voltarei para a cidade agora", 0, "Capitão");
 					ds_grid_add_text("Pode contar comigo caso precise viajar para o exterior", 0, "Capitão");
+					global.marujoDialogue = global.marujoDialogue - global.marujoDialogue;
 					global.capitainDialogue = global.capitainDialogue - global.capitainDialogue;
 					
 				break;	
@@ -260,7 +266,7 @@ function scr_dialogue(){
 				with(obj_transition){
 					destination = rm_seaport02;
 					destination_x = 150;
-					destination_y = 350;
+					destination_y = 380;
 				}	
 				
 			break;
@@ -272,7 +278,7 @@ function scr_dialogue(){
 				with(obj_transition){
 					destination = rm_seaport01;
 					destination_x = 1000;
-					destination_y = 350;	
+					destination_y = 380;	
 				}	
 			break;
 			
