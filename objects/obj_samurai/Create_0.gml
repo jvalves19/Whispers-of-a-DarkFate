@@ -8,7 +8,7 @@ battleFase = 1;
 
 charSprite(spr_samIdle, spr_samWalk);
 
-max_life = 200;
+max_life = 800;
 life = max_life;
 invincible = false;
 
@@ -25,7 +25,7 @@ timer_state = 0;
 
 dist_player = 100;
 damage = noone;
-atk = 25;
+atk = 5;
 canAttack = true;
 
 //Function Attack - Substate

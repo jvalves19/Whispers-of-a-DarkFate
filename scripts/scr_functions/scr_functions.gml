@@ -25,6 +25,7 @@ function player_controls(){
 	up = (gamepad_button_check_pressed(0, gp_padu) ||
 		keyboard_check_pressed(vk_up)
 	);
+	
 	right = (gamepad_button_check(0, gp_padr) ||
 		keyboard_check(ord("D"))
 	);

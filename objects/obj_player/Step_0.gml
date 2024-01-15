@@ -1,27 +1,19 @@
-if(instance_exists(obj_transition) || instance_exists(obj_dialogo)) || instance_exists(obj_dialogue) || instance_exists(obj_cutscene) || obj_game_controller.game_over exit;
-//Initializing variables
+if (instance_exists(obj_dialogo) || instance_exists(obj_dialogue) || instance_exists(obj_cutscene)) state = "idle";
+if (instance_exists(obj_transition) || obj_game_controller.game_over) exit;
 
 player_controls();
-/*
-halfViewW = camera_get_view_height(view_camera[0]) / 2;
-halfViewH = camera_get_view_height(view_camera[0]) / 1.5;
 
-camera_set_view_pos(view_camera[0], x - halfViewW, y - halfViewH);
-*/
 var doorSense = place_meeting(x, y, obj_sensor);
 var npcSense = place_meeting(x, y, obj_npcFather);
 var ground = place_meeting(x, y + 1, obj_block);
 var fall = vSpd!=0;
 //Gravity
+
 if(left && right) state = "idle"
 if(!ground && (vSpd < max_vSpd * 2 )){
 	vSpd += GRAVITY * weight * global.spd_mult;
 }
 
-//Spell direction variables
-//var flipped = direction;
-//var spell_x = (x + 4) * (flipped);
-//var y_offset = lengthdir_y(-20, image_angle);
 var _xx = x + lengthdir_x(20 * image_xscale, image_angle);
 
 #region CHANGE ITEM

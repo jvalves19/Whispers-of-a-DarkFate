@@ -190,6 +190,7 @@ function scr_dialogue(){
 				add_op("Sim", "Ajudar Capitão");
 				add_op("Não", "Não Ajudar Capitão");		
 			break;
+			
 			case "Ajudar Capitão":
 				ds_grid_add_text("Levarei você até o último rastro do capitão", 0, "Marujo");
 				ds_grid_add_text("Mas não conte comigo para ajudar, ficarei de longe apenas a olhar", 0, "Marujo");
@@ -206,7 +207,8 @@ function scr_dialogue(){
 			
 			case "Não Ajudar Capitão":
 				ds_grid_add_text("Não tem o que possamos fazer então", 0, "Marujo");
-			break;	
+			break;
+		break;
 		#endregion
 		
 		#region CAPITÃO

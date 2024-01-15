@@ -80,8 +80,7 @@ function cutsceneScript(_sceneNumber){
 		];
 	
 		if(!instance_exists(obj_cutscene) && _sceneNumber == 6) create_cutscene(global.scene_info);
-		if(_sceneNumber != 6) instance_destroy(obj_cutscene);			
-		
+		if(_sceneNumber != 6) instance_destroy(obj_cutscene);					
 	}
 	#endregion
 }
