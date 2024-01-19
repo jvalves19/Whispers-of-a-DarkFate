@@ -1,5 +1,5 @@
 if (instance_exists(obj_dialogo) || instance_exists(obj_dialogue) || instance_exists(obj_cutscene)) state = "idle";
-if (instance_exists(obj_transition) || obj_game_controller.game_over) exit;
+if (instance_exists(obj_transition) || instance_exists(obj_dialogo) || obj_game_controller.game_over) exit;
 
 player_controls();
 
@@ -9,7 +9,7 @@ var ground = place_meeting(x, y + 1, obj_block);
 var fall = vSpd!=0;
 //Gravity
 
-if(left && right) state = "idle"
+if(left && right && ground) state = "idle"
 if(!ground && (vSpd < max_vSpd * 2 )){
 	vSpd += GRAVITY * weight * global.spd_mult;
 }
@@ -19,7 +19,7 @@ var _xx = x + lengthdir_x(20 * image_xscale, image_angle);
 #region CHANGE ITEM
 array_items = array_length(global.controllItems)
 for(i=0; i<=array_items; i++){
-	if(changeItem && global.currentItem == i){
+	if(ground && changeItem && global.currentItem == i){
 		while(i < array_items-1){
 			i++;
 			if(global.controllItems[i]){
@@ -222,7 +222,6 @@ switch(state){
 		else
 			if(dash){
 				state = "dash";
-				image_index = 0;
 			}
 		else
 			if(heal){

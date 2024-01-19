@@ -27,6 +27,9 @@ function scr_dialogue(){
 					if(global.destroyed[2] && global.potionStash == 5){
 						add_op("Aumentar Espaços de Poção +5", "Aumentar Espaços de Poção");
 					}
+					if(global.lifePotionQtd <= global.potionStash){
+						add_op("Comprar Poção de Vida +1", "Comprar Poção de Vida");
+					}
 					if(global.damagePotionQtd <= global.potionStash/2){
 						add_op("Comprar Poção de Forca +1", "Comprar Poção de Força");
 					}
@@ -39,7 +42,12 @@ function scr_dialogue(){
 			case "Aumentar Espaços de Poção":
 				ds_grid_add_text("Seus espaçoes de poção foram aumentados em +5", 0, "Merchant");
 				global.potionStash = global.potionStash+5;
-			break;			
+			break;	
+			case "Comprar Poção de Vida":
+				ds_grid_add_text("...", 0, "Merchant");
+				global.lifePotionQtd = global.lifePotionQtd+1;
+				global.controllItems[0] = true;
+			break;
 			case "Comprar Poção de Força":
 				ds_grid_add_text("...", 0, "Merchant");
 				global.damagePotionQtd = global.damagePotionQtd+1;

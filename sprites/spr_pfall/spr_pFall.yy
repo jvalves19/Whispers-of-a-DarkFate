@@ -2,7 +2,7 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "spr_pFall",
-  "bbox_bottom": 68,
+  "bbox_bottom": 67,
   "bbox_left": 32,
   "bbox_right": 63,
   "bbox_top": 23,
